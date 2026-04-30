@@ -1,0 +1,74 @@
+[
+  {
+    "id": "desertico",
+    "nombre": "Desértico",
+    "emoji": "☀️",
+    "descripcion": "Clima extremadamente seco y cálido. Lluvias casi nulas. Radiación solar muy alta.",
+    "temperatura_verano": 32,
+    "temperatura_invierno": 8,
+    "humedad": "Muy baja (15–30%)",
+    "riesgo_helada": false,
+    "riesgo_sequia": true,
+    "color": "#F4A234"
+  },
+  {
+    "id": "semiarido",
+    "nombre": "Semiárido",
+    "emoji": "🌵",
+    "descripcion": "Pocas lluvias en invierno. Veranos cálidos y secos. Noches frescas.",
+    "temperatura_verano": 28,
+    "temperatura_invierno": 5,
+    "humedad": "Baja (25–45%)",
+    "riesgo_helada": false,
+    "riesgo_sequia": true,
+    "color": "#D4A04C"
+  },
+  {
+    "id": "costero",
+    "nombre": "Costero",
+    "emoji": "🌊",
+    "descripcion": "Alta humedad por influencia marina. Niebla frecuente. Temperaturas moderadas todo el año.",
+    "temperatura_verano": 22,
+    "temperatura_invierno": 8,
+    "humedad": "Alta (70–85%)",
+    "riesgo_helada": false,
+    "riesgo_sequia": false,
+    "color": "#4A90D9"
+  },
+  {
+    "id": "templado",
+    "nombre": "Templado",
+    "emoji": "🌤️",
+    "descripcion": "Cuatro estaciones marcadas. Veranos cálidos y secos, inviernos fríos con lluvias ocasionales.",
+    "temperatura_verano": 28,
+    "temperatura_invierno": 3,
+    "humedad": "Media (40–65%)",
+    "riesgo_helada": true,
+    "riesgo_sequia": false,
+    "color": "#6B8F71"
+  },
+  {
+    "id": "montana",
+    "nombre": "Montaña",
+    "emoji": "⛰️",
+    "descripcion": "Fríos intensos en invierno. Heladas frecuentes. Veranos cortos y frescos. Alta amplitud térmica diaria.",
+    "temperatura_verano": 24,
+    "temperatura_invierno": -2,
+    "humedad": "Media-baja (35–55%)",
+    "riesgo_helada": true,
+    "riesgo_sequia": false,
+    "color": "#8B6E4E"
+  },
+  {
+    "id": "frio_humedo",
+    "nombre": "Frío Húmedo",
+    "emoji": "🌧️",
+    "descripcion": "Lluvias frecuentes todo el año. Inviernos muy fríos. Alta humedad ambiental. Riesgo de hongos.",
+    "temperatura_verano": 20,
+    "temperatura_invierno": 2,
+    "humedad": "Alta (70–90%)",
+    "riesgo_helada": true,
+    "riesgo_sequia": false,
+    "color": "#5B8AC5"
+  }
+]

@@ -1,0 +1,435 @@
+[
+  {
+    "id": "HERBACEAS PERENES",
+    "nombre": "Herbáceas Perennes",
+    "color": "#4CAF50",
+    "emoji": "🪴",
+    "luz": "Luz indirecta brillante a sol parcial",
+    "riego": "Moderado – suelo ligeramente húmedo",
+    "frecuencia": {
+      "desertico": "Diario",
+      "semiarido": "Cada 2d",
+      "costero": "Cada 2-3d",
+      "templado": "Cada 2-3d",
+      "montana": "Cada 3d",
+      "frio_humedo": "Cada 3-4d"
+    },
+    "temperatura_min": 5,
+    "temperatura_max": 35,
+    "estructura": "Mesa con bandejas perforadas para drenaje libre. Separar 15cm entre plantas.",
+    "alertas": [
+      "Hoja amarilla = exceso de riego o falta de luz"
+    ],
+    "tips": [
+      "Retirar flores marchitas para prolongar floración",
+      "No mojar el follaje al regar",
+      "Revisar pulgones semanalmente en brotes nuevos"
+    ]
+  },
+  {
+    "id": "ARBUSTIVA DE FLOR",
+    "nombre": "Arbustiva de Flor",
+    "color": "#E91E63",
+    "emoji": "🌸",
+    "luz": "Sol pleno o semisombra",
+    "riego": "Regular – suelo moderadamente húmedo",
+    "frecuencia": {
+      "desertico": "Diario",
+      "semiarido": "Cada 2d",
+      "costero": "Cada 2-3d",
+      "templado": "Cada 2-3d",
+      "montana": "Cada 3d",
+      "frio_humedo": "Cada 3-4d"
+    },
+    "temperatura_min": 0,
+    "temperatura_max": 38,
+    "estructura": "Mesa de madera o metal con mínimo 20cm entre plantas.",
+    "alertas": [
+      "Hojas caídas = estrés por calor o falta de agua"
+    ],
+    "tips": [
+      "Podar flores secas para estimular nuevo crecimiento",
+      "Fertilizar cada 15 días en temporada de floración",
+      "Proteger de heladas fuertes en invierno"
+    ]
+  },
+  {
+    "id": "PLANTA INTERIOR FOLL",
+    "nombre": "Planta Interior Follaje",
+    "color": "#2196F3",
+    "emoji": "🏠",
+    "luz": "Luz indirecta – NUNCA sol directo",
+    "riego": "Moderado – dejar secar 2-3cm la capa superficial entre riegos",
+    "frecuencia": {
+      "desertico": "Cada 2-3d*",
+      "semiarido": "Cada 2-3d*",
+      "costero": "Cada 3-4d*",
+      "templado": "Cada 3-4d*",
+      "montana": "Cada 4-5d*",
+      "frio_humedo": "Cada 5-7d*"
+    },
+    "temperatura_min": 10,
+    "temperatura_max": 30,
+    "estructura": "Mesa interior. Platos individuales sin encharcamiento. Agrupar para crear microclima húmedo.",
+    "alertas": [
+      "*Tiendas del norte: mantener SIEMPRE bajo techo. Nunca a la intemperie."
+    ],
+    "tips": [
+      "Mantener en zona protegida del interior",
+      "Limpiar hojas con paño húmedo 1 vez/semana",
+      "Rociar ambiente para aumentar humedad",
+      "Nunca exponer a corrientes de aire frío"
+    ]
+  },
+  {
+    "id": "PLANTA INTERIOR FLOR",
+    "nombre": "Planta Interior Floración",
+    "color": "#9C27B0",
+    "emoji": "💡",
+    "luz": "Luz brillante indirecta",
+    "riego": "Regular – suelo húmedo pero bien drenado",
+    "frecuencia": {
+      "desertico": "Cada 2-3d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3d",
+      "templado": "Cada 3d",
+      "montana": "Cada 3-4d",
+      "frio_humedo": "Cada 4-5d"
+    },
+    "temperatura_min": 12,
+    "temperatura_max": 28,
+    "estructura": "Mesa cubierta, zona premium. Bandejas con piedras húmedas para humedad ambiental.",
+    "alertas": [
+      "Flores o hojas caídas = corriente de aire o cambio brusco de temperatura"
+    ],
+    "tips": [
+      "Retirar flores marchitas diariamente",
+      "No regar sobre las flores (se manchan)",
+      "Ambiente cálido sin corrientes de aire"
+    ]
+  },
+  {
+    "id": "PLANTA INTERIOR COLG",
+    "nombre": "Planta Interior Colgante",
+    "color": "#00BCD4",
+    "emoji": "🪝",
+    "luz": "Luz indirecta media",
+    "riego": "Regular – revisar diariamente en verano (se secan más rápido)",
+    "frecuencia": {
+      "desertico": "Diario",
+      "semiarido": "Cada 2d",
+      "costero": "Cada 2-3d",
+      "templado": "Cada 2-3d",
+      "montana": "Cada 3d",
+      "frio_humedo": "Cada 3d"
+    },
+    "temperatura_min": 10,
+    "temperatura_max": 32,
+    "estructura": "Ganchos o soportes colgantes. Usar regadera de cuello largo para riego cómodo.",
+    "alertas": [
+      "Puntas de hojas secas = baja humedad o falta de agua"
+    ],
+    "tips": [
+      "Macetas colgantes se secan más rápido que las de mesa",
+      "Colgar a altura accesible para riego y revisión",
+      "Rotar cada semana para crecimiento uniforme"
+    ]
+  },
+  {
+    "id": "PLANTIN PRIMAV/VERAN",
+    "nombre": "Plantín Primavera/Verano",
+    "color": "#FF9800",
+    "emoji": "🪣",
+    "luz": "Sol pleno o semisombra según especie",
+    "riego": "Frecuente – plantas jóvenes necesitan más agua",
+    "frecuencia": {
+      "desertico": "2x/día 🔴",
+      "semiarido": "Diario",
+      "costero": "Cada 2d",
+      "templado": "Cada 2d",
+      "montana": "Cada 2-3d",
+      "frio_humedo": "Cada 3d"
+    },
+    "temperatura_min": 5,
+    "temperatura_max": 35,
+    "estructura": "Bandejas de riego por inmersión (5cm agua, 20 min), luego escurrir. Ideal para plantines pequeños.",
+    "alertas": [
+      "🚨 Plantín marchito = emergencia hídrica. Regar de INMEDIATO."
+    ],
+    "tips": [
+      "Revisar cada mañana: plantines se estresan rápido",
+      "Agrupar por especie para facilitar el riego",
+      "En calor extremo, regar también a las 5pm"
+    ]
+  },
+  {
+    "id": "PLANTIN OTOÑ/INVIER",
+    "nombre": "Plantín Otoño/Invierno",
+    "color": "#607D8B",
+    "emoji": "🌱",
+    "luz": "Sol o semisombra según especie",
+    "riego": "Moderado – reducir en invierno",
+    "frecuencia": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3d",
+      "templado": "Cada 3-4d",
+      "montana": "Cada 4-5d",
+      "frio_humedo": "Cada 5-7d"
+    },
+    "temperatura_min": -2,
+    "temperatura_max": 30,
+    "estructura": "Mesa con buena circulación de aire. Evitar bandejas con agua estancada en invierno.",
+    "alertas": [
+      "Suelo empapado en invierno = riesgo de pudrición radical"
+    ],
+    "tips": [
+      "Exceso de agua en invierno pudre las raíces",
+      "Revisar drenaje antes de regar",
+      "Mover al interior si temperatura baja de 2°C"
+    ]
+  },
+  {
+    "id": "ARBUSTIVA FOLLAJE",
+    "nombre": "Arbustiva Follaje",
+    "color": "#8BC34A",
+    "emoji": "🌿",
+    "luz": "Sol o semisombra",
+    "riego": "Regular – más resistentes una vez establecidas",
+    "frecuencia": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3d",
+      "templado": "Cada 3d",
+      "montana": "Cada 3-4d",
+      "frio_humedo": "Cada 4-5d"
+    },
+    "temperatura_min": -5,
+    "temperatura_max": 38,
+    "estructura": "Mesa o suelo directo. Buena ventilación entre plantas.",
+    "alertas": [
+      "Hojas café en puntas = estrés hídrico o agua muy salina"
+    ],
+    "tips": [
+      "Podar para mantener forma compacta",
+      "Limpiar hojas de polvo para mejor aspecto",
+      "Buen producto de vidriera: exhibir con luz natural"
+    ]
+  },
+  {
+    "id": "ARBUSTIVA TREPADORAS",
+    "nombre": "Arbustiva Trepadora",
+    "color": "#4DB6AC",
+    "emoji": "🌿",
+    "luz": "Sol pleno a semisombra",
+    "riego": "Regular – toleran algo de sequía cuando están establecidas",
+    "frecuencia": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 2-3d",
+      "templado": "Cada 3d",
+      "montana": "Cada 3-4d",
+      "frio_humedo": "Cada 4d"
+    },
+    "temperatura_min": -3,
+    "temperatura_max": 38,
+    "estructura": "Maceta grande con tutores o malla de apoyo. Zona con estructura visible.",
+    "alertas": [
+      "Tallos caídos = falta de soporte. Poner tutor inmediatamente."
+    ],
+    "tips": [
+      "Amarrar guías para mantener presentación",
+      "Exhibir cerca de estructura o reja",
+      "Regar en la base, no mojar tallos"
+    ]
+  },
+  {
+    "id": "ARBOLES FOLLAJE",
+    "nombre": "Árboles Follaje",
+    "color": "#388E3C",
+    "emoji": "🌳",
+    "luz": "Sol pleno",
+    "riego": "Moderado – según tamaño del contenedor",
+    "frecuencia": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3-4d",
+      "templado": "Cada 3-4d",
+      "montana": "Cada 4d",
+      "frio_humedo": "Cada 5d"
+    },
+    "temperatura_min": -5,
+    "temperatura_max": 38,
+    "estructura": "Suelo directo o pallets. Zona protegida del viento. Regar profundo.",
+    "alertas": [
+      "Caída masiva de hojas = estrés hídrico severo"
+    ],
+    "tips": [
+      "Maceta grande = se deshidrata más lento",
+      "Proteger de vientos fuertes que puedan tumbar",
+      "Revisar raíces que no salgan por el fondo"
+    ]
+  },
+  {
+    "id": "ARBOLES FRUTALES",
+    "nombre": "Árboles Frutales",
+    "color": "#FFA000",
+    "emoji": "🍋",
+    "luz": "Sol pleno – mínimo 6 horas directas",
+    "riego": "Regular – constante para desarrollo del fruto",
+    "frecuencia": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3d",
+      "templado": "Cada 3d",
+      "montana": "Cada 3-4d",
+      "frio_humedo": "Cada 4-5d"
+    },
+    "temperatura_min": -2,
+    "temperatura_max": 38,
+    "estructura": "Suelo directo o pallet bajo. Zona soleada frontal de la tienda.",
+    "alertas": [
+      "Frutos caídos prematuramente = estrés hídrico o temperatura"
+    ],
+    "tips": [
+      "Los cítricos son muy populares: en zona visible",
+      "No dejar suelo completamente seco entre riegos",
+      "Revisar plagas en hojas nuevas (más susceptibles)"
+    ]
+  },
+  {
+    "id": "ARBOLES PALMERAS",
+    "nombre": "Palmeras",
+    "color": "#26A69A",
+    "emoji": "🌴",
+    "luz": "Sol pleno a semisombra intensa",
+    "riego": "Moderado – tolera algo de sequía",
+    "frecuencia": {
+      "desertico": "Cada 2-3d",
+      "semiarido": "Cada 3d",
+      "costero": "Cada 3-4d",
+      "templado": "Cada 3-4d",
+      "montana": "Cada 4d",
+      "frio_humedo": "Cada 5-7d"
+    },
+    "temperatura_min": -3,
+    "temperatura_max": 40,
+    "estructura": "Suelo directo o maceteros grandes en piso. Zona de alto tráfico.",
+    "alertas": [
+      "Varias hojas nuevas amarillas simultáneamente = problema de raíces"
+    ],
+    "tips": [
+      "Retirar hojas secas o dobladas para presentación",
+      "Resistentes pero no abandonar el riego",
+      "En norte: verificar que no reciban sol del mediodía directo"
+    ]
+  },
+  {
+    "id": "HERBACEAS CACTUS",
+    "nombre": "Cactus y Suculentas",
+    "color": "#795548",
+    "emoji": "🌵",
+    "luz": "Sol pleno – mínimo 4 horas directas",
+    "riego": "Escaso – dejar secar COMPLETAMENTE entre riegos",
+    "frecuencia": {
+      "desertico": "Cada 7-10d",
+      "semiarido": "Cada 10d",
+      "costero": "Cada 10-14d",
+      "templado": "Cada 10-14d",
+      "montana": "Cada 14d",
+      "frio_humedo": "Cada 14-21d"
+    },
+    "temperatura_min": -5,
+    "temperatura_max": 45,
+    "estructura": "Mesa bien drenada. Platos secos. Sustrato arenoso. Zona de máximo sol.",
+    "alertas": [
+      "🚨 Tallo blando o café en base = pudrición por exceso de agua. Sin solución."
+    ],
+    "tips": [
+      "El error más común es regar demasiado",
+      "En invierno: regar solo 1 vez al mes",
+      "Platos SIN agua acumulada"
+    ]
+  },
+  {
+    "id": "HERBACEAS AROMÁTICAS",
+    "nombre": "Aromáticas",
+    "color": "#66BB6A",
+    "emoji": "🌿",
+    "luz": "Sol directo – mínimo 4-6 horas",
+    "riego": "Regular – suelo húmedo pero bien drenado",
+    "frecuencia": {
+      "desertico": "Diario",
+      "semiarido": "Cada 2d",
+      "costero": "Cada 2d",
+      "templado": "Cada 2-3d",
+      "montana": "Cada 3d",
+      "frio_humedo": "Cada 3d"
+    },
+    "temperatura_min": 0,
+    "temperatura_max": 35,
+    "estructura": "Mesa bien ventilada con sol directo. Ideal zona de entrada o caja.",
+    "alertas": [
+      "Tallo leñoso y flor prematura = estrés hídrico crónico"
+    ],
+    "tips": [
+      "Exhibir cerca del acceso: el aroma atrae clientes",
+      "No dejar sin agua: se marchitan muy rápido",
+      "Pinchar las flores para mantener aroma"
+    ]
+  },
+  {
+    "id": "FLORALES",
+    "nombre": "Florales",
+    "color": "#F06292",
+    "emoji": "🌸",
+    "luz": "Sol o semisombra según especie",
+    "riego": "Regular – mantener suelo húmedo",
+    "frecuencia": {
+      "desertico": "Diario",
+      "semiarido": "Cada 2d",
+      "costero": "Cada 2d",
+      "templado": "Cada 2-3d",
+      "montana": "Cada 3d",
+      "frio_humedo": "Cada 3d"
+    },
+    "temperatura_min": 3,
+    "temperatura_max": 35,
+    "estructura": "Zona destacada frontal. Mesa o isla central. Máxima visibilidad.",
+    "alertas": [
+      "Flores marchitas sin retirar = mala imagen del área completa"
+    ],
+    "tips": [
+      "Alta rotación: revisar presentación cada mañana",
+      "Retirar flores marchitas diariamente",
+      "Agrupar por colores para impacto visual"
+    ]
+  },
+  {
+    "id": "PLANTA INTERIOR CORT",
+    "nombre": "Planta Interior Gran Porte",
+    "color": "#1565C0",
+    "emoji": "🌿",
+    "luz": "Luz indirecta brillante",
+    "riego": "Moderado – suelo húmedo constante",
+    "frecuencia": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3d",
+      "templado": "Cada 3d",
+      "montana": "Cada 3-4d",
+      "frio_humedo": "Cada 4d"
+    },
+    "temperatura_min": 12,
+    "temperatura_max": 30,
+    "estructura": "Suelo directo en zona premium. Macetero decorativo exterior.",
+    "alertas": [
+      "Puntas café = baja humedad ambiental. Rociar hojas con agua."
+    ],
+    "tips": [
+      "Gran porte: exhibir en zona premium",
+      "Limpiar hojas con paño húmedo para brillo",
+      "Revisar que el macetero no restrinja las raíces"
+    ]
+  }
+]

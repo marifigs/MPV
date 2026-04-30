@@ -1,52 +1,17 @@
-// Minimal type stubs — expanded in FASE 3 with full data migration
-
-export interface Plant {
-  sku: string;
-  nombre: string;
-  nombre_cientifico?: string;
-  grupo: string; // FK → CareGroup.id
-  precio?: number;
-  precio_anterior?: number;
-  descuento?: number; // percentage 0–100
-  tags?: string[];
-}
-
-export interface CareGroup {
-  id: string;
-  nombre: string;
-  color: string; // hex, used for placeholder images
-  emoji?: string;
-  riego: string;
-  luz: string;
-  temperatura_min: number;
-  temperatura_max: number;
-  humedad?: string;
-  sustrato?: string;
-  fertilizacion?: string;
-  alertas?: string[];
-  tips?: string[];
-}
-
-export interface Store {
-  id: string;
-  nombre: string;
-  ciudad: string;
-  zona_climatica: ClimateZoneId;
-  direccion?: string;
-  telefono?: string;
-}
+// ─── Climate Zones ──────────────────────────────────────────────────────────
 
 export type ClimateZoneId =
-  | "norte_grande"
-  | "norte_chico"
-  | "zona_central"
-  | "sur"
-  | "patagonia"
-  | "isla";
+  | "desertico"
+  | "semiarido"
+  | "costero"
+  | "templado"
+  | "montana"
+  | "frio_humedo";
 
 export interface ClimateZone {
   id: ClimateZoneId;
   nombre: string;
+  emoji: string;
   descripcion: string;
   temperatura_verano: number;
   temperatura_invierno: number;
@@ -54,4 +19,69 @@ export interface ClimateZone {
   riesgo_helada: boolean;
   riesgo_sequia: boolean;
   color: string;
+}
+
+// ─── Care Groups ─────────────────────────────────────────────────────────────
+
+export type CareGroupId =
+  | "HERBACEAS PERENES"
+  | "ARBUSTIVA DE FLOR"
+  | "PLANTA INTERIOR FOLL"
+  | "PLANTA INTERIOR FLOR"
+  | "PLANTA INTERIOR COLG"
+  | "PLANTIN PRIMAV/VERAN"
+  | "PLANTIN OTOÑ/INVIER"
+  | "ARBUSTIVA FOLLAJE"
+  | "ARBUSTIVA TREPADORAS"
+  | "ARBOLES FOLLAJE"
+  | "ARBOLES FRUTALES"
+  | "ARBOLES PALMERAS"
+  | "HERBACEAS CACTUS"
+  | "HERBACEAS AROMÁTICAS"
+  | "FLORALES"
+  | "PLANTA INTERIOR CORT";
+
+export interface CareGroup {
+  id: CareGroupId;
+  nombre: string;
+  color: string;
+  emoji: string;
+  luz: string;
+  riego: string;
+  frecuencia: Record<ClimateZoneId, string>;
+  temperatura_min: number;
+  temperatura_max: number;
+  estructura: string;
+  alertas: string[];
+  tips: string[];
+}
+
+// ─── Stores ──────────────────────────────────────────────────────────────────
+
+export type StoreSize = "GRA" | "MED" | "PEQ";
+
+export interface Store {
+  id: string;
+  nombre: string;
+  ciudad: string;
+  zona_climatica: ClimateZoneId;
+  tipo: StoreSize;
+  direccion?: string;
+  telefono?: string;
+}
+
+// ─── Plants ──────────────────────────────────────────────────────────────────
+
+export interface Plant {
+  sku: string;
+  nombre: string;
+  nombre_cientifico?: string;
+  grupo: CareGroupId;
+  subrubro: string;
+  stock_total: number;
+  stock?: Record<string, number>; // store nombre → units
+  precio?: number;
+  precio_anterior?: number;
+  descuento?: number;
+  tags?: string[];
 }
