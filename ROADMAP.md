@@ -16,7 +16,7 @@
 
 ### 🔴 Alta prioridad
 
-- [ ] **Conexión con GitHub para auto-deploy** — configurar repo y webhook con Vercel
+- [x] **Deploy en GitHub Pages** — GitHub Actions despliega automáticamente en cada push a `main`
 - [ ] **Actualización de stock desde Excel** — flujo para subir nuevo Excel y regenerar datos sin tocar código
 - [ ] **Precios reales en tabla de liquidación** — conectar con precios reales del sistema Easy
 
