@@ -24,6 +24,16 @@ export const metadata: Metadata = {
   description:
     "Guía operativa para vendedores de plantas vivas en tiendas Easy Chile. Frecuencias de riego, fichas de cuidado y proceso de liquidación.",
   robots: { index: false, follow: false },
+  manifest: "/manifest.json",
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "default",
+    title: "PlantasFácil",
+  },
+  icons: {
+    icon: "/icons/icon-192.png",
+    apple: "/icons/icon-192.png",
+  },
 };
 
 export default function RootLayout({
