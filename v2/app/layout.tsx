@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Source_Serif_4 } from "next/font/google";
+import { Inter, Source_Serif_4 } from "next/font/google";
+import { Nav } from "@/components/Nav";
 import "./globals.css";
 
 const inter = Inter({
@@ -33,7 +33,33 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.variable} ${sourceSerif4.variable} antialiased`}>
-        {children}
+        <div className="flex min-h-screen flex-col bg-[var(--bg)] text-[var(--ink)] md:flex-row">
+          {/* Desktop sidebar */}
+          <aside className="hidden w-56 shrink-0 md:block">
+            <div className="sticky top-0 flex h-screen flex-col">
+              <div className="border-b border-[var(--rule)] px-4 py-5">
+                <p
+                  className="text-lg font-semibold leading-none text-[var(--green-deep)]"
+                  style={{ fontFamily: "var(--font-display)" }}
+                >
+                  PlantasFácil
+                </p>
+                <p className="mt-0.5 text-xs text-[var(--ink-soft)]">Easy Chile</p>
+              </div>
+              <Nav />
+            </div>
+          </aside>
+
+          {/* Main content */}
+          <main className="flex-1 pb-20 md:pb-0">
+            {children}
+          </main>
+
+          {/* Mobile bottom nav */}
+          <div className="fixed inset-x-0 bottom-0 z-50 md:hidden">
+            <Nav />
+          </div>
+        </div>
       </body>
     </html>
   );
