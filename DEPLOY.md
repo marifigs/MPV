@@ -19,14 +19,17 @@ git remote add origin https://github.com/TU_USUARIO/plantasfacil-easy.git
 git push -u origin main
 ```
 
-### 3. Conectar con Vercel
-1. Ir a https://vercel.com/new
-2. Click **"Import Git Repository"**
-3. Seleccionar `plantasfacil-easy`
-4. Framework Preset: **Other**
-5. Click **Deploy**
+### 3. Activar GitHub Pages
+1. Ir a **Settings → Pages** en el repo de GitHub
+2. En **Source**, seleccionar **GitHub Actions**
+3. Click **Save**
 
-Vercel detecta el `vercel.json` automáticamente y configura todo.
+El workflow en `.github/workflows/deploy.yml` se ejecuta automáticamente en cada push a `main` y publica el sitio en:
+```
+https://TU_USUARIO.github.io/plantasfacil-easy/
+```
+
+> También se puede disparar manualmente desde **Actions → Deploy to GitHub Pages → Run workflow**.
 
 ---
 
