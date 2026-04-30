@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import { Nav } from "@/components/Nav";
+import { GlobalSearchWrapper } from "@/components/GlobalSearchWrapper";
 import "./globals.css";
 
 const inter = Inter({
@@ -45,6 +46,9 @@ export default function RootLayout({
                   PlantasFácil
                 </p>
                 <p className="mt-0.5 text-xs text-[var(--ink-soft)]">Easy Chile</p>
+                <div className="mt-3">
+                  <GlobalSearchWrapper />
+                </div>
               </div>
               <Nav />
             </div>

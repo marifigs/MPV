@@ -5,6 +5,7 @@ import { ArrowLeft, Droplets, Sun, Thermometer, Check, Leaf } from "@/lib/icons"
 import { Card, CardBody, CardHeader } from "@/components/ui/card";
 import { Eyebrow } from "@/components/ui/eyebrow";
 import { Alert } from "@/components/ui/alert";
+import { ShareButton } from "@/components/ShareButton";
 import type { Metadata } from "next";
 
 interface Props {
@@ -36,14 +37,17 @@ export default async function PlantDetailPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 md:px-6">
-      {/* Back */}
-      <Link
-        href="/plantas"
-        className="mb-6 inline-flex items-center gap-1.5 text-sm text-[var(--ink-soft)] hover:text-[var(--ink)]"
-      >
-        <ArrowLeft className="size-4" aria-hidden />
-        Catálogo
-      </Link>
+      {/* Back + Share */}
+      <div className="mb-6 flex items-center justify-between">
+        <Link
+          href="/plantas"
+          className="inline-flex items-center gap-1.5 text-sm text-[var(--ink-soft)] hover:text-[var(--ink)]"
+        >
+          <ArrowLeft className="size-4" aria-hidden />
+          Catálogo
+        </Link>
+        <ShareButton title={plant.nombre} text={`Ficha de cuidado: ${plant.nombre}`} />
+      </div>
 
       {/* Plant hero */}
       <div

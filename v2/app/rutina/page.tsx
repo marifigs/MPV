@@ -1,6 +1,5 @@
-import { Checklist } from "@/components/Checklist";
 import { Eyebrow } from "@/components/ui/eyebrow";
-import { Section } from "@/components/ui/section";
+import { DailyChecklist } from "./DailyChecklist";
 
 export const metadata = {
   title: "Rutina Diaria — PlantasFácil",
@@ -43,35 +42,19 @@ export default function RutinaPage() {
           Rutina Diaria
         </h1>
         <p className="mt-1 text-sm text-[var(--ink-soft)]">
-          Progreso guardado en este dispositivo
+          Se reinicia automáticamente cada día
         </p>
       </header>
 
-      <div className="flex flex-col gap-8">
-        <Section>
-          <div className="rounded-[var(--radius-lg)] border border-[var(--rule)] bg-[var(--surface)] p-5 shadow-[var(--shadow-sm)]">
-            <Checklist
-              items={APERTURA}
-              storageKey="rutina_apertura"
-              title="🌅 Apertura"
-            />
-          </div>
-        </Section>
-
+      <div className="flex flex-col gap-6">
         <div className="rounded-[var(--radius-lg)] border border-[var(--rule)] bg-[var(--surface)] p-5 shadow-[var(--shadow-sm)]">
-          <Checklist
-            items={CIERRE}
-            storageKey="rutina_cierre"
-            title="🌇 Cierre"
-          />
+          <DailyChecklist items={APERTURA} storageKey="rutina_apertura" title="🌅 Apertura" />
         </div>
-
         <div className="rounded-[var(--radius-lg)] border border-[var(--rule)] bg-[var(--surface)] p-5 shadow-[var(--shadow-sm)]">
-          <Checklist
-            items={SEMANAL}
-            storageKey="rutina_semanal"
-            title="📅 Semanal"
-          />
+          <DailyChecklist items={CIERRE} storageKey="rutina_cierre" title="🌇 Cierre" />
+        </div>
+        <div className="rounded-[var(--radius-lg)] border border-[var(--rule)] bg-[var(--surface)] p-5 shadow-[var(--shadow-sm)]">
+          <DailyChecklist items={SEMANAL} storageKey="rutina_semanal" title="📅 Semanal" />
         </div>
       </div>
     </div>
