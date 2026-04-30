@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+/* ─── Design Tokens ─────────────────────────────────────── */
+@theme inline {
+  /* Brand palette */
+  --color-green-deep: #2d5a3d;
+  --color-green-soft: #6b8f71;
+  --color-terracotta: #c8553d;
+  --color-cream: #f5f1e8;
+  --color-ink: #1a1f1b;
+  --color-ink-soft: #4a524c;
+  --color-rule: #e5e0d5;
+  --color-success: #4a7c59;
+  --color-warning: #d4a04c;
+  --color-danger: #b33a3a;
+  --color-surface: #fdfcf9;
+  --color-surface-raised: #f9f6f0;
+
+  /* Typography */
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-display: var(--font-source-serif), Georgia, serif;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 22px;
+}
+
+/* ─── CSS custom properties (runtime access) ─────────────── */
+:root {
+  --green-deep: #2d5a3d;
+  --green-soft: #6b8f71;
+  --terracotta: #c8553d;
+  --cream: #f5f1e8;
+  --ink: #1a1f1b;
+  --ink-soft: #4a524c;
+  --rule: #e5e0d5;
+  --success: #4a7c59;
+  --warning: #d4a04c;
+  --danger: #b33a3a;
+  --surface: #fdfcf9;
+  --surface-raised: #f9f6f0;
+
+  --shadow-sm: 0 1px 4px rgba(26, 20, 14, 0.07);
+  --shadow-md: 0 4px 20px rgba(26, 20, 14, 0.09), 0 2px 6px rgba(26, 20, 14, 0.05);
+  --shadow-lg: 0 12px 48px rgba(26, 20, 14, 0.11), 0 4px 14px rgba(26, 20, 14, 0.07);
+}
+
+/* ─── Base ────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  min-height: 100dvh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+/* ─── Focus visible ───────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--green-deep);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ─── Touch targets mínimos 48×48px ──────────────────────── */
+button,
+a[role="button"],
+[role="button"] {
+  min-height: 48px;
+}
+
+/* ─── Reduced motion ──────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
