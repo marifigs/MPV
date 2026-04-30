@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Source_Serif_4 } from "next/font/google";
 import { Nav } from "@/components/Nav";
 import { GlobalSearchWrapper } from "@/components/GlobalSearchWrapper";
@@ -18,6 +18,14 @@ const sourceSerif4 = Source_Serif_4({
   style: ["normal", "italic"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  themeColor: "#2d5a3d",
+  colorScheme: "light",
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 
 export const metadata: Metadata = {
   title: "PlantasFácil — Manual de Plantas Vivas Easy Chile",
@@ -44,6 +52,13 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.variable} ${sourceSerif4.variable} antialiased`}>
+        {/* Skip to main content — keyboard/screen reader shortcut */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[var(--radius-md)] focus:bg-[var(--green-deep)] focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-white"
+        >
+          Saltar al contenido
+        </a>
         <div className="flex min-h-screen flex-col bg-[var(--bg)] text-[var(--ink)] md:flex-row">
           {/* Desktop sidebar */}
           <aside className="hidden w-56 shrink-0 md:block">
@@ -65,7 +80,7 @@ export default function RootLayout({
           </aside>
 
           {/* Main content */}
-          <main className="flex-1 pb-20 md:pb-0">
+          <main id="main-content" className="flex-1 pb-20 md:pb-0">
             {children}
           </main>
 
