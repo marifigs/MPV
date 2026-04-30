@@ -12,7 +12,8 @@ interface SearchBarProps<T> {
   className?: string;
 }
 
-export function SearchBar<T extends Record<string, unknown>>({
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function SearchBar<T extends Record<string, any>>({
   items,
   searchKeys,
   placeholder = "Buscar plantas...",
