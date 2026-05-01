@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { plantBySku, careFor, climateZoneById } from "@/lib/data";
+import { plants, plantBySku, careFor, climateZoneById } from "@/lib/data";
 import { ArrowLeft, Droplets, Sun, Thermometer, Check, Leaf } from "@/lib/icons";
 import { Card, CardBody, CardHeader } from "@/components/ui/card";
 import { Eyebrow } from "@/components/ui/eyebrow";
@@ -10,6 +10,10 @@ import type { Metadata } from "next";
 
 interface Props {
   params: Promise<{ sku: string }>;
+}
+
+export function generateStaticParams() {
+  return plants.map((p) => ({ sku: p.sku }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
