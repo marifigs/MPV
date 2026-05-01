@@ -1,47 +1,110 @@
 import Link from 'next/link';
 import { Icons } from '@/lib/icons';
-import { Eyebrow } from '@/components/ui/eyebrow';
-import { Section } from '@/components/ui/section';
-import { Card } from '@/components/ui/card';
-import { Stat } from '@/components/ui/stat';
-import { Alert } from '@/components/ui/alert';
 import { plantas, tiendas, zonas, plantasEspeciales } from '@/data';
 
 export default function HomePage() {
   return (
-    <div className="space-y-12">
-      {/* Hero */}
-      <section className="overflow-hidden rounded-2xl bg-[var(--color-green-deep)] p-7 sm:p-10 text-[var(--color-cream)]">
-        <Eyebrow className="text-[var(--color-cream)]/70">Manual operativo</Eyebrow>
-        <h1 className="serif mt-2 text-[40px] sm:text-[56px] leading-[1.05] tracking-tight">
-          Plantas Vivas,
-          <br />
-          cuidadas como deben.
+    <div>
+      {/* ══════════════════════════════════════════════════
+          HERO — luxury editorial masthead
+      ══════════════════════════════════════════════════ */}
+      <section className="relative overflow-hidden rounded-2xl bg-[var(--color-green-deep)] px-8 py-14 sm:px-14 sm:py-20 lg:px-20 lg:py-28 mb-24">
+        {/* Decorative concentric rings */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-32 -top-32 h-[480px] w-[480px] rounded-full border border-[var(--color-cream)]/[0.04]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -right-16 -top-10 h-[320px] w-[320px] rounded-full border border-[var(--color-cream)]/[0.04]"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute right-8 top-20 h-[160px] w-[160px] rounded-full bg-[var(--color-terracotta)]/[0.07]"
+        />
+
+        {/* Eyebrow */}
+        <div className="mb-10 flex items-center gap-4">
+          <div className="h-px w-12 bg-[var(--color-cream)]/20" />
+          <span
+            className="font-semibold text-[10px] uppercase tracking-[0.2em]"
+            style={{ color: 'rgba(245,241,232,0.4)' }}
+          >
+            Easy Chile · Manual operativo
+          </span>
+        </div>
+
+        {/* Display headline — editorial scale */}
+        <h1 className="display">
+          <span
+            className="block leading-[0.88] text-[var(--color-cream)]"
+            style={{ fontSize: 'clamp(52px, 9vw, 96px)' }}
+          >
+            Plantas
+          </span>
+          <span
+            className="block leading-[0.88] text-[var(--color-terracotta)]"
+            style={{ fontSize: 'clamp(52px, 9vw, 96px)' }}
+          >
+            Vivas,
+          </span>
+          <span
+            className="block leading-[0.88]"
+            style={{
+              fontSize: 'clamp(52px, 9vw, 96px)',
+              color: 'rgba(245,241,232,0.45)',
+            }}
+          >
+            bien cuidadas.
+          </span>
         </h1>
-        <p className="mt-4 max-w-prose text-[var(--color-cream)]/85 leading-relaxed">
-          Tu guía operativa para mantener las plantas en perfectas condiciones.
-          Busca tu tienda, conoce tu clima y aprende a cuidar cada especie.
+
+        {/* Body */}
+        <p
+          className="mt-10 max-w-[46ch] leading-relaxed"
+          style={{
+            fontSize: 'clamp(15px, 2vw, 18px)',
+            color: 'rgba(245,241,232,0.65)',
+          }}
+        >
+          Tu guía operativa para el área de plantas. Busca tu tienda, conoce
+          tu zona climática y aprende los cuidados de cada especie.
         </p>
-        <div className="mt-7 grid grid-cols-3 gap-3">
-          <HeroStat value={plantas.length} label="plantas" />
-          <HeroStat value={tiendas.length} label="tiendas" />
-          <HeroStat value={zonas.length} label="zonas" />
+
+        {/* Stats strip */}
+        <div
+          className="mt-12 grid grid-cols-3 border-t pt-8"
+          style={{ borderColor: 'rgba(245,241,232,0.12)' }}
+        >
+          <HeroStat value={plantas.length} label="Plantas" />
+          <HeroStat value={tiendas.length} label="Tiendas" separator />
+          <HeroStat value={zonas.length} label="Zonas climáticas" separator />
         </div>
       </section>
 
-      {/* 3 Reglas de oro */}
-      <Section
-        eyebrow="Lo esencial"
-        title="Las 3 reglas de oro"
-        description="Sigue estas reglas y tus plantas estarán siempre bien."
-      >
-        <div className="grid gap-4 md:grid-cols-3">
+      {/* ══════════════════════════════════════════════════
+          ACCESO RÁPIDO
+      ══════════════════════════════════════════════════ */}
+      <LuxSection eyebrow="Navegación" title="¿Qué necesitas ahora?">
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <QuickLink href="/mi-tienda" iconKey="store" label="Mi tienda" hint="Riego por zona" />
+          <QuickLink href="/plantas" iconKey="sprout" label="Plantas" hint="572 fichas de cuidado" />
+          <QuickLink href="/alertas" iconKey="alert" label="Alertas" hint="Diagnóstico rápido" />
+          <QuickLink href="/liquidacion" iconKey="tag" label="Liquidación" hint="Proceso completo" />
+        </div>
+      </LuxSection>
+
+      {/* ══════════════════════════════════════════════════
+          3 REGLAS DE ORO
+      ══════════════════════════════════════════════════ */}
+      <LuxSection eyebrow="Lo esencial" title="Las 3 reglas de oro">
+        <div className="grid gap-5 md:grid-cols-3">
           <ReglaCard
             numero="01"
             iconKey="drop"
             titulo="No todas las plantas necesitan el mismo riego"
             cuerpo="Como regla general: en verano, plantas de interior una vez por semana. En invierno, cada dos semanas."
-            tip='Truco profesional: coloca fieltro en las mesas. Humedécelo y las plantas tomarán agua por capilaridad según su necesidad.'
+            tip="Truco: usa fieltro en las mesas. Humedécelo y las plantas toman agua por capilaridad según su necesidad."
             ctaHref="/mi-tienda"
             ctaLabel="Ver frecuencia exacta de mi tienda"
           />
@@ -49,8 +112,8 @@ export default function HomePage() {
             numero="02"
             iconKey="sun"
             titulo="Ubica cada planta según su luz"
-            cuerpo="Las plantas de interior no toleran sol directo, salvo el de la mañana. Las de exterior necesitan al menos algunas horas de sol directo al día."
-            tip="Sol directo fuerte sobre interior → hojas quemadas. Sin sol sobre exterior → la planta se debilita y pierde forma."
+            cuerpo="Las plantas de interior no toleran sol directo, salvo el de la mañana. Las de exterior necesitan al menos unas horas de sol directo."
+            tip="Sol directo fuerte sobre interior → hojas quemadas. Sin sol sobre exterior → la planta se debilita."
             ctaHref="/plantas"
             ctaLabel="Ver fichas de plantas"
           />
@@ -58,75 +121,79 @@ export default function HomePage() {
             numero="03"
             iconKey="eye"
             titulo="Revisar cada día: 10 minutos salvan plantas"
-            cuerpo="Una planta enferma detectada a tiempo se puede salvar. Una planta abandonada se pierde. Revisa en la mañana, al mediodía y al cierre."
-            tip="Mete el dedo 2 cm en la tierra. Húmedo no riegues; seco riega. Es más preciso que cualquier calendario."
+            cuerpo="Una planta enferma detectada a tiempo se puede salvar. Una abandonada se pierde. Revisa mañana, mediodía y al cierre."
+            tip="Mete el dedo 2 cm en la tierra. Húmedo → no riegues. Seco → riega. Más preciso que cualquier calendario."
             ctaHref="/rutina"
             ctaLabel="Ver checklist diario"
           />
         </div>
-      </Section>
+      </LuxSection>
 
-      {/* Plantas especiales */}
-      <Section
-        eyebrow="Atención extra"
-        title="Cuidados especiales"
-        description="Estas plantas necesitan reglas particulares. Léelas antes de regar."
-      >
-        <div className="grid gap-3 md:grid-cols-2">
+      {/* ══════════════════════════════════════════════════
+          PLANTAS ESPECIALES
+      ══════════════════════════════════════════════════ */}
+      <LuxSection eyebrow="Atención extra" title="Plantas con cuidados específicos">
+        <div className="grid gap-5 md:grid-cols-2">
           {plantasEspeciales.map((p) => (
-            <Card key={p.id} className="p-5">
-              <div className="flex items-center gap-3">
-                <span className="grid h-10 w-10 place-items-center rounded-lg bg-[var(--color-surface-2)] text-[var(--color-green-deep)]">
-                  <Icons.flower aria-hidden className="h-5 w-5" strokeWidth={1.75} />
-                </span>
-                <h3 className="serif text-[20px] leading-tight">{p.nombre}</h3>
-              </div>
-              <dl className="mt-4 grid gap-3 text-[14px]">
-                <div>
-                  <dt className="eyebrow text-[var(--color-green-deep)]">Cuidado especial</dt>
-                  <dd className="mt-1 text-[var(--color-ink)] leading-relaxed">{p.especial}</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow text-[var(--color-green-deep)]">Temperatura</dt>
-                  <dd className="mt-1 text-[var(--color-ink-soft)] leading-relaxed">{p.temperatura}</dd>
-                </div>
-                <div>
-                  <dt className="eyebrow text-[var(--color-terracotta)]">Atento a esto</dt>
-                  <dd className="mt-1 text-[var(--color-ink-soft)] leading-relaxed">{p.urgente}</dd>
-                </div>
-              </dl>
-            </Card>
+            <EspecialCard key={p.id} planta={p} />
           ))}
         </div>
-      </Section>
-
-      {/* Acceso rápido */}
-      <Section eyebrow="Saltos rápidos" title="¿Qué necesitas ahora?">
-        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-4">
-          <QuickLink href="/mi-tienda" iconKey="store" label="Mi tienda" hint="Riego por zona" />
-          <QuickLink href="/plantas" iconKey="sprout" label="Plantas" hint="Catálogo y fichas" />
-          <QuickLink href="/alertas" iconKey="alert" label="Alertas" hint="Diagnóstico rápido" />
-          <QuickLink href="/liquidacion" iconKey="tag" label="Liquidación" hint="Proceso completo" />
-        </div>
-      </Section>
-
-      {/* Reminder */}
-      <Stat
-        value={`${tiendas.length} · ${plantas.length}`}
-        label="Tiendas · Plantas activas"
-        hint="Actualiza el dato real desde Easy cuando llegue una recarga de mercadería."
-      />
+      </LuxSection>
     </div>
   );
 }
 
-function HeroStat({ value, label }: { value: number; label: string }) {
+/* ── Subcomponents ──────────────────────────────────── */
+
+function LuxSection({
+  eyebrow,
+  title,
+  children,
+}: {
+  eyebrow: string;
+  title: string;
+  children: React.ReactNode;
+}) {
   return (
-    <div className="flex flex-col items-start rounded-xl bg-[var(--color-cream)]/10 px-4 py-3 backdrop-blur-sm">
-      <span className="serif text-[28px] sm:text-[36px] leading-none text-[var(--color-cream)]">
+    <section className="mb-24">
+      <div className="mb-8 sm:mb-10">
+        <p className="eyebrow mb-3">{eyebrow}</p>
+        <h2
+          className="serif"
+          style={{ fontSize: 'clamp(32px, 4vw, 48px)', letterSpacing: '-0.03em' }}
+        >
+          {title}
+        </h2>
+      </div>
+      {children}
+    </section>
+  );
+}
+
+function HeroStat({
+  value,
+  label,
+  separator,
+}: {
+  value: number;
+  label: string;
+  separator?: boolean;
+}) {
+  return (
+    <div
+      className="flex flex-col pl-6 first:pl-0"
+      style={separator ? { borderLeft: '1px solid rgba(245,241,232,0.10)' } : undefined}
+    >
+      <span
+        className="serif leading-none font-semibold text-[var(--color-cream)]"
+        style={{ fontSize: 'clamp(32px, 4vw, 52px)' }}
+      >
         {value}
       </span>
-      <span className="text-[12px] uppercase tracking-[0.08em] text-[var(--color-cream)]/70 mt-1">
+      <span
+        className="mt-2 font-medium text-[10px] uppercase tracking-[0.12em]"
+        style={{ color: 'rgba(245,241,232,0.4)' }}
+      >
         {label}
       </span>
     </div>
@@ -152,26 +219,39 @@ function ReglaCard({
 }) {
   const Icon = Icons[iconKey];
   return (
-    <Card className="flex flex-col p-5 sm:p-6">
+    <div className="flex flex-col rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-7 sm:p-8 shadow-[var(--shadow-soft)] hover:shadow-[var(--shadow-card)] transition-shadow">
+      {/* Number + icon header */}
       <div className="flex items-start justify-between">
-        <Icon aria-hidden className="h-6 w-6 text-[var(--color-green-deep)]" strokeWidth={1.5} />
-        <span className="eyebrow">{numero}</span>
+        <span
+          className="serif select-none leading-none font-semibold tabular-nums"
+          style={{ fontSize: '80px', color: 'var(--color-rule)', lineHeight: 1 }}
+          aria-hidden
+        >
+          {numero}
+        </span>
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[var(--color-green-deep)] text-[var(--color-cream)]">
+          <Icon aria-hidden className="h-5 w-5" strokeWidth={1.75} />
+        </span>
       </div>
-      <h3 className="serif mt-4 text-[22px] leading-tight">{titulo}</h3>
-      <p className="mt-3 text-[14px] leading-relaxed text-[var(--color-ink-soft)]">
+
+      <h3 className="serif mt-4 text-[20px] sm:text-[22px] leading-snug">{titulo}</h3>
+      <p className="mt-3 flex-1 text-[14px] leading-relaxed text-[var(--color-ink-soft)]">
         {cuerpo}
       </p>
-      <Alert className="mt-4" variant="info">
-        {tip}
-      </Alert>
+
+      {/* Tip — left border accent */}
+      <div className="mt-6 border-l-2 border-[var(--color-green-soft)] bg-[var(--color-surface-2)] px-4 py-3.5 rounded-r-xl">
+        <p className="text-[13px] leading-relaxed text-[var(--color-ink-soft)]">{tip}</p>
+      </div>
+
       <Link
         href={ctaHref}
-        className="mt-5 inline-flex items-center gap-1.5 text-[14px] font-medium text-[var(--color-green-deep)] hover:underline"
+        className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--color-green-deep)] hover:gap-2 transition-all"
       >
         {ctaLabel}
-        <Icons.arrowRight aria-hidden className="h-4 w-4" strokeWidth={1.75} />
+        <Icons.arrowRight aria-hidden className="h-4 w-4" strokeWidth={2} />
       </Link>
-    </Card>
+    </div>
   );
 }
 
@@ -190,15 +270,59 @@ function QuickLink({
   return (
     <Link
       href={href}
-      className="flex items-center gap-3 rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-4 transition-colors hover:border-[var(--color-green-soft)] hover:bg-[var(--color-surface-2)] min-h-[72px]"
+      className="group relative flex flex-col gap-5 rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-5 sm:p-6 transition-all hover:border-[var(--color-green-deep)] hover:shadow-[var(--shadow-lift)] min-h-[148px] sm:min-h-[160px]"
     >
-      <span className="grid h-10 w-10 place-items-center rounded-lg bg-[var(--color-surface-2)] text-[var(--color-green-deep)]">
+      <span className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--color-green-deep)] text-[var(--color-cream)] transition-transform group-hover:scale-[0.94]">
         <Icon aria-hidden className="h-5 w-5" strokeWidth={1.75} />
       </span>
       <div>
-        <p className="font-medium text-[15px]">{label}</p>
-        <p className="text-[12px] text-[var(--color-ink-soft)]">{hint}</p>
+        <p className="serif text-[18px] sm:text-[20px] leading-tight font-semibold">{label}</p>
+        <p className="mt-1 text-[12px] leading-snug text-[var(--color-ink-soft)]">{hint}</p>
       </div>
+      <Icons.arrowRight
+        aria-hidden
+        className="absolute right-5 bottom-5 h-4 w-4 opacity-25 transition-all group-hover:opacity-100 group-hover:text-[var(--color-green-deep)] group-hover:translate-x-0.5"
+        strokeWidth={2}
+      />
     </Link>
+  );
+}
+
+function EspecialCard({
+  planta,
+}: {
+  planta: (typeof plantasEspeciales)[number];
+}) {
+  return (
+    <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6 sm:p-7 shadow-[var(--shadow-soft)]">
+      {/* Plant identity */}
+      <div className="flex items-start gap-4">
+        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--color-green-deep)] text-[var(--color-cream)]">
+          <Icons.flower aria-hidden className="h-5 w-5" strokeWidth={1.75} />
+        </span>
+        <div>
+          <h3 className="serif text-[22px] sm:text-[24px] leading-tight">{planta.nombre}</h3>
+          <p className="eyebrow mt-1 text-[var(--color-green-soft)]">Planta de temporada</p>
+        </div>
+      </div>
+
+      {/* Cuidado especial highlight */}
+      <div className="mt-5 rounded-xl bg-[var(--color-surface-2)] px-5 py-4">
+        <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Cuidado especial</p>
+        <p className="text-[14px] leading-relaxed text-[var(--color-ink)]">{planta.especial}</p>
+      </div>
+
+      {/* Temp + Alerta */}
+      <div className="mt-4 grid grid-cols-2 gap-4 text-[13px]">
+        <div>
+          <p className="eyebrow mb-1.5">Temperatura</p>
+          <p className="leading-snug text-[var(--color-ink-soft)]">{planta.temperatura}</p>
+        </div>
+        <div>
+          <p className="eyebrow mb-1.5 text-[var(--color-terracotta)]">Atento a esto</p>
+          <p className="leading-snug text-[var(--color-ink-soft)]">{planta.urgente}</p>
+        </div>
+      </div>
+    </div>
   );
 }

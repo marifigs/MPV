@@ -3,8 +3,6 @@ import { notFound } from 'next/navigation';
 import { plantas, plantasById, cuidadosByGrupo, tiendasById, ZONA_LABELS } from '@/data';
 import { GRUPO_ICON, GRUPO_LABEL } from '@/lib/group-icons';
 import { Icons } from '@/lib/icons';
-import { Eyebrow } from '@/components/ui/eyebrow';
-import { Card } from '@/components/ui/card';
 import { Alert } from '@/components/ui/alert';
 import { ZONAS_ORDEN } from '@/types/data';
 import { ShareButton } from '@/components/share-button';
@@ -31,18 +29,21 @@ export default async function PlantaDetailPage({ params }: PageProps) {
     .sort((a, b) => b.qty - a.qty);
 
   return (
-    <div className="space-y-8">
+    <div className="space-y-10">
+      {/* Back */}
       <Link
         href="/plantas"
-        className="inline-flex items-center gap-1 text-[14px] text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]"
+        className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] transition-colors"
       >
-        <Icons.chevronLeft aria-hidden className="h-4 w-4" strokeWidth={1.75} />
-        Volver al catálogo
+        <Icons.chevronLeft aria-hidden className="h-4 w-4" strokeWidth={2} />
+        Catálogo
       </Link>
 
-      <header className="grid gap-6 md:grid-cols-[280px_1fr]">
+      {/* Hero header */}
+      <header className="grid gap-8 md:grid-cols-[320px_1fr] md:gap-12">
+        {/* Photo */}
         <div
-          className="aspect-square overflow-hidden rounded-2xl"
+          className="aspect-square overflow-hidden rounded-2xl shadow-[var(--shadow-card)]"
           style={{ background: planta.fotoUrl ? undefined : planta.fotoPlaceholder }}
         >
           {planta.fotoUrl ? (
@@ -54,63 +55,78 @@ export default async function PlantaDetailPage({ params }: PageProps) {
               decoding="async"
             />
           ) : (
-            <div className="grid h-full w-full place-items-center text-[var(--color-cream)]">
-              <Icon aria-hidden className="h-20 w-20" strokeWidth={1} />
+            <div className="grid h-full w-full place-items-center">
+              <Icon
+                aria-hidden
+                className="h-24 w-24 opacity-30"
+                strokeWidth={0.75}
+                style={{ color: 'var(--color-cream)' }}
+              />
             </div>
           )}
         </div>
-        <div className="flex flex-col">
-          <Eyebrow>{GRUPO_LABEL[planta.grupo] ?? planta.grupo}</Eyebrow>
-          <h1 className="serif mt-2 text-[36px] sm:text-[44px] leading-tight tracking-tight">
+
+        {/* Identity */}
+        <div className="flex flex-col justify-center">
+          <p className="eyebrow text-[var(--color-green-deep)] mb-3">
+            {GRUPO_LABEL[planta.grupo] ?? planta.grupo}
+          </p>
+          <h1
+            className="serif leading-[1.0] tracking-[-0.03em] text-[var(--color-ink)]"
+            style={{ fontSize: 'clamp(36px, 5vw, 56px)' }}
+          >
             {planta.nombre}
           </h1>
-          <div className="mt-3 flex flex-wrap items-center gap-3 text-[13px] text-[var(--color-ink-soft)]">
-            <span className="rounded-full bg-[var(--color-surface-2)] px-3 py-1">
+          <div className="mt-5 flex flex-wrap items-center gap-2.5 text-[13px]">
+            <span className="rounded-full border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-3.5 py-1.5 font-medium">
               {planta.subrubro === 'PLANTAS DE INTERIOR' ? 'Interior' : 'Exterior'}
             </span>
-            <span>SKU {planta.sku}</span>
-            <span className="font-medium text-[var(--color-ink)]">
-              {planta.total} unidades en red
+            <span className="text-[var(--color-ink-soft)]">SKU {planta.sku}</span>
+            <span className="font-semibold text-[var(--color-ink)]">
+              {planta.total} uds. en red
             </span>
           </div>
-          <div className="mt-5">
+          <div className="mt-6">
             <ShareButton title={planta.nombre} />
           </div>
         </div>
       </header>
 
-      {/* Cuidado del grupo */}
-      <section className="grid gap-4 md:grid-cols-2">
-        <Card className="p-5">
-          <Eyebrow className="text-[var(--color-green-deep)]">Luz</Eyebrow>
-          <p className="mt-1.5 text-[15px] leading-relaxed">{cuidado.luz}</p>
-        </Card>
-        <Card className="p-5">
-          <Eyebrow className="text-[var(--color-green-deep)]">Riego</Eyebrow>
-          <p className="mt-1.5 text-[15px] leading-relaxed">{cuidado.riego}</p>
-        </Card>
-        <Card className="p-5 md:col-span-2">
-          <Eyebrow className="text-[var(--color-green-deep)]">Estructura recomendada</Eyebrow>
-          <p className="mt-1.5 text-[15px] leading-relaxed">{cuidado.estructura}</p>
-        </Card>
+      {/* ── Cuidado del grupo ── */}
+      <section>
+        <p className="eyebrow mb-5">Cuidados del grupo</p>
+        <div className="grid gap-4 md:grid-cols-2">
+          <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6">
+            <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Luz</p>
+            <p className="text-[15px] leading-relaxed">{cuidado.luz}</p>
+          </div>
+          <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6">
+            <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Riego</p>
+            <p className="text-[15px] leading-relaxed">{cuidado.riego}</p>
+          </div>
+          <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6 md:col-span-2">
+            <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Estructura recomendada</p>
+            <p className="text-[15px] leading-relaxed">{cuidado.estructura}</p>
+          </div>
+        </div>
       </section>
 
-      {/* Frecuencia por zona */}
+      {/* ── Frecuencia de riego ── */}
       <section>
-        <h2 className="serif text-[24px] mb-3">Frecuencia de riego por zona</h2>
-        <div className="overflow-hidden rounded-xl border border-[var(--color-rule)]">
+        <p className="eyebrow mb-5">Frecuencia de riego por zona climática</p>
+        <div className="overflow-hidden rounded-2xl border border-[var(--color-rule)]">
           <table className="w-full border-collapse text-[14px]">
-            <thead className="bg-[var(--color-surface-2)] text-left">
+            <thead className="bg-[var(--color-surface-2)]">
               <tr>
-                <th className="px-4 py-3 font-medium">Zona</th>
-                <th className="px-4 py-3 font-medium">Frecuencia</th>
+                <th className="px-5 py-3.5 text-left font-semibold text-[var(--color-ink)]">Zona</th>
+                <th className="px-5 py-3.5 text-left font-semibold text-[var(--color-ink)]">Frecuencia</th>
               </tr>
             </thead>
             <tbody>
               {ZONAS_ORDEN.map((z) => (
                 <tr key={z} className="border-t border-[var(--color-rule)]">
-                  <td className="px-4 py-3 text-[var(--color-ink)]">{ZONA_LABELS[z]}</td>
-                  <td className="px-4 py-3 text-[var(--color-ink-soft)]">
+                  <td className="px-5 py-3.5 text-[var(--color-ink)]">{ZONA_LABELS[z]}</td>
+                  <td className="px-5 py-3.5 text-[var(--color-ink-soft)]">
                     {cuidado.frecuenciaPorZona[z]}
                   </td>
                 </tr>
@@ -120,14 +136,14 @@ export default async function PlantaDetailPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Tips */}
+      {/* ── Tips ── */}
       <section>
-        <h2 className="serif text-[24px] mb-3">Tips para esta familia</h2>
-        <ul className="grid gap-2">
+        <p className="eyebrow mb-5">Tips para esta familia</p>
+        <ul className="grid gap-3">
           {cuidado.tips.map((t, i) => (
             <li
               key={i}
-              className="flex gap-3 rounded-lg border border-[var(--color-rule)] bg-[var(--color-surface)] p-4"
+              className="flex gap-4 rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-5"
             >
               <Icons.bulb
                 aria-hidden
@@ -144,23 +160,27 @@ export default async function PlantaDetailPage({ params }: PageProps) {
         {cuidado.alerta}
       </Alert>
 
-      {/* Stock por tienda */}
+      {/* ── Stock por tienda ── */}
       {stockOrdenado.length > 0 ? (
         <section>
-          <h2 className="serif text-[24px] mb-3">Stock por tienda</h2>
-          <div className="grid gap-2 md:grid-cols-2">
+          <p className="eyebrow mb-5">Stock por tienda</p>
+          <div className="grid gap-2.5 md:grid-cols-2">
             {stockOrdenado.map(({ tienda, qty }) =>
               tienda ? (
                 <Link
                   key={tienda.id}
                   href={`/mi-tienda/${tienda.id}`}
-                  className="flex items-center justify-between rounded-lg border border-[var(--color-rule)] bg-[var(--color-surface)] px-4 py-3 hover:border-[var(--color-green-soft)] hover:bg-[var(--color-surface-2)]"
+                  className="flex items-center justify-between rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] px-5 py-3.5 hover:border-[var(--color-green-deep)] hover:shadow-[var(--shadow-soft)] transition-all"
                 >
-                  <span className="flex items-center gap-2 text-[14px]">
-                    <Icons.store aria-hidden className="h-4 w-4 text-[var(--color-green-deep)]" strokeWidth={1.75} />
+                  <span className="flex items-center gap-2.5 text-[14px]">
+                    <Icons.store
+                      aria-hidden
+                      className="h-4 w-4 text-[var(--color-green-deep)]"
+                      strokeWidth={1.75}
+                    />
                     {tienda.nombre}
                   </span>
-                  <span className="text-[14px] font-medium">{qty}</span>
+                  <span className="text-[14px] font-semibold text-[var(--color-ink)]">{qty}</span>
                 </Link>
               ) : null
             )}

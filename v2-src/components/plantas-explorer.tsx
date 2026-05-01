@@ -45,7 +45,8 @@ export function PlantasExplorer() {
   }, [q, grupo, subrubro]);
 
   return (
-    <div className="space-y-5">
+    <div className="space-y-6">
+      {/* Filters */}
       <div className="grid gap-3 sm:grid-cols-[1fr_auto_auto]">
         <SearchBar
           value={q}
@@ -57,7 +58,7 @@ export function PlantasExplorer() {
         <select
           value={grupo}
           onChange={(e) => setGrupo(e.target.value as GrupoCuidado | '')}
-          className="h-12 rounded-lg border border-[var(--color-rule)] bg-[var(--color-surface)] px-3 text-[15px]"
+          className="h-12 rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] px-4 text-[14px] text-[var(--color-ink)] cursor-pointer hover:border-[var(--color-green-soft)] transition-colors"
           aria-label="Filtrar por grupo"
         >
           <option value="">Todos los grupos</option>
@@ -70,7 +71,7 @@ export function PlantasExplorer() {
         <select
           value={subrubro}
           onChange={(e) => setSubrubro(e.target.value as SubrubroPlanta | '')}
-          className="h-12 rounded-lg border border-[var(--color-rule)] bg-[var(--color-surface)] px-3 text-[15px]"
+          className="h-12 rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] px-4 text-[14px] text-[var(--color-ink)] cursor-pointer hover:border-[var(--color-green-soft)] transition-colors"
           aria-label="Filtrar por interior o exterior"
         >
           <option value="">Interior y exterior</option>
@@ -79,11 +80,14 @@ export function PlantasExplorer() {
         </select>
       </div>
 
+      {/* Count */}
       <p className="text-[13px] text-[var(--color-ink-soft)]">
-        {filtered.length} de {plantas.length} plantas
+        <span className="font-semibold text-[var(--color-ink)]">{filtered.length}</span> de{' '}
+        {plantas.length} plantas
       </p>
 
-      <ul className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Grid */}
+      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
         {filtered.slice(0, shown).map((p) => (
           <li key={p.id}>
             <PlantaCardItem planta={p} />
@@ -91,18 +95,27 @@ export function PlantasExplorer() {
         ))}
       </ul>
 
+      {/* Empty state */}
       {filtered.length === 0 ? (
-        <p className="rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface-2)] p-6 text-center text-[var(--color-ink-soft)]">
-          Sin resultados con esos filtros.
-        </p>
+        <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-8 py-12 text-center">
+          <Icons.sprout
+            aria-hidden
+            className="mx-auto mb-3 h-8 w-8 text-[var(--color-green-soft)]"
+            strokeWidth={1.25}
+          />
+          <p className="text-[15px] text-[var(--color-ink-soft)]">
+            Sin resultados con esos filtros.
+          </p>
+        </div>
       ) : null}
 
+      {/* Load more */}
       {shown < filtered.length ? (
-        <div className="flex justify-center">
+        <div className="flex justify-center pt-2">
           <button
             type="button"
             onClick={() => setShown((s) => s + PAGE)}
-            className="h-12 rounded-lg border border-[var(--color-rule)] bg-[var(--color-surface)] px-6 text-[15px] font-medium hover:border-[var(--color-green-soft)]"
+            className="h-12 rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] px-8 text-[14px] font-medium text-[var(--color-ink)] hover:border-[var(--color-green-deep)] hover:shadow-[var(--shadow-soft)] transition-all"
           >
             Cargar más ({filtered.length - shown})
           </button>
@@ -118,41 +131,54 @@ function PlantaCardItem({ planta }: { planta: Planta }) {
     <Link
       href={`/plantas/${planta.id}`}
       className={cn(
-        'group flex h-full flex-col overflow-hidden rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] transition-colors',
-        'hover:border-[var(--color-green-soft)] hover:bg-[var(--color-surface-2)]'
+        'group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] transition-all',
+        'hover:border-[var(--color-green-deep)] hover:shadow-[var(--shadow-card)]'
       )}
     >
+      {/* Photo / placeholder */}
       <div
-        className="relative h-36 w-full"
-        style={{ background: planta.fotoUrl ? undefined : planta.fotoPlaceholder }}
+        className="relative w-full overflow-hidden"
+        style={{
+          height: '200px',
+          background: planta.fotoUrl ? undefined : planta.fotoPlaceholder,
+        }}
       >
         {planta.fotoUrl ? (
           <img
             src={`/MPV/v2/${planta.fotoUrl}`}
             alt=""
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
             decoding="async"
           />
         ) : (
-          <div className="grid h-full w-full place-items-center text-[var(--color-cream)]/80">
-            <Icon aria-hidden className="h-12 w-12" strokeWidth={1.25} />
+          <div className="flex h-full w-full items-center justify-center">
+            <Icon
+              aria-hidden
+              className="h-14 w-14 opacity-40"
+              strokeWidth={1}
+              style={{ color: 'var(--color-cream)' }}
+            />
           </div>
         )}
+        {/* Interior/exterior badge */}
+        <span className="absolute left-3 top-3 rounded-full bg-black/30 px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.07em] text-white backdrop-blur-sm">
+          {planta.subrubro === 'PLANTAS DE INTERIOR' ? 'Interior' : 'Exterior'}
+        </span>
       </div>
-      <div className="flex flex-1 flex-col gap-1.5 p-4">
-        <span className="line-clamp-2 text-[15px] font-medium leading-snug">
+
+      {/* Card body */}
+      <div className="flex flex-1 flex-col gap-2 p-4">
+        <span className="text-[15px] font-semibold leading-snug text-[var(--color-ink)] line-clamp-2">
           {planta.nombre}
         </span>
-        <span className="text-[12px] uppercase tracking-[0.06em] text-[var(--color-ink-soft)]">
+        <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--color-ink-soft)]">
           {GRUPO_LABEL[planta.grupo] ?? planta.grupo}
         </span>
-        <div className="mt-auto flex items-center justify-between text-[12px] text-[var(--color-ink-soft)]">
+        <div className="mt-auto flex items-center justify-between text-[12px] text-[var(--color-ink-soft)] pt-2 border-t border-[var(--color-rule)]">
+          <span>SKU {planta.sku}</span>
           <span>
-            {planta.subrubro === 'PLANTAS DE INTERIOR' ? 'Interior' : 'Exterior'}
-          </span>
-          <span>
-            <span className="font-medium text-[var(--color-ink)]">{planta.total}</span> stock
+            <span className="font-semibold text-[var(--color-ink)]">{planta.total}</span> en stock
           </span>
         </div>
       </div>
