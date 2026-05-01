@@ -15,6 +15,18 @@ const PLANTS = [
   { file: 'cana', name: 'Caña de India', label: 'Exterior' },
   { file: 'abelia', name: 'Abelia', label: 'Exterior' },
   { file: 'chile', name: 'Chile Ornamental', label: 'Exterior' },
+  { file: 'osteospermum', name: 'Osteospermum', label: 'Exterior' },
+  { file: 'washingtonia', name: 'Palmera Washingtonia', label: 'Exterior' },
+  { file: 'impatiens-doble', name: 'Alegría Doble', label: 'Interior' },
+  { file: 'nandina', name: 'Nandina', label: 'Exterior' },
+  { file: 'orquidea', name: 'Orquídea', label: 'Interior' },
+  { file: 'chamaedorea', name: 'Palma Bambú', label: 'Interior' },
+  { file: 'olivo', name: 'Olivo', label: 'Exterior' },
+  { file: 'naranjo', name: 'Naranjo', label: 'Exterior' },
+  { file: 'oregano', name: 'Orégano', label: 'Exterior' },
+  { file: 'ornitogalo', name: 'Ornitógalo', label: 'Exterior' },
+  { file: 'osmanthus', name: 'Osmanthus', label: 'Exterior' },
+  { file: 'nogal', name: 'Nogal', label: 'Exterior' },
 ];
 
 function PlantVideo({ file, name, label }: { file: string; name: string; label: string }) {
