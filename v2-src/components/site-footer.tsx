@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { Icons } from '@/lib/icons';
 
 export function SiteFooter() {
@@ -18,12 +17,12 @@ export function SiteFooter() {
             <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-[var(--color-ink-soft)]/60">
               Easy Chile · Cencosud S.A. · Uso exclusivo para vendedores
             </p>
-            <Image
-              src="/cencosud-logo.png"
+            <img
+              src="/MPV/v2/cencosud-logo.png"
               alt="Cencosud"
-              width={1280}
-              height={673}
               className="h-7 w-auto opacity-80"
+              decoding="async"
+              loading="lazy"
             />
           </div>
         </div>
