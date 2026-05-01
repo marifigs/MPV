@@ -2,15 +2,21 @@ import { Icons } from '@/lib/icons';
 
 export function SiteFooter() {
   return (
-    <footer className="mt-12 border-t border-[var(--color-rule)] bg-[var(--color-surface-2)]">
-      <div className="mx-auto flex max-w-5xl flex-col gap-2 px-4 sm:px-6 py-6 text-[13px] text-[var(--color-ink-soft)]">
-        <div className="flex items-center gap-2">
-          <Icons.sprout aria-hidden className="h-4 w-4" strokeWidth={1.75} />
-          <span className="serif font-semibold text-[var(--color-ink)]">
-            Manual de Plantas Vivas
-          </span>
+    <footer className="border-t border-[var(--color-rule)] bg-[var(--color-surface-2)]">
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-10">
+        <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+          <div className="flex items-center gap-3">
+            <span className="grid h-8 w-8 place-items-center rounded-lg bg-[var(--color-green-deep)] text-[var(--color-cream)]">
+              <Icons.sprout aria-hidden className="h-4 w-4" strokeWidth={2} />
+            </span>
+            <span className="serif text-[17px] font-semibold tracking-tight text-[var(--color-ink)]">
+              Manual de Plantas Vivas
+            </span>
+          </div>
+          <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-[var(--color-ink-soft)]/60">
+            Easy Chile · Cencosud S.A. · Uso exclusivo para vendedores
+          </p>
         </div>
-        <p>Easy Chile · Cencosud S.A. · Uso exclusivo para vendedores.</p>
       </div>
     </footer>
   );

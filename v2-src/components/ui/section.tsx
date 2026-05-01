@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { cn } from '@/lib/cn';
-import { Eyebrow } from './eyebrow';
 
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   eyebrow?: string;
@@ -19,18 +18,23 @@ export function Section({
   ...rest
 }: SectionProps) {
   return (
-    <section className={cn('mb-10', className)} {...rest}>
+    <section className={cn('mb-16', className)} {...rest}>
       {(eyebrow || title || description || actions) && (
-        <div className="mb-5 flex flex-wrap items-end justify-between gap-3">
-          <div className="flex flex-col gap-1.5">
-            {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
+        <div className="mb-8 flex flex-wrap items-end justify-between gap-3">
+          <div className="flex flex-col gap-2">
+            {eyebrow ? (
+              <p className="eyebrow">{eyebrow}</p>
+            ) : null}
             {title ? (
-              <h2 className="serif text-[28px] sm:text-[32px] leading-tight tracking-tight text-[var(--color-ink)]">
+              <h2
+                className="serif text-[var(--color-ink)]"
+                style={{ fontSize: 'clamp(28px, 3.5vw, 44px)', letterSpacing: '-0.03em' }}
+              >
                 {title}
               </h2>
             ) : null}
             {description ? (
-              <p className="max-w-[60ch] text-[var(--color-ink-soft)]">
+              <p className="max-w-[60ch] text-[var(--color-ink-soft)] leading-relaxed">
                 {description}
               </p>
             ) : null}

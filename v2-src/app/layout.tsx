@@ -15,7 +15,8 @@ const sourceSerif = Source_Serif_4({
   subsets: ['latin'],
   variable: '--font-source-serif',
   display: 'swap',
-  weight: ['400', '600'],
+  weight: ['300', '400', '600'],
+  style: ['normal', 'italic'],
 });
 
 export const metadata: Metadata = {
@@ -44,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Saltar al contenido
         </a>
         <TopNav />
-        <main id="contenido" className="mx-auto max-w-5xl px-4 sm:px-6 pb-24 pt-6">
+        <main id="contenido" className="mx-auto max-w-6xl px-5 sm:px-8 pb-32 pt-8">
           {children}
         </main>
         <SiteFooter />
