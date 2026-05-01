@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Icons, type IconName } from '@/lib/icons';
+import { GlobalSearchTrigger } from './global-search';
 import { cn } from '@/lib/cn';
 
 type NavItem = { href: string; label: string; icon: IconName };
@@ -40,6 +41,7 @@ export function TopNav() {
               </span>
             </div>
           </Link>
+          <GlobalSearchTrigger />
         </div>
         <nav
           aria-label="Secciones"
