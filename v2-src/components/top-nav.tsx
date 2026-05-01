@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Icons, type IconName } from '@/lib/icons';
@@ -50,7 +51,17 @@ export function TopNav() {
               </span>
             </div>
           </Link>
-          <GlobalSearchTrigger />
+          <div className="flex items-center gap-3 sm:gap-4">
+            <GlobalSearchTrigger />
+            <Image
+              src="/easy-logo.png"
+              alt="Easy Cencosud"
+              width={1536}
+              height={1024}
+              priority
+              className="h-9 w-auto sm:h-10"
+            />
+          </div>
         </div>
 
         {/* Nav tabs */}

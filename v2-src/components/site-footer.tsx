@@ -1,10 +1,11 @@
+import Image from 'next/image';
 import { Icons } from '@/lib/icons';
 
 export function SiteFooter() {
   return (
     <footer className="border-t border-[var(--color-rule)] bg-[var(--color-surface-2)]">
       <div className="mx-auto max-w-6xl px-5 sm:px-8 py-10">
-        <div className="flex flex-col gap-1 sm:flex-row sm:items-end sm:justify-between">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
           <div className="flex items-center gap-3">
             <span className="grid h-8 w-8 place-items-center rounded-lg bg-[var(--color-green-deep)] text-[var(--color-cream)]">
               <Icons.sprout aria-hidden className="h-4 w-4" strokeWidth={2} />
@@ -13,9 +14,18 @@ export function SiteFooter() {
               Manual de Plantas Vivas
             </span>
           </div>
-          <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-[var(--color-ink-soft)]/60">
-            Easy Chile · Cencosud S.A. · Uso exclusivo para vendedores
-          </p>
+          <div className="flex items-center gap-4">
+            <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-[var(--color-ink-soft)]/60">
+              Easy Chile · Cencosud S.A. · Uso exclusivo para vendedores
+            </p>
+            <Image
+              src="/cencosud-logo.png"
+              alt="Cencosud"
+              width={1280}
+              height={673}
+              className="h-7 w-auto opacity-80"
+            />
+          </div>
         </div>
       </div>
     </footer>
