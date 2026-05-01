@@ -2,7 +2,7 @@ import type { NextConfig } from "next";
 import withPWA from "@ducanh2912/next-pwa";
 
 const isGitHubPages = process.env.GITHUB_PAGES === "true";
-const basePath = isGitHubPages ? "/MPV" : "";
+const basePath = isGitHubPages ? "/MPV/v2" : "";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,

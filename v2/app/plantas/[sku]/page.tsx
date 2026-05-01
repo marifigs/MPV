@@ -41,7 +41,6 @@ export default async function PlantDetailPage({ params }: Props) {
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 md:px-6">
-      {/* Back + Share */}
       <div className="mb-6 flex items-center justify-between">
         <Link
           href="/plantas"
@@ -53,7 +52,6 @@ export default async function PlantDetailPage({ params }: Props) {
         <ShareButton title={plant.nombre} text={`Ficha de cuidado: ${plant.nombre}`} />
       </div>
 
-      {/* Plant hero */}
       <div
         className="mb-6 flex h-40 items-center justify-center rounded-[var(--radius-lg)]"
         style={{ background: care ? `${care.color}18` : "#f0f0f0" }}
@@ -72,7 +70,6 @@ export default async function PlantDetailPage({ params }: Props) {
         <p className="mt-0.5 text-xs text-[var(--ink-soft)]">SKU {plant.sku}</p>
       </header>
 
-      {/* Stock */}
       <div className="mb-6 flex items-center gap-2 text-sm">
         <span
           className={`font-semibold ${plant.stock_total > 0 ? "text-[var(--success)]" : "text-[var(--ink-soft)]"}`}
@@ -85,7 +82,6 @@ export default async function PlantDetailPage({ params }: Props) {
 
       {care && (
         <>
-          {/* Care overview */}
           <Card className="mb-4" accentColor={care.color}>
             <CardBody className="grid grid-cols-2 gap-4">
               <div className="flex flex-col gap-1">
@@ -111,7 +107,6 @@ export default async function PlantDetailPage({ params }: Props) {
             </CardBody>
           </Card>
 
-          {/* Watering frequency by zone */}
           <Card className="mb-4">
             <CardHeader>
               <Eyebrow>Frecuencia de riego por zona</Eyebrow>
@@ -136,7 +131,6 @@ export default async function PlantDetailPage({ params }: Props) {
             </CardBody>
           </Card>
 
-          {/* Alerts */}
           {care.alertas.length > 0 && (
             <div className="mb-4 flex flex-col gap-2">
               {care.alertas.map((alerta, i) => (
@@ -147,7 +141,6 @@ export default async function PlantDetailPage({ params }: Props) {
             </div>
           )}
 
-          {/* Tips */}
           {care.tips.length > 0 && (
             <Card className="mb-4">
               <CardHeader>
@@ -166,7 +159,6 @@ export default async function PlantDetailPage({ params }: Props) {
             </Card>
           )}
 
-          {/* Estructura */}
           <Card>
             <CardBody>
               <Eyebrow className="mb-2">Estructura en tienda</Eyebrow>

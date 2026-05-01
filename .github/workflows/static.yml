@@ -1,4 +1,4 @@
-name: Deploy PlantasFácil v2 to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -20,9 +20,6 @@ env:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: v2
     steps:
       - uses: actions/checkout@v4
 
@@ -37,21 +34,27 @@ jobs:
           cache-dependency-path: v2/pnpm-lock.yaml
 
       - name: Install dependencies
+        working-directory: v2
         run: pnpm install --frozen-lockfile
 
-      - name: Build static export
+      - name: Build v2 static export
+        working-directory: v2
         run: pnpm build
         env:
           GITHUB_PAGES: "true"
 
-      - name: Add .nojekyll
-        run: touch out/.nojekyll
+      - name: Prepare Pages artifact
+        run: |
+          mkdir -p _site/v2
+          cp index.html _site/
+          cp -r v2/out/. _site/v2/
+          touch _site/.nojekyll
 
       - uses: actions/configure-pages@v5
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: v2/out
+          path: _site
 
   deploy:
     needs: build
