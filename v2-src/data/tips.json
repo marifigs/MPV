@@ -1,0 +1,32 @@
+[
+  {
+    "id": "dedo-herramienta",
+    "titulo": "El dedo es tu mejor herramienta",
+    "texto": "Mete el dedo 2 cm en el suelo. Húmedo → no riegues. Seco → riega. Es más preciso que cualquier calendario."
+  },
+  {
+    "id": "calor-mata",
+    "titulo": "El calor mata más rápido que el frío",
+    "texto": "En el norte, una planta sin agua puede morir en pocas horas. En el sur, el exceso de agua pudre en días."
+  },
+  {
+    "id": "poco-frecuente",
+    "titulo": "Mejor poco y frecuente que mucho y espaciado",
+    "texto": "Evita encharcamiento. Es mejor regar un poco todos los días que mucho una vez a la semana."
+  },
+  {
+    "id": "presentacion-ventas",
+    "titulo": "Presentación = ventas",
+    "texto": "Retira diariamente flores secas, hojas amarillas y ramas muertas. Una planta limpia se vende sola."
+  },
+  {
+    "id": "rotacion-stock",
+    "titulo": "Rotación de stock",
+    "texto": "Las plantas más antiguas van adelante. Las nuevas van atrás. Vendes primero las que llevan más tiempo."
+  },
+  {
+    "id": "fin-semana",
+    "titulo": "Fin de semana: preparar el viernes",
+    "texto": "Si la tienda cierra el domingo, riega bien el sábado antes de cerrar. Las del norte pueden morir en un día sin agua."
+  }
+]

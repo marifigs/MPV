@@ -1,0 +1,132 @@
+{
+  "reglas": [
+    {
+      "id": "flor-temporada",
+      "titulo": "Flores de Temporada",
+      "plazo": "2 semanas desde el ingreso a tienda",
+      "descripcion": "Crisantemos, pensamientos, petunias, begonias, tulipanes y similares. Su ciclo de vida en tienda es corto: a las 2 semanas ya están en su punto máximo de deterioro potencial.",
+      "ejemplo": "Crisantemos, pensamientos, petunias, begonias, tulipanes",
+      "tip": "Anota la fecha de llegada en la maceta con un sticker. Facilita el control."
+    },
+    {
+      "id": "flor-perenne",
+      "titulo": "Flores Perennes",
+      "plazo": "1 mes desde el ingreso a tienda",
+      "descripcion": "Geranios, lavanda, rosas de jardín, agapantos y similares. Son más resistentes pero al mes en tienda sin venderse ya acumulan estrés y deterioro visual que afecta su valor.",
+      "ejemplo": "Geranios, lavanda, rosas de jardín, agapantos",
+      "tip": "Revisa el lote completo cada vez que llega mercadería nueva."
+    },
+    {
+      "id": "interior-arbusto",
+      "titulo": "Interior y Arbustos",
+      "plazo": "Al primer signo visible de daño",
+      "descripcion": "Ficus, monsteras, dracenas, scheffleras, arbustos ornamentales. Al primer síntoma visible (hoja amarilla, forma irregular, raíz expuesta) es el momento de liquidar.",
+      "ejemplo": "Ficus, monsteras, dracenas, scheffleras",
+      "tip": "Un deterioro leve bien trabajado (podada, limpia) se vende rápido con descuento."
+    }
+  ],
+  "descuentos": [
+    {
+      "porcentaje": 30,
+      "nombre": "1er descuento",
+      "estado": "inicial",
+      "descripcion": "Al iniciar la liquidación. Planta con leve deterioro, aún presentable."
+    },
+    {
+      "porcentaje": 50,
+      "nombre": "2do descuento",
+      "estado": "medio",
+      "descripcion": "Si no vendió en 5–7 días con 30%. Deterioro moderado, aún recuperable."
+    },
+    {
+      "porcentaje": 70,
+      "nombre": "Precio mínimo",
+      "estado": "final",
+      "descripcion": "Última instancia. Recuperar algo de costo antes de la merma total."
+    }
+  ],
+  "precios": [
+    {
+      "producto": "Crisantemo M15",
+      "normal": 4990,
+      "con30": 3490,
+      "con50": 2490,
+      "con70": 1490
+    },
+    {
+      "producto": "Geranio M15",
+      "normal": 6990,
+      "con30": 4890,
+      "con50": 3490,
+      "con70": 2090
+    },
+    {
+      "producto": "Ficus Lyrata CT17",
+      "normal": 19990,
+      "con30": 13990,
+      "con50": 9990,
+      "con70": 5990
+    },
+    {
+      "producto": "Lavanda M21",
+      "normal": 9990,
+      "con30": 6990,
+      "con50": 4990,
+      "con70": 2990
+    }
+  ],
+  "flujo": [
+    {
+      "numero": 1,
+      "titulo": "Detectar la planta candidata a liquidación",
+      "detalle": "Revisa la fecha de ingreso o el estado visual. ¿Ya cumplió su plazo? ¿Presenta deterioro leve? → Es candidata."
+    },
+    {
+      "numero": 2,
+      "titulo": "Preparar la planta antes de liquidar",
+      "detalle": "Limpiar hojas, retirar flores o ramas secas, regar si está seca. Una planta bien presentada se vende incluso en liquidación."
+    },
+    {
+      "numero": 3,
+      "titulo": "Aplicar nuevo precio en sistema y etiquetar",
+      "detalle": "Cambia el precio en Easy según el descuento definido. Coloca etiqueta con precio nuevo Y precio anterior tachado en cada maceta."
+    },
+    {
+      "numero": 4,
+      "titulo": "Trasladar a la zona de liquidación señalizada",
+      "detalle": "Mueve la planta a la zona exclusiva. Nunca mezclar con producto a precio normal. Verificar señalética visible."
+    },
+    {
+      "numero": 5,
+      "titulo": "Seguimiento semanal y bajada de precio si no vende",
+      "detalle": "Revisar cada 5–7 días. ¿No vendió? → Bajar al siguiente nivel de descuento. Seguir cuidando (regar, limpiar)."
+    },
+    {
+      "numero": 6,
+      "titulo": "Dar de baja y registrar merma",
+      "detalle": "Si llegó al 70% y no vendió, o la planta murió: retirar del área, dar de baja en sistema como merma. Registrar para análisis de categoría."
+    }
+  ],
+  "kpis": [
+    {
+      "nombre": "Tasa de liquidación",
+      "descripcion": "% de plantas ingresadas que llegan a liquidación.",
+      "objetivo": "Idealmente bajo 15%"
+    },
+    {
+      "nombre": "Días en liquidación",
+      "descripcion": "Tiempo promedio de venta en zona de liquidación.",
+      "objetivo": "Menos de 10 días"
+    },
+    {
+      "nombre": "% merma total",
+      "descripcion": "Plantas que no se vendieron ni en liquidación.",
+      "objetivo": "Bajo 5% del total"
+    },
+    {
+      "nombre": "Recupero promedio",
+      "descripcion": "% del precio original recuperado en liquidación.",
+      "objetivo": "Sobre 35%"
+    }
+  ]
+}
