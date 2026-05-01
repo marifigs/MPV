@@ -1,0 +1,254 @@
+[
+  {
+    "id": "easy-antofagasta",
+    "nombre": "EASY ANTOFAGASTA",
+    "zona": "desertico",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-bio-bio",
+    "nombre": "EASY BIO BIO",
+    "zona": "frio-humedo",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-calama",
+    "nombre": "EASY CALAMA",
+    "zona": "desertico",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-cerrillos",
+    "nombre": "EASY CERRILLOS",
+    "zona": "templado",
+    "tipo": "GRA"
+  },
+  {
+    "id": "easy-chiguayante",
+    "nombre": "EASY CHIGUAYANTE",
+    "zona": "frio-humedo",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-chillan",
+    "nombre": "EASY CHILLAN",
+    "zona": "frio-humedo",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-colina-valle-alegre",
+    "nombre": "EASY COLINA VALLE ALEGRE",
+    "zona": "templado",
+    "tipo": "GRA"
+  },
+  {
+    "id": "easy-copiapo",
+    "nombre": "EASY COPIAPO",
+    "zona": "desertico",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "easy-coronel-manuel-montt",
+    "nombre": "EASY CORONEL-MANUEL MONTT",
+    "zona": "frio-humedo",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "easy-costanera",
+    "nombre": "EASY COSTANERA",
+    "zona": "templado",
+    "tipo": "GRA"
+  },
+  {
+    "id": "easy-curico-o-higgins",
+    "nombre": "EASY CURICO O'HIGGINS",
+    "zona": "templado",
+    "tipo": "GRA"
+  },
+  {
+    "id": "easy-el-belloto-ii",
+    "nombre": "EASY EL BELLOTO II",
+    "zona": "costero",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-el-llano-subercaseaux",
+    "nombre": "EASY EL LLANO SUBERCASEAUX",
+    "zona": "templado",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "easy-florida",
+    "nombre": "EASY FLORIDA",
+    "zona": "templado",
+    "tipo": "GRA"
+  },
+  {
+    "id": "easy-kennedy",
+    "nombre": "EASY KENNEDY",
+    "zona": "templado",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "easy-la-dehesa",
+    "nombre": "EASY LA DEHESA",
+    "zona": "templado",
+    "tipo": "GRA"
+  },
+  {
+    "id": "easy-la-reina-padre-hurtado",
+    "nombre": "EASY LA REINA PADRE HURTADO",
+    "zona": "templado",
+    "tipo": "GRA"
+  },
+  {
+    "id": "easy-la-serena",
+    "nombre": "EASY LA SERENA",
+    "zona": "semiarido",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-linares",
+    "nombre": "EASY LINARES",
+    "zona": "templado",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "easy-los-andes-el-laberinto",
+    "nombre": "EASY LOS ANDES -  EL LABERINTO",
+    "zona": "montana",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-los-angeles",
+    "nombre": "EASY LOS ANGELES",
+    "zona": "frio-humedo",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-maipu",
+    "nombre": "EASY MAIPU",
+    "zona": "templado",
+    "tipo": "GRA"
+  },
+  {
+    "id": "easy-ochagavia",
+    "nombre": "EASY OCHAGAVIA",
+    "zona": "templado",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "easy-osorno-da-vinci",
+    "nombre": "EASY OSORNO DA VINCI",
+    "zona": "frio-humedo",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-puente-alto-barnabitas",
+    "nombre": "EASY PUENTE ALTO - BARNABITAS",
+    "zona": "templado",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "easy-puerto-montt",
+    "nombre": "EASY PUERTO MONTT",
+    "zona": "frio-humedo",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-quilicura",
+    "nombre": "EASY QUILICURA",
+    "zona": "templado",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-quilin",
+    "nombre": "EASY QUILIN",
+    "zona": "templado",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-quillota",
+    "nombre": "EASY QUILLOTA",
+    "zona": "costero",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-rancagua",
+    "nombre": "EASY RANCAGUA",
+    "zona": "templado",
+    "tipo": "GRA"
+  },
+  {
+    "id": "easy-san-bernardo-las-lilas",
+    "nombre": "EASY SAN BERNARDO LAS LILAS",
+    "zona": "templado",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-talca-el-arenal",
+    "nombre": "EASY TALCA EL ARENAL",
+    "zona": "templado",
+    "tipo": "GRA"
+  },
+  {
+    "id": "easy-temuco",
+    "nombre": "EASY TEMUCO",
+    "zona": "frio-humedo",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-valparaiso",
+    "nombre": "EASY VALPARAISO",
+    "zona": "costero",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-villarrica",
+    "nombre": "EASY VILLARRICA",
+    "zona": "frio-humedo",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-vina-del-mar",
+    "nombre": "EASY VINA DEL MAR",
+    "zona": "costero",
+    "tipo": "MED"
+  },
+  {
+    "id": "easy-arica-costanera",
+    "nombre": "Easy Arica Costanera",
+    "zona": "desertico",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "la-union",
+    "nombre": "LA UNION",
+    "zona": "frio-humedo",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "portal-osorno",
+    "nombre": "PORTAL OSORNO",
+    "zona": "frio-humedo",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "portal-temuco",
+    "nombre": "PORTAL TEMUCO",
+    "zona": "frio-humedo",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "portal-nunoa",
+    "nombre": "PORTAL ÑUÑOA",
+    "zona": "templado",
+    "tipo": "PEQ"
+  },
+  {
+    "id": "santa-amalia",
+    "nombre": "SANTA AMALIA",
+    "zona": "templado",
+    "tipo": "PEQ"
+  }
+]

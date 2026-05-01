@@ -1,0 +1,141 @@
+[
+  {
+    "id": "desertico",
+    "titulo": "Clima Desértico",
+    "descripcion": "Calor extremo, muy baja humedad. Las plantas se secan RÁPIDO.",
+    "riegoGeneral": "ALTO – Regar 2 veces al día en verano. 1 vez al día en invierno.",
+    "tipsZona": [
+      "Revisar el suelo al tacto cada mañana sin excepción",
+      "Usar agua a temperatura ambiente, nunca fría",
+      "Proteger plantas sensibles del viento caliente",
+      "Jamás dejar pasar más de 24h sin revisar en verano",
+      "Cyclamen, Fuchsia y Poinsettia: cuidado extra o evitar"
+    ],
+    "alertaZona": "🔴 RIESGO CRÍTICO: Una planta puede morir en pocas horas sin agua.",
+    "color": "#FF5722",
+    "tiendasIds": [
+      "easy-antofagasta",
+      "easy-calama",
+      "easy-copiapo",
+      "easy-arica-costanera"
+    ]
+  },
+  {
+    "id": "semiarido",
+    "titulo": "Clima Semiárido",
+    "descripcion": "Seco pero más suave que el desierto. Algo de humedad costera en La Serena.",
+    "riegoGeneral": "MEDIO-ALTO – Regar diariamente en verano, cada 2 días en invierno.",
+    "tipsZona": [
+      "La humedad costera ayuda en La Serena, pero igual revisar diario",
+      "Mayor atención en los meses de diciembre a marzo",
+      "Plantas tropicales: ubicar en interior protegido siempre"
+    ],
+    "alertaZona": "🟠 RIESGO ALTO en verano. Monitorear mañana y tarde.",
+    "color": "#FF9800",
+    "tiendasIds": [
+      "easy-la-serena"
+    ]
+  },
+  {
+    "id": "costero",
+    "titulo": "Clima Costero",
+    "descripcion": "Humedad del mar beneficia. Temperatura estable. Ojo con viento marino.",
+    "riegoGeneral": "MEDIO – Regar cada 2 días. La humedad ambiental ayuda mucho.",
+    "tipsZona": [
+      "La humedad marina reduce la evaporación",
+      "El viento salino puede dañar las hojas: ubicar en zona protegida",
+      "Limpiar hojas regularmente para quitar sal",
+      "Temperatura estable todo el año: facilita el mantenimiento"
+    ],
+    "alertaZona": "🟡 RIESGO MODERADO. Atención al viento salino y hongos en invierno.",
+    "color": "#2196F3",
+    "tiendasIds": [
+      "easy-el-belloto-ii",
+      "easy-quillota",
+      "easy-valparaiso",
+      "easy-vina-del-mar"
+    ]
+  },
+  {
+    "id": "templado",
+    "titulo": "Clima Templado",
+    "descripcion": "El más común de Chile central. Apto para casi todas las plantas.",
+    "riegoGeneral": "MEDIO – Cada 2-3 días en verano, cada 3-5 días en invierno.",
+    "tipsZona": [
+      "En verano (dic-feb) aumentar frecuencia de riego",
+      "En invierno cuidado con encharcamiento: el frío + agua pudre raíces",
+      "Plantas de exterior se pueden exhibir en entrada casi todo el año",
+      "Aprovechar temperatura estable para rotar exhibición"
+    ],
+    "alertaZona": "🟢 RIESGO BAJO. Atención en olas de calor y heladas ocasionales.",
+    "color": "#4CAF50",
+    "tiendasIds": [
+      "easy-cerrillos",
+      "easy-colina-valle-alegre",
+      "easy-costanera",
+      "easy-curico-o-higgins",
+      "easy-el-llano-subercaseaux",
+      "easy-florida",
+      "easy-kennedy",
+      "easy-la-dehesa",
+      "easy-la-reina-padre-hurtado",
+      "easy-linares",
+      "easy-maipu",
+      "easy-ochagavia",
+      "easy-puente-alto-barnabitas",
+      "easy-quilicura",
+      "easy-quilin",
+      "easy-rancagua",
+      "easy-san-bernardo-las-lilas",
+      "easy-talca-el-arenal",
+      "portal-nunoa",
+      "santa-amalia"
+    ]
+  },
+  {
+    "id": "montana",
+    "titulo": "Clima de Montaña",
+    "descripcion": "Amplitud térmica alta. Heladas en invierno. Principal riesgo: el frío nocturno.",
+    "riegoGeneral": "BAJO-MEDIO – Cada 3-4 días. Cuidado con heladas en invierno.",
+    "tipsZona": [
+      "Heladas en invierno son el principal riesgo",
+      "En noches de helada: mover plantas sensibles al interior",
+      "El suelo retiene más humedad por las bajas temperaturas",
+      "Plantas de clima frío se adaptan mejor: Cyclamen, Crisantemo"
+    ],
+    "alertaZona": "🟠 RIESGO HELADAS en invierno. Nunca dejar plantas sensibles afuera de noche.",
+    "color": "#9C27B0",
+    "tiendasIds": [
+      "easy-los-andes-el-laberinto"
+    ]
+  },
+  {
+    "id": "frio-humedo",
+    "titulo": "Clima Frío Húmedo",
+    "descripcion": "Sur de Chile. Lluvia frecuente. El riesgo es el EXCESO de agua y hongos.",
+    "riegoGeneral": "BAJO – Cada 3-5 días. La lluvia y humedad hacen gran parte del trabajo.",
+    "tipsZona": [
+      "Riesgo principal: EXCESO DE AGUA y hongos",
+      "En días de lluvia: NO regar plantas expuestas al agua natural",
+      "Revisar que macetas tengan buen drenaje (huecos al fondo)",
+      "Plantas tropicales: SIEMPRE bajo techo",
+      "Hongos y moho son el enemigo #1: buena ventilación entre plantas"
+    ],
+    "alertaZona": "🔵 RIESGO DE HONGOS Y PUDRICIÓN. Priorizar drenaje y ventilación.",
+    "color": "#607D8B",
+    "tiendasIds": [
+      "easy-bio-bio",
+      "easy-chiguayante",
+      "easy-chillan",
+      "easy-coronel-manuel-montt",
+      "easy-los-angeles",
+      "easy-osorno-da-vinci",
+      "easy-puerto-montt",
+      "easy-temuco",
+      "easy-villarrica",
+      "portal-temuco",
+      "portal-osorno",
+      "la-union"
+    ]
+  }
+]

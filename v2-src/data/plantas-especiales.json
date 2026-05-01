@@ -1,0 +1,44 @@
+[
+  {
+    "id": "cyclamen",
+    "nombre": "Cyclamen",
+    "especial": "REGAR SIEMPRE POR EL PLATO, nunca por arriba. Llenar el plato, dejar 20 minutos, vaciar.",
+    "temperatura": "Le encanta el frío (10-18°C). MUERE con calor sobre 22°C.",
+    "urgente": "Alejar de calefactores y tiendas del norte. Retirar hojas/flores tirando desde la base."
+  },
+  {
+    "id": "poinsettia",
+    "nombre": "Poinsettia / Corona de Adviento",
+    "especial": "NUNCA exponer a corrientes de aire frío. No mover una vez ubicada.",
+    "temperatura": "Cálida (18-24°C). El frío bota todas las hojas en horas.",
+    "urgente": "Regar con agua a temperatura ambiente. Zona sin corriente de aire."
+  },
+  {
+    "id": "orquidea",
+    "nombre": "Orquídea Phalaenopsis",
+    "especial": "Regar solo 1 vez por semana. Dejar escurrir completamente. Nunca encharcada.",
+    "temperatura": "Templada (18-25°C). Sin sol directo.",
+    "urgente": "Raíces verdes = bien hidratada. Raíces grises/arrugadas = necesita agua."
+  },
+  {
+    "id": "anturio",
+    "nombre": "Anturio",
+    "especial": "Interior protegido siempre. Rociar hojas con agua para aumentar humedad.",
+    "temperatura": "Cálida (18-28°C). Nunca bajo 15°C.",
+    "urgente": "Hoja amarilla = exceso de agua. Hoja café = frío o falta de agua."
+  },
+  {
+    "id": "fuchsia",
+    "nombre": "Fuchsia Ballerina",
+    "especial": "Semisombra SIEMPRE. El sol directo fuerte la quema en horas.",
+    "temperatura": "Fresca (10-22°C). Sufre sobre 30°C.",
+    "urgente": "Regar 2 veces/día en verano en tiendas calurosas. Retirar flores secas diario."
+  },
+  {
+    "id": "cala",
+    "nombre": "Cala",
+    "especial": "Suelo húmedo pero con buen drenaje. No acumular agua en plato más de 30min.",
+    "temperatura": "Templada (15-25°C). Sensible a heladas fuertes.",
+    "urgente": "Flor caída = estrés hídrico. En tiendas del sur: mantener bajo techo en invierno."
+  }
+]

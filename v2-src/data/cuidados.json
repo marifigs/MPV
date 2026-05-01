@@ -1,0 +1,339 @@
+[
+  {
+    "grupo": "HERBACEAS PERENES",
+    "luz": "☀️ Luz indirecta brillante a sol parcial",
+    "riego": "💧 Moderado – suelo ligeramente húmedo",
+    "frecuenciaPorZona": {
+      "desertico": "Diario",
+      "semiarido": "Cada 2d",
+      "costero": "Cada 2-3d",
+      "templado": "Cada 2-3d",
+      "montana": "Cada 3d",
+      "frio-humedo": "Cada 3-4d"
+    },
+    "tips": [
+      "Retirar flores marchitas para prolongar floración",
+      "No mojar el follaje al regar",
+      "Revisar pulgones semanalmente en brotes nuevos"
+    ],
+    "estructura": "🪴 Mesa con bandejas perforadas para drenaje libre. Separar 15cm entre plantas.",
+    "alerta": "⚠️ Hoja amarilla = exceso de riego o falta de luz",
+    "acentoColor": "#4A7C59"
+  },
+  {
+    "grupo": "ARBUSTIVA DE FLOR",
+    "luz": "☀️ Sol pleno o semisombra",
+    "riego": "💧 Regular – suelo moderadamente húmedo",
+    "frecuenciaPorZona": {
+      "desertico": "Diario",
+      "semiarido": "Cada 2d",
+      "costero": "Cada 2-3d",
+      "templado": "Cada 2-3d",
+      "montana": "Cada 3d",
+      "frio-humedo": "Cada 3-4d"
+    },
+    "tips": [
+      "Podar flores secas para estimular nuevo crecimiento",
+      "Fertilizar cada 15 días en temporada de floración",
+      "Proteger de heladas fuertes en invierno"
+    ],
+    "estructura": "🪴 Mesa de madera o metal con mínimo 20cm entre plantas.",
+    "alerta": "⚠️ Hojas caídas = estrés por calor o falta de agua",
+    "acentoColor": "#C8553D"
+  },
+  {
+    "grupo": "PLANTA INTERIOR FOLL",
+    "luz": "🌤️ Luz indirecta – NUNCA sol directo",
+    "riego": "💧 Moderado – dejar secar 2-3cm la capa superficial entre riegos",
+    "frecuenciaPorZona": {
+      "desertico": "Cada 2-3d*",
+      "semiarido": "Cada 2-3d*",
+      "costero": "Cada 3-4d*",
+      "templado": "Cada 3-4d*",
+      "montana": "Cada 4-5d*",
+      "frio-humedo": "Cada 5-7d*"
+    },
+    "tips": [
+      "Mantener en zona protegida del interior",
+      "Limpiar hojas con paño húmedo 1 vez/semana",
+      "Rociar ambiente para aumentar humedad",
+      "Nunca exponer a corrientes de aire frío"
+    ],
+    "estructura": "🏠 Mesa interior. Platos individuales sin encharcamiento. Agrupar para crear microclima húmedo.",
+    "alerta": "⚠️ *Tiendas del norte: mantener SIEMPRE bajo techo. Nunca a la intemperie.",
+    "acentoColor": "#2D5A3D"
+  },
+  {
+    "grupo": "PLANTA INTERIOR FLOR",
+    "luz": "💡 Luz brillante indirecta",
+    "riego": "💧 Regular – suelo húmedo pero bien drenado",
+    "frecuenciaPorZona": {
+      "desertico": "Cada 2-3d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3d",
+      "templado": "Cada 3d",
+      "montana": "Cada 3-4d",
+      "frio-humedo": "Cada 4-5d"
+    },
+    "tips": [
+      "Retirar flores marchitas diariamente",
+      "No regar sobre las flores (se manchan)",
+      "Ambiente cálido sin corrientes de aire"
+    ],
+    "estructura": "🏠 Mesa cubierta, zona premium. Bandejas con piedras húmedas para humedad ambiental.",
+    "alerta": "⚠️ Flores o hojas caídas = corriente de aire o cambio brusco de temperatura",
+    "acentoColor": "#8E5A8E"
+  },
+  {
+    "grupo": "PLANTA INTERIOR COLG",
+    "luz": "🌤️ Luz indirecta media",
+    "riego": "💧 Regular – revisar diariamente en verano (se secan más rápido)",
+    "frecuenciaPorZona": {
+      "desertico": "Diario",
+      "semiarido": "Cada 2d",
+      "costero": "Cada 2-3d",
+      "templado": "Cada 2-3d",
+      "montana": "Cada 3d",
+      "frio-humedo": "Cada 3d"
+    },
+    "tips": [
+      "Macetas colgantes se secan más rápido que las de mesa",
+      "Colgar a altura accesible para riego y revisión",
+      "Rotar cada semana para crecimiento uniforme"
+    ],
+    "estructura": "🪝 Ganchos o soportes colgantes. Usar regadera de cuello largo para riego cómodo.",
+    "alerta": "⚠️ Puntas de hojas secas = baja humedad o falta de agua",
+    "acentoColor": "#3F8B82"
+  },
+  {
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "luz": "☀️ Sol pleno o semisombra según especie",
+    "riego": "💧💧 Frecuente – plantas jóvenes necesitan más agua",
+    "frecuenciaPorZona": {
+      "desertico": "2x/día 🔴",
+      "semiarido": "Diario",
+      "costero": "Cada 2d",
+      "templado": "Cada 2d",
+      "montana": "Cada 2-3d",
+      "frio-humedo": "Cada 3d"
+    },
+    "tips": [
+      "Revisar cada mañana: plantines se estresan rápido",
+      "Agrupar por especie para facilitar el riego",
+      "En calor extremo, regar también a las 5pm"
+    ],
+    "estructura": "🪣 Bandejas de riego por inmersión (5cm agua, 20 min), luego escurrir. Ideal para plantines pequeños.",
+    "alerta": "🚨 Plantín marchito = emergencia hídrica. Regar de INMEDIATO.",
+    "acentoColor": "#D4A04C"
+  },
+  {
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "luz": "☀️ Sol o semisombra según especie",
+    "riego": "💧 Moderado – reducir en invierno",
+    "frecuenciaPorZona": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3d",
+      "templado": "Cada 3-4d",
+      "montana": "Cada 4-5d",
+      "frio-humedo": "Cada 5-7d"
+    },
+    "tips": [
+      "Exceso de agua en invierno pudre las raíces",
+      "Revisar drenaje antes de regar",
+      "Mover al interior si temperatura baja de 2°C"
+    ],
+    "estructura": "🪴 Mesa con buena circulación de aire. Evitar bandejas con agua estancada en invierno.",
+    "alerta": "⚠️ Suelo empapado en invierno = riesgo de pudrición radical",
+    "acentoColor": "#6B7B7E"
+  },
+  {
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "luz": "☀️ Sol o semisombra",
+    "riego": "💧 Regular – más resistentes una vez establecidas",
+    "frecuenciaPorZona": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3d",
+      "templado": "Cada 3d",
+      "montana": "Cada 3-4d",
+      "frio-humedo": "Cada 4-5d"
+    },
+    "tips": [
+      "Podar para mantener forma compacta",
+      "Limpiar hojas de polvo para mejor aspecto",
+      "Buen producto de vidriera: exhibir con luz natural"
+    ],
+    "estructura": "🪴 Mesa o suelo directo. Buena ventilación entre plantas.",
+    "alerta": "⚠️ Hojas café en puntas = estrés hídrico o agua muy salina",
+    "acentoColor": "#638544"
+  },
+  {
+    "grupo": "ARBUSTIVA TREPADORAS",
+    "luz": "☀️ Sol pleno a semisombra",
+    "riego": "💧 Regular – toleran algo de sequía cuando están establecidas",
+    "frecuenciaPorZona": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 2-3d",
+      "templado": "Cada 3d",
+      "montana": "Cada 3-4d",
+      "frio-humedo": "Cada 4d"
+    },
+    "tips": [
+      "Amarrar guías para mantener presentación",
+      "Exhibir cerca de estructura o reja",
+      "Regar en la base, no mojar tallos"
+    ],
+    "estructura": "🌿 Maceta grande con tutores o malla de apoyo. Zona con estructura visible.",
+    "alerta": "⚠️ Tallos caídos = falta de soporte. Poner tutor inmediatamente.",
+    "acentoColor": "#4DB6AC"
+  },
+  {
+    "grupo": "ARBOLES FOLLAJE",
+    "luz": "☀️ Sol pleno",
+    "riego": "💧 Moderado – según tamaño del contenedor",
+    "frecuenciaPorZona": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3-4d",
+      "templado": "Cada 3-4d",
+      "montana": "Cada 4d",
+      "frio-humedo": "Cada 5d"
+    },
+    "tips": [
+      "Maceta grande = se deshidrata más lento",
+      "Proteger de vientos fuertes que puedan tumbar",
+      "Revisar raíces que no salgan por el fondo"
+    ],
+    "estructura": "🌳 Suelo directo o pallets. Zona protegida del viento. Regar profundo.",
+    "alerta": "⚠️ Caída masiva de hojas = estrés hídrico severo",
+    "acentoColor": "#2F6B3A"
+  },
+  {
+    "grupo": "ARBOLES FRUTALES",
+    "luz": "☀️ Sol pleno – mínimo 6 horas directas",
+    "riego": "💧 Regular – constante para desarrollo del fruto",
+    "frecuenciaPorZona": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3d",
+      "templado": "Cada 3d",
+      "montana": "Cada 3-4d",
+      "frio-humedo": "Cada 4-5d"
+    },
+    "tips": [
+      "Los cítricos son muy populares: en zona visible",
+      "No dejar suelo completamente seco entre riegos",
+      "Revisar plagas en hojas nuevas (más susceptibles)"
+    ],
+    "estructura": "🍋 Suelo directo o pallet bajo. Zona soleada frontal de la tienda.",
+    "alerta": "⚠️ Frutos caídos prematuramente = estrés hídrico o temperatura",
+    "acentoColor": "#B57A1B"
+  },
+  {
+    "grupo": "ARBOLES PALMERAS",
+    "luz": "☀️ Sol pleno a semisombra intensa",
+    "riego": "💧 Moderado – tolera algo de sequía",
+    "frecuenciaPorZona": {
+      "desertico": "Cada 2-3d",
+      "semiarido": "Cada 3d",
+      "costero": "Cada 3-4d",
+      "templado": "Cada 3-4d",
+      "montana": "Cada 4d",
+      "frio-humedo": "Cada 5-7d"
+    },
+    "tips": [
+      "Retirar hojas secas o dobladas para presentación",
+      "Resistentes pero no abandonar el riego",
+      "En norte: verificar que no reciban sol del mediodía directo"
+    ],
+    "estructura": "🌴 Suelo directo o maceteros grandes en piso. Zona de alto tráfico.",
+    "alerta": "⚠️ Varias hojas nuevas amarillas simultáneamente = problema de raíces",
+    "acentoColor": "#2F8B7E"
+  },
+  {
+    "grupo": "HERBACEAS CACTUS",
+    "luz": "☀️☀️ Sol pleno – mínimo 4 horas directas",
+    "riego": "💧 Escaso – dejar secar COMPLETAMENTE entre riegos",
+    "frecuenciaPorZona": {
+      "desertico": "Cada 7-10d",
+      "semiarido": "Cada 10d",
+      "costero": "Cada 10-14d",
+      "templado": "Cada 10-14d",
+      "montana": "Cada 14d",
+      "frio-humedo": "Cada 14-21d"
+    },
+    "tips": [
+      "El error más común es regar demasiado",
+      "En invierno: regar solo 1 vez al mes",
+      "Platos SIN agua acumulada"
+    ],
+    "estructura": "🌵 Mesa bien drenada. Platos secos. Sustrato arenoso. Zona de máximo sol.",
+    "alerta": "🚨 Tallo blando o café en base = pudrición por exceso de agua. Sin solución.",
+    "acentoColor": "#7A5C3D"
+  },
+  {
+    "grupo": "HERBACEAS AROMÁTICAS",
+    "luz": "☀️ Sol directo – mínimo 4-6 horas",
+    "riego": "💧 Regular – suelo húmedo pero bien drenado",
+    "frecuenciaPorZona": {
+      "desertico": "Diario",
+      "semiarido": "Cada 2d",
+      "costero": "Cada 2d",
+      "templado": "Cada 2-3d",
+      "montana": "Cada 3d",
+      "frio-humedo": "Cada 3d"
+    },
+    "tips": [
+      "Exhibir cerca del acceso: el aroma atrae clientes",
+      "No dejar sin agua: se marchitan muy rápido",
+      "Pinchar las flores para mantener aroma"
+    ],
+    "estructura": "🌿 Mesa bien ventilada con sol directo. Ideal zona de entrada o caja.",
+    "alerta": "⚠️ Tallo leñoso y flor prematura = estrés hídrico crónico",
+    "acentoColor": "#5D8C4A"
+  },
+  {
+    "grupo": "FLORALES",
+    "luz": "☀️ Sol o semisombra según especie",
+    "riego": "💧 Regular – mantener suelo húmedo",
+    "frecuenciaPorZona": {
+      "desertico": "Diario",
+      "semiarido": "Cada 2d",
+      "costero": "Cada 2d",
+      "templado": "Cada 2-3d",
+      "montana": "Cada 3d",
+      "frio-humedo": "Cada 3d"
+    },
+    "tips": [
+      "Alta rotación: revisar presentación cada mañana",
+      "Retirar flores marchitas diariamente",
+      "Agrupar por colores para impacto visual"
+    ],
+    "estructura": "🌸 Zona destacada frontal. Mesa o isla central. Máxima visibilidad.",
+    "alerta": "⚠️ Flores marchitas sin retirar = mala imagen del área completa",
+    "acentoColor": "#B85580"
+  },
+  {
+    "grupo": "PLANTA INTERIOR CORT",
+    "luz": "💡 Luz indirecta brillante",
+    "riego": "💧 Moderado – suelo húmedo constante",
+    "frecuenciaPorZona": {
+      "desertico": "Cada 2d",
+      "semiarido": "Cada 2-3d",
+      "costero": "Cada 3d",
+      "templado": "Cada 3d",
+      "montana": "Cada 3-4d",
+      "frio-humedo": "Cada 4d"
+    },
+    "tips": [
+      "Gran porte: exhibir en zona premium",
+      "Limpiar hojas con paño húmedo para brillo",
+      "Revisar que el macetero no restrinja las raíces"
+    ],
+    "estructura": "🌿 Suelo directo en zona premium. Macetero decorativo exterior.",
+    "alerta": "⚠️ Puntas café = baja humedad ambiental. Rociar hojas con agua.",
+    "acentoColor": "#1F5293"
+  }
+]

@@ -1,0 +1,54 @@
+import type { Metadata, Viewport } from 'next';
+import { Inter, Source_Serif_4 } from 'next/font/google';
+import { TopNav } from '@/components/top-nav';
+import { SiteFooter } from '@/components/site-footer';
+import './globals.css';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+  weight: ['400', '500', '600'],
+});
+
+const sourceSerif = Source_Serif_4({
+  subsets: ['latin'],
+  variable: '--font-source-serif',
+  display: 'swap',
+  weight: ['400', '600'],
+});
+
+export const metadata: Metadata = {
+  title: 'Manual Plantas Vivas — Easy Chile',
+  description:
+    'Manual operativo digital para vendedores del área de plantas vivas en Easy Chile. 572 plantas, 42 tiendas, 6 zonas climáticas.',
+  robots: { index: false, follow: false },
+  applicationName: 'Manual Plantas Vivas',
+};
+
+export const viewport: Viewport = {
+  themeColor: '#2D5A3D',
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="es" className={`${inter.variable} ${sourceSerif.variable}`}>
+      <body>
+        <a
+          href="#contenido"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-[var(--color-green-deep)] focus:text-[var(--color-cream)] focus:px-4 focus:py-2 focus:rounded-md"
+        >
+          Saltar al contenido
+        </a>
+        <TopNav />
+        <main id="contenido" className="mx-auto max-w-5xl px-4 sm:px-6 pb-24 pt-6">
+          {children}
+        </main>
+        <SiteFooter />
+      </body>
+    </html>
+  );
+}

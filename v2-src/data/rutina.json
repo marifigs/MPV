@@ -1,0 +1,37 @@
+[
+  {
+    "id": "apertura",
+    "momento": "apertura",
+    "duracionMin": 10,
+    "titulo": "Revisión matutina",
+    "pasos": [
+      "Recorre todas las mesas de izquierda a derecha.",
+      "Mete el dedo 2 cm en la tierra: si está seca → regar ahora.",
+      "Retira hojas y flores secas de TODAS las plantas.",
+      "Revisa si hay plantas caídas, con plagas o en mal estado."
+    ]
+  },
+  {
+    "id": "mediodia",
+    "momento": "mediodia",
+    "duracionMin": 5,
+    "titulo": "Revisión rápida",
+    "pasos": [
+      "Verifica plantas en zonas de sol directo: en verano pueden deshidratarse en pocas horas.",
+      "En tiendas del norte (Arica, Antofagasta, Calama): revisar si necesitan riego adicional.",
+      "Retira cualquier planta con mal aspecto que hayas notado."
+    ]
+  },
+  {
+    "id": "cierre",
+    "momento": "cierre",
+    "duracionMin": 5,
+    "titulo": "Revisión de cierre",
+    "pasos": [
+      "Última revisión general.",
+      "Asegúrate de que NINGUNA planta quedó con raíces encharcadas.",
+      "Verifica que plantas sensibles al frío estén bajo techo (tiendas del sur en invierno).",
+      "¿Necesitas regar antes del fin de semana? Hazlo el viernes con buena carga."
+    ]
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "hojas-amarillas",
+    "titulo": "Hojas amarillas",
+    "accion": "Exceso de agua O falta de luz. Revisa si el suelo está empapado. Si sí → deja secar y mejora el drenaje. Si no → cambia de ubicación a zona más iluminada.",
+    "severidad": "media"
+  },
+  {
+    "id": "hojas-cafes-puntas",
+    "titulo": "Hojas cafés y secas en puntas",
+    "accion": "Falta de agua O quemadura por sol directo. Regar de inmediato y revisar si está expuesta a sol intenso.",
+    "severidad": "media"
+  },
+  {
+    "id": "tallo-negro-base",
+    "titulo": "Tallo negro en la base",
+    "accion": "Pudrición por exceso de agua. Sin solución: retirar de exhibición, reportar a supervisor. Mejorar drenaje para las demás plantas cercanas.",
+    "severidad": "critica"
+  },
+  {
+    "id": "hojas-caidas-masivo",
+    "titulo": "Hojas caídas masivamente",
+    "accion": "Estrés por frío, calor extremo o corriente de aire. Revisar ubicación de inmediato. Alejar de puertas y fuentes de calor/frío.",
+    "severidad": "media"
+  },
+  {
+    "id": "manchas-agujeros",
+    "titulo": "Manchas y agujeros en hojas",
+    "accion": "Plagas (pulgones, ácaros). AISLAR la planta del resto inmediatamente. Avisar al supervisor para tratamiento.",
+    "severidad": "media"
+  },
+  {
+    "id": "polvo-gris-pelusa",
+    "titulo": "Polvo gris en hojas (pelusa)",
+    "accion": "Hongo (oídio o botrytis). Mejorar ventilación urgente. Separar de otras plantas. No regar por arriba.",
+    "severidad": "media"
+  },
+  {
+    "id": "suelo-empapado",
+    "titulo": "Suelo siempre empapado",
+    "accion": "Riego excesivo o drenaje tapado. Espaciar riegos. Revisar que el hoyo del fondo de la maceta no esté tapado.",
+    "severidad": "media"
+  },
+  {
+    "id": "planta-marchita",
+    "titulo": "Planta completamente marchita o seca",
+    "accion": "Sin solución. Retirar de exhibición INMEDIATAMENTE. Nunca dejar una planta muerta en exhibición.",
+    "severidad": "critica"
+  },
+  {
+    "id": "no-florece",
+    "titulo": "No florece o flores caen rápido",
+    "accion": "Falta de luz, temperatura inadecuada o estrés por cambio de ambiente. Revisar ubicación y frecuencia de riego.",
+    "severidad": "leve"
+  },
+  {
+    "id": "tierra-insectos",
+    "titulo": "Tierra con insectos pequeños",
+    "accion": "Sciaridos o trips. No regar por un tiempo. Dejar secar bien el sustrato. Consultar con supervisor.",
+    "severidad": "media"
+  }
+]

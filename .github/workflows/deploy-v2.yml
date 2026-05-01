@@ -1,8 +1,12 @@
-name: Deploy to GitHub Pages
+name: Build & Deploy v2 to GitHub Pages
 
 on:
   push:
-    branches: ["main", "refactor/nextjs-v2"]
+    branches: [main]
+    paths:
+      - 'v2-src/**'
+      - 'index.html'
+      - '.github/workflows/deploy-v2.yml'
   workflow_dispatch:
 
 permissions:
@@ -11,11 +15,8 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: false
-
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   build:
@@ -29,26 +30,30 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 22
-          cache: pnpm
-          cache-dependency-path: v2/pnpm-lock.yaml
+          node-version: 20
+          cache: 'pnpm'
+          cache-dependency-path: v2-src/pnpm-lock.yaml
 
-      - name: Install dependencies
-        working-directory: v2
+      - name: Install dependencies (v2-src)
+        working-directory: v2-src
         run: pnpm install --frozen-lockfile
 
-      - name: Build v2 static export
-        working-directory: v2
+      - name: Build Next.js v2 (static export)
+        working-directory: v2-src
         run: pnpm build
-        env:
-          GITHUB_PAGES: "true"
 
-      - name: Prepare Pages artifact
+      - name: Compose Pages site
         run: |
+          set -e
           mkdir -p _site/v2
+          # Legacy v1 site at root (intact)
           cp index.html _site/
-          cp -r v2/out/. _site/v2/
+          [ -f vercel.json ] && cp vercel.json _site/ || true
+          # Next.js v2 build output mounted at /v2/
+          cp -r v2-src/out/. _site/v2/
+          # Disable Jekyll so _next assets are served as-is
           touch _site/.nojekyll
+          touch _site/v2/.nojekyll
 
       - uses: actions/configure-pages@v5
 
