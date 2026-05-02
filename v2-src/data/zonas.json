@@ -11,7 +11,7 @@
       "Jamás dejar pasar más de 24h sin revisar en verano",
       "Cyclamen, Fuchsia y Poinsettia: cuidado extra o evitar"
     ],
-    "alertaZona": "🔴 RIESGO CRÍTICO: Una planta puede morir en pocas horas sin agua.",
+    "alertaZona": "Plantines y plantas en maceta pequeña sin riego matutino pueden deshidratarse antes del mediodía en verano. Regar entre 7–9 AM es la regla de oro en esta zona.",
     "color": "#FF5722",
     "tiendasIds": [
       "easy-antofagasta",
@@ -30,7 +30,7 @@
       "Mayor atención en los meses de diciembre a marzo",
       "Plantas tropicales: ubicar en interior protegido siempre"
     ],
-    "alertaZona": "🟠 RIESGO ALTO en verano. Monitorear mañana y tarde.",
+    "alertaZona": "En diciembre–febrero, plantas de interior como Calathea y Difenbachia se estresan si el sustrato se seca completamente. Revisar humedad del suelo cada mañana.",
     "color": "#FF9800",
     "tiendasIds": [
       "easy-la-serena"
@@ -47,7 +47,7 @@
       "Limpiar hojas regularmente para quitar sal",
       "Temperatura estable todo el año: facilita el mantenimiento"
     ],
-    "alertaZona": "🟡 RIESGO MODERADO. Atención al viento salino y hongos en invierno.",
+    "alertaZona": "El viento marino con sal daña las hojas de Helechos y Orquídeas si quedan expuestas. Ubicarlas siempre en zona cubierta o interior. En invierno, reducir riego un 30% para evitar hongos.",
     "color": "#2196F3",
     "tiendasIds": [
       "easy-el-belloto-ii",
@@ -67,7 +67,7 @@
       "Plantas de exterior se pueden exhibir en entrada casi todo el año",
       "Aprovechar temperatura estable para rotar exhibición"
     ],
-    "alertaZona": "🟢 RIESGO BAJO. Atención en olas de calor y heladas ocasionales.",
+    "alertaZona": "En olas de calor (días sobre 33°C), los plantines en exhibición exterior pueden perder turgencia en 4–5 horas sin agua. Agregar un riego extra de emergencia al mediodía esos días.",
     "color": "#4CAF50",
     "tiendasIds": [
       "easy-cerrillos",
@@ -103,7 +103,7 @@
       "El suelo retiene más humedad por las bajas temperaturas",
       "Plantas de clima frío se adaptan mejor: Cyclamen, Crisantemo"
     ],
-    "alertaZona": "🟠 RIESGO HELADAS en invierno. Nunca dejar plantas sensibles afuera de noche.",
+    "alertaZona": "Cuando la temperatura nocturna baja de 2°C, Impatiens, Begonias y Orquídeas sufren daño irreversible en sus hojas si quedan afuera. Identificar esas noches en el pronóstico y moverlas adentro.",
     "color": "#9C27B0",
     "tiendasIds": [
       "easy-los-andes-el-laberinto"
@@ -121,7 +121,7 @@
       "Plantas tropicales: SIEMPRE bajo techo",
       "Hongos y moho son el enemigo #1: buena ventilación entre plantas"
     ],
-    "alertaZona": "🔵 RIESGO DE HONGOS Y PUDRICIÓN. Priorizar drenaje y ventilación.",
+    "alertaZona": "Tras 3 días seguidos de lluvia, revisar que las macetas drenen bien: si el sustrato huele a tierra mojada por más de 48h, hay riesgo de pudrición de raíces en Orquídeas, Cícadas y Suculentas.",
     "color": "#607D8B",
     "tiendasIds": [
       "easy-bio-bio",
