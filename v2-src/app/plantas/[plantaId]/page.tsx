@@ -6,6 +6,8 @@ import { Icons } from '@/lib/icons';
 import { Alert } from '@/components/ui/alert';
 import { ZONAS_ORDEN } from '@/types/data';
 import { ShareButton } from '@/components/share-button';
+import { getPlantVideo } from '@/lib/plant-video-map';
+import { PlantVideo } from '@/components/plant-video';
 
 export function generateStaticParams() {
   return plantas.map((p) => ({ plantaId: p.id }));
@@ -21,6 +23,8 @@ export default async function PlantaDetailPage({ params }: PageProps) {
   if (!planta) notFound();
   const cuidado = cuidadosByGrupo[planta.grupo];
   const Icon = Icons[GRUPO_ICON[planta.grupo]];
+
+  const videoFile = getPlantVideo(planta.fotoUrl);
 
   const stockOrdenado = Object.entries(planta.stockPorTienda)
     .filter(([, qty]) => qty > 0)
@@ -40,13 +44,13 @@ export default async function PlantaDetailPage({ params }: PageProps) {
       </Link>
 
       {/* Hero header */}
-      <header className="grid gap-8 md:grid-cols-[320px_1fr] md:gap-12">
-        {/* Photo */}
-        <div
-          className="aspect-square overflow-hidden rounded-2xl shadow-[var(--shadow-card)]"
-          style={{ background: planta.fotoUrl ? undefined : planta.fotoPlaceholder }}
-        >
-          {planta.fotoUrl ? (
+      <header className="grid gap-8 md:grid-cols-[300px_1fr] md:gap-14">
+
+        {/* Visual: video (if available) or photo */}
+        {videoFile ? (
+          <PlantVideo videoFile={videoFile} name={planta.nombre} />
+        ) : planta.fotoUrl ? (
+          <div className="overflow-hidden" style={{ borderRadius: '20px', boxShadow: '0 24px 64px rgba(26,31,27,0.14), 0 6px 20px rgba(26,31,27,0.07)', aspectRatio: '3 / 4' }}>
             <img
               src={`/MPV/v2/${planta.fotoUrl}`}
               alt={`Foto de ${planta.nombre}`}
@@ -54,39 +58,53 @@ export default async function PlantaDetailPage({ params }: PageProps) {
               loading="eager"
               decoding="async"
             />
-          ) : (
+          </div>
+        ) : (
+          <div
+            className="overflow-hidden"
+            style={{ borderRadius: '20px', background: planta.fotoPlaceholder, aspectRatio: '3 / 4' }}
+          >
             <div className="grid h-full w-full place-items-center">
               <Icon
                 aria-hidden
-                className="h-24 w-24 opacity-30"
+                className="h-24 w-24 opacity-20"
                 strokeWidth={0.75}
                 style={{ color: 'var(--color-cream)' }}
               />
             </div>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Identity */}
         <div className="flex flex-col justify-center">
-          <p className="eyebrow text-[var(--color-green-deep)] mb-3">
+          <p className="eyebrow text-[var(--color-green-deep)] mb-4">
             {GRUPO_LABEL[planta.grupo] ?? planta.grupo}
           </p>
           <h1
-            className="serif leading-[1.0] tracking-[-0.03em] text-[var(--color-ink)]"
-            style={{ fontSize: 'clamp(36px, 5vw, 56px)' }}
+            className="display text-[var(--color-ink)]"
+            style={{ fontSize: 'clamp(42px, 5.5vw, 72px)' }}
           >
             {planta.nombre}
           </h1>
-          <div className="mt-5 flex flex-wrap items-center gap-2.5 text-[13px]">
-            <span className="rounded-full border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-3.5 py-1.5 font-medium">
-              {planta.subrubro === 'PLANTAS DE INTERIOR' ? 'Interior' : 'Exterior'}
+          <div className="mt-2">
+            <span className="serif-italic text-[var(--color-ink-soft)]"
+              style={{ fontSize: 'clamp(17px, 1.8vw, 22px)' }}>
+              {planta.subrubro === 'PLANTAS DE INTERIOR' ? 'Planta de interior' : 'Planta de exterior'}
             </span>
-            <span className="text-[var(--color-ink-soft)]">SKU {planta.sku}</span>
-            <span className="font-semibold text-[var(--color-ink)]">
+          </div>
+          <div className="mt-7 flex flex-wrap items-center gap-2.5 text-[12px]">
+            <span className="rounded-full border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-3.5 py-1.5 font-medium tracking-wide">
+              SKU {planta.sku}
+            </span>
+            <span
+              className="rounded-full px-3.5 py-1.5 font-semibold text-white"
+              style={{ background: 'var(--color-green-deep)', fontSize: '12px' }}
+            >
               {planta.total} uds. en red
             </span>
           </div>
-          <div className="mt-6">
+          <div className="mt-7 h-px" style={{ background: 'var(--color-rule)' }} />
+          <div className="mt-7">
             <ShareButton title={planta.nombre} />
           </div>
         </div>

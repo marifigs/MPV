@@ -20,7 +20,7 @@ export function SiteFooter() {
             <img
               src="/MPV/v2/cencosud-logo.png"
               alt="Cencosud"
-              className="h-7 w-auto opacity-80"
+              className="h-9 w-auto opacity-85"
               decoding="async"
               loading="lazy"
             />

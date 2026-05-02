@@ -55,7 +55,7 @@ export function TopNav() {
             <img
               src="/MPV/v2/easy-logo.png"
               alt="Easy Cencosud"
-              className="h-9 w-auto sm:h-10"
+              className="h-11 w-auto sm:h-13"
               decoding="async"
             />
           </div>

@@ -1,21 +1,21 @@
 import type { Metadata, Viewport } from 'next';
-import { Inter, Source_Serif_4 } from 'next/font/google';
+import { DM_Sans, Cormorant_Garamond } from 'next/font/google';
 import { TopNav } from '@/components/top-nav';
 import { SiteFooter } from '@/components/site-footer';
 import './globals.css';
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-dm-sans',
   display: 'swap',
-  weight: ['400', '500', '600'],
+  weight: ['300', '400', '500'],
 });
 
-const sourceSerif = Source_Serif_4({
+const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
-  variable: '--font-source-serif',
+  variable: '--font-cormorant',
   display: 'swap',
-  weight: ['300', '400', '600'],
+  weight: ['300', '400', '500', '600'],
   style: ['normal', 'italic'],
 });
 
@@ -36,7 +36,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${inter.variable} ${sourceSerif.variable}`}>
+    <html lang="es" className={`${dmSans.variable} ${cormorant.variable}`}>
       <body>
         <a
           href="#contenido"
