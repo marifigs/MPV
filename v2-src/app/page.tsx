@@ -10,10 +10,19 @@ export default function HomePage() {
           HERO — editorial split layout
           Left: dark ink panel / Right: video portrait frame
       ══════════════════════════════════════════════════ */}
-      <section className="-mx-5 sm:-mx-8 -mt-8 overflow-hidden">
+      <section
+        className="overflow-hidden"
+        style={{
+          marginTop: '-2rem',
+          width: '100vw',
+          position: 'relative',
+          left: '50%',
+          transform: 'translateX(-50%)',
+        }}
+      >
 
         {/* ── Desktop split ─────────────────────────────── */}
-        <div className="hidden md:grid md:grid-cols-[1fr_380px] lg:grid-cols-[1fr_440px] xl:grid-cols-[1fr_500px]" style={{ minHeight: '92vh' }}>
+        <div className="hidden md:grid md:grid-cols-[1fr_min(38vw,520px)]" style={{ minHeight: '92vh' }}>
 
           {/* Left: dark ink panel */}
           <div
@@ -72,37 +81,30 @@ export default function HomePage() {
 
           {/* Right: cream panel with portrait video */}
           <div
-            className="relative flex flex-col items-center justify-center px-8 xl:px-12 gap-8"
+            className="relative flex flex-col items-center justify-center overflow-hidden"
             style={{ background: 'var(--color-surface-2)' }}
           >
-            {/* Portrait video frame */}
-            <div
-              className="relative w-full overflow-hidden rounded-[24px]"
-              style={{
-                maxWidth: '340px',
-                aspectRatio: '3/4',
-                boxShadow: '0 32px 80px rgba(26,31,27,0.22), 0 8px 24px rgba(26,31,27,0.12)',
-              }}
+            {/* Video fills the panel, letterboxed vertically */}
+            <video
+              autoPlay muted loop playsInline
+              className="absolute inset-0 h-full w-full object-cover"
+              poster="/MPV/v2/videos/hero-poster.jpg"
             >
-              <video
-                autoPlay muted loop playsInline
-                className="absolute inset-0 h-full w-full object-cover"
-                poster="/MPV/v2/videos/hero-poster.jpg"
-              >
-                <source src="/MPV/v2/videos/hero-loop.mp4" type="video/mp4" />
-              </video>
-              {/* Subtle vignette bottom */}
-              <div className="absolute bottom-0 left-0 right-0 h-24"
-                style={{ background: 'linear-gradient(to top, rgba(245,241,232,0.35), transparent)' }} />
+              <source src="/MPV/v2/videos/hero-loop.mp4" type="video/mp4" />
+            </video>
+            {/* Vignette */}
+            <div className="absolute inset-0 pointer-events-none"
+              style={{ background: 'linear-gradient(to top, rgba(24,32,26,0.55) 0%, rgba(24,32,26,0.10) 50%, transparent 100%)' }} />
+            {/* Easy logo bottom-center */}
+            <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+              <img
+                src="/MPV/v2/easy-logo.png"
+                alt="Easy Cencosud"
+                className="w-24 drop-shadow-lg"
+                style={{ opacity: 0.92 }}
+                decoding="async"
+              />
             </div>
-
-            {/* Easy logo below video */}
-            <img
-              src="/MPV/v2/easy-logo.png"
-              alt="Easy Cencosud"
-              className="w-28 opacity-90"
-              decoding="async"
-            />
           </div>
         </div>
 

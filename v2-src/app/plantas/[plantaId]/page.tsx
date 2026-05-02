@@ -82,7 +82,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
           </p>
           <h1
             className="display text-[var(--color-ink)]"
-            style={{ fontSize: 'clamp(42px, 5.5vw, 72px)' }}
+            style={{ fontSize: 'clamp(28px, 3.8vw, 54px)', overflowWrap: 'break-word' }}
           >
             {planta.nombre}
           </h1>
