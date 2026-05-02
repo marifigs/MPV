@@ -27,6 +27,7 @@ const PLANTS = [
   { file: 'ornitogalo', name: 'Ornitógalo', label: 'Exterior' },
   { file: 'osmanthus', name: 'Osmanthus', label: 'Exterior' },
   { file: 'nogal', name: 'Nogal', label: 'Exterior' },
+  { file: 'narciso', name: 'Narciso', label: 'Exterior' },
 ];
 
 function PlantVideo({ file, name, label }: { file: string; name: string; label: string }) {
