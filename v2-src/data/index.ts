@@ -69,6 +69,20 @@ export function getTiendasDeZona(zonaId: ZonaClimatica): Tienda[] {
   return tiendas.filter((t) => t.zona === zonaId);
 }
 
+import catalogData from './catalog.json';
+
+export interface CatalogPlant {
+  id: string;
+  nombre: string;
+  folderSlug: string | null;
+  fotoUrl: string | null;
+  subrubro: string;
+  grupo: string;
+  fotoPlaceholder: string;
+}
+
+export const catalog = catalogData as CatalogPlant[];
+
 export const ZONA_LABELS: Record<ZonaClimatica, string> = {
   desertico: 'Desértico',
   semiarido: 'Semiárido',

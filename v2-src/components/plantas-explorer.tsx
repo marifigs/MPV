@@ -3,16 +3,19 @@
 import * as React from 'react';
 import Link from 'next/link';
 import Fuse from 'fuse.js';
-import { plantas } from '@/data';
-import { GRUPO_ICON, GRUPO_LABEL } from '@/lib/group-icons';
-import { Icons } from '@/lib/icons';
+import { catalog } from '@/data';
+import type { CatalogPlant } from '@/data';
 import { SearchBar } from '@/components/ui/search-bar';
-import type { Planta, GrupoCuidado, SubrubroPlanta } from '@/types/data';
+import { Icons } from '@/lib/icons';
 import { cn } from '@/lib/cn';
 
-const GRUPO_OPCIONES = Array.from(new Set(plantas.map((p) => p.grupo))).sort();
+// ── Helpers ──────────────────────────────────────────────────────────────────
+function capitalize(str: string): string {
+  return str.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+}
 
-const fuse = new Fuse(plantas, {
+// ── Fuse setup ───────────────────────────────────────────────────────────────
+const fuse = new Fuse(catalog, {
   keys: [
     { name: 'nombre', weight: 0.8 },
     { name: 'grupo', weight: 0.2 },
@@ -22,32 +25,31 @@ const fuse = new Fuse(plantas, {
   minMatchCharLength: 2,
 });
 
-const PAGE = 60;
+const PAGE = 80;
 
+// ── Component ─────────────────────────────────────────────────────────────────
 export function PlantasExplorer() {
   const [q, setQ] = React.useState('');
-  const [grupo, setGrupo] = React.useState<GrupoCuidado | ''>('');
-  const [subrubro, setSubrubro] = React.useState<SubrubroPlanta | ''>('');
+  const [subrubro, setSubrubro] = React.useState('');
   const [shown, setShown] = React.useState(PAGE);
 
-  const filtered = React.useMemo<Planta[]>(() => {
-    let list: Planta[] = plantas;
+  const filtered = React.useMemo<CatalogPlant[]>(() => {
+    let list: CatalogPlant[] = catalog;
     if (q.trim().length >= 2) {
       list = fuse.search(q).map((r) => r.item);
     }
-    if (grupo) list = list.filter((p) => p.grupo === grupo);
     if (subrubro) list = list.filter((p) => p.subrubro === subrubro);
     return list;
-  }, [q, grupo, subrubro]);
+  }, [q, subrubro]);
 
   React.useEffect(() => {
     setShown(PAGE);
-  }, [q, grupo, subrubro]);
+  }, [q, subrubro]);
 
   return (
     <div className="space-y-6">
       {/* Filters */}
-      <div className="grid gap-3 sm:grid-cols-[1fr_auto_auto]">
+      <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
         <SearchBar
           value={q}
           onChange={(e) => setQ(e.target.value)}
@@ -56,21 +58,8 @@ export function PlantasExplorer() {
           aria-label="Buscar planta"
         />
         <select
-          value={grupo}
-          onChange={(e) => setGrupo(e.target.value as GrupoCuidado | '')}
-          className="h-12 rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] px-4 text-[14px] text-[var(--color-ink)] cursor-pointer hover:border-[var(--color-green-soft)] transition-colors"
-          aria-label="Filtrar por grupo"
-        >
-          <option value="">Todos los grupos</option>
-          {GRUPO_OPCIONES.map((g) => (
-            <option key={g} value={g}>
-              {GRUPO_LABEL[g] ?? g}
-            </option>
-          ))}
-        </select>
-        <select
           value={subrubro}
-          onChange={(e) => setSubrubro(e.target.value as SubrubroPlanta | '')}
+          onChange={(e) => setSubrubro(e.target.value)}
           className="h-12 rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] px-4 text-[14px] text-[var(--color-ink)] cursor-pointer hover:border-[var(--color-green-soft)] transition-colors"
           aria-label="Filtrar por interior o exterior"
         >
@@ -83,14 +72,14 @@ export function PlantasExplorer() {
       {/* Count */}
       <p className="text-[13px] text-[var(--color-ink-soft)]">
         <span className="font-semibold text-[var(--color-ink)]">{filtered.length}</span> de{' '}
-        {plantas.length} plantas
+        {catalog.length} plantas
       </p>
 
       {/* Grid */}
-      <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {filtered.slice(0, shown).map((p) => (
           <li key={p.id}>
-            <PlantaCardItem planta={p} />
+            <LuxuryPlantCard plant={p} />
           </li>
         ))}
       </ul>
@@ -125,63 +114,127 @@ export function PlantasExplorer() {
   );
 }
 
-function PlantaCardItem({ planta }: { planta: Planta }) {
-  const Icon = Icons[GRUPO_ICON[planta.grupo]];
+// ── Luxury portrait card ──────────────────────────────────────────────────────
+function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
+  const label = plant.subrubro === 'PLANTAS DE INTERIOR' ? 'Interior' : 'Exterior';
+
   return (
     <Link
-      href={`/plantas/${planta.id}`}
-      className={cn(
-        'group flex h-full flex-col overflow-hidden rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] transition-all',
-        'hover:border-[var(--color-green-deep)] hover:shadow-[var(--shadow-card)]'
-      )}
+      href={`/plantas/${plant.id}`}
+      className={cn('group block overflow-hidden rounded-xl transition-transform duration-300 hover:scale-[1.02]')}
+      style={{ aspectRatio: '3/4', display: 'block' }}
     >
-      {/* Photo / placeholder */}
-      <div
-        className="relative w-full overflow-hidden"
-        style={{
-          height: '200px',
-          background: planta.fotoUrl ? undefined : planta.fotoPlaceholder,
-        }}
-      >
-        {planta.fotoUrl ? (
+      {plant.fotoUrl ? (
+        /* ── With image: full-bleed + gradient overlay ── */
+        <div style={{ position: 'relative', height: '100%', width: '100%' }}>
           <img
-            src={`/MPV/v2/${planta.fotoUrl}`}
+            src={`/MPV/v2/${plant.fotoUrl}`}
             alt=""
-            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
             loading="lazy"
             decoding="async"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+              transition: 'transform 0.5s ease',
+            }}
+            className="group-hover:scale-105"
           />
-        ) : (
-          <div className="flex h-full w-full items-center justify-center">
-            <Icon
-              aria-hidden
-              className="h-14 w-14 opacity-40"
-              strokeWidth={1}
-              style={{ color: 'var(--color-cream)' }}
-            />
+          {/* Gradient overlay — 40% bottom */}
+          <div
+            style={{
+              position: 'absolute',
+              inset: 0,
+              background:
+                'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.28) 40%, transparent 65%)',
+              pointerEvents: 'none',
+            }}
+          />
+          {/* Text layer */}
+          <div
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              right: 0,
+              padding: '16px',
+            }}
+          >
+            <p
+              className="eyebrow"
+              style={{ color: 'rgba(255,255,255,0.55)', marginBottom: '4px', fontSize: '10px' }}
+            >
+              {label}
+            </p>
+            <p
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontStyle: 'italic',
+                color: 'white',
+                fontSize: '18px',
+                lineHeight: 1.25,
+                fontWeight: 400,
+              }}
+            >
+              {capitalize(plant.nombre)}
+            </p>
           </div>
-        )}
-        {/* Interior/exterior badge */}
-        <span className="absolute left-3 top-3 rounded-full bg-black/30 px-2.5 py-1 text-[11px] font-medium uppercase tracking-[0.07em] text-white backdrop-blur-sm">
-          {planta.subrubro === 'PLANTAS DE INTERIOR' ? 'Interior' : 'Exterior'}
-        </span>
-      </div>
-
-      {/* Card body */}
-      <div className="flex flex-1 flex-col gap-2 p-4">
-        <span className="text-[15px] font-semibold leading-snug text-[var(--color-ink)] line-clamp-2">
-          {planta.nombre}
-        </span>
-        <span className="text-[11px] font-medium uppercase tracking-[0.08em] text-[var(--color-ink-soft)]">
-          {GRUPO_LABEL[planta.grupo] ?? planta.grupo}
-        </span>
-        <div className="mt-auto flex items-center justify-between text-[12px] text-[var(--color-ink-soft)] pt-2 border-t border-[var(--color-rule)]">
-          <span>SKU {planta.sku}</span>
-          <span>
-            <span className="font-semibold text-[var(--color-ink)]">{planta.total}</span> en stock
-          </span>
         </div>
-      </div>
+      ) : (
+        /* ── Without image: warm placeholder ── */
+        <div
+          style={{
+            background: plant.fotoPlaceholder,
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-end',
+            padding: '20px',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Big initial letter as decorative background */}
+          <p
+            aria-hidden
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontSize: '96px',
+              opacity: 0.08,
+              lineHeight: 1,
+              color: 'var(--color-ink)',
+              position: 'absolute',
+              top: '12px',
+              left: '16px',
+              userSelect: 'none',
+            }}
+          >
+            {plant.nombre[0]}
+          </p>
+          {/* Labels */}
+          <p
+            className="eyebrow"
+            style={{ color: 'var(--color-ink-soft)', marginBottom: '4px', fontSize: '10px' }}
+          >
+            {label}
+          </p>
+          <p
+            style={{
+              fontFamily: 'var(--font-display)',
+              fontStyle: 'italic',
+              fontSize: '18px',
+              lineHeight: 1.25,
+              fontWeight: 400,
+              color: 'var(--color-ink)',
+            }}
+          >
+            {capitalize(plant.nombre)}
+          </p>
+        </div>
+      )}
     </Link>
   );
 }

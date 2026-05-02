@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { plantas, plantasById, cuidadosByGrupo, tiendasById, ZONA_LABELS } from '@/data';
+import { plantas, plantasById, cuidadosByGrupo, tiendasById, ZONA_LABELS, catalog } from '@/data';
 import { GRUPO_ICON, GRUPO_LABEL } from '@/lib/group-icons';
 import { Icons } from '@/lib/icons';
 import { Alert } from '@/components/ui/alert';
@@ -10,7 +10,12 @@ import { getPlantVideo } from '@/lib/plant-video-map';
 import { PlantVideo } from '@/components/plant-video';
 
 export function generateStaticParams() {
-  return plantas.map((p) => ({ plantaId: p.id }));
+  const skuIds = plantas.map((p) => ({ plantaId: p.id }));
+  const catalogIds = catalog.map((c) => ({ plantaId: c.id }));
+  // Deduplicate
+  const seen = new Set(skuIds.map((x) => x.plantaId));
+  const uniqueCatalogIds = catalogIds.filter((x) => !seen.has(x.plantaId));
+  return [...skuIds, ...uniqueCatalogIds];
 }
 
 interface PageProps {
@@ -20,17 +25,28 @@ interface PageProps {
 export default async function PlantaDetailPage({ params }: PageProps) {
   const { plantaId } = await params;
   const planta = plantasById[plantaId];
-  if (!planta) notFound();
-  const cuidado = cuidadosByGrupo[planta.grupo];
-  const Icon = Icons[GRUPO_ICON[planta.grupo]];
+  const catalogEntry = !planta ? catalog.find((c) => c.id === plantaId) : null;
+  if (!planta && !catalogEntry) notFound();
 
-  const videoFile = getPlantVideo(planta.fotoUrl);
+  // If catalog-only entry (no SKU data), show a simplified view
+  const displayNombre = planta?.nombre ?? catalogEntry?.nombre ?? '';
+  const displayGrupo = planta?.grupo ?? catalogEntry?.grupo ?? 'ARBUSTIVA FOLLAJE';
+  const displaySubrubro = planta?.subrubro ?? catalogEntry?.subrubro ?? 'PLANTAS DE EXTERIOR';
+  const displayFotoUrl = planta?.fotoUrl ?? catalogEntry?.fotoUrl ?? null;
 
-  const stockOrdenado = Object.entries(planta.stockPorTienda)
-    .filter(([, qty]) => qty > 0)
-    .map(([id, qty]) => ({ tienda: tiendasById[id], qty }))
-    .filter((x) => !!x.tienda)
-    .sort((a, b) => b.qty - a.qty);
+  const cuidado = cuidadosByGrupo[displayGrupo as keyof typeof cuidadosByGrupo] ?? null;
+  const Icon = Icons[GRUPO_ICON[displayGrupo as keyof typeof GRUPO_ICON] ?? 'sprout'];
+
+  const videoFile = getPlantVideo(displayFotoUrl ?? undefined);
+  const displayPlaceholder = planta?.fotoPlaceholder ?? catalogEntry?.fotoPlaceholder ?? 'hsl(80 22% 90%)';
+
+  const stockOrdenado = planta
+    ? Object.entries(planta.stockPorTienda)
+        .filter(([, qty]) => qty > 0)
+        .map(([id, qty]) => ({ tienda: tiendasById[id], qty }))
+        .filter((x) => !!x.tienda)
+        .sort((a, b) => b.qty - a.qty)
+    : [];
 
   return (
     <div className="space-y-10">
@@ -48,12 +64,12 @@ export default async function PlantaDetailPage({ params }: PageProps) {
 
         {/* Visual: video (if available) or photo */}
         {videoFile ? (
-          <PlantVideo videoFile={videoFile} name={planta.nombre} />
-        ) : planta.fotoUrl ? (
+          <PlantVideo videoFile={videoFile} name={displayNombre} />
+        ) : displayFotoUrl ? (
           <div className="overflow-hidden" style={{ borderRadius: '20px', boxShadow: '0 24px 64px rgba(26,31,27,0.14), 0 6px 20px rgba(26,31,27,0.07)', aspectRatio: '3 / 4' }}>
             <img
-              src={`/MPV/v2/${planta.fotoUrl}`}
-              alt={`Foto de ${planta.nombre}`}
+              src={`/MPV/v2/${displayFotoUrl}`}
+              alt={`Foto de ${displayNombre}`}
               className="h-full w-full object-cover"
               loading="eager"
               decoding="async"
@@ -62,7 +78,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
         ) : (
           <div
             className="overflow-hidden"
-            style={{ borderRadius: '20px', background: planta.fotoPlaceholder, aspectRatio: '3 / 4' }}
+            style={{ borderRadius: '20px', background: displayPlaceholder, aspectRatio: '3 / 4' }}
           >
             <div className="grid h-full w-full place-items-center">
               <Icon
@@ -78,105 +94,111 @@ export default async function PlantaDetailPage({ params }: PageProps) {
         {/* Identity */}
         <div className="flex flex-col justify-center">
           <p className="eyebrow text-[var(--color-green-deep)] mb-4">
-            {GRUPO_LABEL[planta.grupo] ?? planta.grupo}
+            {GRUPO_LABEL[displayGrupo as keyof typeof GRUPO_LABEL] ?? displayGrupo}
           </p>
           <h1
             className="display text-[var(--color-ink)]"
             style={{ fontSize: 'clamp(28px, 3.8vw, 54px)', overflowWrap: 'break-word' }}
           >
-            {planta.nombre}
+            {displayNombre}
           </h1>
           <div className="mt-2">
             <span className="serif-italic text-[var(--color-ink-soft)]"
               style={{ fontSize: 'clamp(17px, 1.8vw, 22px)' }}>
-              {planta.subrubro === 'PLANTAS DE INTERIOR' ? 'Planta de interior' : 'Planta de exterior'}
+              {displaySubrubro === 'PLANTAS DE INTERIOR' ? 'Planta de interior' : 'Planta de exterior'}
             </span>
           </div>
-          <div className="mt-7 flex flex-wrap items-center gap-2.5 text-[12px]">
-            <span className="rounded-full border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-3.5 py-1.5 font-medium tracking-wide">
-              SKU {planta.sku}
-            </span>
-            <span
-              className="rounded-full px-3.5 py-1.5 font-semibold text-white"
-              style={{ background: 'var(--color-green-deep)', fontSize: '12px' }}
-            >
-              {planta.total} uds. en red
-            </span>
-          </div>
+          {planta ? (
+            <div className="mt-7 flex flex-wrap items-center gap-2.5 text-[12px]">
+              <span className="rounded-full border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-3.5 py-1.5 font-medium tracking-wide">
+                SKU {planta.sku}
+              </span>
+              <span
+                className="rounded-full px-3.5 py-1.5 font-semibold text-white"
+                style={{ background: 'var(--color-green-deep)', fontSize: '12px' }}
+              >
+                {planta.total} uds. en red
+              </span>
+            </div>
+          ) : null}
           <div className="mt-7 h-px" style={{ background: 'var(--color-rule)' }} />
           <div className="mt-7">
-            <ShareButton title={planta.nombre} />
+            <ShareButton title={displayNombre} />
           </div>
         </div>
       </header>
 
       {/* ── Cuidado del grupo ── */}
-      <section>
-        <p className="eyebrow mb-5">Cuidados del grupo</p>
-        <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6">
-            <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Luz</p>
-            <p className="text-[15px] leading-relaxed">{cuidado.luz}</p>
-          </div>
-          <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6">
-            <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Riego</p>
-            <p className="text-[15px] leading-relaxed">{cuidado.riego}</p>
-          </div>
-          <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6 md:col-span-2">
-            <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Estructura recomendada</p>
-            <p className="text-[15px] leading-relaxed">{cuidado.estructura}</p>
-          </div>
-        </div>
-      </section>
+      {cuidado ? (
+        <>
+          <section>
+            <p className="eyebrow mb-5">Cuidados del grupo</p>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6">
+                <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Luz</p>
+                <p className="text-[15px] leading-relaxed">{cuidado.luz}</p>
+              </div>
+              <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6">
+                <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Riego</p>
+                <p className="text-[15px] leading-relaxed">{cuidado.riego}</p>
+              </div>
+              <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6 md:col-span-2">
+                <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Estructura recomendada</p>
+                <p className="text-[15px] leading-relaxed">{cuidado.estructura}</p>
+              </div>
+            </div>
+          </section>
 
-      {/* ── Frecuencia de riego ── */}
-      <section>
-        <p className="eyebrow mb-5">Frecuencia de riego por zona climática</p>
-        <div className="overflow-hidden rounded-2xl border border-[var(--color-rule)]">
-          <table className="w-full border-collapse text-[14px]">
-            <thead className="bg-[var(--color-surface-2)]">
-              <tr>
-                <th className="px-5 py-3.5 text-left font-semibold text-[var(--color-ink)]">Zona</th>
-                <th className="px-5 py-3.5 text-left font-semibold text-[var(--color-ink)]">Frecuencia</th>
-              </tr>
-            </thead>
-            <tbody>
-              {ZONAS_ORDEN.map((z) => (
-                <tr key={z} className="border-t border-[var(--color-rule)]">
-                  <td className="px-5 py-3.5 text-[var(--color-ink)]">{ZONA_LABELS[z]}</td>
-                  <td className="px-5 py-3.5 text-[var(--color-ink-soft)]">
-                    {cuidado.frecuenciaPorZona[z]}
-                  </td>
-                </tr>
+          {/* ── Frecuencia de riego ── */}
+          <section>
+            <p className="eyebrow mb-5">Frecuencia de riego por zona climática</p>
+            <div className="overflow-hidden rounded-2xl border border-[var(--color-rule)]">
+              <table className="w-full border-collapse text-[14px]">
+                <thead className="bg-[var(--color-surface-2)]">
+                  <tr>
+                    <th className="px-5 py-3.5 text-left font-semibold text-[var(--color-ink)]">Zona</th>
+                    <th className="px-5 py-3.5 text-left font-semibold text-[var(--color-ink)]">Frecuencia</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {ZONAS_ORDEN.map((z) => (
+                    <tr key={z} className="border-t border-[var(--color-rule)]">
+                      <td className="px-5 py-3.5 text-[var(--color-ink)]">{ZONA_LABELS[z]}</td>
+                      <td className="px-5 py-3.5 text-[var(--color-ink-soft)]">
+                        {cuidado.frecuenciaPorZona[z]}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          {/* ── Tips ── */}
+          <section>
+            <p className="eyebrow mb-5">Tips para esta familia</p>
+            <ul className="grid gap-3">
+              {cuidado.tips.map((t, i) => (
+                <li
+                  key={i}
+                  className="flex gap-4 rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-5"
+                >
+                  <Icons.bulb
+                    aria-hidden
+                    className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-warning)]"
+                    strokeWidth={1.5}
+                  />
+                  <p className="text-[14px] leading-relaxed">{t}</p>
+                </li>
               ))}
-            </tbody>
-          </table>
-        </div>
-      </section>
+            </ul>
+          </section>
 
-      {/* ── Tips ── */}
-      <section>
-        <p className="eyebrow mb-5">Tips para esta familia</p>
-        <ul className="grid gap-3">
-          {cuidado.tips.map((t, i) => (
-            <li
-              key={i}
-              className="flex gap-4 rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-5"
-            >
-              <Icons.bulb
-                aria-hidden
-                className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-warning)]"
-                strokeWidth={1.5}
-              />
-              <p className="text-[14px] leading-relaxed">{t}</p>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <Alert variant="warning" title="Señal a vigilar">
-        {cuidado.alerta}
-      </Alert>
+          <Alert variant="warning" title="Señal a vigilar">
+            {cuidado.alerta}
+          </Alert>
+        </>
+      ) : null}
 
       {/* ── Stock por tienda ── */}
       {stockOrdenado.length > 0 ? (

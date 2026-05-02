@@ -1,0 +1,2513 @@
+[
+  {
+    "id": "abelia",
+    "nombre": "ABELIA",
+    "folderSlug": "ABELIA",
+    "fotoUrl": "plantas/ABELIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "abeto",
+    "nombre": "ABETO",
+    "folderSlug": "ABETO",
+    "fotoUrl": "plantas/ABETO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "acer-japonico",
+    "nombre": "ACER JAPONICO",
+    "folderSlug": "ACER_JAPONICO",
+    "fotoUrl": "plantas/ACER_JAPONICO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "achira",
+    "nombre": "ACHIRA",
+    "folderSlug": "ACHIRA",
+    "fotoUrl": "plantas/ACHIRA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "agapanto",
+    "nombre": "AGAPANTO",
+    "folderSlug": "AGAPANTO",
+    "fotoUrl": "plantas/AGAPANTO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "agatea",
+    "nombre": "AGATEA",
+    "folderSlug": "AGATEA",
+    "fotoUrl": "plantas/AGATEA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "agave",
+    "nombre": "AGAVE",
+    "folderSlug": "AGAVE",
+    "fotoUrl": "plantas/AGAVE/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "aji",
+    "nombre": "AJI",
+    "folderSlug": "AJI",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "alamo",
+    "nombre": "ALAMO",
+    "folderSlug": "ALAMO",
+    "fotoUrl": "plantas/ALAMO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "albahaca",
+    "nombre": "ALBAHACA",
+    "folderSlug": "ALBAHACA",
+    "fotoUrl": "plantas/ALBAHACA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "alegria-del-hogar",
+    "nombre": "ALEGRIA DEL HOGAR",
+    "folderSlug": "IMPATIENS",
+    "fotoUrl": "plantas/IMPATIENS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "alegria-doble",
+    "nombre": "ALEGRIA DOBLE",
+    "folderSlug": "IMPATIENS_DOBLE",
+    "fotoUrl": "plantas/IMPATIENS_DOBLE/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "alegria-nueva-guinea",
+    "nombre": "ALEGRIA NUEVA GUINEA",
+    "folderSlug": "NEW_GUINEA",
+    "fotoUrl": "plantas/NEW_GUINEA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "aleli",
+    "nombre": "ALELI",
+    "folderSlug": "ALELI",
+    "fotoUrl": "plantas/ALELI/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "algarrobo",
+    "nombre": "ALGARROBO",
+    "folderSlug": "ALGARROBO",
+    "fotoUrl": "plantas/ALGARROBO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "alissum",
+    "nombre": "ALISSUM",
+    "folderSlug": "ALISSUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "almendro",
+    "nombre": "ALMENDRO",
+    "folderSlug": "ALMENDRO",
+    "fotoUrl": "plantas/ALMENDRO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBOLES FRUTALES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "alocasia",
+    "nombre": "ALOCASIA",
+    "folderSlug": "ALOCASIA",
+    "fotoUrl": "plantas/ALOCASIA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "aloe-vera",
+    "nombre": "ALOE VERA",
+    "folderSlug": "ALOE",
+    "fotoUrl": "plantas/ALOE/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "alstroemeria",
+    "nombre": "ALSTROEMERIA",
+    "folderSlug": "ALSTROEMERIA",
+    "fotoUrl": "plantas/ALSTROEMERIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "amaryllis",
+    "nombre": "AMARYLLIS",
+    "folderSlug": "AMARILIS",
+    "fotoUrl": "plantas/AMARILIS/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "anemona",
+    "nombre": "ANEMONA",
+    "folderSlug": "ANEMONA",
+    "fotoUrl": "plantas/ANEMONA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "FLORALES",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "anigozantho",
+    "nombre": "ANIGOZANTHO",
+    "folderSlug": "ANIGOZANTO",
+    "fotoUrl": "plantas/ANIGOZANTO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "anisodontea",
+    "nombre": "ANISODONTEA",
+    "folderSlug": "ANISODONTEA",
+    "fotoUrl": "plantas/ANISODONTEA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "anturio",
+    "nombre": "ANTURIO",
+    "folderSlug": "ANTURIO",
+    "fotoUrl": "plantas/ANTURIO/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "aphelandra",
+    "nombre": "APHELANDRA",
+    "folderSlug": "APHELANDRA",
+    "fotoUrl": "plantas/APHELANDRA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "aquilegia",
+    "nombre": "AQUILEGIA",
+    "folderSlug": "AGUILEÑA",
+    "fotoUrl": "plantas/AGUILEÑA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "aralia",
+    "nombre": "ARALIA",
+    "folderSlug": "ARALIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "arandano",
+    "nombre": "ARANDANO",
+    "folderSlug": "ARANDANO",
+    "fotoUrl": "plantas/ARANDANO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBOLES FRUTALES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "argyranthemum",
+    "nombre": "ARGYRANTHEMUM",
+    "folderSlug": "ARGYRANTHEMUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "armeria",
+    "nombre": "ARMERIA",
+    "folderSlug": "ARMERIA",
+    "fotoUrl": "plantas/ARMERIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "arrayan",
+    "nombre": "ARRAYAN",
+    "folderSlug": "ARRAYAN",
+    "fotoUrl": "plantas/ARRAYAN/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "arreglo-floral",
+    "nombre": "ARREGLO FLORAL",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "aspidistra",
+    "nombre": "ASPIDISTRA",
+    "folderSlug": "ASPIDISTRA",
+    "fotoUrl": "plantas/ASPIDISTRA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "asplenium",
+    "nombre": "ASPLENIUM",
+    "folderSlug": "ASPLENIUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "aster",
+    "nombre": "ASTER",
+    "folderSlug": "ASTER",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "aucuba",
+    "nombre": "AUCUBA",
+    "folderSlug": "AUCUBA",
+    "fotoUrl": "plantas/AUCUBA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "azalea",
+    "nombre": "AZALEA",
+    "folderSlug": "AZALEA",
+    "fotoUrl": "plantas/AZALEA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "bacopa",
+    "nombre": "BACOPA",
+    "folderSlug": "BACOPA",
+    "fotoUrl": "plantas/BACOPA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "bananero",
+    "nombre": "BANANERO",
+    "folderSlug": "BANANERO",
+    "fotoUrl": "plantas/BANANERO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "begonia",
+    "nombre": "BEGONIA",
+    "folderSlug": "BEGONIA",
+    "fotoUrl": "plantas/BEGONIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "belloto",
+    "nombre": "BELLOTO",
+    "folderSlug": "BELLOTO",
+    "fotoUrl": "plantas/BELLOTO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "benjamina",
+    "nombre": "BENJAMINA",
+    "folderSlug": "BENJAMINA",
+    "fotoUrl": "plantas/BENJAMINA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "bidens",
+    "nombre": "BIDENS",
+    "folderSlug": "BIDENS",
+    "fotoUrl": "plantas/BIDENS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "bignonia",
+    "nombre": "BIGNONIA",
+    "folderSlug": "BIGNONIA",
+    "fotoUrl": "plantas/BIGNONIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "boj",
+    "nombre": "BOJ",
+    "folderSlug": "BOJ",
+    "fotoUrl": "plantas/BOJ/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "boldo",
+    "nombre": "BOLDO",
+    "folderSlug": "BOLDO",
+    "fotoUrl": "plantas/BOLDO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "bougambilia",
+    "nombre": "BOUGAMBILIA",
+    "folderSlug": "BOUGAMBILIA",
+    "fotoUrl": "plantas/BOUGAMBILIA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "FLORALES",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "brachychiton",
+    "nombre": "BRACHYCHITON",
+    "folderSlug": "BRACHYCHITON",
+    "fotoUrl": "plantas/BRACHYCHITON/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "brachyscome",
+    "nombre": "BRACHYSCOME",
+    "folderSlug": "BRACHYSCOME",
+    "fotoUrl": "plantas/BRACHYSCOME/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "buddleja",
+    "nombre": "BUDDLEJA",
+    "folderSlug": "BUDDLEJA",
+    "fotoUrl": "plantas/BUDDLEJA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cactus",
+    "nombre": "CACTUS",
+    "folderSlug": "CACTUS",
+    "fotoUrl": "plantas/CACTUS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cala",
+    "nombre": "CALA",
+    "folderSlug": "CALA",
+    "fotoUrl": "plantas/CALA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "caladium",
+    "nombre": "CALADIUM",
+    "folderSlug": "CALADIUM",
+    "fotoUrl": "plantas/CALADIUM/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "calamandrina",
+    "nombre": "CALAMANDRINA",
+    "folderSlug": "CALAMANDRINA",
+    "fotoUrl": "plantas/CALAMANDRINA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "calathea",
+    "nombre": "CALATHEA",
+    "folderSlug": "CALATHEA",
+    "fotoUrl": "plantas/CALATHEA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "FLORALES",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "calceolaria",
+    "nombre": "CALCEOLARIA",
+    "folderSlug": "CALCEOLARIA",
+    "fotoUrl": "plantas/CALCEOLARIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "calendula",
+    "nombre": "CALENDULA",
+    "folderSlug": "CALENDULA",
+    "fotoUrl": "plantas/CALENDULA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "calibrachoa",
+    "nombre": "CALIBRACHOA",
+    "folderSlug": "CALIBRACHOA",
+    "fotoUrl": "plantas/CALIBRACHOA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "calle",
+    "nombre": "CALLE",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "callisia",
+    "nombre": "CALLISIA",
+    "folderSlug": "CALLISIA",
+    "fotoUrl": "plantas/CALLISIA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "calocephalus",
+    "nombre": "CALOCEPHALUS",
+    "folderSlug": "CALOCEPHALUS",
+    "fotoUrl": "plantas/CALOCEPHALUS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "camelia",
+    "nombre": "CAMELIA",
+    "folderSlug": "CAMELIA",
+    "fotoUrl": "plantas/CAMELIA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FLOR",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "canelo",
+    "nombre": "CANELO",
+    "folderSlug": "CANELO",
+    "fotoUrl": "plantas/CANELO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBOLES FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cardenal",
+    "nombre": "CARDENAL",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "carex",
+    "nombre": "CAREX",
+    "folderSlug": "CAREX",
+    "fotoUrl": "plantas/CAREX/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "ceanothus",
+    "nombre": "CEANOTHUS",
+    "folderSlug": "CEANOTHUS",
+    "fotoUrl": "plantas/CEANOTHUS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cedro",
+    "nombre": "CEDRO",
+    "folderSlug": "CEDRO",
+    "fotoUrl": "plantas/CEDRO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cedron",
+    "nombre": "CEDRON",
+    "folderSlug": "CEDRON",
+    "fotoUrl": "plantas/CEDRON/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "celosia",
+    "nombre": "CELOSIA",
+    "folderSlug": "CELOSIA",
+    "fotoUrl": "plantas/CELOSIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cerezo",
+    "nombre": "CEREZO",
+    "folderSlug": "CEREZO",
+    "fotoUrl": "plantas/CEREZO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "chamadorea",
+    "nombre": "CHAMADOREA",
+    "folderSlug": "CHAMADOREA",
+    "fotoUrl": "plantas/CHAMADOREA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "chilco",
+    "nombre": "CHILCO",
+    "folderSlug": "CHILCO",
+    "fotoUrl": "plantas/CHILCO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "choisya",
+    "nombre": "CHOISYA",
+    "folderSlug": "CHOISYA",
+    "fotoUrl": "plantas/CHOISYA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "ciboulette",
+    "nombre": "CIBOULETTE",
+    "folderSlug": "CIBOULETTE",
+    "fotoUrl": "plantas/CIBOULETTE/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cilantro",
+    "nombre": "CILANTRO",
+    "folderSlug": "CILANTRO",
+    "fotoUrl": "plantas/CILANTRO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cineraria",
+    "nombre": "CINERARIA",
+    "folderSlug": "CINERARIA",
+    "fotoUrl": "plantas/CINERARIA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FLOR",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "cinta",
+    "nombre": "CINTA",
+    "folderSlug": "CINTA",
+    "fotoUrl": "plantas/CINTA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "ciruelo",
+    "nombre": "CIRUELO",
+    "folderSlug": "CIRUELO",
+    "fotoUrl": "plantas/CIRUELO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cissus",
+    "nombre": "CISSUS",
+    "folderSlug": "CISSUS",
+    "fotoUrl": "plantas/CISSUS/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "citrico",
+    "nombre": "CITRICO",
+    "folderSlug": "CITRICO",
+    "fotoUrl": "plantas/CITRICO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "clavel",
+    "nombre": "CLAVEL",
+    "folderSlug": "CLAVEL",
+    "fotoUrl": "plantas/CLAVEL/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "HERBACEAS PERENES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "clavelina",
+    "nombre": "CLAVELINA",
+    "folderSlug": "CLAVELINA",
+    "fotoUrl": "plantas/CLAVELINA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "clavelon",
+    "nombre": "CLAVELON",
+    "folderSlug": "CLAVELON",
+    "fotoUrl": "plantas/CLAVELON/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "clematides",
+    "nombre": "CLEMATIDES",
+    "folderSlug": "CLEMATIDES",
+    "fotoUrl": "plantas/CLEMATIDES/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "coleus",
+    "nombre": "COLEUS",
+    "folderSlug": "COLEUS",
+    "fotoUrl": "plantas/COLEUS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "convolvulus",
+    "nombre": "CONVOLVULUS",
+    "folderSlug": "CONVOLVULUS",
+    "fotoUrl": "plantas/CONVOLVULUS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "coprosma",
+    "nombre": "COPROSMA",
+    "folderSlug": "COPROSMA",
+    "fotoUrl": "plantas/COPROSMA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "coreopsis",
+    "nombre": "COREOPSIS",
+    "folderSlug": "COREOPSIS",
+    "fotoUrl": "plantas/COREOPSIS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "correa",
+    "nombre": "CORREA",
+    "folderSlug": "CORREA",
+    "fotoUrl": "plantas/CORREA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cotoneaster",
+    "nombre": "COTONEASTER",
+    "folderSlug": "COTONEASTER",
+    "fotoUrl": "plantas/COTONEASTER/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cotula",
+    "nombre": "COTULA",
+    "folderSlug": "COTULA",
+    "fotoUrl": "plantas/COTULA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "crespon",
+    "nombre": "CRESPON",
+    "folderSlug": "CRESPON",
+    "fotoUrl": "plantas/CRESPON/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "crisantemo",
+    "nombre": "CRISANTEMO",
+    "folderSlug": "CRISANTEMO",
+    "fotoUrl": "plantas/CRISANTEMO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "crocus",
+    "nombre": "CROCUS",
+    "folderSlug": "CROCUS",
+    "fotoUrl": "plantas/CROCUS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "croton",
+    "nombre": "CROTON",
+    "folderSlug": "CROTON",
+    "fotoUrl": "plantas/CROTON/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cuphea",
+    "nombre": "CUPHEA",
+    "folderSlug": "CUPHEA",
+    "fotoUrl": "plantas/CUPHEA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cyca",
+    "nombre": "CYCA",
+    "folderSlug": "CYCA",
+    "fotoUrl": "plantas/CYCA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "cyclamen",
+    "nombre": "CYCLAMEN",
+    "folderSlug": "CYCLAMEN",
+    "fotoUrl": "plantas/CYCLAMEN/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "HERBACEAS PERENES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "dalia",
+    "nombre": "DALIA",
+    "folderSlug": "DALIA",
+    "fotoUrl": "plantas/DALIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "dianthus",
+    "nombre": "DIANTHUS",
+    "folderSlug": "DIANTHUS",
+    "fotoUrl": "plantas/DIANTHUS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "dietes",
+    "nombre": "DIETES",
+    "folderSlug": "DIETES",
+    "fotoUrl": "plantas/DIETES/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "diffenbachia",
+    "nombre": "DIFFENBACHIA",
+    "folderSlug": "DIFFENBACHIA",
+    "fotoUrl": "plantas/DIFFENBACHIA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "digitalis",
+    "nombre": "DIGITALIS",
+    "folderSlug": "DIGITALIS",
+    "fotoUrl": "plantas/DIGITALIS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "diosma",
+    "nombre": "DIOSMA",
+    "folderSlug": "DIOSMA",
+    "fotoUrl": "plantas/DIOSMA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "dipladenia",
+    "nombre": "DIPLADENIA",
+    "folderSlug": "DIPLADENIA",
+    "fotoUrl": "plantas/DIPLADENIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "dracena",
+    "nombre": "DRACENA",
+    "folderSlug": "DRACENA",
+    "fotoUrl": "plantas/DRACENA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "durazno",
+    "nombre": "DURAZNO",
+    "folderSlug": "DURAZNERO",
+    "fotoUrl": "plantas/DURAZNERO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "echeveria",
+    "nombre": "ECHEVERIA",
+    "folderSlug": "ECHEVERIA",
+    "fotoUrl": "plantas/ECHEVERIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "echinacea",
+    "nombre": "ECHINACEA",
+    "folderSlug": "EQUINACEA",
+    "fotoUrl": "plantas/EQUINACEA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "equisetum",
+    "nombre": "EQUISETUM",
+    "folderSlug": "EQUISETUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "escalonia",
+    "nombre": "ESCALONIA",
+    "folderSlug": "ESCALLONIA",
+    "fotoUrl": "plantas/ESCALLONIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "esparraguera",
+    "nombre": "ESPARRAGUERA",
+    "folderSlug": "ESPARRAGUERA",
+    "fotoUrl": "plantas/ESPARRAGUERA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "espino",
+    "nombre": "ESPINO",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "eucalyptus",
+    "nombre": "EUCALYPTUS",
+    "folderSlug": "EUCALYPTUS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "eugenia",
+    "nombre": "EUGENIA",
+    "folderSlug": "EUGENIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "exacum",
+    "nombre": "EXACUM",
+    "folderSlug": "EXACUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "ficus",
+    "nombre": "FICUS",
+    "folderSlug": "FICUS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "ficus-ali",
+    "nombre": "FICUS ALI",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "frambuesa",
+    "nombre": "FRAMBUESA",
+    "folderSlug": "FRAMBUESA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "frutilla",
+    "nombre": "FRUTILLA",
+    "folderSlug": "FRUTILLA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "fucsia",
+    "nombre": "FUCSIA",
+    "folderSlug": "FUCSIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "gallardia",
+    "nombre": "GALLARDIA",
+    "folderSlug": "GALLARDIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "gardenia",
+    "nombre": "GARDENIA",
+    "folderSlug": "GARDENIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "gaura",
+    "nombre": "GAURA",
+    "folderSlug": "GAURA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "gazania",
+    "nombre": "GAZANIA",
+    "folderSlug": "GAZANIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "geranio",
+    "nombre": "GERANIO",
+    "folderSlug": "GERANIO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "HERBACEAS PERENES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "gerbera",
+    "nombre": "GERBERA",
+    "folderSlug": "GERBERA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "geum",
+    "nombre": "GEUM",
+    "folderSlug": "GEUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "girasol",
+    "nombre": "GIRASOL",
+    "folderSlug": "GIRASOL",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "gloxinia",
+    "nombre": "GLOXINIA",
+    "folderSlug": "GLOXINIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "gomero",
+    "nombre": "GOMERO",
+    "folderSlug": "GOMERO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "FLORALES",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "hebe",
+    "nombre": "HEBE",
+    "folderSlug": "HEBE",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "helecho",
+    "nombre": "HELECHO",
+    "folderSlug": "HELECHO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FLOR",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "heliotropo",
+    "nombre": "HELIOTROPO",
+    "folderSlug": "HELIOTROPO",
+    "fotoUrl": "plantas/HELIOTROPO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "helleborus",
+    "nombre": "HELLEBORUS",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "hemerocallis",
+    "nombre": "HEMEROCALLIS",
+    "folderSlug": "HEMEROCALLIS",
+    "fotoUrl": "plantas/HEMEROCALLIS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "heuchera",
+    "nombre": "HEUCHERA",
+    "folderSlug": "HEUCHERA",
+    "fotoUrl": "plantas/HEUCHERA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "hibisco",
+    "nombre": "HIBISCO",
+    "folderSlug": "HIBISCO",
+    "fotoUrl": "plantas/HIBISCO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "hiedra",
+    "nombre": "HIEDRA",
+    "folderSlug": "HIEDRA",
+    "fotoUrl": "plantas/HIEDRA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "hortensia",
+    "nombre": "HORTENSIA",
+    "folderSlug": "HORTENSIA",
+    "fotoUrl": "plantas/HORTENSIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "hypoestes",
+    "nombre": "HYPOESTES",
+    "folderSlug": "HYPOESTES",
+    "fotoUrl": "plantas/HYPOESTES/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "incienso",
+    "nombre": "INCIENSO",
+    "folderSlug": "INCIENSO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "iris",
+    "nombre": "IRIS",
+    "folderSlug": "IRIS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "jacaranda",
+    "nombre": "JACARANDA",
+    "folderSlug": "JACARANDA",
+    "fotoUrl": "plantas/JACARANDA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBOLES FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "jacinto",
+    "nombre": "JACINTO",
+    "folderSlug": "JACINTO",
+    "fotoUrl": "plantas/JACINTO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "FLORALES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "jade",
+    "nombre": "JADE",
+    "folderSlug": "JADE",
+    "fotoUrl": "plantas/JADE/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "jazmin",
+    "nombre": "JAZMIN",
+    "folderSlug": "JAZMIN",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "juncus",
+    "nombre": "JUNCUS",
+    "folderSlug": "JUNCUS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "junipero",
+    "nombre": "JUNIPERO",
+    "folderSlug": "JUNIPERO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "kalanchoe",
+    "nombre": "KALANCHOE",
+    "folderSlug": "KALANCHOE",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "kentia",
+    "nombre": "KENTIA",
+    "folderSlug": "KENTIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "kokedama",
+    "nombre": "KOKEDAMA",
+    "folderSlug": "KOKEDAMA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "kumquat",
+    "nombre": "KUMQUAT",
+    "folderSlug": "KUMQUAT",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "lamium",
+    "nombre": "LAMIUM",
+    "folderSlug": "LAMIUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "lantana",
+    "nombre": "LANTANA",
+    "folderSlug": "LANTANA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "laurel",
+    "nombre": "LAUREL",
+    "folderSlug": "LAUREL",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "laurentina",
+    "nombre": "LAURENTINA",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "lavanda",
+    "nombre": "LAVANDA",
+    "folderSlug": "LAVANDA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "leptospermum",
+    "nombre": "LEPTOSPERMUM",
+    "folderSlug": "LEPTOSPERMUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "leucanthemum",
+    "nombre": "LEUCANTHEMUM",
+    "folderSlug": "LEUCANTHEMUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "leucophyta",
+    "nombre": "LEUCOPHYTA",
+    "folderSlug": "LEUCOPHYTA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "ligustrina",
+    "nombre": "LIGUSTRINA",
+    "folderSlug": "LIGUSTRINA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "ligustro",
+    "nombre": "LIGUSTRO",
+    "folderSlug": "LIGUSTRO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "lilium",
+    "nombre": "LILIUM",
+    "folderSlug": "LILIUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "limon",
+    "nombre": "LIMON",
+    "folderSlug": "LIMON",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBOLES FRUTALES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "limonium",
+    "nombre": "LIMONIUM",
+    "folderSlug": "LIMONIUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "liquidambar",
+    "nombre": "LIQUIDAMBAR",
+    "folderSlug": "LIQUIDAMBAR",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "lisianthus",
+    "nombre": "LISIANTHUS",
+    "folderSlug": "LISIANTHUS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "lithodora",
+    "nombre": "LITHODORA",
+    "folderSlug": "LITHODORA",
+    "fotoUrl": "plantas/LITHODORA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "HERBACEAS PERENES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "lobelia",
+    "nombre": "LOBELIA",
+    "folderSlug": "LOBELIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "lonicera",
+    "nombre": "LONICERA",
+    "folderSlug": "LONICERA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "lysimachia",
+    "nombre": "LYSIMACHIA",
+    "folderSlug": "LYSIMACHIA",
+    "fotoUrl": "plantas/LYSIMACHIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "HERBACEAS PERENES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "madrono",
+    "nombre": "MADRONO",
+    "folderSlug": "MADROÑO",
+    "fotoUrl": "plantas/MADROÑO/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "magnolio",
+    "nombre": "MAGNOLIO",
+    "folderSlug": "MAGNOLIA",
+    "fotoUrl": "plantas/MAGNOLIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "maiten",
+    "nombre": "MAITEN",
+    "folderSlug": "MAITEN",
+    "fotoUrl": "plantas/MAITEN/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "mandarino",
+    "nombre": "MANDARINO",
+    "folderSlug": "MANDARINO",
+    "fotoUrl": "plantas/MANDARINO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "manzano",
+    "nombre": "MANZANO",
+    "folderSlug": "MANZANO",
+    "fotoUrl": "plantas/MANZANO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "maranta",
+    "nombre": "MARANTA",
+    "folderSlug": "MARANTA",
+    "fotoUrl": "plantas/MARANTA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "marigold",
+    "nombre": "MARIGOLD",
+    "folderSlug": "MARIGOLD",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "melisa",
+    "nombre": "MELISA",
+    "folderSlug": "MELISA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "membrillo",
+    "nombre": "MEMBRILLO",
+    "folderSlug": "MEMBRILLO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "menta",
+    "nombre": "MENTA",
+    "folderSlug": "MENTA",
+    "fotoUrl": "plantas/MENTA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "HERBACEAS AROMÁTICAS",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "mioporo",
+    "nombre": "MIOPORO",
+    "folderSlug": "MIOPORO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "monstera",
+    "nombre": "MONSTERA",
+    "folderSlug": "MONSTERA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "murta",
+    "nombre": "MURTA",
+    "folderSlug": "MURTILLA",
+    "fotoUrl": "plantas/MURTILLA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "musa",
+    "nombre": "MUSA",
+    "folderSlug": "MUSA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FLOR",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "nandina",
+    "nombre": "NANDINA",
+    "folderSlug": "NANDINA",
+    "fotoUrl": "plantas/NANDINA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "naranjo",
+    "nombre": "NARANJO",
+    "folderSlug": "NARANJO",
+    "fotoUrl": "plantas/NARANJO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBOLES FRUTALES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "narciso",
+    "nombre": "NARCISO",
+    "folderSlug": "NARCISO",
+    "fotoUrl": "plantas/NARCISO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "FLORALES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "neanthe",
+    "nombre": "NEANTHE",
+    "folderSlug": "CHAMADOREA",
+    "fotoUrl": "plantas/CHAMADOREA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "nicolai",
+    "nombre": "NICOLAI",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "nogal",
+    "nombre": "NOGAL",
+    "folderSlug": "NOGAL",
+    "fotoUrl": "plantas/NOGAL/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBOLES FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "olivo",
+    "nombre": "OLIVO",
+    "folderSlug": "OLIVO",
+    "fotoUrl": "plantas/OLIVO/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "FLORALES",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "oregano",
+    "nombre": "OREGANO",
+    "folderSlug": "OREGANO",
+    "fotoUrl": "plantas/OREGANO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "HERBACEAS AROMÁTICAS",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "ornithogalum",
+    "nombre": "ORNITHOGALUM",
+    "folderSlug": "ORNITOGALO",
+    "fotoUrl": "plantas/ORNITOGALO/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "orquidea",
+    "nombre": "ORQUIDEA",
+    "folderSlug": "PHALAENOPSIS",
+    "fotoUrl": "plantas/PHALAENOPSIS/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "HERBACEAS PERENES",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "osmanthus",
+    "nombre": "OSMANTHUS",
+    "folderSlug": "OSMANTHUS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "osteospermum",
+    "nombre": "OSTEOSPERMUM",
+    "folderSlug": "OSTEOSPERMUM",
+    "fotoUrl": "plantas/OSTEOSPERMUM/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "palmera-abanico",
+    "nombre": "PALMERA ABANICO",
+    "folderSlug": "WASHINGTONIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "palmera-areca",
+    "nombre": "PALMERA ARECA",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "palmera-cocos-plumosa",
+    "nombre": "PALMERA COCOS PLUMOSA",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "palmera-kentia",
+    "nombre": "PALMERA KENTIA",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "palmera-neanthe-bella",
+    "nombre": "PALMERA NEANTHE BELLA",
+    "folderSlug": "CHAMADOREA",
+    "fotoUrl": "plantas/CHAMADOREA/image.webp",
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "palo-de-agua",
+    "nombre": "PALO DE AGUA",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "papiro",
+    "nombre": "PAPIRO",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "paquerette",
+    "nombre": "PAQUERETTE",
+    "folderSlug": "PAQUERETTE",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "parkinsonia",
+    "nombre": "PARKINSONIA",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "passiflora",
+    "nombre": "PASSIFLORA",
+    "folderSlug": "PASSIFLORA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "pata-de-guanaco",
+    "nombre": "PATA DE GUANACO",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "pata-de-jaiba",
+    "nombre": "PATA DE JAIBA",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "pelargonio",
+    "nombre": "PELARGONIO",
+    "folderSlug": "PELARGONIO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "pennisetum",
+    "nombre": "PENNISETUM",
+    "folderSlug": "PENNISETUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "peperomia",
+    "nombre": "PEPEROMIA",
+    "folderSlug": "PEPEROMIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FLOR",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "peral",
+    "nombre": "PERAL",
+    "folderSlug": "PERAL",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "perejil",
+    "nombre": "PEREJIL",
+    "folderSlug": "PEREJIL",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "perovskia",
+    "nombre": "PEROVSKIA",
+    "folderSlug": "PEROVSKIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "petunia",
+    "nombre": "PETUNIA",
+    "folderSlug": "PETUNIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "peumo",
+    "nombre": "PEUMO",
+    "folderSlug": "PEUMO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "philodendro",
+    "nombre": "PHILODENDRO",
+    "folderSlug": "PHILODENDRO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "pilea",
+    "nombre": "PILEA",
+    "folderSlug": "PILEA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "pimenton",
+    "nombre": "PIMENTON",
+    "folderSlug": "PIMENTON",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "HERBACEAS AROMÁTICAS",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "pino",
+    "nombre": "PINO",
+    "folderSlug": "PINO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "pitosporo",
+    "nombre": "PITOSPORO",
+    "folderSlug": "PITOSPORO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "platycodon",
+    "nombre": "PLATYCODON",
+    "folderSlug": "PLATYCODON",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "plectranthus",
+    "nombre": "PLECTRANTHUS",
+    "folderSlug": "PLECTRANTHUS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "plumbago",
+    "nombre": "PLUMBAGO",
+    "folderSlug": "PLUMBAGO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "poinsettia",
+    "nombre": "POINSETTIA",
+    "folderSlug": "POINSETTIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FLOR",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "pomelo",
+    "nombre": "POMELO",
+    "folderSlug": "POMELO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "pothus",
+    "nombre": "POTHUS",
+    "folderSlug": "POTHUS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "primula",
+    "nombre": "PRIMULA",
+    "folderSlug": "PRIMULA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "quebracho",
+    "nombre": "QUEBRACHO",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "quillay",
+    "nombre": "QUILLAY",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "ranunculo",
+    "nombre": "RANUNCULO",
+    "folderSlug": "RANUNCULO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FLOR",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "rhaphidophora",
+    "nombre": "RHAPHIDOPHORA",
+    "folderSlug": "RHAPHIDOPHORA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "rhus",
+    "nombre": "RHUS",
+    "folderSlug": "RHUS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "roble",
+    "nombre": "ROBLE",
+    "folderSlug": "ROBLE",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "rododendro",
+    "nombre": "RODODENDRO",
+    "folderSlug": "RODODENDRO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "romero",
+    "nombre": "ROMERO",
+    "folderSlug": "ROMERO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA DE FLOR",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "rosa",
+    "nombre": "ROSA",
+    "folderSlug": "ROSA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "rosario",
+    "nombre": "ROSARIO",
+    "folderSlug": "ROSARIO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "ruda",
+    "nombre": "RUDA",
+    "folderSlug": "RUDA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "salvia",
+    "nombre": "SALVIA",
+    "folderSlug": "SALVIA",
+    "fotoUrl": "plantas/SALVIA/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "sansevieria",
+    "nombre": "SANSEVIERIA",
+    "folderSlug": "SANSEVIERIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "sarcococca",
+    "nombre": "SARCOCOCCA",
+    "folderSlug": "SARCOCOCCA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "saxifraga",
+    "nombre": "SAXIFRAGA",
+    "folderSlug": "SAXIFRAGA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "schefflera",
+    "nombre": "SCHEFFLERA",
+    "folderSlug": "SCHEFFLERA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "scindapsus",
+    "nombre": "SCINDAPSUS",
+    "folderSlug": "SCINDAPSUS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FLOR",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "sedum",
+    "nombre": "SEDUM",
+    "folderSlug": "SEDUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "selaginella",
+    "nombre": "SELAGINELLA",
+    "folderSlug": "SELAGINELLA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FLOR",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "senecio",
+    "nombre": "SENECIO",
+    "folderSlug": "SENECIO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "FLORALES",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "solanum",
+    "nombre": "SOLANUM",
+    "folderSlug": "SOLANUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "spathiphyllum",
+    "nombre": "SPATHIPHYLLUM",
+    "folderSlug": "SPATHIPHYLLUM",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "stenocarpo",
+    "nombre": "STENOCARPO",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBOLES PALMERAS",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "stephanotis",
+    "nombre": "STEPHANOTIS",
+    "folderSlug": "STEPHANOTIS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "stipa",
+    "nombre": "STIPA",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "strelitzia",
+    "nombre": "STRELITZIA",
+    "folderSlug": "STRELITZIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "suculenta",
+    "nombre": "SUCULENTA",
+    "folderSlug": "SUCULENTA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "syngonio",
+    "nombre": "SYNGONIO",
+    "folderSlug": "SYNGONIO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "tagete",
+    "nombre": "TAGETE",
+    "folderSlug": "TAGETE",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "tangelo",
+    "nombre": "TANGELO",
+    "folderSlug": "TANGELO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "tara",
+    "nombre": "TARA",
+    "folderSlug": null,
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "taxus",
+    "nombre": "TAXUS",
+    "folderSlug": "TAXUS",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "thuja",
+    "nombre": "THUJA",
+    "folderSlug": "THUJA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "tilo",
+    "nombre": "TILO",
+    "folderSlug": "TILO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "tobira",
+    "nombre": "TOBIRA",
+    "folderSlug": "TOBIRA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "tomate",
+    "nombre": "TOMATE",
+    "folderSlug": "TOMATE",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "tomillo",
+    "nombre": "TOMILLO",
+    "folderSlug": "TOMILLO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "toronjil",
+    "nombre": "TORONJIL",
+    "folderSlug": "TORONJIL",
+    "fotoUrl": "plantas/TORONJIL/image.webp",
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "tradescantia",
+    "nombre": "TRADESCANTIA",
+    "folderSlug": "TRADESCANTIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FLOR",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "tulipan",
+    "nombre": "TULIPAN",
+    "folderSlug": "TULIPAN",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "tulipero",
+    "nombre": "TULIPERO",
+    "folderSlug": "TULIPERO",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "ARBUSTIVA FOLLAJE",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "verbena",
+    "nombre": "VERBENA",
+    "folderSlug": "VERBENA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "veronica",
+    "nombre": "VERONICA",
+    "folderSlug": "VERONICA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "vinca",
+    "nombre": "VINCA",
+    "folderSlug": "VINCA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN PRIMAV/VERAN",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "viola",
+    "nombre": "VIOLA",
+    "folderSlug": "VIOLA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "westringia",
+    "nombre": "WESTRINGIA",
+    "folderSlug": "WESTRINGIA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE EXTERIOR",
+    "grupo": "PLANTIN OTOÑ/INVIER",
+    "fotoPlaceholder": "hsl(80 22% 90%)"
+  },
+  {
+    "id": "yuca",
+    "nombre": "YUCA",
+    "folderSlug": "YUCA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  },
+  {
+    "id": "yucca",
+    "nombre": "YUCCA",
+    "folderSlug": "YUCCA",
+    "fotoUrl": null,
+    "subrubro": "PLANTAS DE INTERIOR",
+    "grupo": "PLANTA INTERIOR FOLL",
+    "fotoPlaceholder": "hsl(150 18% 92%)"
+  }
+]
