@@ -42,3 +42,9 @@ export function getPlantVideo(fotoUrl?: string): string | undefined {
   if (!slug) return undefined;
   return PLANT_VIDEO_MAP[slug];
 }
+
+/** Get video filename directly from a folder slug (used by catalog entries). */
+export function getPlantVideoBySlug(folderSlug?: string | null): string | undefined {
+  if (!folderSlug) return undefined;
+  return PLANT_VIDEO_MAP[folderSlug];
+}

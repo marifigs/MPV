@@ -8,6 +8,7 @@ import type { CatalogPlant } from '@/data';
 import { SearchBar } from '@/components/ui/search-bar';
 import { Icons } from '@/lib/icons';
 import { cn } from '@/lib/cn';
+import { getPlantVideoBySlug } from '@/lib/plant-video-map';
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 function capitalize(str: string): string {
@@ -114,123 +115,91 @@ export function PlantasExplorer() {
   );
 }
 
+// ── Card video (plays when visible) ──────────────────────────────────────────
+function CardVideo({ videoFile }: { videoFile: string }) {
+  const ref = React.useRef<HTMLVideoElement>(null);
+  React.useEffect(() => {
+    const video = ref.current;
+    if (!video) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) video.play().catch(() => {});
+        else video.pause();
+      },
+      { threshold: 0.2 }
+    );
+    io.observe(video);
+    return () => io.disconnect();
+  }, []);
+  return (
+    <video
+      ref={ref}
+      muted loop playsInline preload="none"
+      style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
+    >
+      <source src={`/MPV/v2/videos/${videoFile}.mp4`} type="video/mp4" />
+    </video>
+  );
+}
+
+// ── Card overlay (shared between image and video cards) ───────────────────────
+function CardOverlay({ label, nombre }: { label: string; nombre: string }) {
+  return (
+    <>
+      <div style={{
+        position: 'absolute', inset: 0, pointerEvents: 'none',
+        background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.22) 45%, transparent 68%)',
+      }} />
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px' }}>
+        <p className="eyebrow" style={{ color: 'rgba(255,255,255,0.50)', marginBottom: '4px', fontSize: '10px' }}>
+          {label}
+        </p>
+        <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'white', fontSize: '18px', lineHeight: 1.25, fontWeight: 400 }}>
+          {capitalize(nombre)}
+        </p>
+      </div>
+    </>
+  );
+}
+
 // ── Luxury portrait card ──────────────────────────────────────────────────────
 function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
   const label = plant.subrubro === 'PLANTAS DE INTERIOR' ? 'Interior' : 'Exterior';
+  const videoFile = getPlantVideoBySlug(plant.folderSlug);
 
   return (
     <Link
       href={`/plantas/${plant.id}`}
       className={cn('group block overflow-hidden rounded-xl transition-transform duration-300 hover:scale-[1.02]')}
-      style={{ aspectRatio: '3/4', display: 'block' }}
+      style={{ aspectRatio: '3/4', display: 'block', position: 'relative' }}
     >
-      {plant.fotoUrl ? (
-        /* ── With image: full-bleed + gradient overlay ── */
+      {videoFile ? (
+        /* ── Video card ── */
+        <div style={{ position: 'relative', height: '100%', width: '100%' }}>
+          <CardVideo videoFile={videoFile} />
+          <CardOverlay label={label} nombre={plant.nombre} />
+        </div>
+      ) : plant.fotoUrl ? (
+        /* ── Photo card ── */
         <div style={{ position: 'relative', height: '100%', width: '100%' }}>
           <img
             src={`/MPV/v2/${plant.fotoUrl}`}
             alt=""
             loading="lazy"
             decoding="async"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              transition: 'transform 0.5s ease',
-            }}
+            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
             className="group-hover:scale-105"
           />
-          {/* Gradient overlay — 40% bottom */}
-          <div
-            style={{
-              position: 'absolute',
-              inset: 0,
-              background:
-                'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.28) 40%, transparent 65%)',
-              pointerEvents: 'none',
-            }}
-          />
-          {/* Text layer */}
-          <div
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              right: 0,
-              padding: '16px',
-            }}
-          >
-            <p
-              className="eyebrow"
-              style={{ color: 'rgba(255,255,255,0.55)', marginBottom: '4px', fontSize: '10px' }}
-            >
-              {label}
-            </p>
-            <p
-              style={{
-                fontFamily: 'var(--font-display)',
-                fontStyle: 'italic',
-                color: 'white',
-                fontSize: '18px',
-                lineHeight: 1.25,
-                fontWeight: 400,
-              }}
-            >
-              {capitalize(plant.nombre)}
-            </p>
-          </div>
+          <CardOverlay label={label} nombre={plant.nombre} />
         </div>
       ) : (
-        /* ── Without image: warm placeholder ── */
-        <div
-          style={{
-            background: plant.fotoPlaceholder,
-            height: '100%',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'flex-end',
-            padding: '20px',
-            position: 'relative',
-            overflow: 'hidden',
-          }}
-        >
-          {/* Big initial letter as decorative background */}
-          <p
-            aria-hidden
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontSize: '96px',
-              opacity: 0.08,
-              lineHeight: 1,
-              color: 'var(--color-ink)',
-              position: 'absolute',
-              top: '12px',
-              left: '16px',
-              userSelect: 'none',
-            }}
-          >
+        /* ── Placeholder card ── */
+        <div style={{ background: plant.fotoPlaceholder, height: '100%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '20px', position: 'relative', overflow: 'hidden' }}>
+          <p aria-hidden style={{ fontFamily: 'var(--font-display)', fontSize: '96px', opacity: 0.08, lineHeight: 1, color: 'var(--color-ink)', position: 'absolute', top: '12px', left: '16px', userSelect: 'none' }}>
             {plant.nombre[0]}
           </p>
-          {/* Labels */}
-          <p
-            className="eyebrow"
-            style={{ color: 'var(--color-ink-soft)', marginBottom: '4px', fontSize: '10px' }}
-          >
-            {label}
-          </p>
-          <p
-            style={{
-              fontFamily: 'var(--font-display)',
-              fontStyle: 'italic',
-              fontSize: '18px',
-              lineHeight: 1.25,
-              fontWeight: 400,
-              color: 'var(--color-ink)',
-            }}
-          >
+          <p className="eyebrow" style={{ color: 'var(--color-ink-soft)', marginBottom: '4px', fontSize: '10px' }}>{label}</p>
+          <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: '18px', lineHeight: 1.25, fontWeight: 400, color: 'var(--color-ink)' }}>
             {capitalize(plant.nombre)}
           </p>
         </div>
