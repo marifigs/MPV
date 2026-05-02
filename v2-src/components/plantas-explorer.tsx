@@ -33,6 +33,7 @@ export function PlantasExplorer() {
   const [q, setQ] = React.useState('');
   const [subrubro, setSubrubro] = React.useState('');
   const [shown, setShown] = React.useState(PAGE);
+  const sentinelRef = React.useRef<HTMLDivElement>(null);
 
   const filtered = React.useMemo<CatalogPlant[]>(() => {
     let list: CatalogPlant[] = catalog;
@@ -47,39 +48,63 @@ export function PlantasExplorer() {
     setShown(PAGE);
   }, [q, subrubro]);
 
+  React.useEffect(() => {
+    const el = sentinelRef.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => { if (entry?.isIntersecting) setShown(s => s + PAGE); },
+      { rootMargin: '200px' }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div className="space-y-6">
       {/* Filters */}
-      <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
-        <SearchBar
-          value={q}
-          onChange={(e) => setQ(e.target.value)}
-          onClear={() => setQ('')}
-          placeholder="Buscar planta por nombre…"
-          aria-label="Buscar planta"
-        />
-        <select
-          value={subrubro}
-          onChange={(e) => setSubrubro(e.target.value)}
-          className="h-12 rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] px-4 text-[14px] text-[var(--color-ink)] cursor-pointer hover:border-[var(--color-green-soft)] transition-colors"
-          aria-label="Filtrar por interior o exterior"
-        >
-          <option value="">Interior y exterior</option>
-          <option value="PLANTAS DE INTERIOR">Solo interior</option>
-          <option value="PLANTAS DE EXTERIOR">Solo exterior</option>
-        </select>
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+        <div className="flex-1">
+          <SearchBar
+            value={q}
+            onChange={(e) => setQ(e.target.value)}
+            onClear={() => setQ('')}
+            placeholder="Buscar planta por nombre…"
+            aria-label="Buscar planta"
+          />
+        </div>
+        <div className="flex gap-2">
+          {[
+            { v: '', label: 'Todas' },
+            { v: 'PLANTAS DE INTERIOR', label: 'Interior' },
+            { v: 'PLANTAS DE EXTERIOR', label: 'Exterior' },
+          ].map(({ v, label }) => (
+            <button
+              key={v}
+              type="button"
+              onClick={() => setSubrubro(v)}
+              className="rounded-full px-4 py-2 text-[13px] font-medium transition-all"
+              style={
+                subrubro === v
+                  ? { background: 'var(--color-ink)', color: 'var(--color-cream)' }
+                  : { border: '1px solid var(--color-rule)', background: 'var(--color-surface)', color: 'var(--color-ink-soft)' }
+              }
+            >
+              {label}
+            </button>
+          ))}
+        </div>
       </div>
 
       {/* Count */}
       <p className="text-[13px] text-[var(--color-ink-soft)]">
-        <span className="font-semibold text-[var(--color-ink)]">{filtered.length}</span> de{' '}
-        {catalog.length} plantas
+        <span className="font-semibold text-[var(--color-ink)]">{filtered.length}</span>
+        {filtered.length !== catalog.length && ` de ${catalog.length}`} plantas
       </p>
 
       {/* Grid */}
       <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        {filtered.slice(0, shown).map((p) => (
-          <li key={p.id}>
+        {filtered.slice(0, shown).map((p, index) => (
+          <li key={p.id} className="animate-fade-up" style={{ animationDelay: `${Math.min(index, 20) * 0.025}s`, opacity: 0 }}>
             <LuxuryPlantCard plant={p} />
           </li>
         ))}
@@ -99,18 +124,12 @@ export function PlantasExplorer() {
         </div>
       ) : null}
 
-      {/* Load more */}
-      {shown < filtered.length ? (
-        <div className="flex justify-center pt-2">
-          <button
-            type="button"
-            onClick={() => setShown((s) => s + PAGE)}
-            className="h-12 rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] px-8 text-[14px] font-medium text-[var(--color-ink)] hover:border-[var(--color-green-deep)] hover:shadow-[var(--shadow-soft)] transition-all"
-          >
-            Cargar más ({filtered.length - shown})
-          </button>
+      {/* Infinite scroll sentinel */}
+      {shown < filtered.length && (
+        <div ref={sentinelRef} className="flex justify-center py-8">
+          <div className="h-6 w-6 animate-spin rounded-full border-2 border-[var(--color-rule)] border-t-[var(--color-green-deep)]" />
         </div>
-      ) : null}
+      )}
     </div>
   );
 }

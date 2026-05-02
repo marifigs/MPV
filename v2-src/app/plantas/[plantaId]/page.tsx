@@ -48,6 +48,11 @@ export default async function PlantaDetailPage({ params }: PageProps) {
         .sort((a, b) => b.qty - a.qty)
     : [];
 
+  // Plantas relacionadas: mismo grupo, con imagen, excluir la actual
+  const relacionadas = catalog
+    .filter((c) => c.grupo === displayGrupo && c.id !== plantaId && c.fotoUrl)
+    .slice(0, 4);
+
   return (
     <div className="space-y-10">
       {/* Back */}
@@ -227,6 +232,39 @@ export default async function PlantaDetailPage({ params }: PageProps) {
           </div>
         </section>
       ) : null}
+
+      {/* ── Otras plantas del mismo grupo ── */}
+      {relacionadas.length > 0 && (
+        <section>
+          <p className="eyebrow mb-5">Del mismo grupo</p>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {relacionadas.map((r) => (
+              <Link
+                key={r.id}
+                href={`/plantas/${r.id}`}
+                className="group overflow-hidden rounded-xl"
+                style={{ aspectRatio: '3/4', display: 'block', position: 'relative' }}
+              >
+                <img
+                  src={`/MPV/v2/${r.fotoUrl}`}
+                  alt={r.nombre}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 pointer-events-none"
+                  style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%)' }}
+                />
+                <p
+                  className="absolute bottom-0 left-0 right-0 p-3 text-white"
+                  style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: '14px', lineHeight: 1.3 }}
+                >
+                  {r.nombre.toLowerCase().replace(/\b\w/g, c => c.toUpperCase())}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

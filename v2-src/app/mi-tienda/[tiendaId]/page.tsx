@@ -149,9 +149,13 @@ export default async function TiendaDetailPage({ params }: PageProps) {
       {/* ── Alertas de inventario ── */}
       {alertasInventario.length > 0 && (
         <section className="space-y-3">
-          <h2 className="serif text-[24px]">Plantas en riesgo en esta tienda</h2>
+          <h2 className="serif text-[24px]">
+            {alertasInventario.some(a => a.nivel === 'critica')
+              ? '⚠ Plantas en riesgo en esta tienda'
+              : 'Plantas a monitorear hoy'}
+          </h2>
           <p className="text-[14px] text-[var(--color-ink-soft)]">
-            Basado en el stock actual de {tienda.nombre} y las condiciones del clima {ZONA_LABELS[tienda.zona]}.
+            Stock actual de {tienda.nombre} cruzado con condiciones del clima {ZONA_LABELS[tienda.zona as ZonaClimatica]}.
           </p>
           <ul className="space-y-3">
             {alertasInventario.map((a) => {

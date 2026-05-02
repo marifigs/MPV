@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { Icons } from '@/lib/icons';
-import { plantas, tiendas, zonas, plantasEspeciales } from '@/data';
+import { plantas, tiendas, zonas, plantasEspeciales, catalog } from '@/data';
 
 export default function HomePage() {
   return (
@@ -153,7 +153,7 @@ export default function HomePage() {
         </h2>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
           <QuickLink href="/mi-tienda" iconKey="store" label="Mi tienda" hint="Riego por zona" />
-          <QuickLink href="/plantas" iconKey="sprout" label="Plantas" hint="572 fichas de cuidado" />
+          <QuickLink href="/plantas" iconKey="sprout" label="Plantas" hint={`${catalog.length} especies`} />
           <QuickLink href="/alertas" iconKey="alert" label="Alertas" hint="Diagnóstico rápido" />
           <QuickLink href="/liquidacion" iconKey="tag" label="Liquidación" hint="Proceso completo" />
         </div>
