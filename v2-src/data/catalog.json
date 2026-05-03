@@ -66,7 +66,7 @@
     "id": "aji",
     "nombre": "AJI",
     "folderSlug": "AJI",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/AJI/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -138,7 +138,7 @@
     "id": "alissum",
     "nombre": "ALISSUM",
     "folderSlug": "ALISSUM",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/ALISSUM/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -264,7 +264,7 @@
     "id": "argyranthemum",
     "nombre": "ARGYRANTHEMUM",
     "folderSlug": "ARGYRANTHEMUM",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/ARGYRANTHEMUM/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -309,7 +309,7 @@
     "id": "asplenium",
     "nombre": "ASPLENIUM",
     "folderSlug": "ASPLENIUM",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/ASPLENIUM/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -318,7 +318,7 @@
     "id": "aster",
     "nombre": "ASTER",
     "folderSlug": "ASTER",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/ASTER/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -993,7 +993,7 @@
     "id": "equisetum",
     "nombre": "EQUISETUM",
     "folderSlug": "EQUISETUM",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/EQUISETUM/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -1281,7 +1281,7 @@
     "id": "incienso",
     "nombre": "INCIENSO",
     "folderSlug": "INCIENSO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/INCIENSO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1290,7 +1290,7 @@
     "id": "iris",
     "nombre": "IRIS",
     "folderSlug": "IRIS",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/IRIS/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1542,7 +1542,7 @@
     "id": "lonicera",
     "nombre": "LONICERA",
     "folderSlug": "LONICERA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/LONICERA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1623,7 +1623,7 @@
     "id": "melisa",
     "nombre": "MELISA",
     "folderSlug": "MELISA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/MELISA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1677,7 +1677,7 @@
     "id": "musa",
     "nombre": "MUSA",
     "folderSlug": "MUSA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/MUSA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FLOR",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -1902,7 +1902,7 @@
     "id": "pelargonio",
     "nombre": "PELARGONIO",
     "folderSlug": "PELARGONIO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PELARGONIO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1911,7 +1911,7 @@
     "id": "pennisetum",
     "nombre": "PENNISETUM",
     "folderSlug": "PENNISETUM",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PENNISETUM/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1920,7 +1920,7 @@
     "id": "peperomia",
     "nombre": "PEPEROMIA",
     "folderSlug": "PEPEROMIA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PEPEROMIA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FLOR",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -1929,7 +1929,7 @@
     "id": "peral",
     "nombre": "PERAL",
     "folderSlug": "PERAL",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PERAL/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1938,7 +1938,7 @@
     "id": "perejil",
     "nombre": "PEREJIL",
     "folderSlug": "PEREJIL",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PEREJIL/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1947,7 +1947,7 @@
     "id": "perovskia",
     "nombre": "PEROVSKIA",
     "folderSlug": "PEROVSKIA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PEROVSKIA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -1956,7 +1956,7 @@
     "id": "petunia",
     "nombre": "PETUNIA",
     "folderSlug": "PETUNIA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PETUNIA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1965,7 +1965,7 @@
     "id": "peumo",
     "nombre": "PEUMO",
     "folderSlug": "PEUMO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PEUMO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1974,7 +1974,7 @@
     "id": "philodendro",
     "nombre": "PHILODENDRO",
     "folderSlug": "PHILODENDRO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PHILODENDRO/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -1983,7 +1983,7 @@
     "id": "pilea",
     "nombre": "PILEA",
     "folderSlug": "PILEA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PILEA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -1992,7 +1992,7 @@
     "id": "pimenton",
     "nombre": "PIMENTON",
     "folderSlug": "PIMENTON",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PIMENTON/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "HERBACEAS AROMÁTICAS",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2001,7 +2001,7 @@
     "id": "pino",
     "nombre": "PINO",
     "folderSlug": "PINO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PINO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2019,7 +2019,7 @@
     "id": "platycodon",
     "nombre": "PLATYCODON",
     "folderSlug": "PLATYCODON",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PLATYCODON/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2028,7 +2028,7 @@
     "id": "plectranthus",
     "nombre": "PLECTRANTHUS",
     "folderSlug": "PLECTRANTHUS",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PLECTRANTHUS/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2037,7 +2037,7 @@
     "id": "plumbago",
     "nombre": "PLUMBAGO",
     "folderSlug": "PLUMBAGO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PLUMBAGO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2046,7 +2046,7 @@
     "id": "poinsettia",
     "nombre": "POINSETTIA",
     "folderSlug": "POINSETTIA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/POINSETTIA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FLOR",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2055,7 +2055,7 @@
     "id": "pomelo",
     "nombre": "POMELO",
     "folderSlug": "POMELO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/POMELO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2064,7 +2064,7 @@
     "id": "pothus",
     "nombre": "POTHUS",
     "folderSlug": "POTHUS",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/POTHUS/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2073,7 +2073,7 @@
     "id": "primula",
     "nombre": "PRIMULA",
     "folderSlug": "PRIMULA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PRIMULA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2100,7 +2100,7 @@
     "id": "ranunculo",
     "nombre": "RANUNCULO",
     "folderSlug": "RANUNCULO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/RANUNCULO/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FLOR",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2109,7 +2109,7 @@
     "id": "rhaphidophora",
     "nombre": "RHAPHIDOPHORA",
     "folderSlug": "RHAPHIDOPHORA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/RHAPHIDOPHORA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2118,7 +2118,7 @@
     "id": "rhus",
     "nombre": "RHUS",
     "folderSlug": "RHUS",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/RHUS/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2127,7 +2127,7 @@
     "id": "roble",
     "nombre": "ROBLE",
     "folderSlug": "ROBLE",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/ROBLE/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2136,7 +2136,7 @@
     "id": "rododendro",
     "nombre": "RODODENDRO",
     "folderSlug": "RODODENDRO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/RODODENDRO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2145,7 +2145,7 @@
     "id": "romero",
     "nombre": "ROMERO",
     "folderSlug": "ROMERO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/ROMERO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA DE FLOR",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2154,7 +2154,7 @@
     "id": "rosa",
     "nombre": "ROSA",
     "folderSlug": "ROSA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/ROSA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2172,7 +2172,7 @@
     "id": "ruda",
     "nombre": "RUDA",
     "folderSlug": "RUDA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/RUDA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2190,7 +2190,7 @@
     "id": "sansevieria",
     "nombre": "SANSEVIERIA",
     "folderSlug": "SANSEVIERIA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SANSEVIERIA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2199,7 +2199,7 @@
     "id": "sarcococca",
     "nombre": "SARCOCOCCA",
     "folderSlug": "SARCOCOCCA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SARCOCOCCA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2208,7 +2208,7 @@
     "id": "saxifraga",
     "nombre": "SAXIFRAGA",
     "folderSlug": "SAXIFRAGA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SAXIFRAGA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2217,7 +2217,7 @@
     "id": "schefflera",
     "nombre": "SCHEFFLERA",
     "folderSlug": "SCHEFFLERA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SCHEFFLERA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2226,7 +2226,7 @@
     "id": "scindapsus",
     "nombre": "SCINDAPSUS",
     "folderSlug": "SCINDAPSUS",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SCINDAPSUS/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FLOR",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2235,7 +2235,7 @@
     "id": "sedum",
     "nombre": "SEDUM",
     "folderSlug": "SEDUM",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SEDUM/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2244,7 +2244,7 @@
     "id": "selaginella",
     "nombre": "SELAGINELLA",
     "folderSlug": "SELAGINELLA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SELAGINELLA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FLOR",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2253,7 +2253,7 @@
     "id": "senecio",
     "nombre": "SENECIO",
     "folderSlug": "SENECIO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SENECIO/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "FLORALES",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2262,7 +2262,7 @@
     "id": "solanum",
     "nombre": "SOLANUM",
     "folderSlug": "SOLANUM",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SOLANUM/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2271,7 +2271,7 @@
     "id": "spathiphyllum",
     "nombre": "SPATHIPHYLLUM",
     "folderSlug": "SPATHIPHYLLUM",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SPATHIPHYLLUM/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2289,7 +2289,7 @@
     "id": "stephanotis",
     "nombre": "STEPHANOTIS",
     "folderSlug": "STEPHANOTIS",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/STEPHANOTIS/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2307,7 +2307,7 @@
     "id": "strelitzia",
     "nombre": "STRELITZIA",
     "folderSlug": "STRELITZIA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/STRELITZIA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2316,7 +2316,7 @@
     "id": "suculenta",
     "nombre": "SUCULENTA",
     "folderSlug": "SUCULENTA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SUCULENTA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2325,7 +2325,7 @@
     "id": "syngonio",
     "nombre": "SYNGONIO",
     "folderSlug": "SYNGONIO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/SYNGONIO/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2334,7 +2334,7 @@
     "id": "tagete",
     "nombre": "TAGETE",
     "folderSlug": "TAGETE",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/TAGETE/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2343,7 +2343,7 @@
     "id": "tangelo",
     "nombre": "TANGELO",
     "folderSlug": "TANGELO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/TANGELO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2361,7 +2361,7 @@
     "id": "taxus",
     "nombre": "TAXUS",
     "folderSlug": "TAXUS",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/TAXUS/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2370,7 +2370,7 @@
     "id": "thuja",
     "nombre": "THUJA",
     "folderSlug": "THUJA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/THUJA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2379,7 +2379,7 @@
     "id": "tilo",
     "nombre": "TILO",
     "folderSlug": "TILO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/TILO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2388,7 +2388,7 @@
     "id": "tobira",
     "nombre": "TOBIRA",
     "folderSlug": "TOBIRA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/TOBIRA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2397,7 +2397,7 @@
     "id": "tomate",
     "nombre": "TOMATE",
     "folderSlug": "TOMATE",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/TOMATE/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2406,7 +2406,7 @@
     "id": "tomillo",
     "nombre": "TOMILLO",
     "folderSlug": "TOMILLO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/TOMILLO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
