@@ -12,7 +12,6 @@ import { PlantVideo } from '@/components/plant-video';
 export function generateStaticParams() {
   const skuIds = plantas.map((p) => ({ plantaId: p.id }));
   const catalogIds = catalog.map((c) => ({ plantaId: c.id }));
-  // Deduplicate
   const seen = new Set(skuIds.map((x) => x.plantaId));
   const uniqueCatalogIds = catalogIds.filter((x) => !seen.has(x.plantaId));
   return [...skuIds, ...uniqueCatalogIds];
@@ -28,17 +27,15 @@ export default async function PlantaDetailPage({ params }: PageProps) {
   const catalogEntry = !planta ? catalog.find((c) => c.id === plantaId) : null;
   if (!planta && !catalogEntry) notFound();
 
-  // If catalog-only entry (no SKU data), show a simplified view
-  const displayNombre = planta?.nombre ?? catalogEntry?.nombre ?? '';
-  const displayGrupo = planta?.grupo ?? catalogEntry?.grupo ?? 'ARBUSTIVA FOLLAJE';
-  const displaySubrubro = planta?.subrubro ?? catalogEntry?.subrubro ?? 'PLANTAS DE EXTERIOR';
-  const displayFotoUrl = planta?.fotoUrl ?? catalogEntry?.fotoUrl ?? null;
+  const displayNombre    = planta?.nombre ?? catalogEntry?.nombre ?? '';
+  const displayGrupo     = planta?.grupo ?? catalogEntry?.grupo ?? 'ARBUSTIVA FOLLAJE';
+  const displaySubrubro  = planta?.subrubro ?? catalogEntry?.subrubro ?? 'PLANTAS DE EXTERIOR';
+  const displayFotoUrl   = planta?.fotoUrl ?? catalogEntry?.fotoUrl ?? null;
+  const displayPlaceholder = planta?.fotoPlaceholder ?? catalogEntry?.fotoPlaceholder ?? 'hsl(80 22% 90%)';
 
   const cuidado = cuidadosByGrupo[displayGrupo as keyof typeof cuidadosByGrupo] ?? null;
   const Icon = Icons[GRUPO_ICON[displayGrupo as keyof typeof GRUPO_ICON] ?? 'sprout'];
-
   const videoFile = getPlantVideo(displayFotoUrl ?? undefined);
-  const displayPlaceholder = planta?.fotoPlaceholder ?? catalogEntry?.fotoPlaceholder ?? 'hsl(80 22% 90%)';
 
   const stockOrdenado = planta
     ? Object.entries(planta.stockPorTienda)
@@ -48,223 +45,318 @@ export default async function PlantaDetailPage({ params }: PageProps) {
         .sort((a, b) => b.qty - a.qty)
     : [];
 
-  // Plantas relacionadas: mismo grupo, con imagen, excluir la actual
   const relacionadas = catalog
     .filter((c) => c.grupo === displayGrupo && c.id !== plantaId && c.fotoUrl)
     .slice(0, 4);
 
   return (
-    <div className="space-y-10">
-      {/* Back */}
+    <div>
+      {/* ── Back ────────────────────────────────────────── */}
       <Link
         href="/plantas"
-        className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[var(--color-ink-soft)] hover:text-[var(--color-ink)] transition-colors"
+        className="inline-flex items-center gap-1.5 transition-colors hover:text-[var(--color-ink)]"
+        style={{ fontSize: '13px', fontWeight: 500, color: 'var(--color-ink-soft)', marginBottom: '3rem', display: 'inline-flex' }}
       >
         <Icons.chevronLeft aria-hidden className="h-4 w-4" strokeWidth={2} />
         Catálogo
       </Link>
 
-      {/* Hero header */}
-      <header className="grid gap-8 md:grid-cols-[300px_1fr] md:gap-14">
-
-        {/* Visual: video (if available) or photo */}
-        {videoFile ? (
-          <PlantVideo videoFile={videoFile} name={displayNombre} />
-        ) : displayFotoUrl ? (
-          <div className="overflow-hidden" style={{ borderRadius: '20px', boxShadow: '0 24px 64px rgba(26,31,27,0.14), 0 6px 20px rgba(26,31,27,0.07)', aspectRatio: '3 / 4' }}>
-            <img
-              src={`/MPV/v2/${displayFotoUrl}`}
-              alt={`Foto de ${displayNombre}`}
-              className="h-full w-full object-cover"
-              loading="eager"
-              decoding="async"
-            />
-          </div>
-        ) : (
-          <div
-            className="overflow-hidden"
-            style={{ borderRadius: '20px', background: displayPlaceholder, aspectRatio: '3 / 4' }}
-          >
-            <div className="grid h-full w-full place-items-center">
-              <Icon
-                aria-hidden
-                className="h-24 w-24 opacity-20"
-                strokeWidth={0.75}
-                style={{ color: 'var(--color-cream)' }}
+      {/* ══════════════════════════════════════════════════
+          EDITORIAL HERO — magazine spread layout
+      ══════════════════════════════════════════════════ */}
+      <header
+        className="grid gap-10 md:gap-16"
+        style={{ gridTemplateColumns: 'min(44vw, 460px) 1fr' }}
+      >
+        {/* ── Visual ──────────────────────────────────── */}
+        <div className="grain">
+          {videoFile ? (
+            <PlantVideo videoFile={videoFile} name={displayNombre} />
+          ) : displayFotoUrl ? (
+            <div
+              className="overflow-hidden"
+              style={{
+                borderRadius: '18px',
+                aspectRatio: '3 / 4',
+                boxShadow: '0 32px 80px rgba(24,32,26,0.16), 0 8px 24px rgba(24,32,26,0.08)',
+              }}
+            >
+              <img
+                src={`/MPV/v2/${displayFotoUrl}`}
+                alt={`Foto de ${displayNombre}`}
+                className="h-full w-full object-cover"
+                loading="eager"
+                decoding="async"
+                style={{ transition: 'transform 1s var(--ease-luxury)' }}
               />
             </div>
-          </div>
-        )}
+          ) : (
+            <div
+              className="overflow-hidden"
+              style={{
+                borderRadius: '18px',
+                background: displayPlaceholder,
+                aspectRatio: '3 / 4',
+                boxShadow: '0 32px 80px rgba(24,32,26,0.10)',
+              }}
+            >
+              <div className="grid h-full w-full place-items-center">
+                <Icon
+                  aria-hidden
+                  className="h-28 w-28 opacity-12"
+                  strokeWidth={0.5}
+                  style={{ color: 'var(--color-ink)' }}
+                />
+              </div>
+            </div>
+          )}
+        </div>
 
-        {/* Identity */}
-        <div className="flex flex-col justify-center">
-          <p className="eyebrow text-[var(--color-green-deep)] mb-4">
+        {/* ── Identity ────────────────────────────────── */}
+        <div className="flex flex-col justify-center py-4">
+          {/* Grupo eyebrow */}
+          <p className="eyebrow mb-6" style={{ color: 'var(--color-green-soft)' }}>
             {GRUPO_LABEL[displayGrupo as keyof typeof GRUPO_LABEL] ?? displayGrupo}
           </p>
+
+          {/* Plant name — display scale */}
           <h1
             className="display text-[var(--color-ink)]"
-            style={{ fontSize: 'clamp(28px, 3.8vw, 54px)', overflowWrap: 'break-word' }}
+            style={{
+              fontSize: 'clamp(36px, 4.8vw, 80px)',
+              overflowWrap: 'break-word',
+              lineHeight: 0.88,
+            }}
           >
             {displayNombre}
           </h1>
-          <div className="mt-2">
-            <span className="serif-italic text-[var(--color-ink-soft)]"
-              style={{ fontSize: 'clamp(17px, 1.8vw, 22px)' }}>
-              {displaySubrubro === 'PLANTAS DE INTERIOR' ? 'Planta de interior' : 'Planta de exterior'}
-            </span>
-          </div>
+
+          {/* Interior / Exterior — italic serif */}
+          <p
+            className="serif-italic mt-4"
+            style={{ fontSize: 'clamp(16px, 1.6vw, 22px)', color: 'var(--color-ink-soft)' }}
+          >
+            {displaySubrubro === 'PLANTAS DE INTERIOR' ? 'Planta de interior' : 'Planta de exterior'}
+          </p>
+
+          {/* SKU badges */}
           {planta ? (
-            <div className="mt-7 flex flex-wrap items-center gap-2.5 text-[12px]">
-              <span className="rounded-full border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-3.5 py-1.5 font-medium tracking-wide">
+            <div className="mt-8 flex flex-wrap items-center gap-2.5">
+              <span
+                className="rounded-full px-4 py-1.5 font-medium"
+                style={{
+                  fontSize: '11px',
+                  border: '0.5px solid var(--color-rule)',
+                  background: 'var(--color-surface-2)',
+                  letterSpacing: '0.04em',
+                }}
+              >
                 SKU {planta.sku}
               </span>
               <span
-                className="rounded-full px-3.5 py-1.5 font-semibold text-white"
-                style={{ background: 'var(--color-green-deep)', fontSize: '12px' }}
+                className="rounded-full px-4 py-1.5 font-semibold text-white"
+                style={{ fontSize: '12px', background: 'var(--color-green-deep)' }}
               >
                 {planta.total} uds. en red
               </span>
             </div>
           ) : null}
-          <div className="mt-7 h-px" style={{ background: 'var(--color-rule)' }} />
-          <div className="mt-7">
+
+          {/* Hairline rule */}
+          <div className="mt-10" style={{ height: '0.5px', background: 'var(--color-rule)' }} />
+
+          {/* Share */}
+          <div className="mt-8">
             <ShareButton title={displayNombre} />
           </div>
         </div>
       </header>
 
-      {/* ── Cuidado del grupo ── */}
-      {cuidado ? (
-        <>
-          <section>
-            <p className="eyebrow mb-5">Cuidados del grupo</p>
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6">
-                <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Luz</p>
-                <p className="text-[15px] leading-relaxed">{cuidado.luz}</p>
-              </div>
-              <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6">
-                <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Riego</p>
-                <p className="text-[15px] leading-relaxed">{cuidado.riego}</p>
-              </div>
-              <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6 md:col-span-2">
-                <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Estructura recomendada</p>
-                <p className="text-[15px] leading-relaxed">{cuidado.estructura}</p>
-              </div>
-            </div>
-          </section>
+      {/* ══════════════════════════════════════════════════
+          CONTENT — generous spacing
+      ══════════════════════════════════════════════════ */}
+      <div style={{ marginTop: '5rem' }} className="space-y-16">
 
-          {/* ── Frecuencia de riego ── */}
-          <section>
-            <p className="eyebrow mb-5">Frecuencia de riego por zona climática</p>
-            <div className="overflow-hidden rounded-2xl border border-[var(--color-rule)]">
-              <table className="w-full border-collapse text-[14px]">
-                <thead className="bg-[var(--color-surface-2)]">
-                  <tr>
-                    <th className="px-5 py-3.5 text-left font-semibold text-[var(--color-ink)]">Zona</th>
-                    <th className="px-5 py-3.5 text-left font-semibold text-[var(--color-ink)]">Frecuencia</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {ZONAS_ORDEN.map((z) => (
-                    <tr key={z} className="border-t border-[var(--color-rule)]">
-                      <td className="px-5 py-3.5 text-[var(--color-ink)]">{ZONA_LABELS[z]}</td>
-                      <td className="px-5 py-3.5 text-[var(--color-ink-soft)]">
-                        {cuidado.frecuenciaPorZona[z]}
-                      </td>
+        {/* ── Cuidados del grupo ── */}
+        {cuidado ? (
+          <>
+            <section>
+              <SectionEyebrow>Cuidados del grupo</SectionEyebrow>
+              <div className="grid gap-4 md:grid-cols-2">
+                <InfoCard label="Luz" value={cuidado.luz} />
+                <InfoCard label="Riego" value={cuidado.riego} />
+                <div
+                  className="rounded-2xl p-6 md:col-span-2"
+                  style={{ border: '0.5px solid var(--color-rule)', background: 'var(--color-surface)' }}
+                >
+                  <p className="eyebrow mb-3" style={{ color: 'var(--color-green-deep)' }}>Estructura recomendada</p>
+                  <p className="leading-relaxed" style={{ fontSize: '15px' }}>{cuidado.estructura}</p>
+                </div>
+              </div>
+            </section>
+
+            {/* ── Frecuencia de riego ── */}
+            <section>
+              <SectionEyebrow>Frecuencia de riego por zona climática</SectionEyebrow>
+              <div className="overflow-hidden rounded-2xl" style={{ border: '0.5px solid var(--color-rule)' }}>
+                <table className="w-full border-collapse" style={{ fontSize: '14px' }}>
+                  <thead style={{ background: 'var(--color-surface-2)' }}>
+                    <tr>
+                      <th className="px-6 py-4 text-left font-semibold">Zona</th>
+                      <th className="px-6 py-4 text-left font-semibold">Frecuencia</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {ZONAS_ORDEN.map((z) => (
+                      <tr key={z} style={{ borderTop: '0.5px solid var(--color-rule)' }}>
+                        <td className="px-6 py-4">{ZONA_LABELS[z]}</td>
+                        <td className="px-6 py-4" style={{ color: 'var(--color-ink-soft)' }}>
+                          {cuidado.frecuenciaPorZona[z]}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            {/* ── Tips ── */}
+            <section>
+              <SectionEyebrow>Tips para esta familia</SectionEyebrow>
+              <ul className="grid gap-3">
+                {cuidado.tips.map((t, i) => (
+                  <li
+                    key={i}
+                    className="flex gap-5 rounded-2xl p-6"
+                    style={{ border: '0.5px solid var(--color-rule)', background: 'var(--color-surface)' }}
+                  >
+                    <Icons.bulb
+                      aria-hidden
+                      className="mt-0.5 h-5 w-5 shrink-0"
+                      strokeWidth={1.5}
+                      style={{ color: 'var(--color-warning)' }}
+                    />
+                    <p className="leading-relaxed" style={{ fontSize: '14px' }}>{t}</p>
+                  </li>
+                ))}
+              </ul>
+            </section>
+
+            <Alert variant="warning" title="Señal a vigilar">
+              {cuidado.alerta}
+            </Alert>
+          </>
+        ) : null}
+
+        {/* ── Stock por tienda ── */}
+        {stockOrdenado.length > 0 ? (
+          <section>
+            <SectionEyebrow>Stock por tienda</SectionEyebrow>
+            <div className="grid gap-2.5 md:grid-cols-2">
+              {stockOrdenado.map(({ tienda, qty }) =>
+                tienda ? (
+                  <Link
+                    key={tienda.id}
+                    href={`/mi-tienda/${tienda.id}`}
+                    className="flex items-center justify-between rounded-xl px-5 py-4 transition-all"
+                    style={{
+                      border: '0.5px solid var(--color-rule)',
+                      background: 'var(--color-surface)',
+                      fontSize: '14px',
+                      transition: 'border-color 0.35s, box-shadow 0.35s',
+                    }}
+                  >
+                    <span className="flex items-center gap-2.5">
+                      <Icons.store
+                        aria-hidden
+                        className="h-4 w-4"
+                        strokeWidth={1.75}
+                        style={{ color: 'var(--color-green-deep)' }}
+                      />
+                      {tienda.nombre}
+                    </span>
+                    <span className="font-semibold">{qty}</span>
+                  </Link>
+                ) : null
+              )}
             </div>
           </section>
+        ) : null}
 
-          {/* ── Tips ── */}
+        {/* ── Otras plantas del mismo grupo ── */}
+        {relacionadas.length > 0 && (
           <section>
-            <p className="eyebrow mb-5">Tips para esta familia</p>
-            <ul className="grid gap-3">
-              {cuidado.tips.map((t, i) => (
-                <li
-                  key={i}
-                  className="flex gap-4 rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-5"
-                >
-                  <Icons.bulb
-                    aria-hidden
-                    className="mt-0.5 h-5 w-5 shrink-0 text-[var(--color-warning)]"
-                    strokeWidth={1.5}
-                  />
-                  <p className="text-[14px] leading-relaxed">{t}</p>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <Alert variant="warning" title="Señal a vigilar">
-            {cuidado.alerta}
-          </Alert>
-        </>
-      ) : null}
-
-      {/* ── Stock por tienda ── */}
-      {stockOrdenado.length > 0 ? (
-        <section>
-          <p className="eyebrow mb-5">Stock por tienda</p>
-          <div className="grid gap-2.5 md:grid-cols-2">
-            {stockOrdenado.map(({ tienda, qty }) =>
-              tienda ? (
+            <SectionEyebrow>Del mismo grupo</SectionEyebrow>
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+              {relacionadas.map((r) => (
                 <Link
-                  key={tienda.id}
-                  href={`/mi-tienda/${tienda.id}`}
-                  className="flex items-center justify-between rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] px-5 py-3.5 hover:border-[var(--color-green-deep)] hover:shadow-[var(--shadow-soft)] transition-all"
+                  key={r.id}
+                  href={`/plantas/${r.id}`}
+                  className="grain group overflow-hidden rounded-xl"
+                  style={{
+                    aspectRatio: '3/4',
+                    display: 'block',
+                    position: 'relative',
+                    boxShadow: '0 4px 16px rgba(24,32,26,0.08)',
+                    transition: 'transform 0.7s var(--ease-luxury), box-shadow 0.7s var(--ease-luxury)',
+                  }}
                 >
-                  <span className="flex items-center gap-2.5 text-[14px]">
-                    <Icons.store
-                      aria-hidden
-                      className="h-4 w-4 text-[var(--color-green-deep)]"
-                      strokeWidth={1.75}
-                    />
-                    {tienda.nombre}
-                  </span>
-                  <span className="text-[14px] font-semibold text-[var(--color-ink)]">{qty}</span>
+                  <img
+                    src={`/MPV/v2/${r.fotoUrl}`}
+                    alt={r.nombre}
+                    loading="lazy"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    style={{ transition: 'transform 0.85s var(--ease-luxury)' }}
+                  />
+                  <div
+                    className="group-hover:scale-[1.06]"
+                    style={{
+                      position: 'absolute', inset: 0,
+                      background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, transparent 55%)',
+                      pointerEvents: 'none',
+                    }}
+                  />
+                  <p
+                    className="absolute bottom-0 left-0 right-0 p-3.5 text-white"
+                    style={{
+                      fontFamily: 'var(--font-display)',
+                      fontStyle: 'italic',
+                      fontSize: '15px',
+                      lineHeight: 1.2,
+                      letterSpacing: '-0.01em',
+                    }}
+                  >
+                    {r.nombre.toLowerCase().replace(/\b\w/g, c => c.toUpperCase())}
+                  </p>
                 </Link>
-              ) : null
-            )}
-          </div>
-        </section>
-      ) : null}
+              ))}
+            </div>
+          </section>
+        )}
 
-      {/* ── Otras plantas del mismo grupo ── */}
-      {relacionadas.length > 0 && (
-        <section>
-          <p className="eyebrow mb-5">Del mismo grupo</p>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {relacionadas.map((r) => (
-              <Link
-                key={r.id}
-                href={`/plantas/${r.id}`}
-                className="group overflow-hidden rounded-xl"
-                style={{ aspectRatio: '3/4', display: 'block', position: 'relative' }}
-              >
-                <img
-                  src={`/MPV/v2/${r.fotoUrl}`}
-                  alt={r.nombre}
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 pointer-events-none"
-                  style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 55%)' }}
-                />
-                <p
-                  className="absolute bottom-0 left-0 right-0 p-3 text-white"
-                  style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: '14px', lineHeight: 1.3 }}
-                >
-                  {r.nombre.toLowerCase().replace(/\b\w/g, c => c.toUpperCase())}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </section>
-      )}
+      </div>
+    </div>
+  );
+}
+
+/* ── Section header ── */
+function SectionEyebrow({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="mb-6 flex items-center gap-4">
+      <span className="eyebrow" style={{ color: 'var(--color-green-soft)' }}>{children}</span>
+      <div style={{ flex: 1, height: '0.5px', background: 'var(--color-rule)' }} />
+    </div>
+  );
+}
+
+function InfoCard({ label, value }: { label: string; value: string }) {
+  return (
+    <div
+      className="rounded-2xl p-6"
+      style={{ border: '0.5px solid var(--color-rule)', background: 'var(--color-surface)' }}
+    >
+      <p className="eyebrow mb-3" style={{ color: 'var(--color-green-deep)' }}>{label}</p>
+      <p className="leading-relaxed" style={{ fontSize: '15px' }}>{value}</p>
     </div>
   );
 }

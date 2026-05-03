@@ -8,7 +8,7 @@ export default function HomePage() {
 
       {/* ══════════════════════════════════════════════════
           HERO — editorial split layout
-          Left: dark ink panel / Right: video portrait frame
+          Left: deep forest panel / Right: video portrait
       ══════════════════════════════════════════════════ */}
       <section
         className="overflow-hidden"
@@ -22,69 +22,100 @@ export default function HomePage() {
       >
 
         {/* ── Desktop split ─────────────────────────────── */}
-        <div className="hidden md:grid md:grid-cols-[1fr_min(38vw,520px)]" style={{ minHeight: '92vh' }}>
+        <div className="hidden md:grid md:grid-cols-[1fr_min(40vw,560px)]" style={{ minHeight: '95vh' }}>
 
-          {/* Left: dark ink panel */}
+          {/* Left: forest panel */}
           <div
-            className="relative flex flex-col justify-between px-10 lg:px-16 xl:px-20 py-16 xl:py-20"
-            style={{ background: 'var(--color-ink)' }}
+            className="relative flex flex-col justify-between px-12 lg:px-18 xl:px-24 py-18 xl:py-22"
+            style={{ background: 'var(--color-forest)' }}
           >
-            {/* Top: eyebrow + brand */}
+            {/* Top eyebrow */}
             <div className="flex items-center gap-4">
-              <div className="h-px w-10 bg-white/20" />
-              <span className="text-[10px] font-semibold uppercase tracking-[0.22em]"
-                style={{ color: 'rgba(245,241,232,0.35)' }}>
+              <div className="h-px w-12 bg-white/15" />
+              <span style={{
+                fontFamily: 'var(--font-sans)',
+                fontSize: '0.5rem',
+                fontWeight: 500,
+                textTransform: 'uppercase',
+                letterSpacing: '0.30em',
+                color: 'rgba(245,241,232,0.30)',
+              }}>
                 Plantas vivas · Manual operativo
               </span>
             </div>
 
-            {/* Center: headline */}
+            {/* Center: display headline */}
             <div>
-              <h1 className="display">
-                <span className="block text-white"
-                  style={{ fontSize: 'clamp(64px,7vw,112px)', lineHeight: 0.87, letterSpacing: '-0.04em' }}>
+              <h1 className="display" style={{ overflow: 'visible' }}>
+                <span
+                  className="block animate-reveal text-white"
+                  style={{ fontSize: 'clamp(76px, 9.5vw, 148px)', opacity: 0 }}
+                >
                   Plantas
                 </span>
-                <span className="block" style={{ fontSize: 'clamp(64px,7vw,112px)', lineHeight: 0.87, letterSpacing: '-0.04em', color: 'var(--color-terracotta)' }}>
+                <span
+                  className="block animate-reveal delay-100"
+                  style={{
+                    fontSize: 'clamp(76px, 9.5vw, 148px)',
+                    color: 'var(--color-terracotta)',
+                    opacity: 0,
+                  }}
+                >
                   Vivas,
                 </span>
-                <span className="block" style={{ fontSize: 'clamp(64px,7vw,112px)', lineHeight: 0.87, letterSpacing: '-0.04em', color: 'rgba(245,241,232,0.28)' }}>
+                <span
+                  className="block animate-reveal delay-200"
+                  style={{
+                    fontSize: 'clamp(76px, 9.5vw, 148px)',
+                    color: 'rgba(245,241,232,0.18)',
+                    opacity: 0,
+                  }}
+                >
                   bien cuidadas.
                 </span>
               </h1>
-              <p className="mt-8 leading-relaxed max-w-[40ch]"
-                style={{ fontSize: 'clamp(15px,1.4vw,18px)', color: 'rgba(245,241,232,0.50)' }}>
+              <p
+                className="mt-10 leading-relaxed max-w-[38ch] animate-fade-up delay-400"
+                style={{
+                  fontSize: 'clamp(15px, 1.3vw, 18px)',
+                  color: 'rgba(245,241,232,0.42)',
+                  opacity: 0,
+                }}
+              >
                 Tu guía operativa para el área de plantas. Tienda, zona climática y cuidados de cada especie.
               </p>
-              <div className="mt-10 flex items-center gap-5">
+              <div className="mt-12 flex items-center gap-6 animate-fade-up delay-500" style={{ opacity: 0 }}>
                 <Link href="/plantas"
-                  className="inline-flex items-center gap-2 rounded-full px-6 py-3 text-[13px] font-semibold transition-all hover:opacity-90"
-                  style={{ background: 'var(--color-terracotta)', color: '#fff' }}>
+                  className="inline-flex items-center gap-2.5 rounded-full px-7 py-3.5 text-[13px] font-semibold transition-all hover:opacity-90 hover:scale-[0.98]"
+                  style={{
+                    background: 'var(--color-terracotta)',
+                    color: '#fff',
+                    transition: 'opacity 0.3s, transform 0.3s var(--ease-luxury)',
+                  }}>
                   Ver catálogo
-                  <Icons.arrowRight aria-hidden className="h-4 w-4" strokeWidth={2} />
+                  <Icons.arrowRight aria-hidden className="h-3.5 w-3.5" strokeWidth={2.5} />
                 </Link>
                 <Link href="/mi-tienda"
-                  className="text-[13px] font-semibold transition-opacity hover:opacity-80"
-                  style={{ color: 'rgba(245,241,232,0.55)' }}>
+                  className="text-[13px] font-medium transition-opacity hover:opacity-70"
+                  style={{ color: 'rgba(245,241,232,0.45)' }}>
                   Mi tienda →
                 </Link>
               </div>
             </div>
 
             {/* Bottom: stats */}
-            <div className="grid grid-cols-3 border-t pt-8" style={{ borderColor: 'rgba(245,241,232,0.08)' }}>
+            <div className="grid grid-cols-3 pt-10" style={{ borderTop: '0.5px solid rgba(245,241,232,0.08)' }}>
               <HeroStat value={plantas.length} label="Plantas" />
               <HeroStat value={tiendas.length} label="Tiendas" separator />
               <HeroStat value={zonas.length} label="Zonas climáticas" separator />
             </div>
           </div>
 
-          {/* Right: cream panel with portrait video */}
+          {/* Right: video panel — full bleed */}
           <div
-            className="relative flex flex-col items-center justify-center overflow-hidden"
-            style={{ background: 'var(--color-surface-2)' }}
+            className="relative overflow-hidden grain"
+            style={{ background: 'var(--color-surface-3)' }}
           >
-            {/* Video fills the panel, letterboxed vertically */}
             <video
               autoPlay muted loop playsInline
               className="absolute inset-0 h-full w-full object-cover"
@@ -92,16 +123,18 @@ export default function HomePage() {
             >
               <source src="/MPV/v2/videos/hero-loop.mp4" type="video/mp4" />
             </video>
-            {/* Vignette */}
+            {/* Deep vignette */}
             <div className="absolute inset-0 pointer-events-none"
-              style={{ background: 'linear-gradient(to top, rgba(24,32,26,0.55) 0%, rgba(24,32,26,0.10) 50%, transparent 100%)' }} />
-            {/* Easy logo bottom-center */}
-            <div className="absolute bottom-8 left-0 right-0 flex justify-center">
+              style={{
+                background: 'linear-gradient(to top, rgba(15,26,18,0.70) 0%, rgba(15,26,18,0.08) 50%, transparent 100%)',
+              }} />
+            {/* Easy logo */}
+            <div className="absolute bottom-9 left-0 right-0 flex justify-center">
               <img
                 src="/MPV/v2/easy-logo.png"
                 alt="Easy Cencosud"
                 className="w-24 drop-shadow-lg"
-                style={{ opacity: 0.92 }}
+                style={{ opacity: 0.88 }}
                 decoding="async"
               />
             </div>
@@ -110,8 +143,8 @@ export default function HomePage() {
 
         {/* ── Mobile: full-bleed ───────────────────────── */}
         <div
-          className="relative flex flex-col justify-end overflow-hidden md:hidden"
-          style={{ minHeight: '88vh' }}
+          className="relative flex flex-col justify-end overflow-hidden grain md:hidden"
+          style={{ minHeight: '92vh' }}
         >
           <video autoPlay muted loop playsInline
             className="absolute inset-0 h-full w-full object-cover"
@@ -120,21 +153,21 @@ export default function HomePage() {
             <source src="/MPV/v2/videos/hero-loop.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0"
-            style={{ background: 'linear-gradient(to top, rgba(10,14,11,0.96) 0%, rgba(10,14,11,0.50) 50%, transparent 100%)' }} />
-          <div className="relative z-10 px-5 pb-14">
+            style={{ background: 'linear-gradient(to top, rgba(10,14,11,0.97) 0%, rgba(10,14,11,0.50) 55%, transparent 100%)' }} />
+          <div className="relative z-10 px-6 pb-16">
             <h1 className="display">
-              <span className="block text-white" style={{ fontSize: 'clamp(52px,12vw,80px)', lineHeight: 0.87, letterSpacing: '-0.04em' }}>Plantas</span>
-              <span className="block" style={{ fontSize: 'clamp(52px,12vw,80px)', lineHeight: 0.87, letterSpacing: '-0.04em', color: 'var(--color-terracotta)' }}>Vivas,</span>
-              <span className="block" style={{ fontSize: 'clamp(52px,12vw,80px)', lineHeight: 0.87, letterSpacing: '-0.04em', color: 'rgba(245,241,232,0.30)' }}>bien cuidadas.</span>
+              <span className="block text-white" style={{ fontSize: 'clamp(56px, 14vw, 88px)' }}>Plantas</span>
+              <span className="block" style={{ fontSize: 'clamp(56px, 14vw, 88px)', color: 'var(--color-terracotta)' }}>Vivas,</span>
+              <span className="block" style={{ fontSize: 'clamp(56px, 14vw, 88px)', color: 'rgba(245,241,232,0.22)' }}>bien cuidadas.</span>
             </h1>
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-10 flex items-center gap-4">
               <Link href="/plantas"
-                className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[13px] font-semibold"
+                className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-[13px] font-semibold"
                 style={{ background: 'var(--color-terracotta)', color: '#fff' }}>
-                Ver catálogo <Icons.arrowRight aria-hidden className="h-3.5 w-3.5" strokeWidth={2} />
+                Ver catálogo <Icons.arrowRight aria-hidden className="h-3.5 w-3.5" strokeWidth={2.5} />
               </Link>
             </div>
-            <div className="mt-8 grid grid-cols-3 border-t pt-6" style={{ borderColor: 'rgba(245,241,232,0.08)' }}>
+            <div className="mt-10 grid grid-cols-3 pt-7" style={{ borderTop: '0.5px solid rgba(245,241,232,0.10)' }}>
               <HeroStat value={plantas.length} label="Plantas" />
               <HeroStat value={tiendas.length} label="Tiendas" separator />
               <HeroStat value={zonas.length} label="Zonas" separator />
@@ -146,9 +179,9 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           QUICK NAVIGATION
       ══════════════════════════════════════════════════ */}
-      <section className="pt-20 pb-4">
-        <p className="eyebrow mb-3">Navegación rápida</p>
-        <h2 className="serif mb-8" style={{ fontSize: 'clamp(26px,3vw,40px)', letterSpacing: '-0.03em' }}>
+      <section className="pt-32 pb-0">
+        <p className="eyebrow mb-5" style={{ color: 'var(--color-green-soft)' }}>Navegación rápida</p>
+        <h2 className="serif mb-12" style={{ fontSize: 'clamp(30px, 3.5vw, 52px)', letterSpacing: '-0.03em' }}>
           ¿Qué necesitas ahora?
         </h2>
         <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
@@ -160,38 +193,58 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          3 REGLAS DE ORO
+          3 REGLAS DE ORO — dark stripe
       ══════════════════════════════════════════════════ */}
-      <section className="pt-20 pb-4">
-        <p className="eyebrow mb-3">Lo esencial</p>
-        <h2 className="serif mb-8" style={{ fontSize: 'clamp(26px,3vw,40px)', letterSpacing: '-0.03em' }}>
-          Las 3 reglas de oro
-        </h2>
-        <div className="grid gap-5 md:grid-cols-3">
-          <ReglaCard numero="01" iconKey="drop"
-            titulo="No todas las plantas necesitan el mismo riego"
-            cuerpo="Como regla general: en verano, plantas de interior una vez por semana. En invierno, cada dos semanas."
-            tip="Truco: usa fieltro en las mesas. Humedécelo y las plantas toman agua por capilaridad según su necesidad."
-            ctaHref="/mi-tienda" ctaLabel="Ver frecuencia exacta de mi tienda" />
-          <ReglaCard numero="02" iconKey="sun"
-            titulo="Ubica cada planta según su luz"
-            cuerpo="Las plantas de interior no toleran sol directo, salvo el de la mañana. Las de exterior necesitan al menos unas horas de sol directo."
-            tip="Sol directo fuerte sobre interior → hojas quemadas. Sin sol sobre exterior → la planta se debilita."
-            ctaHref="/plantas" ctaLabel="Ver fichas de plantas" />
-          <ReglaCard numero="03" iconKey="eye"
-            titulo="Revisar cada día: 10 minutos salvan plantas"
-            cuerpo="Una planta enferma detectada a tiempo se puede salvar. Una abandonada se pierde. Revisa mañana, mediodía y al cierre."
-            tip="Mete el dedo 2 cm en la tierra. Húmedo → no riegues. Seco → riega. Más preciso que cualquier calendario."
-            ctaHref="/rutina" ctaLabel="Ver checklist diario" />
+      <section
+        className="pt-32 pb-0"
+        style={{
+          marginTop: '7rem',
+          width: '100vw',
+          position: 'relative',
+          left: '50%',
+          transform: 'translateX(-50%)',
+        }}
+      >
+        <div
+          className="surface-forest px-5 sm:px-8 py-20 sm:py-24"
+          style={{ width: '100%' }}
+        >
+          <div className="mx-auto max-w-6xl">
+            <p className="eyebrow mb-5" style={{ color: 'rgba(245,241,232,0.30)' }}>Lo esencial</p>
+            <h2 className="serif mb-14" style={{
+              fontSize: 'clamp(30px, 3.5vw, 52px)',
+              letterSpacing: '-0.03em',
+              color: 'var(--color-cream)',
+            }}>
+              Las 3 reglas de oro
+            </h2>
+            <div className="grid gap-5 md:grid-cols-3">
+              <ReglaCard numero="01" iconKey="drop"
+                titulo="No todas las plantas necesitan el mismo riego"
+                cuerpo="Como regla general: en verano, plantas de interior una vez por semana. En invierno, cada dos semanas."
+                tip="Truco: usa fieltro en las mesas. Humedécelo y las plantas toman agua por capilaridad según su necesidad."
+                ctaHref="/mi-tienda" ctaLabel="Ver frecuencia exacta de mi tienda" />
+              <ReglaCard numero="02" iconKey="sun"
+                titulo="Ubica cada planta según su luz"
+                cuerpo="Las plantas de interior no toleran sol directo, salvo el de la mañana. Las de exterior necesitan al menos unas horas de sol directo."
+                tip="Sol directo fuerte sobre interior → hojas quemadas. Sin sol sobre exterior → la planta se debilita."
+                ctaHref="/plantas" ctaLabel="Ver fichas de plantas" />
+              <ReglaCard numero="03" iconKey="eye"
+                titulo="Revisar cada día: 10 minutos salvan plantas"
+                cuerpo="Una planta enferma detectada a tiempo se puede salvar. Una abandonada se pierde. Revisa mañana, mediodía y al cierre."
+                tip="Mete el dedo 2 cm en la tierra. Húmedo → no riegues. Seco → riega. Más preciso que cualquier calendario."
+                ctaHref="/rutina" ctaLabel="Ver checklist diario" />
+            </div>
+          </div>
         </div>
       </section>
 
       {/* ══════════════════════════════════════════════════
           PLANTAS ESPECIALES
       ══════════════════════════════════════════════════ */}
-      <section className="pt-20 pb-4">
-        <p className="eyebrow mb-3">Atención extra</p>
-        <h2 className="serif mb-8" style={{ fontSize: 'clamp(26px,3vw,40px)', letterSpacing: '-0.03em' }}>
+      <section className="pt-32 pb-0">
+        <p className="eyebrow mb-5" style={{ color: 'var(--color-green-soft)' }}>Atención extra</p>
+        <h2 className="serif mb-12" style={{ fontSize: 'clamp(30px, 3.5vw, 52px)', letterSpacing: '-0.03em' }}>
           Plantas con cuidados específicos
         </h2>
         <div className="grid gap-5 md:grid-cols-2">
@@ -209,12 +262,27 @@ export default function HomePage() {
 
 function HeroStat({ value, label, separator }: { value: number; label: string; separator?: boolean }) {
   return (
-    <div className="flex flex-col pl-6 first:pl-0"
-      style={separator ? { borderLeft: '1px solid rgba(245,241,232,0.08)' } : undefined}>
-      <span className="serif leading-none font-semibold text-white"
-        style={{ fontSize: 'clamp(28px,3vw,44px)' }}>{value}</span>
-      <span className="mt-2 font-semibold text-[10px] uppercase tracking-[0.14em]"
-        style={{ color: 'rgba(245,241,232,0.35)' }}>{label}</span>
+    <div
+      className="flex flex-col pl-8 first:pl-0"
+      style={separator ? { borderLeft: '0.5px solid rgba(245,241,232,0.10)' } : undefined}
+    >
+      <span
+        className="display text-white"
+        style={{ fontSize: 'clamp(32px, 3.5vw, 52px)' }}
+      >
+        {value}
+      </span>
+      <span style={{
+        marginTop: '0.4rem',
+        fontFamily: 'var(--font-sans)',
+        fontSize: '0.5rem',
+        fontWeight: 500,
+        textTransform: 'uppercase',
+        letterSpacing: '0.22em',
+        color: 'rgba(245,241,232,0.28)',
+      }}>
+        {label}
+      </span>
     </div>
   );
 }
@@ -225,23 +293,56 @@ function ReglaCard({ numero, iconKey, titulo, cuerpo, tip, ctaHref, ctaLabel }: 
 }) {
   const Icon = Icons[iconKey];
   return (
-    <div className="flex flex-col rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-7 sm:p-8 hover:shadow-[var(--shadow-card)] transition-shadow">
+    <div
+      className="flex flex-col rounded-2xl p-8 sm:p-9"
+      style={{
+        background: 'rgba(245,241,232,0.04)',
+        border: '0.5px solid rgba(245,241,232,0.08)',
+        transition: 'background 0.4s var(--ease-luxury)',
+      }}
+    >
       <div className="flex items-start justify-between">
-        <span className="serif select-none leading-none font-semibold tabular-nums"
-          style={{ fontSize: '84px', color: 'var(--color-rule)', lineHeight: 1 }} aria-hidden>{numero}</span>
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-[var(--color-green-deep)] text-[var(--color-cream)]">
-          <Icon aria-hidden className="h-5 w-5" strokeWidth={1.75} />
+        <span
+          className="display select-none leading-none"
+          style={{ fontSize: '100px', color: 'rgba(245,241,232,0.06)', lineHeight: 1 }}
+          aria-hidden
+        >
+          {numero}
+        </span>
+        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full"
+          style={{ background: 'rgba(245,241,232,0.08)' }}>
+          <Icon aria-hidden className="h-5 w-5" strokeWidth={1.5} style={{ color: 'var(--color-cream)' }} />
         </span>
       </div>
-      <h3 className="serif mt-4 text-[20px] sm:text-[22px] leading-snug">{titulo}</h3>
-      <p className="mt-3 flex-1 text-[14px] leading-relaxed text-[var(--color-ink-soft)]">{cuerpo}</p>
-      <div className="mt-6 border-l-[3px] border-[var(--color-green-soft)] bg-[var(--color-surface-2)] px-4 py-3.5 rounded-r-xl">
-        <p className="text-[13px] leading-relaxed text-[var(--color-ink-soft)]">{tip}</p>
+      <h3
+        className="serif mt-5 leading-snug"
+        style={{ fontSize: 'clamp(18px, 1.6vw, 22px)', color: 'var(--color-cream)' }}
+      >
+        {titulo}
+      </h3>
+      <p className="mt-3 flex-1 leading-relaxed" style={{ fontSize: '14px', color: 'rgba(245,241,232,0.50)' }}>
+        {cuerpo}
+      </p>
+      <div
+        className="mt-7 px-5 py-4 rounded-r-xl"
+        style={{
+          borderLeft: '2px solid rgba(245,241,232,0.15)',
+          background: 'rgba(245,241,232,0.04)',
+        }}
+      >
+        <p style={{ fontSize: '13px', lineHeight: 1.7, color: 'rgba(245,241,232,0.40)' }}>{tip}</p>
       </div>
       <Link href={ctaHref}
-        className="mt-6 inline-flex items-center gap-1.5 text-[13px] font-semibold text-[var(--color-green-deep)] hover:gap-2 transition-all">
+        className="mt-7 inline-flex items-center gap-1.5 font-medium transition-all hover:gap-2.5"
+        style={{
+          fontSize: '12px',
+          color: 'rgba(245,241,232,0.45)',
+          textTransform: 'uppercase',
+          letterSpacing: '0.12em',
+          transition: 'gap 0.3s var(--ease-luxury), color 0.3s',
+        }}>
         {ctaLabel}
-        <Icons.arrowRight aria-hidden className="h-4 w-4" strokeWidth={2} />
+        <Icons.arrowRight aria-hidden className="h-3.5 w-3.5" strokeWidth={2} />
       </Link>
     </div>
   );
@@ -251,45 +352,71 @@ function QuickLink({ href, iconKey, label, hint }: { href: string; iconKey: 'sto
   const Icon = Icons[iconKey];
   return (
     <Link href={href}
-      className="group relative flex flex-col gap-5 rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6 transition-all hover:border-[var(--color-green-deep)] hover:shadow-[var(--shadow-lift)] min-h-[156px]">
-      <span className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--color-green-deep)] text-[var(--color-cream)] transition-transform group-hover:scale-95">
+      className="group relative flex flex-col gap-7 rounded-2xl p-7 sm:p-8"
+      style={{
+        border: '0.5px solid var(--color-rule)',
+        background: 'var(--color-surface)',
+        minHeight: '180px',
+        transition: 'border-color 0.4s var(--ease-luxury), box-shadow 0.4s var(--ease-luxury)',
+      }}
+    >
+      <span
+        className="grid h-12 w-12 place-items-center rounded-xl text-[var(--color-cream)]"
+        style={{
+          background: 'var(--color-green-deep)',
+          transition: 'transform 0.4s var(--ease-luxury)',
+        }}
+      >
         <Icon aria-hidden className="h-5 w-5" strokeWidth={1.75} />
       </span>
       <div>
-        <p className="serif text-[19px] sm:text-[21px] leading-tight font-semibold">{label}</p>
-        <p className="mt-1 text-[12px] leading-snug text-[var(--color-ink-soft)]">{hint}</p>
+        <p className="serif leading-tight" style={{ fontSize: 'clamp(19px, 2vw, 23px)' }}>{label}</p>
+        <p className="mt-1.5" style={{ fontSize: '12px', color: 'var(--color-ink-soft)', opacity: 0.7 }}>{hint}</p>
       </div>
       <Icons.arrowRight aria-hidden
-        className="absolute right-5 bottom-5 h-4 w-4 opacity-20 transition-all group-hover:opacity-100 group-hover:text-[var(--color-green-deep)] group-hover:translate-x-0.5"
-        strokeWidth={2} />
+        className="absolute right-6 bottom-6 h-4 w-4 opacity-15 transition-all group-hover:opacity-80 group-hover:text-[var(--color-green-deep)] group-hover:translate-x-1"
+        strokeWidth={2}
+        style={{ transition: 'opacity 0.35s, transform 0.35s var(--ease-luxury), color 0.35s' }}
+      />
     </Link>
   );
 }
 
 function EspecialCard({ planta }: { planta: (typeof plantasEspeciales)[number] }) {
   return (
-    <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] p-6 sm:p-7">
-      <div className="flex items-start gap-4">
-        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--color-green-deep)] text-[var(--color-cream)]">
-          <Icons.flower aria-hidden className="h-5 w-5" strokeWidth={1.75} />
+    <div
+      className="rounded-2xl p-7 sm:p-8"
+      style={{
+        border: '0.5px solid var(--color-rule)',
+        background: 'var(--color-surface)',
+      }}
+    >
+      <div className="flex items-start gap-5">
+        <span className="grid h-13 w-13 shrink-0 place-items-center rounded-xl bg-[var(--color-green-deep)] text-[var(--color-cream)]">
+          <Icons.flower aria-hidden className="h-6 w-6" strokeWidth={1.5} />
         </span>
         <div>
-          <h3 className="serif text-[22px] sm:text-[24px] leading-tight">{planta.nombre}</h3>
-          <p className="eyebrow mt-1 text-[var(--color-green-soft)]">Planta de temporada</p>
+          <h3 className="serif leading-tight" style={{ fontSize: 'clamp(20px, 2vw, 26px)' }}>
+            {planta.nombre}
+          </h3>
+          <p className="eyebrow mt-1.5" style={{ color: 'var(--color-green-soft)' }}>Planta de temporada</p>
         </div>
       </div>
-      <div className="mt-5 rounded-xl bg-[var(--color-surface-2)] px-5 py-4">
-        <p className="eyebrow mb-2 text-[var(--color-green-deep)]">Cuidado especial</p>
-        <p className="text-[14px] leading-relaxed text-[var(--color-ink)]">{planta.especial}</p>
+      <div
+        className="mt-6 rounded-xl px-6 py-5"
+        style={{ background: 'var(--color-surface-2)' }}
+      >
+        <p className="eyebrow mb-2.5" style={{ color: 'var(--color-green-deep)' }}>Cuidado especial</p>
+        <p className="leading-relaxed" style={{ fontSize: '14px' }}>{planta.especial}</p>
       </div>
-      <div className="mt-4 grid grid-cols-2 gap-4 text-[13px]">
+      <div className="mt-5 grid grid-cols-2 gap-5" style={{ fontSize: '13px' }}>
         <div>
-          <p className="eyebrow mb-1.5">Temperatura</p>
-          <p className="leading-snug text-[var(--color-ink-soft)]">{planta.temperatura}</p>
+          <p className="eyebrow mb-2">Temperatura</p>
+          <p className="leading-snug" style={{ color: 'var(--color-ink-soft)' }}>{planta.temperatura}</p>
         </div>
         <div>
-          <p className="eyebrow mb-1.5 text-[var(--color-terracotta)]">Atento a esto</p>
-          <p className="leading-snug text-[var(--color-ink-soft)]">{planta.urgente}</p>
+          <p className="eyebrow mb-2" style={{ color: 'var(--color-terracotta)' }}>Atento a esto</p>
+          <p className="leading-snug" style={{ color: 'var(--color-ink-soft)' }}>{planta.urgente}</p>
         </div>
       </div>
     </div>

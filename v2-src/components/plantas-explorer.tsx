@@ -104,7 +104,7 @@ export function PlantasExplorer() {
       {/* Grid */}
       <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {filtered.slice(0, shown).map((p, index) => (
-          <li key={p.id} className="animate-fade-up" style={{ animationDelay: `${Math.min(index, 20) * 0.025}s`, opacity: 0 }}>
+          <li key={p.id} className="animate-fade-up" style={{ animationDelay: `${Math.min(index, 24) * 0.03}s`, opacity: 0 }}>
             <LuxuryPlantCard plant={p} />
           </li>
         ))}
@@ -167,13 +167,29 @@ function CardOverlay({ label, nombre }: { label: string; nombre: string }) {
     <>
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
-        background: 'linear-gradient(to top, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.22) 45%, transparent 68%)',
+        background: 'linear-gradient(to top, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.18) 48%, transparent 70%)',
       }} />
-      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '16px' }}>
-        <p className="eyebrow" style={{ color: 'rgba(255,255,255,0.50)', marginBottom: '4px', fontSize: '10px' }}>
+      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '18px 20px' }}>
+        <p style={{
+          fontFamily: 'var(--font-sans)',
+          fontSize: '0.47rem',
+          fontWeight: 500,
+          textTransform: 'uppercase',
+          letterSpacing: '0.28em',
+          color: 'rgba(255,255,255,0.42)',
+          marginBottom: '5px',
+        }}>
           {label}
         </p>
-        <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', color: 'white', fontSize: '18px', lineHeight: 1.25, fontWeight: 400 }}>
+        <p style={{
+          fontFamily: 'var(--font-display)',
+          fontStyle: 'italic',
+          color: 'white',
+          fontSize: '19px',
+          lineHeight: 1.2,
+          fontWeight: 400,
+          letterSpacing: '-0.01em',
+        }}>
           {capitalize(nombre)}
         </p>
       </div>
@@ -189,8 +205,22 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
   return (
     <Link
       href={`/plantas/${plant.id}`}
-      className={cn('group block overflow-hidden rounded-xl transition-transform duration-300 hover:scale-[1.02]')}
-      style={{ aspectRatio: '3/4', display: 'block', position: 'relative' }}
+      className={cn('grain group block overflow-hidden rounded-xl')}
+      style={{
+        aspectRatio: '3/4',
+        display: 'block',
+        position: 'relative',
+        boxShadow: '0 2px 12px rgba(24,32,26,0.07)',
+        transition: 'transform 0.7s var(--ease-luxury), box-shadow 0.7s var(--ease-luxury)',
+      }}
+      onMouseEnter={(e) => {
+        (e.currentTarget as HTMLElement).style.transform = 'scale(1.025)';
+        (e.currentTarget as HTMLElement).style.boxShadow = '0 20px 60px rgba(24,32,26,0.18), 0 6px 18px rgba(24,32,26,0.08)';
+      }}
+      onMouseLeave={(e) => {
+        (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
+        (e.currentTarget as HTMLElement).style.boxShadow = '0 2px 12px rgba(24,32,26,0.07)';
+      }}
     >
       {videoFile ? (
         /* ── Video card ── */
@@ -206,19 +236,50 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
             alt=""
             loading="lazy"
             decoding="async"
-            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
-            className="group-hover:scale-105"
+            style={{
+              position: 'absolute', inset: 0,
+              width: '100%', height: '100%',
+              objectFit: 'cover',
+              transition: 'transform 0.85s var(--ease-luxury)',
+            }}
+            className="group-hover:scale-[1.06]"
           />
           <CardOverlay label={label} nombre={plant.nombre} />
         </div>
       ) : (
         /* ── Placeholder card ── */
-        <div style={{ background: plant.fotoPlaceholder, height: '100%', width: '100%', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', padding: '20px', position: 'relative', overflow: 'hidden' }}>
-          <p aria-hidden style={{ fontFamily: 'var(--font-display)', fontSize: '96px', opacity: 0.08, lineHeight: 1, color: 'var(--color-ink)', position: 'absolute', top: '12px', left: '16px', userSelect: 'none' }}>
+        <div style={{
+          background: plant.fotoPlaceholder,
+          height: '100%', width: '100%',
+          display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+          padding: '22px', position: 'relative', overflow: 'hidden',
+        }}>
+          <p aria-hidden style={{
+            fontFamily: 'var(--font-display)',
+            fontSize: '104px',
+            opacity: 0.07,
+            lineHeight: 1,
+            color: 'var(--color-ink)',
+            position: 'absolute',
+            top: '10px', left: '16px',
+            userSelect: 'none',
+            letterSpacing: '-0.04em',
+          }}>
             {plant.nombre[0]}
           </p>
-          <p className="eyebrow" style={{ color: 'var(--color-ink-soft)', marginBottom: '4px', fontSize: '10px' }}>{label}</p>
-          <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: '18px', lineHeight: 1.25, fontWeight: 400, color: 'var(--color-ink)' }}>
+          <p style={{
+            fontFamily: 'var(--font-sans)',
+            fontSize: '0.47rem',
+            fontWeight: 500,
+            textTransform: 'uppercase',
+            letterSpacing: '0.28em',
+            color: 'var(--color-ink-soft)',
+            marginBottom: '6px',
+            opacity: 0.55,
+          }}>
+            {label}
+          </p>
+          <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: '19px', lineHeight: 1.2, fontWeight: 400, color: 'var(--color-ink)' }}>
             {capitalize(plant.nombre)}
           </p>
         </div>

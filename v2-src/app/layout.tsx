@@ -45,7 +45,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           Saltar al contenido
         </a>
         <TopNav />
-        <main id="contenido" className="mx-auto max-w-6xl px-5 sm:px-8 pb-32 pt-8">
+        <main id="contenido" className="mx-auto max-w-6xl px-5 sm:px-8 pb-40 pt-12">
           {children}
         </main>
         <SiteFooter />

@@ -2,29 +2,64 @@ import { Icons } from '@/lib/icons';
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-[var(--color-rule)] bg-[var(--color-surface-2)]">
-      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-10">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+    <footer style={{ background: 'var(--color-forest)', borderTop: 'none' }}>
+      <div className="mx-auto max-w-6xl px-5 sm:px-8 py-14 sm:py-16">
+        <div className="flex flex-col gap-8 sm:flex-row sm:items-end sm:justify-between">
+
+          {/* Left: brand */}
           <div className="flex items-center gap-3">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-[var(--color-green-deep)] text-[var(--color-cream)]">
-              <Icons.sprout aria-hidden className="h-4 w-4" strokeWidth={2} />
+            <span
+              className="grid h-9 w-9 place-items-center rounded-lg"
+              style={{ background: 'rgba(245,241,232,0.08)', color: 'rgba(245,241,232,0.60)' }}
+            >
+              <Icons.sprout aria-hidden className="h-4 w-4" strokeWidth={1.75} />
             </span>
-            <span className="serif text-[17px] font-semibold tracking-tight text-[var(--color-ink)]">
+            <span
+              className="serif tracking-tight"
+              style={{ fontSize: '17px', color: 'rgba(245,241,232,0.75)' }}
+            >
               Manual de Plantas Vivas
             </span>
           </div>
-          <div className="flex items-center gap-4">
-            <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-[var(--color-ink-soft)]/60">
+
+          {/* Right: meta + logo */}
+          <div className="flex items-center gap-5">
+            <p style={{
+              fontFamily: 'var(--font-sans)',
+              fontSize: '0.5rem',
+              fontWeight: 500,
+              textTransform: 'uppercase',
+              letterSpacing: '0.22em',
+              color: 'rgba(245,241,232,0.22)',
+            }}>
               Easy Chile · Cencosud S.A. · Uso exclusivo para vendedores
             </p>
             <img
               src="/MPV/v2/cencosud-logo.png"
               alt="Cencosud"
-              className="h-9 w-auto opacity-85"
+              className="w-auto"
+              style={{ height: '32px', opacity: 0.35, filter: 'brightness(2)' }}
               decoding="async"
               loading="lazy"
             />
           </div>
+        </div>
+
+        {/* Bottom hairline + year */}
+        <div
+          className="mt-10 pt-6 flex items-center justify-between"
+          style={{ borderTop: '0.5px solid rgba(245,241,232,0.06)' }}
+        >
+          <span style={{
+            fontFamily: 'var(--font-sans)',
+            fontSize: '0.5rem',
+            fontWeight: 400,
+            textTransform: 'uppercase',
+            letterSpacing: '0.22em',
+            color: 'rgba(245,241,232,0.14)',
+          }}>
+            © 2026 Cencosud S.A.
+          </span>
         </div>
       </div>
     </footer>
