@@ -26,6 +26,10 @@ export const metadata: Metadata = {
     'Manual operativo digital para vendedores del área de plantas vivas en Easy Chile. 572 plantas, 42 tiendas, 6 zonas climáticas.',
   robots: { index: false, follow: false },
   applicationName: 'Manual Plantas Vivas',
+  icons: {
+    icon: '/MPV/v2/favicon.svg',
+    shortcut: '/MPV/v2/favicon.svg',
+  },
 };
 
 export const viewport: Viewport = {

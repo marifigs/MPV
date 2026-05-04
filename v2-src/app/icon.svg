@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" rx="7" fill="#2D5A3D"/>
+  <!-- Sprout: stem -->
+  <line x1="16" y1="24" x2="16" y2="13" stroke="#F5F1E8" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- Left leaf -->
+  <path d="M16 18 C12 17 10 13 12 10 C14 13 15 16 16 18Z" fill="#F5F1E8" opacity="0.9"/>
+  <!-- Right leaf -->
+  <path d="M16 15 C20 14 22 10 20 8 C18 11 17 13 16 15Z" fill="#F5F1E8" opacity="0.75"/>
+</svg>
