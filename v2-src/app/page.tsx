@@ -201,6 +201,64 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
+          MARQUEE — luxury editorial ticker
+      ══════════════════════════════════════════════════ */}
+      <div
+        style={{
+          marginTop: '0',
+          width: '100vw',
+          position: 'relative',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          borderTop: '0.5px solid var(--color-rule)',
+          borderBottom: '0.5px solid var(--color-rule)',
+          background: 'var(--color-surface-2)',
+          overflow: 'hidden',
+          padding: '14px 0',
+        }}
+      >
+        <div className="animate-marquee" aria-hidden>
+          {[...Array(2)].map((_, i) => (
+            <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
+              {[
+                '279 Especies',
+                '42 Tiendas Easy Chile',
+                '6 Zonas Climáticas',
+                'Cuidado de Plantas Vivas',
+                'Merma Cero',
+                'Riego por Zona',
+                'Fichas de Cuidado',
+                'Stock en Tiempo Real',
+              ].map((text) => (
+                <span key={text} style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
+                  <span style={{
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '10px',
+                    fontWeight: 500,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.2em',
+                    color: 'var(--color-ink-soft)',
+                    whiteSpace: 'nowrap',
+                    padding: '0 2.5rem',
+                  }}>
+                    {text}
+                  </span>
+                  <span style={{
+                    width: '4px',
+                    height: '4px',
+                    borderRadius: '50%',
+                    background: 'var(--color-green-soft)',
+                    opacity: 0.4,
+                    flexShrink: 0,
+                  }} />
+                </span>
+              ))}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* ══════════════════════════════════════════════════
           MANIFESTO — editorial statement
       ══════════════════════════════════════════════════ */}
       <section
@@ -317,11 +375,11 @@ export default function HomePage() {
         >
           ¿Qué necesitas ahora?
         </h2>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <QuickLink href="/mi-tienda" iconKey="store" label="Mi tienda" hint="Riego por zona climática" />
-          <QuickLink href="/plantas" iconKey="sprout" label="Catálogo" hint={`${catalog.length} especies documentadas`} />
-          <QuickLink href="/alertas" iconKey="alert" label="Alertas" hint="Diagnóstico en segundos" />
-          <QuickLink href="/liquidacion" iconKey="tag" label="Liquidación" hint="Protocolo completo" />
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
+          <QuickLink index={1} href="/mi-tienda"    iconKey="store"   label="Mi tienda"   hint="Riego por zona climática" />
+          <QuickLink index={2} href="/plantas"      iconKey="sprout"  label="Catálogo"    hint={`${catalog.length} especies`} />
+          <QuickLink index={3} href="/alertas"      iconKey="alert"   label="Alertas"     hint="Diagnóstico en segundos" />
+          <QuickLink index={4} href="/liquidacion"  iconKey="tag"     label="Liquidación" hint="Protocolo de merma" />
         </div>
       </section>
 
@@ -414,11 +472,11 @@ function HeroStat({ value, label, separator }: { value: number | string; label: 
       <p style={{
         marginTop: '0.35rem',
         fontFamily: 'var(--font-sans)',
-        fontSize: '0.47rem',
+        fontSize: '10px',
         fontWeight: 500,
         textTransform: 'uppercase',
-        letterSpacing: '0.22em',
-        color: 'rgba(245,241,232,0.26)',
+        letterSpacing: '0.2em',
+        color: 'rgba(245,241,232,0.30)',
       }}>
         {label}
       </p>
@@ -492,46 +550,81 @@ function ReglaCard({ numero, iconKey, titulo, cuerpo, tip, ctaHref, ctaLabel }: 
   );
 }
 
-function QuickLink({ href, iconKey, label, hint }: {
+function QuickLink({ href, iconKey, label, hint, index }: {
   href: string;
   iconKey: 'store' | 'sprout' | 'alert' | 'tag';
   label: string;
   hint: string;
+  index: number;
 }) {
-  const Icon = Icons[iconKey];
   return (
     <Link
       href={href}
-      className="group relative flex flex-col rounded-2xl overflow-hidden"
+      className="group relative flex flex-col justify-between overflow-hidden"
       style={{
         border: '0.5px solid var(--color-rule)',
         background: 'var(--color-surface)',
-        minHeight: '190px',
-        padding: 'clamp(24px,2.5vw,36px)',
-        gap: '1.75rem',
-        transition: 'border-color 0.5s var(--ease-luxury), box-shadow 0.5s var(--ease-luxury), transform 0.5s var(--ease-luxury)',
+        minHeight: '200px',
+        padding: 'clamp(22px,2.5vw,34px)',
+        transition: 'border-color 0.6s var(--ease-luxury), box-shadow 0.6s var(--ease-luxury)',
+        borderRadius: '18px',
       }}
     >
+      {/* Ghost index number */}
       <span
-        className="grid h-12 w-12 place-items-center rounded-xl"
+        className="display select-none absolute"
+        aria-hidden
         style={{
-          background: 'var(--color-green-deep)',
-          color: 'var(--color-cream)',
-          transition: 'transform 0.5s var(--ease-luxury)',
+          fontSize: '120px',
+          color: 'var(--color-ink)',
+          opacity: 0.028,
+          lineHeight: 1,
+          right: '-0.1em',
+          top: '-0.15em',
+          fontStyle: 'italic',
+          letterSpacing: '-0.06em',
+          pointerEvents: 'none',
         }}
       >
-        <Icon aria-hidden className="h-5 w-5" strokeWidth={1.75} />
+        {String(index).padStart(2, '0')}
       </span>
-      <div style={{ flex: 1 }}>
-        <p className="serif leading-tight" style={{ fontSize: 'clamp(18px, 1.8vw, 22px)' }}>{label}</p>
-        <p style={{ marginTop: '0.4rem', fontSize: '12px', color: 'var(--color-ink-soft)', opacity: 0.65 }}>{hint}</p>
+
+      {/* Top: hairline rule + label */}
+      <div>
+        <div style={{ height: '0.5px', background: 'var(--color-rule)', marginBottom: '20px', width: '32px' }} />
+        <p style={{
+          fontFamily: 'var(--font-sans)',
+          fontSize: '10px',
+          fontWeight: 500,
+          textTransform: 'uppercase',
+          letterSpacing: '0.2em',
+          color: 'var(--color-ink-soft)',
+          opacity: 0.55,
+        }}>
+          {hint}
+        </p>
       </div>
-      <Icons.arrowRight
-        aria-hidden
-        className="absolute right-6 bottom-6 h-4 w-4 opacity-15 group-hover:opacity-70 group-hover:translate-x-1"
-        strokeWidth={2}
-        style={{ transition: 'opacity 0.35s, transform 0.5s var(--ease-luxury)', color: 'var(--color-green-deep)' }}
-      />
+
+      {/* Bottom: name + arrow */}
+      <div className="flex items-end justify-between">
+        <p
+          className="display"
+          style={{
+            fontSize: 'clamp(22px, 2.2vw, 30px)',
+            fontStyle: 'italic',
+            color: 'var(--color-ink)',
+            lineHeight: 1,
+          }}
+        >
+          {label}
+        </p>
+        <Icons.arrowRight
+          aria-hidden
+          className="h-4 w-4 shrink-0 mb-0.5 opacity-20 group-hover:opacity-80 group-hover:translate-x-1"
+          strokeWidth={1.75}
+          style={{ transition: 'opacity 0.4s, transform 0.5s var(--ease-luxury)', color: 'var(--color-green-deep)' }}
+        />
+      </div>
     </Link>
   );
 }

@@ -1,6 +1,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { plantas, plantasById, cuidadosByGrupo, tiendasById, ZONA_LABELS, catalog } from '@/data';
+
+function capitalize(str: string): string {
+  return str.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+}
 import { GRUPO_ICON, GRUPO_LABEL } from '@/lib/group-icons';
 import { Icons } from '@/lib/icons';
 import { Alert } from '@/components/ui/alert';
@@ -129,7 +133,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
               fontStyle: 'italic',
             }}
           >
-            {displayNombre}
+            {capitalize(displayNombre)}
           </h1>
 
           {/* Interior / Exterior — italic serif */}

@@ -120,9 +120,9 @@ select:focus-visible,
 .eyebrow {
   font-family: var(--font-sans);
   font-weight: 500;
-  font-size: 0.5rem; /* 8px */
+  font-size: 10px;
   text-transform: uppercase;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.26em;
   color: var(--color-ink-soft);
 }
 
@@ -220,3 +220,32 @@ select:focus-visible,
 .delay-300 { animation-delay: 0.30s; }
 .delay-400 { animation-delay: 0.40s; }
 .delay-500 { animation-delay: 0.50s; }
+
+/* ── Luxury marquee ticker ─────────────────────── */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 28s linear infinite;
+  will-change: transform;
+}
+.animate-marquee:hover { animation-play-state: paused; }
+
+/* ── Bordered eyebrow pill ─────────────────────── */
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 0.5px solid var(--color-rule);
+  color: var(--color-ink-soft);
+}

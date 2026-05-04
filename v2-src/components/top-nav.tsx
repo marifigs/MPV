@@ -65,10 +65,10 @@ export function TopNav() {
               <span style={{
                 marginTop: '2px',
                 fontFamily: 'var(--font-sans)',
-                fontSize: '0.47rem',
+                fontSize: '9px',
                 fontWeight: 500,
                 textTransform: 'uppercase',
-                letterSpacing: '0.24em',
+                letterSpacing: '0.22em',
                 color: 'var(--color-ink-soft)',
                 opacity: 0.55,
               }}>
