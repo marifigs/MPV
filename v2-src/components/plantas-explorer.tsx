@@ -82,11 +82,11 @@ export function PlantasExplorer() {
               key={v}
               type="button"
               onClick={() => setSubrubro(v)}
-              className="rounded-full px-4 py-2 text-[13px] font-medium transition-all"
+              className="px-4 py-2 text-[13px] font-medium transition-all"
               style={
                 subrubro === v
                   ? { background: 'var(--color-ink)', color: 'var(--color-cream)' }
-                  : { border: '1px solid var(--color-rule)', background: 'var(--color-surface)', color: 'var(--color-ink-soft)' }
+                  : { border: '0.5px solid var(--color-rule)', background: 'var(--color-surface)', color: 'var(--color-ink-soft)' }
               }
             >
               {label}

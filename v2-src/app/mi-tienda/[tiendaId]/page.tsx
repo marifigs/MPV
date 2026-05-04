@@ -80,54 +80,44 @@ export default async function TiendaDetailPage({ params }: PageProps) {
         Todas las tiendas
       </Link>
 
-      <header className="space-y-4">
-        <div className="flex items-center gap-3">
-          <span className="grid h-12 w-12 place-items-center rounded-xl bg-[var(--color-green-deep)] text-[var(--color-cream)]">
-            <Icons.store aria-hidden className="h-6 w-6" strokeWidth={1.75} />
-          </span>
-          <div>
-            <Eyebrow>Tienda Easy</Eyebrow>
-            <h1 className="serif text-[36px] sm:text-[44px] leading-tight tracking-tight">
-              {tienda.nombre}
-            </h1>
-          </div>
-        </div>
-        <div className="flex flex-wrap items-center gap-3 text-[14px] text-[var(--color-ink-soft)]">
-          <span className="flex items-center gap-1.5 rounded-full bg-[var(--color-surface-2)] px-3 py-1">
-            <ZonaIcon aria-hidden className="h-4 w-4" strokeWidth={1.75} />
-            {ZONA_LABELS[tienda.zona]}
-          </span>
-          <span className="rounded-full bg-[var(--color-surface-2)] px-3 py-1">
-            Tienda {TIPO_TIENDA_LABELS[tienda.tipo]}
-          </span>
-          <span className="rounded-full bg-[var(--color-surface-2)] px-3 py-1">
-            {totalUnidades} unidades en stock
-          </span>
-        </div>
-        <div className="flex flex-wrap gap-3">
+      <header style={{ paddingBottom: '2rem', borderBottom: '0.5px solid var(--color-rule)' }}>
+        <p className="eyebrow mb-5" style={{ color: 'var(--color-green-soft)' }}>Tienda Easy Chile</p>
+        <h1
+          className="display"
+          style={{
+            fontSize: 'clamp(40px, 6vw, 82px)',
+            fontStyle: 'italic',
+            lineHeight: 0.88,
+            color: 'var(--color-ink)',
+          }}
+        >
+          {tienda.nombre}
+        </h1>
+
+        {/* Metadata — plain text, no pills */}
+        <p style={{ marginTop: '1.25rem', fontSize: '14px', color: 'var(--color-ink-soft)', lineHeight: 1.6 }}>
+          {ZONA_LABELS[tienda.zona]}
+          <span style={{ margin: '0 0.6em', opacity: 0.3 }}>·</span>
+          Tienda {TIPO_TIENDA_LABELS[tienda.tipo]}
+          <span style={{ margin: '0 0.6em', opacity: 0.3 }}>·</span>
+          {totalUnidades} uds. en stock
+          {tienda.riegoAutomatico && (
+            <>
+              <span style={{ margin: '0 0.6em', opacity: 0.3 }}>·</span>
+              <span style={{ color: 'var(--color-green-deep)' }}>Riego automático</span>
+            </>
+          )}
+        </p>
+
+        <div className="mt-6 flex flex-wrap gap-3">
           <SaveMiTienda tiendaId={tienda.id} />
           <ShareButton title={`${tienda.nombre} — Manual Plantas Vivas`} />
         </div>
 
         {/* Clima actual */}
-        <WeatherWidget lat={tienda.lat} lon={tienda.lon} tiendaNombre={tienda.nombre} />
-
-        {/* Riego automático badge */}
-        {tienda.riegoAutomatico && (
-          <div
-            className="inline-flex items-center gap-2 rounded-full px-4 py-2"
-            style={{
-              background: 'rgba(45,90,61,0.08)',
-              border: '0.5px solid var(--color-green-soft)',
-              fontSize: '12px',
-              color: 'var(--color-green-deep)',
-              fontWeight: 500,
-            }}
-          >
-            <span aria-hidden>💧</span>
-            Riego automático activo — estrés hídrico reducido en el score
-          </div>
-        )}
+        <div className="mt-6">
+          <WeatherWidget lat={tienda.lat} lon={tienda.lon} tiendaNombre={tienda.nombre} />
+        </div>
       </header>
 
       {/* ── Riesgo de inventario — motor de scoring ──────────────────────── */}
@@ -159,10 +149,9 @@ export default async function TiendaDetailPage({ params }: PageProps) {
         </p>
 
         {riesgos.length === 0 ? (
-          <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-6 py-10 text-center">
-            <Icons.sprout aria-hidden className="mx-auto mb-3 h-7 w-7 text-[var(--color-green-soft)]" strokeWidth={1.25} />
+          <div className="px-6 py-10 text-center" style={{ border: '0.5px solid var(--color-rule)' }}>
             <p className="text-[14px] text-[var(--color-ink-soft)]">
-              No se detectan riesgos significativos con el stock actual.
+              Sin riesgos significativos con el stock actual.
             </p>
           </div>
         ) : (
@@ -183,9 +172,12 @@ export default async function TiendaDetailPage({ params }: PageProps) {
               return (
                 <li
                   key={r.grupo}
-                  className="overflow-hidden rounded-2xl"
+                  className="overflow-hidden"
                   style={{
-                    border: `0.5px solid ${accentColor}`,
+                    borderLeft: `2px solid ${accentColor}`,
+                    borderTop: '0.5px solid var(--color-rule)',
+                    borderRight: '0.5px solid var(--color-rule)',
+                    borderBottom: '0.5px solid var(--color-rule)',
                     background: bgColor,
                   }}
                 >
@@ -236,15 +228,15 @@ export default async function TiendaDetailPage({ params }: PageProps) {
                         >
                           {r.plantasGrupo.length} {r.plantasGrupo.length === 1 ? 'especie afectada' : 'especies afectadas'} →
                         </summary>
-                        <ul className="mt-2 flex flex-wrap gap-1.5">
+                        <ul className="mt-3 space-y-1">
                           {r.plantasGrupo.map((p) => (
                             <li key={p.id}>
                               <Link
                                 href={`/plantas/${p.id}`}
-                                className="inline-flex items-center gap-1 rounded-full border border-[var(--color-rule)] bg-white/60 px-2.5 py-1 text-[11px] transition-colors hover:border-[var(--color-green-deep)]"
+                                style={{ fontSize: '12px', color: 'var(--color-ink-soft)', display: 'flex', justifyContent: 'space-between', padding: '3px 0', borderBottom: '0.5px solid var(--color-rule)', textDecoration: 'none' }}
                               >
-                                {p.nombre}
-                                <span className="font-semibold" style={{ color: accentColor }}>{p.stock}</span>
+                                <span>{p.nombre}</span>
+                                <span style={{ fontWeight: 600, color: accentColor }}>{p.stock} uds.</span>
                               </Link>
                             </li>
                           ))}
@@ -294,7 +286,7 @@ export default async function TiendaDetailPage({ params }: PageProps) {
         <p className="text-[14px] text-[var(--color-ink-soft)]">
           Para tu zona ({ZONA_LABELS[tienda.zona]}). El número entre paréntesis es referencia general en otras zonas.
         </p>
-        <div className="overflow-hidden rounded-xl border border-[var(--color-rule)]">
+        <div className="overflow-hidden" style={{ border: '0.5px solid var(--color-rule)' }}>
           <table className="w-full border-collapse text-[14px]">
             <thead className="bg-[var(--color-surface-2)] text-left">
               <tr>
@@ -337,7 +329,8 @@ export default async function TiendaDetailPage({ params }: PageProps) {
               return (
                 <details
                   key={grupo}
-                  className="group rounded-xl border border-[var(--color-rule)] bg-[var(--color-surface)] open:bg-[var(--color-surface-2)]"
+                  className="group"
+                  style={{ border: '0.5px solid var(--color-rule)', background: 'var(--color-surface)' }}
                 >
                   <summary className="flex cursor-pointer list-none items-center gap-3 p-4">
                     <Icon
@@ -385,7 +378,7 @@ export default async function TiendaDetailPage({ params }: PageProps) {
             <Link
               key={z}
               href={`/climas/${z}`}
-              className="flex items-center justify-between rounded-lg border border-[var(--color-rule)] bg-[var(--color-surface)] px-4 py-3 hover:border-[var(--color-green-soft)]"
+              className="flex items-center justify-between border border-[var(--color-rule)] bg-[var(--color-surface)] px-4 py-3 hover:border-[var(--color-green-soft)]"
             >
               <span className="text-[14px]">{ZONA_LABELS[z]}</span>
               <Icons.chevronRight aria-hidden className="h-4 w-4 text-[var(--color-ink-soft)]" strokeWidth={1.75} />

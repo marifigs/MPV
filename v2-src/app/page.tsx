@@ -502,60 +502,54 @@ function ReglaCard({ numero, iconKey, titulo, cuerpo, tip, ctaHref, ctaLabel }: 
   const Icon = Icons[iconKey];
   return (
     <div
-      className="flex flex-col rounded-2xl"
+      className="flex flex-col"
       style={{
         padding: 'clamp(28px,3vw,40px)',
-        background: 'rgba(245,241,232,0.035)',
-        border: '0.5px solid rgba(245,241,232,0.07)',
-        transition: 'background 0.5s var(--ease-luxury)',
+        borderTop: '0.5px solid rgba(245,241,232,0.10)',
+        borderRight: '0.5px solid rgba(245,241,232,0.06)',
+        borderBottom: '0.5px solid rgba(245,241,232,0.06)',
+        borderLeft: '0.5px solid rgba(245,241,232,0.06)',
       }}
     >
-      <div className="flex items-start justify-between">
+      {/* Number + icon inline */}
+      <div className="flex items-center gap-3 mb-6">
         <span
           className="display select-none"
-          style={{ fontSize: '96px', color: 'rgba(245,241,232,0.05)', lineHeight: 1, fontStyle: 'italic' }}
+          style={{ fontSize: '13px', color: 'rgba(245,241,232,0.28)', fontStyle: 'normal', fontFamily: 'var(--font-sans)', letterSpacing: '0.1em' }}
           aria-hidden
         >
           {numero}
         </span>
-        <span
-          className="grid h-11 w-11 shrink-0 place-items-center rounded-full"
-          style={{ background: 'rgba(245,241,232,0.07)' }}
-        >
-          <Icon aria-hidden className="h-5 w-5" strokeWidth={1.4} style={{ color: 'rgba(245,241,232,0.55)' }} />
-        </span>
+        <Icon aria-hidden className="h-4 w-4" strokeWidth={1.4} style={{ color: 'rgba(245,241,232,0.35)' }} />
       </div>
       <h3
-        className="serif mt-4 leading-snug"
-        style={{ fontSize: 'clamp(17px, 1.5vw, 20px)', color: 'var(--color-cream)' }}
+        className="display"
+        style={{ fontSize: 'clamp(22px, 2vw, 28px)', fontStyle: 'italic', color: 'var(--color-cream)', lineHeight: 1.05 }}
       >
         {titulo}
       </h3>
-      <p className="mt-3 flex-1 leading-relaxed" style={{ fontSize: '13.5px', color: 'rgba(245,241,232,0.45)' }}>
+      <p className="mt-4 flex-1 leading-relaxed" style={{ fontSize: '14px', color: 'rgba(245,241,232,0.42)' }}>
         {cuerpo}
       </p>
       <div
-        className="mt-6 px-5 py-4 rounded-r-xl"
-        style={{
-          borderLeft: '1.5px solid rgba(245,241,232,0.12)',
-          background: 'rgba(245,241,232,0.03)',
-        }}
+        className="mt-6 py-4"
+        style={{ borderTop: '0.5px solid rgba(245,241,232,0.10)' }}
       >
-        <p style={{ fontSize: '13px', lineHeight: 1.7, color: 'rgba(245,241,232,0.36)' }}>{tip}</p>
+        <p style={{ fontSize: '13px', lineHeight: 1.75, color: 'rgba(245,241,232,0.32)' }}>{tip}</p>
       </div>
       <Link
         href={ctaHref}
-        className="mt-7 inline-flex items-center gap-1.5 font-medium"
+        className="mt-6 inline-flex items-center gap-1.5"
         style={{
           fontSize: '11px',
-          color: 'rgba(245,241,232,0.38)',
+          fontWeight: 500,
+          color: 'rgba(245,241,232,0.35)',
           textTransform: 'uppercase',
           letterSpacing: '0.14em',
-          transition: 'color 0.3s, gap 0.3s var(--ease-luxury)',
+          transition: 'color 0.3s',
         }}
       >
-        {ctaLabel}
-        <Icons.arrowRight aria-hidden className="h-3.5 w-3.5" strokeWidth={2} />
+        {ctaLabel} →
       </Link>
     </div>
   );
@@ -640,29 +634,20 @@ function QuickLink({ href, label, hint, index }: {
 function EspecialCard({ planta }: { planta: (typeof plantasEspeciales)[number] }) {
   return (
     <div
-      className="rounded-2xl"
       style={{
-        border: '0.5px solid var(--color-rule)',
-        background: 'var(--color-surface)',
+        borderTop: '2px solid var(--color-green-deep)',
+        borderRight: '0.5px solid var(--color-rule)',
+        borderBottom: '0.5px solid var(--color-rule)',
+        borderLeft: '0.5px solid var(--color-rule)',
         padding: 'clamp(24px,2.5vw,36px)',
       }}
     >
-      <div className="flex items-start gap-5">
-        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--color-green-deep)] text-[var(--color-cream)]">
-          <Icons.flower aria-hidden className="h-5 w-5" strokeWidth={1.5} />
-        </span>
-        <div>
-          <h3 className="serif leading-tight" style={{ fontSize: 'clamp(19px, 2vw, 24px)' }}>
-            {planta.nombre}
-          </h3>
-          <p className="eyebrow mt-1.5" style={{ color: 'var(--color-green-soft)' }}>Planta de temporada</p>
-        </div>
-      </div>
-      <div className="mt-5 rounded-xl px-5 py-4" style={{ background: 'var(--color-surface-2)' }}>
-        <p className="eyebrow mb-2" style={{ color: 'var(--color-green-deep)' }}>Cuidado especial</p>
-        <p className="leading-relaxed" style={{ fontSize: '14px' }}>{planta.especial}</p>
-      </div>
-      <div className="mt-5 grid grid-cols-2 gap-5" style={{ fontSize: '13px' }}>
+      <p className="eyebrow mb-4" style={{ color: 'var(--color-green-soft)' }}>Planta de temporada</p>
+      <h3 className="display" style={{ fontSize: 'clamp(22px, 2.5vw, 32px)', fontStyle: 'italic', lineHeight: 1 }}>
+        {planta.nombre}
+      </h3>
+      <p className="mt-5 leading-relaxed" style={{ fontSize: '14px', color: 'var(--color-ink-soft)' }}>{planta.especial}</p>
+      <div className="mt-6 grid grid-cols-2 gap-6 pt-5" style={{ borderTop: '0.5px solid var(--color-rule)', fontSize: '13px' }}>
         <div>
           <p className="eyebrow mb-2">Temperatura</p>
           <p className="leading-snug" style={{ color: 'var(--color-ink-soft)' }}>{planta.temperatura}</p>

@@ -144,27 +144,13 @@ export default async function PlantaDetailPage({ params }: PageProps) {
             {displaySubrubro === 'PLANTAS DE INTERIOR' ? 'Planta de interior' : 'Planta de exterior'}
           </p>
 
-          {/* SKU badges */}
+          {/* SKU metadata — plain text */}
           {planta ? (
-            <div className="mt-8 flex flex-wrap items-center gap-2.5">
-              <span
-                className="rounded-full px-4 py-1.5 font-medium"
-                style={{
-                  fontSize: '11px',
-                  border: '0.5px solid var(--color-rule)',
-                  background: 'var(--color-surface-2)',
-                  letterSpacing: '0.04em',
-                }}
-              >
-                SKU {planta.sku}
-              </span>
-              <span
-                className="rounded-full px-4 py-1.5 font-semibold text-white"
-                style={{ fontSize: '12px', background: 'var(--color-green-deep)' }}
-              >
-                {planta.total} uds. en red
-              </span>
-            </div>
+            <p style={{ marginTop: '2rem', fontSize: '13px', color: 'var(--color-ink-soft)' }}>
+              SKU {planta.sku}
+              <span style={{ margin: '0 0.6em', opacity: 0.35 }}>·</span>
+              <span style={{ color: 'var(--color-green-deep)', fontWeight: 500 }}>{planta.total} uds. en red</span>
+            </p>
           ) : null}
 
           {/* Hairline rule */}
@@ -191,7 +177,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
                 <InfoCard label="Luz" value={cuidado.luz} />
                 <InfoCard label="Riego" value={cuidado.riego} />
                 <div
-                  className="rounded-2xl p-6 md:col-span-2"
+                  className="p-6 md:col-span-2"
                   style={{ border: '0.5px solid var(--color-rule)', background: 'var(--color-surface)' }}
                 >
                   <p className="eyebrow mb-3" style={{ color: 'var(--color-green-deep)' }}>Estructura recomendada</p>
@@ -203,7 +189,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
             {/* ── Frecuencia de riego ── */}
             <section>
               <SectionEyebrow>Frecuencia de riego por zona climática</SectionEyebrow>
-              <div className="overflow-hidden rounded-2xl" style={{ border: '0.5px solid var(--color-rule)' }}>
+              <div className="overflow-hidden" style={{ border: '0.5px solid var(--color-rule)' }}>
                 <table className="w-full border-collapse" style={{ fontSize: '14px' }}>
                   <thead style={{ background: 'var(--color-surface-2)' }}>
                     <tr>
@@ -228,20 +214,20 @@ export default async function PlantaDetailPage({ params }: PageProps) {
             {/* ── Tips ── */}
             <section>
               <SectionEyebrow>Tips para esta familia</SectionEyebrow>
-              <ul className="grid gap-3">
+              <ul style={{ borderTop: '0.5px solid var(--color-rule)' }}>
                 {cuidado.tips.map((t, i) => (
                   <li
                     key={i}
-                    className="flex gap-5 rounded-2xl p-6"
-                    style={{ border: '0.5px solid var(--color-rule)', background: 'var(--color-surface)' }}
+                    className="flex gap-5 py-5"
+                    style={{ borderBottom: '0.5px solid var(--color-rule)' }}
                   >
-                    <Icons.bulb
+                    <span
                       aria-hidden
-                      className="mt-0.5 h-5 w-5 shrink-0"
-                      strokeWidth={1.5}
-                      style={{ color: 'var(--color-warning)' }}
-                    />
-                    <p className="leading-relaxed" style={{ fontSize: '14px' }}>{t}</p>
+                      style={{ fontSize: '16px', flexShrink: 0, marginTop: '1px', color: 'var(--color-warning)', opacity: 0.8 }}
+                    >
+                      —
+                    </span>
+                    <p className="leading-relaxed" style={{ fontSize: '15px' }}>{t}</p>
                   </li>
                 ))}
               </ul>
@@ -263,12 +249,10 @@ export default async function PlantaDetailPage({ params }: PageProps) {
                   <Link
                     key={tienda.id}
                     href={`/mi-tienda/${tienda.id}`}
-                    className="flex items-center justify-between rounded-xl px-5 py-4 transition-all"
+                    className="flex items-center justify-between px-0 py-4 transition-all"
                     style={{
-                      border: '0.5px solid var(--color-rule)',
-                      background: 'var(--color-surface)',
+                      borderBottom: '0.5px solid var(--color-rule)',
                       fontSize: '14px',
-                      transition: 'border-color 0.35s, box-shadow 0.35s',
                     }}
                   >
                     <span className="flex items-center gap-2.5">
@@ -357,8 +341,8 @@ function SectionEyebrow({ children }: { children: React.ReactNode }) {
 function InfoCard({ label, value }: { label: string; value: string }) {
   return (
     <div
-      className="rounded-2xl p-6"
-      style={{ border: '0.5px solid var(--color-rule)', background: 'var(--color-surface)' }}
+      className="p-6"
+      style={{ border: '0.5px solid var(--color-rule)' }}
     >
       <p className="eyebrow mb-3" style={{ color: 'var(--color-green-deep)' }}>{label}</p>
       <p className="leading-relaxed" style={{ fontSize: '15px' }}>{value}</p>
