@@ -87,10 +87,13 @@ export function calcularRiesgosTienda(
   zona: ZonaClimatica,
   plantasDeTienda: Array<{ id: string; nombre: string; grupo: string; stock: number }>,
   mes: number = new Date().getMonth() + 1,
+  riegoAutomatico = false,
 ): RiesgoGrupo[] {
   const estacional = factorEstacional(mes);
   const zonaPerfil = ZONA_PERFIL[zona];
   const esHumedo   = zona === 'frio-humedo';
+  // Con riego automático confiable, el estrés hídrico por calor queda cubierto
+  const heatMultiplier = riegoAutomatico ? 0.15 : 1;
 
   // ── Group plants by grupo ─────────────────────────────────────────────────
   const porGrupo = new Map<GrupoCuidado, typeof plantasDeTienda>();
@@ -114,8 +117,9 @@ export function calcularRiesgosTienda(
 
     // ── Component 1: heat/drought stress (0–1) ───────────────────────────────
     // baseVuln = 1/dias → daily watering = 1.0, weekly = 0.14
+    // Reduced 85% when store has automatic irrigation
     const baseVuln   = Math.min(1, 1 / dias);
-    const heatStress = Math.min(1, baseVuln * zonaPerfil.calor * estacional.calor);
+    const heatStress = Math.min(1, baseVuln * zonaPerfil.calor * estacional.calor * heatMultiplier);
 
     // ── Component 2: cold damage stress (0–1) ───────────────────────────────
     const frioSens   = (FRIO_SENS[grupo] ?? 0.2) / 2; // normalize to 0–1

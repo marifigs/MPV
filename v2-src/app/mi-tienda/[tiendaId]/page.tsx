@@ -19,6 +19,7 @@ import { GRUPO_ICON, GRUPO_LABEL } from '@/lib/group-icons';
 import { ZONAS_ORDEN } from '@/types/data';
 import type { ZonaClimatica } from '@/types/data';
 import { calcularRiesgosTienda, type FactorPrincipal } from '@/lib/risk-engine';
+import { WeatherWidget } from '@/components/weather-widget';
 
 // ── Factor labels & colors ────────────────────────────────────────────────────
 const FACTOR_LABEL: Record<FactorPrincipal, string> = {
@@ -66,6 +67,7 @@ export default async function TiendaDetailPage({ params }: PageProps) {
     tienda.zona as ZonaClimatica,
     plantasDeTienda,
     mesActual,
+    tienda.riegoAutomatico,
   );
 
   return (
@@ -106,6 +108,26 @@ export default async function TiendaDetailPage({ params }: PageProps) {
           <SaveMiTienda tiendaId={tienda.id} />
           <ShareButton title={`${tienda.nombre} — Manual Plantas Vivas`} />
         </div>
+
+        {/* Clima actual */}
+        <WeatherWidget lat={tienda.lat} lon={tienda.lon} tiendaNombre={tienda.nombre} />
+
+        {/* Riego automático badge */}
+        {tienda.riegoAutomatico && (
+          <div
+            className="inline-flex items-center gap-2 rounded-full px-4 py-2"
+            style={{
+              background: 'rgba(45,90,61,0.08)',
+              border: '0.5px solid var(--color-green-soft)',
+              fontSize: '12px',
+              color: 'var(--color-green-deep)',
+              fontWeight: 500,
+            }}
+          >
+            <span aria-hidden>💧</span>
+            Riego automático activo — estrés hídrico reducido en el score
+          </div>
+        )}
       </header>
 
       {/* ── Riesgo de inventario — motor de scoring ──────────────────────── */}

@@ -48,6 +48,9 @@ export interface Tienda {
   nombre: string;
   zona: ZonaClimatica;
   tipo: TipoTienda;
+  lat: number;
+  lon: number;
+  riegoAutomatico: boolean;
 }
 
 export interface Planta {
