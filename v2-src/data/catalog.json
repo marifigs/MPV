@@ -246,7 +246,7 @@
     "id": "aralia",
     "nombre": "ARALIA",
     "folderSlug": "ARALIA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/ARALIA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -290,8 +290,8 @@
   {
     "id": "arreglo-floral",
     "nombre": "ARREGLO FLORAL",
-    "folderSlug": null,
-    "fotoUrl": null,
+    "folderSlug": "ARREGLO_FLORAL",
+    "fotoUrl": "plantas/ARREGLO_FLORAL/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -533,8 +533,8 @@
   {
     "id": "calle",
     "nombre": "CALLE",
-    "folderSlug": null,
-    "fotoUrl": null,
+    "folderSlug": "CALLE",
+    "fotoUrl": "plantas/CALLE/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -578,8 +578,8 @@
   {
     "id": "cardenal",
     "nombre": "CARDENAL",
-    "folderSlug": null,
-    "fotoUrl": null,
+    "folderSlug": "CARDENAL",
+    "fotoUrl": "plantas/CARDENAL/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA DE FLOR",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1056,7 +1056,7 @@
     "id": "ficus",
     "nombre": "FICUS",
     "folderSlug": "FICUS",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/FICUS/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1092,7 +1092,7 @@
     "id": "fucsia",
     "nombre": "FUCSIA",
     "folderSlug": "FUCSIA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/FUCSIA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1217,8 +1217,8 @@
   {
     "id": "helleborus",
     "nombre": "HELLEBORUS",
-    "folderSlug": null,
-    "fotoUrl": null,
+    "folderSlug": "HELLEBORUS",
+    "fotoUrl": "plantas/HELLEBORUS/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1452,7 +1452,7 @@
     "id": "leucophyta",
     "nombre": "LEUCOPHYTA",
     "folderSlug": "LEUCOPHYTA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/LEUCOPHYTA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1614,7 +1614,7 @@
     "id": "marigold",
     "nombre": "MARIGOLD",
     "folderSlug": "MARIGOLD",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/MARIGOLD/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -1650,7 +1650,7 @@
     "id": "mioporo",
     "nombre": "MIOPORO",
     "folderSlug": "MIOPORO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/MIOPORO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2010,7 +2010,7 @@
     "id": "pitosporo",
     "nombre": "PITOSPORO",
     "folderSlug": "PITOSPORO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/PITOSPORO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2081,8 +2081,8 @@
   {
     "id": "quebracho",
     "nombre": "QUEBRACHO",
-    "folderSlug": null,
-    "fotoUrl": null,
+    "folderSlug": "QUEBRACHO",
+    "fotoUrl": "plantas/QUEBRACHO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2090,8 +2090,8 @@
   {
     "id": "quillay",
     "nombre": "QUILLAY",
-    "folderSlug": null,
-    "fotoUrl": null,
+    "folderSlug": "QUILLAY",
+    "fotoUrl": "plantas/QUILLAY/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2163,7 +2163,7 @@
     "id": "rosario",
     "nombre": "ROSARIO",
     "folderSlug": "ROSARIO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/ROSARIO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2279,8 +2279,8 @@
   {
     "id": "stenocarpo",
     "nombre": "STENOCARPO",
-    "folderSlug": null,
-    "fotoUrl": null,
+    "folderSlug": "STENOCARPO",
+    "fotoUrl": "plantas/STENOCARPO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBOLES PALMERAS",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2297,8 +2297,8 @@
   {
     "id": "stipa",
     "nombre": "STIPA",
-    "folderSlug": null,
-    "fotoUrl": null,
+    "folderSlug": "STIPA",
+    "fotoUrl": "plantas/STIPA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2351,8 +2351,8 @@
   {
     "id": "tara",
     "nombre": "TARA",
-    "folderSlug": null,
-    "fotoUrl": null,
+    "folderSlug": "TARA",
+    "fotoUrl": "plantas/TARA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
