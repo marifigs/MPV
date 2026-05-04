@@ -64,27 +64,21 @@ export function TopNav() {
               <span style={{
                 marginTop: '3px',
                 fontFamily: 'var(--font-sans)',
-                fontSize: '11px',
+                fontSize: '10px',
                 fontWeight: 500,
                 textTransform: 'uppercase',
                 letterSpacing: '0.18em',
                 color: 'var(--color-ink-soft)',
-                opacity: 0.5,
+                opacity: 0.4,
               }}>
-                Easy Chile
+                Manual operativo
               </span>
             </div>
           </Link>
 
-          {/* Right: search + logo */}
+          {/* Right: search */}
           <div className="flex items-center gap-5">
             <GlobalSearchTrigger />
-            <img
-              src="/MPV/v2/easy-logo.png"
-              alt="Easy Cencosud"
-              className="h-12 w-auto sm:h-16"
-              decoding="async"
-            />
           </div>
         </div>
 

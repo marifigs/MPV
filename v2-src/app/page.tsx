@@ -41,7 +41,7 @@ export default function HomePage() {
                 letterSpacing: '0.32em',
                 color: 'rgba(245,241,232,0.28)',
               }}>
-                Plantas vivas · Manual operativo · Easy Chile
+                Plantas vivas · Manual operativo
               </span>
             </div>
 
@@ -151,14 +151,6 @@ export default function HomePage() {
               className="absolute inset-0 pointer-events-none"
               style={{ background: 'linear-gradient(to top, rgba(8,13,9,0.7) 0%, rgba(8,13,9,0.05) 55%, transparent 100%)' }}
             />
-            <div className="absolute bottom-10 left-0 right-0 flex justify-center">
-              <img
-                src="/MPV/v2/easy-logo.png"
-                alt="Easy Cencosud"
-                style={{ height: '52px', width: 'auto', opacity: 0.85 }}
-                decoding="async"
-              />
-            </div>
           </div>
         </div>
 
@@ -210,63 +202,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ══════════════════════════════════════════════════
-          MARQUEE — luxury editorial ticker
-      ══════════════════════════════════════════════════ */}
-      <div
-        style={{
-          marginTop: '0',
-          width: '100vw',
-          position: 'relative',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          borderTop: '0.5px solid var(--color-rule)',
-          borderBottom: '0.5px solid var(--color-rule)',
-          background: 'var(--color-surface-2)',
-          overflow: 'hidden',
-          padding: '14px 0',
-        }}
-      >
-        <div className="animate-marquee" aria-hidden>
-          {[...Array(2)].map((_, i) => (
-            <span key={i} style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
-              {[
-                '279 Especies',
-                '42 Tiendas Easy Chile',
-                '6 Zonas Climáticas',
-                'Cuidado de Plantas Vivas',
-                'Merma Cero',
-                'Riego por Zona',
-                'Fichas de Cuidado',
-                'Stock en Tiempo Real',
-              ].map((text) => (
-                <span key={text} style={{ display: 'flex', alignItems: 'center', gap: 0 }}>
-                  <span style={{
-                    fontFamily: 'var(--font-sans)',
-                    fontSize: '10px',
-                    fontWeight: 500,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.2em',
-                    color: 'var(--color-ink-soft)',
-                    whiteSpace: 'nowrap',
-                    padding: '0 2.5rem',
-                  }}>
-                    {text}
-                  </span>
-                  <span style={{
-                    width: '4px',
-                    height: '4px',
-                    borderRadius: '50%',
-                    background: 'var(--color-green-soft)',
-                    opacity: 0.4,
-                    flexShrink: 0,
-                  }} />
-                </span>
-              ))}
-            </span>
-          ))}
-        </div>
-      </div>
 
       {/* ══════════════════════════════════════════════════
           MANIFESTO — editorial statement
@@ -377,7 +312,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           MÓDULOS — quick navigation, editorial grid
       ══════════════════════════════════════════════════ */}
-      <section className="pt-28 pb-0 scroll-reveal">
+      <section className="pt-28 pb-0">
         <p className="eyebrow mb-5" style={{ color: 'var(--color-green-soft)' }}>Acceso directo</p>
         <h2
           className="serif mb-14"
@@ -448,7 +383,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           PLANTAS ESPECIALES
       ══════════════════════════════════════════════════ */}
-      <section className="pt-28 pb-0 scroll-reveal">
+      <section className="pt-28 pb-0">
         <p className="eyebrow mb-5" style={{ color: 'var(--color-green-soft)' }}>Atención extra</p>
         <h2 className="serif mb-12" style={{ fontSize: 'clamp(28px, 3.2vw, 50px)', letterSpacing: '-0.03em' }}>
           Plantas con cuidados específicos

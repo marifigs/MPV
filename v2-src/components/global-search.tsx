@@ -125,7 +125,7 @@ export function GlobalSearchTrigger() {
         type="button"
         onClick={() => setOpen(true)}
         aria-label="Abrir búsqueda global (Cmd+K)"
-        className="flex items-center gap-2 rounded-full border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-3 py-2 text-[13px] text-[var(--color-ink-soft)] hover:border-[var(--color-green-soft)] hover:bg-[var(--color-surface)]"
+        className="flex items-center gap-2 border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-3 py-2 text-[13px] text-[var(--color-ink-soft)] hover:border-[var(--color-ink-soft)] transition-colors"
       >
         <Icons.search aria-hidden className="h-4 w-4" strokeWidth={1.75} />
         <span>Buscar</span>
@@ -144,7 +144,7 @@ export function GlobalSearchTrigger() {
             if (e.target === e.currentTarget) setOpen(false);
           }}
         >
-          <div className="w-full max-w-xl overflow-hidden rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface)] shadow-[var(--shadow-pop)]">
+          <div className="w-full max-w-xl overflow-hidden border border-[var(--color-rule)] bg-[var(--color-surface)] shadow-[var(--shadow-lift)]">
             <div className="flex items-center gap-3 border-b border-[var(--color-rule)] px-4 py-3">
               <Icons.search aria-hidden className="h-5 w-5 text-[var(--color-ink-soft)]" strokeWidth={1.75} />
               <input

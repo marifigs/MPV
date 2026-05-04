@@ -68,17 +68,6 @@ export function SiteFooter() {
             </a>
           </div>
 
-          {/* Logo */}
-          <div className="flex items-start">
-            <img
-              src="/MPV/v2/cencosud-logo.png"
-              alt="Cencosud"
-              className="w-auto"
-              style={{ height: '42px', opacity: 0.38, filter: 'brightness(2)' }}
-              decoding="async"
-              loading="lazy"
-            />
-          </div>
         </div>
 
         {/* ── Bottom rule + copyright ── */}

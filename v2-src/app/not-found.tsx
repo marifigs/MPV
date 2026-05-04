@@ -12,7 +12,7 @@ export default function NotFound() {
         </p>
         <Link
           href="/"
-          className="inline-flex h-12 items-center gap-2 rounded-lg bg-[var(--color-green-deep)] px-5 text-[15px] font-medium text-[var(--color-cream)]"
+          className="inline-flex h-11 items-center gap-2 border border-[var(--color-green-deep)] px-5 text-[13px] font-medium tracking-wide text-[var(--color-green-deep)] transition-colors hover:bg-[var(--color-green-deep)] hover:text-[var(--color-cream)]"
         >
           <Icons.home aria-hidden className="h-4 w-4" strokeWidth={1.75} />
           Volver al inicio
