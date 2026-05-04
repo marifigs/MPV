@@ -1,3 +1,5 @@
+'use client';
+
 import { Icons } from '@/lib/icons';
 
 export function SiteFooter() {
