@@ -3,7 +3,6 @@ import { DM_Sans, Cormorant_Garamond } from 'next/font/google';
 import { TopNav } from '@/components/top-nav';
 import { SiteFooter } from '@/components/site-footer';
 import { PageTransition } from '@/components/page-transition';
-import { MagneticCursor } from '@/components/magnetic-cursor';
 import './globals.css';
 
 const dmSans = DM_Sans({
@@ -46,7 +45,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         >
           Saltar al contenido
         </a>
-        <MagneticCursor />
         <TopNav />
         <main id="contenido" className="mx-auto max-w-6xl px-5 sm:px-8 pb-40 pt-12">
           <PageTransition>{children}</PageTransition>

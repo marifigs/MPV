@@ -254,34 +254,31 @@ select:focus-visible,
   color: var(--color-ink-soft);
 }
 
-/* ── Magnetic custom cursor ───────────────────── */
-@media (pointer: fine) {
-  html.custom-cursor,
-  html.custom-cursor * {
-    cursor: none !important;
+/* ── QuickLink editorial rows ─────────────────── */
+.ql-row { display: flex; align-items: center; }
+.ql-row:hover .ql-label  { color: var(--color-green-deep) !important; }
+.ql-row:hover .ql-hint   { opacity: 0.7 !important; }
+.ql-row:hover .ql-arrow  { transform: translateX(6px); opacity: 0.6 !important; }
+.ql-label  { transition: color 0.4s var(--ease-luxury); }
+.ql-hint   { transition: opacity 0.4s var(--ease-luxury); }
+.ql-arrow  { transition: transform 0.5s var(--ease-luxury), opacity 0.4s var(--ease-luxury); }
+
+/* ── CSS Scroll-Driven Animations (Chrome 115+) ─ */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .scroll-reveal {
+      animation: scroll-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 28%;
+    }
+    .scroll-reveal-slow {
+      animation: scroll-in linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 40%;
+    }
+    @keyframes scroll-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
   }
 }
-
-/* ── Aesop QuickLink editorial rows ──────────── */
-.ql-wipe {
-  position: absolute;
-  inset: 0;
-  background: var(--color-ink);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: none;
-  z-index: 0;
-}
-.ql-row:hover .ql-wipe { transform: scaleX(1); }
-.ql-index,
-.ql-label,
-.ql-hint,
-.ql-arrow {
-  position: relative;
-  z-index: 1;
-}
-.ql-row:hover .ql-index  { color: rgba(245,241,232,0.35) !important; }
-.ql-row:hover .ql-label  { color: var(--color-cream) !important; }
-.ql-row:hover .ql-hint   { color: rgba(245,241,232,0.42) !important; opacity: 1 !important; }
-.ql-row:hover .ql-arrow  { color: var(--color-cream) !important; opacity: 0.65 !important; transform: translateX(8px); }

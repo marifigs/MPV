@@ -155,7 +155,7 @@ export default function HomePage() {
               <img
                 src="/MPV/v2/easy-logo.png"
                 alt="Easy Cencosud"
-                style={{ width: '88px', opacity: 0.82 }}
+                style={{ height: '52px', width: 'auto', opacity: 0.85 }}
                 decoding="async"
               />
             </div>
@@ -377,7 +377,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           MÓDULOS — quick navigation, editorial grid
       ══════════════════════════════════════════════════ */}
-      <section className="pt-28 pb-0">
+      <section className="pt-28 pb-0 scroll-reveal">
         <p className="eyebrow mb-5" style={{ color: 'var(--color-green-soft)' }}>Acceso directo</p>
         <h2
           className="serif mb-14"
@@ -448,7 +448,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           PLANTAS ESPECIALES
       ══════════════════════════════════════════════════ */}
-      <section className="pt-28 pb-0">
+      <section className="pt-28 pb-0 scroll-reveal">
         <p className="eyebrow mb-5" style={{ color: 'var(--color-green-soft)' }}>Atención extra</p>
         <h2 className="serif mb-12" style={{ fontSize: 'clamp(28px, 3.2vw, 50px)', letterSpacing: '-0.03em' }}>
           Plantas con cuidados específicos
@@ -570,44 +570,39 @@ function QuickLink({ href, label, hint, index }: {
   return (
     <Link
       href={href}
-      className="ql-row group relative flex items-center overflow-hidden"
+      className="ql-row group"
       style={{
         borderBottom: '0.5px solid var(--color-rule)',
-        padding: 'clamp(20px, 2.5vw, 32px) 0',
+        padding: 'clamp(20px, 2.5vw, 34px) 0',
         textDecoration: 'none',
       }}
     >
-      {/* Full-width scaleX wipe on hover */}
-      <span className="ql-wipe" aria-hidden />
-
       {/* Index */}
       <span
-        className="ql-index shrink-0"
         aria-hidden
         style={{
+          flexShrink: 0,
           width: '3.5rem',
           fontFamily: 'var(--font-sans)',
           fontSize: '11px',
           fontWeight: 400,
-          letterSpacing: '0.12em',
+          letterSpacing: '0.1em',
           color: 'var(--color-ink-soft)',
-          opacity: 0.32,
-          transition: 'color 0.5s var(--ease-luxury), opacity 0.5s var(--ease-luxury)',
+          opacity: 0.28,
         }}
       >
         {String(index).padStart(2, '0')}
       </span>
 
       {/* Label + hint */}
-      <div className="flex-1" style={{ paddingLeft: 'clamp(16px, 2vw, 32px)', paddingRight: 'clamp(16px, 2vw, 32px)' }}>
+      <div style={{ flex: 1, paddingRight: 'clamp(16px, 2vw, 32px)' }}>
         <p
           className="ql-label display"
           style={{
-            fontSize: 'clamp(30px, 3.8vw, 58px)',
+            fontSize: 'clamp(32px, 4vw, 60px)',
             fontStyle: 'italic',
             color: 'var(--color-ink)',
             lineHeight: 1,
-            transition: 'color 0.5s var(--ease-luxury)',
           }}
         >
           {label}
@@ -615,10 +610,9 @@ function QuickLink({ href, label, hint, index }: {
         <p
           className="ql-hint eyebrow"
           style={{
-            marginTop: '6px',
+            marginTop: '8px',
             color: 'var(--color-ink-soft)',
-            opacity: 0.45,
-            transition: 'color 0.5s var(--ease-luxury), opacity 0.5s var(--ease-luxury)',
+            opacity: 0.4,
           }}
         >
           {hint}
@@ -627,13 +621,14 @@ function QuickLink({ href, label, hint, index }: {
 
       {/* Arrow */}
       <span
-        className="ql-arrow shrink-0"
+        className="ql-arrow"
         aria-hidden
         style={{
-          fontSize: '18px',
+          flexShrink: 0,
+          fontFamily: 'var(--font-sans)',
+          fontSize: '20px',
           color: 'var(--color-ink-soft)',
-          opacity: 0.25,
-          transition: 'color 0.5s var(--ease-luxury), opacity 0.5s var(--ease-luxury), transform 0.5s var(--ease-luxury)',
+          opacity: 0.2,
         }}
       >
         →

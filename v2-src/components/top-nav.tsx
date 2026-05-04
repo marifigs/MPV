@@ -43,33 +43,33 @@ export function TopNav() {
           >
             {/* Logo mark */}
             <span
-              className="grid h-8 w-8 place-items-center rounded-lg"
+              className="grid h-9 w-9 place-items-center rounded-lg"
               style={{
                 background: 'var(--color-green-deep)',
                 color: 'var(--color-cream)',
                 transition: 'transform 0.5s var(--ease-luxury)',
               }}
             >
-              <Icons.sprout aria-hidden className="h-4 w-4" strokeWidth={2} />
+              <Icons.sprout aria-hidden className="h-4.5 w-4.5" strokeWidth={2} />
             </span>
 
             {/* Brand text */}
             <div className="flex flex-col leading-none">
               <span
                 className="serif tracking-tight"
-                style={{ fontSize: '15px', color: 'var(--color-ink)' }}
+                style={{ fontSize: '17px', color: 'var(--color-ink)' }}
               >
                 Plantas Vivas
               </span>
               <span style={{
-                marginTop: '2px',
+                marginTop: '3px',
                 fontFamily: 'var(--font-sans)',
-                fontSize: '9px',
+                fontSize: '11px',
                 fontWeight: 500,
                 textTransform: 'uppercase',
-                letterSpacing: '0.22em',
+                letterSpacing: '0.18em',
                 color: 'var(--color-ink-soft)',
-                opacity: 0.55,
+                opacity: 0.5,
               }}>
                 Easy Chile
               </span>
@@ -77,18 +77,18 @@ export function TopNav() {
           </Link>
 
           {/* Right: search + logo */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-5">
             <GlobalSearchTrigger />
             <img
               src="/MPV/v2/easy-logo.png"
               alt="Easy Cencosud"
-              className="h-11 w-auto sm:h-13"
+              className="h-12 w-auto sm:h-16"
               decoding="async"
             />
           </div>
         </div>
 
-        {/* Nav — icon-free, uppercase micro-text */}
+        {/* Nav — icon-free, editorial register */}
         <nav
           aria-label="Secciones"
           className="flex gap-0 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
@@ -100,20 +100,25 @@ export function TopNav() {
                 key={item.href}
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
-                className="relative flex shrink-0 items-center px-3.5 py-3 min-h-[44px] transition-colors duration-300"
+                className="relative flex shrink-0 items-center px-4 py-3.5 min-h-[44px] transition-colors duration-300"
                 style={{
                   fontFamily: 'var(--font-sans)',
-                  fontSize: '10.5px',
+                  fontSize: '13px',
                   fontWeight: active ? 500 : 400,
-                  textTransform: 'uppercase',
-                  letterSpacing: '0.18em',
+                  letterSpacing: '0.01em',
                   color: active
                     ? 'var(--color-ink)'
                     : 'var(--color-ink-soft)',
-                  opacity: active ? 1 : 0.6,
+                  opacity: active ? 1 : 0.7,
                 }}
               >
                 {item.label}
+                {active && (
+                  <span
+                    className="absolute bottom-0 left-4 right-4"
+                    style={{ height: '0.5px', background: 'var(--color-ink)', opacity: 0.4 }}
+                  />
+                )}
               </Link>
             );
           })}

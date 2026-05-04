@@ -74,7 +74,7 @@ export function SiteFooter() {
               src="/MPV/v2/cencosud-logo.png"
               alt="Cencosud"
               className="w-auto"
-              style={{ height: '28px', opacity: 0.28, filter: 'brightness(2)' }}
+              style={{ height: '42px', opacity: 0.38, filter: 'brightness(2)' }}
               decoding="async"
               loading="lazy"
             />
