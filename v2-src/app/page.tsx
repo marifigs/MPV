@@ -140,7 +140,7 @@ export default function HomePage() {
           {/* Right: video */}
           <div className="relative overflow-hidden grain" style={{ background: '#080d09' }}>
             <video
-              autoPlay muted loop playsInline
+              autoPlay muted loop playsInline preload="metadata"
               className="absolute inset-0 h-full w-full object-cover"
               style={{ opacity: 0.88 }}
               poster="/MPV/v2/videos/hero-poster.jpg"
@@ -157,9 +157,9 @@ export default function HomePage() {
         {/* Mobile: full-bleed */}
         <div
           className="relative flex flex-col justify-end overflow-hidden grain md:hidden"
-          style={{ minHeight: '95svh' }}
+          style={{ minHeight: 'max(600px, 92vh)' }}
         >
-          <video autoPlay muted loop playsInline
+          <video autoPlay muted loop playsInline preload="none"
             className="absolute inset-0 h-full w-full object-cover"
             style={{ objectPosition: 'center 20%' }}
             poster="/MPV/v2/videos/hero-poster.jpg">

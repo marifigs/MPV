@@ -2,46 +2,13 @@
 
 import * as React from 'react';
 import { useRouter } from 'next/navigation';
-import Fuse from 'fuse.js';
 import { Icons } from '@/lib/icons';
-import { plantas, tiendas, zonas, ZONA_LABELS } from '@/data';
 import { cn } from '@/lib/cn';
 
 type Hit =
   | { kind: 'planta'; id: string; nombre: string; meta: string }
   | { kind: 'tienda'; id: string; nombre: string; meta: string }
   | { kind: 'clima'; id: string; nombre: string; meta: string };
-
-const HITS: Hit[] = [
-  ...plantas.map<Hit>((p) => ({
-    kind: 'planta',
-    id: p.id,
-    nombre: p.nombre,
-    meta: p.grupo,
-  })),
-  ...tiendas.map<Hit>((t) => ({
-    kind: 'tienda',
-    id: t.id,
-    nombre: t.nombre,
-    meta: ZONA_LABELS[t.zona],
-  })),
-  ...zonas.map<Hit>((z) => ({
-    kind: 'clima',
-    id: z.id,
-    nombre: z.titulo,
-    meta: z.riegoGeneral,
-  })),
-];
-
-const fuse = new Fuse(HITS, {
-  keys: [
-    { name: 'nombre', weight: 0.7 },
-    { name: 'meta', weight: 0.3 },
-  ],
-  threshold: 0.35,
-  ignoreLocation: true,
-  minMatchCharLength: 2,
-});
 
 const KIND_LABEL = {
   planta: 'Planta',
@@ -53,8 +20,42 @@ export function GlobalSearchTrigger() {
   const [open, setOpen] = React.useState(false);
   const [query, setQuery] = React.useState('');
   const [activeIdx, setActiveIdx] = React.useState(0);
+  const [fuseInstance, setFuseInstance] = React.useState<import('fuse.js').default<Hit> | null>(null);
+  const [allHits, setAllHits] = React.useState<Hit[]>([]);
   const inputRef = React.useRef<HTMLInputElement>(null);
   const router = useRouter();
+
+  // Lazy-load plant data + Fuse only when dialog first opens
+  React.useEffect(() => {
+    if (!open || fuseInstance) return;
+    let cancelled = false;
+    async function loadIndex() {
+      const [{ default: Fuse }, { plantas, tiendas, zonas, ZONA_LABELS }] = await Promise.all([
+        import('fuse.js'),
+        import('@/data'),
+      ]);
+      if (cancelled) return;
+      const hits: Hit[] = [
+        ...plantas.map<Hit>((p) => ({ kind: 'planta', id: p.id, nombre: p.nombre, meta: p.grupo })),
+        ...tiendas.map<Hit>((t) => ({ kind: 'tienda', id: t.id, nombre: t.nombre, meta: ZONA_LABELS[t.zona] })),
+        ...zonas.map<Hit>((z) => ({ kind: 'clima', id: z.id, nombre: z.titulo, meta: z.riegoGeneral })),
+      ];
+      setAllHits(hits);
+      setFuseInstance(
+        new Fuse(hits, {
+          keys: [
+            { name: 'nombre', weight: 0.7 },
+            { name: 'meta', weight: 0.3 },
+          ],
+          threshold: 0.35,
+          ignoreLocation: true,
+          minMatchCharLength: 2,
+        })
+      );
+    }
+    loadIndex();
+    return () => { cancelled = true; };
+  }, [open, fuseInstance]);
 
   React.useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -79,9 +80,9 @@ export function GlobalSearchTrigger() {
   }, [open]);
 
   const results = React.useMemo(() => {
-    if (query.trim().length < 2) return [] as Hit[];
-    return fuse.search(query).slice(0, 30).map((r) => r.item);
-  }, [query]);
+    if (!fuseInstance || query.trim().length < 2) return [] as Hit[];
+    return fuseInstance.search(query).slice(0, 30).map((r) => r.item);
+  }, [query, fuseInstance]);
 
   const grouped = React.useMemo(() => {
     const g: Record<Hit['kind'], Hit[]> = { planta: [], tienda: [], clima: [] };
@@ -164,7 +165,11 @@ export function GlobalSearchTrigger() {
               </kbd>
             </div>
             <div className="max-h-[60vh] overflow-y-auto">
-              {flatList.length === 0 ? (
+              {!fuseInstance ? (
+                <p className="px-5 py-10 text-center text-[14px] text-[var(--color-ink-soft)]">
+                  Cargando…
+                </p>
+              ) : flatList.length === 0 ? (
                 <p className="px-5 py-10 text-center text-[14px] text-[var(--color-ink-soft)]">
                   {query.length < 2
                     ? 'Escribe al menos 2 letras para buscar.'
