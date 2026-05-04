@@ -26,7 +26,7 @@ const fuse = new Fuse(catalog, {
   minMatchCharLength: 2,
 });
 
-const PAGE = 80;
+const PAGE = 48;
 
 // ── Component ─────────────────────────────────────────────────────────────────
 export function PlantasExplorer() {
@@ -104,7 +104,7 @@ export function PlantasExplorer() {
       {/* Grid */}
       <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-5">
         {filtered.slice(0, shown).map((p, index) => (
-          <li key={p.id} className="animate-fade-up" style={{ animationDelay: `${Math.min(index, 24) * 0.03}s`, opacity: 0 }}>
+          <li key={p.id}>
             <LuxuryPlantCard plant={p} />
           </li>
         ))}
@@ -206,7 +206,7 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
   const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const rect = e.currentTarget.getBoundingClientRect();
     const yRel = (e.clientY - rect.top) / rect.height;
-    const yOffset = (yRel - 0.5) * -12; // −6px … +6px
+    const yOffset = (yRel - 0.5) * -12;
     const media = cardRef.current?.querySelector('img, video') as HTMLElement | null;
     if (media) {
       media.style.transform = `scale(1.1) translateY(${yOffset}px)`;
@@ -215,19 +215,25 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.currentTarget.style.boxShadow = '0 28px 72px rgba(24,32,26,0.22), 0 8px 24px rgba(24,32,26,0.12)';
+    // Only promote to GPU layer on hover — never hold 80+ compositor layers at once
+    const media = cardRef.current?.querySelector('img, video') as HTMLElement | null;
+    if (media) media.style.willChange = 'transform';
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.currentTarget.style.boxShadow = 'none';
     const media = cardRef.current?.querySelector('img, video') as HTMLElement | null;
-    if (media) media.style.transform = '';
+    if (media) {
+      media.style.transform = '';
+      media.style.willChange = 'auto';
+    }
   };
 
   return (
     <Link
       ref={cardRef}
       href={`/plantas/${plant.id}`}
-      className={cn('grain group block overflow-hidden')}
+      className="group block overflow-hidden"
       style={{
         aspectRatio: '3/4',
         display: 'block',
@@ -259,7 +265,6 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
               width: '100%', height: '100%',
               objectFit: 'cover',
               transition: 'transform 0.6s var(--ease-luxury)',
-              willChange: 'transform',
             }}
           />
           <CardOverlay label={label} nombre={plant.nombre} />
