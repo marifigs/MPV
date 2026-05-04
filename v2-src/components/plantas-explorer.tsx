@@ -201,9 +201,31 @@ function CardOverlay({ label, nombre }: { label: string; nombre: string }) {
 function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
   const label = plant.subrubro === 'PLANTAS DE INTERIOR' ? 'Interior' : 'Exterior';
   const videoFile = getPlantVideoBySlug(plant.folderSlug);
+  const cardRef = React.useRef<HTMLAnchorElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const yRel = (e.clientY - rect.top) / rect.height;
+    const yOffset = (yRel - 0.5) * -12; // −6px … +6px
+    const media = cardRef.current?.querySelector('img, video') as HTMLElement | null;
+    if (media) {
+      media.style.transform = `scale(1.1) translateY(${yOffset}px)`;
+    }
+  };
+
+  const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.style.boxShadow = '0 24px 64px rgba(24,32,26,0.20), 0 6px 20px rgba(24,32,26,0.10)';
+  };
+
+  const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.currentTarget.style.boxShadow = '0 2px 12px rgba(24,32,26,0.07)';
+    const media = cardRef.current?.querySelector('img, video') as HTMLElement | null;
+    if (media) media.style.transform = '';
+  };
 
   return (
     <Link
+      ref={cardRef}
       href={`/plantas/${plant.id}`}
       className={cn('grain group block overflow-hidden rounded-xl')}
       style={{
@@ -211,16 +233,11 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
         display: 'block',
         position: 'relative',
         boxShadow: '0 2px 12px rgba(24,32,26,0.07)',
-        transition: 'transform 0.7s var(--ease-luxury), box-shadow 0.7s var(--ease-luxury)',
+        transition: 'box-shadow 0.7s var(--ease-luxury)',
       }}
-      onMouseEnter={(e) => {
-        (e.currentTarget as HTMLElement).style.transform = 'scale(1.025)';
-        (e.currentTarget as HTMLElement).style.boxShadow = '0 20px 60px rgba(24,32,26,0.18), 0 6px 18px rgba(24,32,26,0.08)';
-      }}
-      onMouseLeave={(e) => {
-        (e.currentTarget as HTMLElement).style.transform = 'scale(1)';
-        (e.currentTarget as HTMLElement).style.boxShadow = '0 2px 12px rgba(24,32,26,0.07)';
-      }}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       {videoFile ? (
         /* ── Video card ── */
@@ -240,9 +257,9 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
               position: 'absolute', inset: 0,
               width: '100%', height: '100%',
               objectFit: 'cover',
-              transition: 'transform 0.85s var(--ease-luxury)',
+              transition: 'transform 0.6s var(--ease-luxury)',
+              willChange: 'transform',
             }}
-            className="group-hover:scale-[1.06]"
           />
           <CardOverlay label={label} nombre={plant.nombre} />
         </div>

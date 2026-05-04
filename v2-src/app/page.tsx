@@ -7,56 +7,60 @@ export default function HomePage() {
     <div>
 
       {/* ══════════════════════════════════════════════════
-          HERO — editorial split layout
-          Left: deep forest panel / Right: video portrait
+          HERO — immersive full-bleed editorial
       ══════════════════════════════════════════════════ */}
       <section
-        className="overflow-hidden"
         style={{
-          marginTop: '-2rem',
+          marginTop: '-3rem',
           width: '100vw',
           position: 'relative',
           left: '50%',
           transform: 'translateX(-50%)',
+          overflow: 'hidden',
         }}
       >
+        {/* Desktop split */}
+        <div className="hidden md:grid" style={{ gridTemplateColumns: '1fr min(42vw,580px)', minHeight: '100vh' }}>
 
-        {/* ── Desktop split ─────────────────────────────── */}
-        <div className="hidden md:grid md:grid-cols-[1fr_min(40vw,560px)]" style={{ minHeight: '95vh' }}>
-
-          {/* Left: forest panel */}
+          {/* Left: deep forest */}
           <div
-            className="relative flex flex-col justify-between px-12 lg:px-18 xl:px-24 py-18 xl:py-22"
-            style={{ background: 'var(--color-forest)' }}
+            className="relative flex flex-col justify-between"
+            style={{
+              background: 'var(--color-forest)',
+              padding: 'clamp(56px,6vw,88px) clamp(48px,7vw,104px)',
+            }}
           >
-            {/* Top eyebrow */}
+            {/* Eyebrow */}
             <div className="flex items-center gap-4">
-              <div className="h-px w-12 bg-white/15" />
+              <div style={{ height: '0.5px', width: '40px', background: 'rgba(245,241,232,0.18)' }} />
               <span style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: '0.5rem',
+                fontSize: '0.47rem',
                 fontWeight: 500,
                 textTransform: 'uppercase',
-                letterSpacing: '0.30em',
-                color: 'rgba(245,241,232,0.30)',
+                letterSpacing: '0.32em',
+                color: 'rgba(245,241,232,0.28)',
               }}>
-                Plantas vivas · Manual operativo
+                Plantas vivas · Manual operativo · Easy Chile
               </span>
             </div>
 
-            {/* Center: display headline */}
-            <div>
-              <h1 className="display" style={{ overflow: 'visible' }}>
+            {/* Headline */}
+            <div style={{ margin: 'auto 0' }}>
+              <h1
+                className="display"
+                style={{ overflow: 'visible', fontStyle: 'italic' }}
+              >
                 <span
                   className="block animate-reveal text-white"
-                  style={{ fontSize: 'clamp(76px, 9.5vw, 148px)', opacity: 0 }}
+                  style={{ fontSize: 'clamp(88px, 11vw, 172px)', opacity: 0 }}
                 >
                   Plantas
                 </span>
                 <span
                   className="block animate-reveal delay-100"
                   style={{
-                    fontSize: 'clamp(76px, 9.5vw, 148px)',
+                    fontSize: 'clamp(88px, 11vw, 172px)',
                     color: 'var(--color-terracotta)',
                     opacity: 0,
                   }}
@@ -66,85 +70,100 @@ export default function HomePage() {
                 <span
                   className="block animate-reveal delay-200"
                   style={{
-                    fontSize: 'clamp(76px, 9.5vw, 148px)',
-                    color: 'rgba(245,241,232,0.18)',
+                    fontSize: 'clamp(88px, 11vw, 172px)',
+                    color: 'rgba(245,241,232,0.12)',
                     opacity: 0,
                   }}
                 >
                   bien cuidadas.
                 </span>
               </h1>
+
               <p
-                className="mt-10 leading-relaxed max-w-[38ch] animate-fade-up delay-400"
+                className="mt-10 animate-fade-up delay-400"
                 style={{
-                  fontSize: 'clamp(15px, 1.3vw, 18px)',
-                  color: 'rgba(245,241,232,0.42)',
+                  maxWidth: '40ch',
+                  fontSize: 'clamp(14px, 1.15vw, 17px)',
+                  lineHeight: 1.7,
+                  color: 'rgba(245,241,232,0.38)',
                   opacity: 0,
                 }}
               >
-                Tu guía operativa para el área de plantas. Tienda, zona climática y cuidados de cada especie.
+                Tu guía operativa completa para el área de plantas. Zona climática, cuidados por especie y stock de tu tienda en un solo lugar.
               </p>
-              <div className="mt-12 flex items-center gap-6 animate-fade-up delay-500" style={{ opacity: 0 }}>
-                <Link href="/plantas"
-                  className="inline-flex items-center gap-2.5 rounded-full px-7 py-3.5 text-[13px] font-semibold transition-all hover:opacity-90 hover:scale-[0.98]"
+
+              <div className="mt-12 flex items-center gap-8 animate-fade-up delay-500" style={{ opacity: 0 }}>
+                <Link
+                  href="/plantas"
+                  className="inline-flex items-center gap-2.5 rounded-full font-semibold"
                   style={{
+                    padding: '14px 30px',
+                    fontSize: '13px',
                     background: 'var(--color-terracotta)',
                     color: '#fff',
-                    transition: 'opacity 0.3s, transform 0.3s var(--ease-luxury)',
-                  }}>
+                    transition: 'opacity 0.3s, transform 0.4s var(--ease-luxury)',
+                    letterSpacing: '0.02em',
+                  }}
+                >
                   Ver catálogo
                   <Icons.arrowRight aria-hidden className="h-3.5 w-3.5" strokeWidth={2.5} />
                 </Link>
-                <Link href="/mi-tienda"
-                  className="text-[13px] font-medium transition-opacity hover:opacity-70"
-                  style={{ color: 'rgba(245,241,232,0.45)' }}>
+                <Link
+                  href="/mi-tienda"
+                  style={{
+                    fontSize: '12px',
+                    fontWeight: 500,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.18em',
+                    color: 'rgba(245,241,232,0.32)',
+                    transition: 'color 0.3s',
+                  }}
+                >
                   Mi tienda →
                 </Link>
               </div>
             </div>
 
-            {/* Bottom: stats */}
-            <div className="grid grid-cols-3 pt-10" style={{ borderTop: '0.5px solid rgba(245,241,232,0.08)' }}>
-              <HeroStat value={plantas.length} label="Plantas" />
+            {/* Stats */}
+            <div
+              className="grid grid-cols-3"
+              style={{ borderTop: '0.5px solid rgba(245,241,232,0.07)', paddingTop: '2rem' }}
+            >
+              <HeroStat value={catalog.length} label="Especies" />
               <HeroStat value={tiendas.length} label="Tiendas" separator />
               <HeroStat value={zonas.length} label="Zonas climáticas" separator />
             </div>
           </div>
 
-          {/* Right: video panel — full bleed */}
-          <div
-            className="relative overflow-hidden grain"
-            style={{ background: 'var(--color-surface-3)' }}
-          >
+          {/* Right: video */}
+          <div className="relative overflow-hidden grain" style={{ background: '#080d09' }}>
             <video
               autoPlay muted loop playsInline
               className="absolute inset-0 h-full w-full object-cover"
+              style={{ opacity: 0.88 }}
               poster="/MPV/v2/videos/hero-poster.jpg"
             >
               <source src="/MPV/v2/videos/hero-loop.mp4" type="video/mp4" />
             </video>
-            {/* Deep vignette */}
-            <div className="absolute inset-0 pointer-events-none"
-              style={{
-                background: 'linear-gradient(to top, rgba(15,26,18,0.70) 0%, rgba(15,26,18,0.08) 50%, transparent 100%)',
-              }} />
-            {/* Easy logo */}
-            <div className="absolute bottom-9 left-0 right-0 flex justify-center">
+            <div
+              className="absolute inset-0 pointer-events-none"
+              style={{ background: 'linear-gradient(to top, rgba(8,13,9,0.7) 0%, rgba(8,13,9,0.05) 55%, transparent 100%)' }}
+            />
+            <div className="absolute bottom-10 left-0 right-0 flex justify-center">
               <img
                 src="/MPV/v2/easy-logo.png"
                 alt="Easy Cencosud"
-                className="w-24 drop-shadow-lg"
-                style={{ opacity: 0.88 }}
+                style={{ width: '88px', opacity: 0.82 }}
                 decoding="async"
               />
             </div>
           </div>
         </div>
 
-        {/* ── Mobile: full-bleed ───────────────────────── */}
+        {/* Mobile: full-bleed */}
         <div
           className="relative flex flex-col justify-end overflow-hidden grain md:hidden"
-          style={{ minHeight: '92vh' }}
+          style={{ minHeight: '95svh' }}
         >
           <video autoPlay muted loop playsInline
             className="absolute inset-0 h-full w-full object-cover"
@@ -152,23 +171,28 @@ export default function HomePage() {
             poster="/MPV/v2/videos/hero-poster.jpg">
             <source src="/MPV/v2/videos/hero-loop.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0"
-            style={{ background: 'linear-gradient(to top, rgba(10,14,11,0.97) 0%, rgba(10,14,11,0.50) 55%, transparent 100%)' }} />
+          <div
+            className="absolute inset-0"
+            style={{ background: 'linear-gradient(to top, rgba(8,13,9,0.97) 0%, rgba(8,13,9,0.55) 50%, transparent 100%)' }}
+          />
           <div className="relative z-10 px-6 pb-16">
-            <h1 className="display">
-              <span className="block text-white" style={{ fontSize: 'clamp(56px, 14vw, 88px)' }}>Plantas</span>
-              <span className="block" style={{ fontSize: 'clamp(56px, 14vw, 88px)', color: 'var(--color-terracotta)' }}>Vivas,</span>
-              <span className="block" style={{ fontSize: 'clamp(56px, 14vw, 88px)', color: 'rgba(245,241,232,0.22)' }}>bien cuidadas.</span>
+            <h1 className="display" style={{ fontStyle: 'italic' }}>
+              <span className="block text-white" style={{ fontSize: 'clamp(64px, 16vw, 96px)' }}>Plantas</span>
+              <span className="block" style={{ fontSize: 'clamp(64px, 16vw, 96px)', color: 'var(--color-terracotta)' }}>Vivas,</span>
+              <span className="block" style={{ fontSize: 'clamp(64px, 16vw, 96px)', color: 'rgba(245,241,232,0.16)' }}>bien cuidadas.</span>
             </h1>
-            <div className="mt-10 flex items-center gap-4">
+            <p style={{ marginTop: '1.5rem', fontSize: '14px', lineHeight: 1.65, color: 'rgba(245,241,232,0.38)', maxWidth: '36ch' }}>
+              Tu guía operativa para el área de plantas vivas en Easy Chile.
+            </p>
+            <div className="mt-8 flex items-center gap-5">
               <Link href="/plantas"
-                className="inline-flex items-center gap-2 rounded-full px-5 py-3 text-[13px] font-semibold"
-                style={{ background: 'var(--color-terracotta)', color: '#fff' }}>
+                className="inline-flex items-center gap-2 rounded-full font-semibold"
+                style={{ padding: '12px 22px', fontSize: '13px', background: 'var(--color-terracotta)', color: '#fff' }}>
                 Ver catálogo <Icons.arrowRight aria-hidden className="h-3.5 w-3.5" strokeWidth={2.5} />
               </Link>
             </div>
-            <div className="mt-10 grid grid-cols-3 pt-7" style={{ borderTop: '0.5px solid rgba(245,241,232,0.10)' }}>
-              <HeroStat value={plantas.length} label="Plantas" />
+            <div className="mt-10 grid grid-cols-3" style={{ borderTop: '0.5px solid rgba(245,241,232,0.10)', paddingTop: '1.5rem' }}>
+              <HeroStat value={catalog.length} label="Especies" />
               <HeroStat value={tiendas.length} label="Tiendas" separator />
               <HeroStat value={zonas.length} label="Zonas" separator />
             </div>
@@ -177,62 +201,175 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          QUICK NAVIGATION
-      ══════════════════════════════════════════════════ */}
-      <section className="pt-32 pb-0">
-        <p className="eyebrow mb-5" style={{ color: 'var(--color-green-soft)' }}>Navegación rápida</p>
-        <h2 className="serif mb-12" style={{ fontSize: 'clamp(30px, 3.5vw, 52px)', letterSpacing: '-0.03em' }}>
-          ¿Qué necesitas ahora?
-        </h2>
-        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-          <QuickLink href="/mi-tienda" iconKey="store" label="Mi tienda" hint="Riego por zona" />
-          <QuickLink href="/plantas" iconKey="sprout" label="Plantas" hint={`${catalog.length} especies`} />
-          <QuickLink href="/alertas" iconKey="alert" label="Alertas" hint="Diagnóstico rápido" />
-          <QuickLink href="/liquidacion" iconKey="tag" label="Liquidación" hint="Proceso completo" />
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════
-          3 REGLAS DE ORO — dark stripe
+          MANIFESTO — editorial statement
       ══════════════════════════════════════════════════ */}
       <section
         className="pt-32 pb-0"
         style={{
-          marginTop: '7rem',
+          marginTop: '0',
+          width: '100vw',
+          position: 'relative',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            background: 'var(--color-surface-2)',
+            padding: 'clamp(64px,8vw,112px) clamp(24px,6vw,80px)',
+            position: 'relative',
+          }}
+        >
+          {/* Ghost number */}
+          <span
+            className="display select-none absolute"
+            aria-hidden
+            style={{
+              fontSize: 'clamp(200px, 28vw, 400px)',
+              color: 'var(--color-ink)',
+              opacity: 0.028,
+              lineHeight: 1,
+              top: '-0.05em',
+              right: '-0.02em',
+              letterSpacing: '-0.06em',
+              fontStyle: 'italic',
+              pointerEvents: 'none',
+            }}
+          >
+            279
+          </span>
+
+          <div className="mx-auto max-w-6xl relative">
+            <div className="max-w-2xl">
+              <p className="eyebrow mb-6" style={{ color: 'var(--color-green-soft)' }}>La plataforma</p>
+              <h2
+                className="display"
+                style={{
+                  fontSize: 'clamp(40px, 5.5vw, 88px)',
+                  fontStyle: 'italic',
+                  color: 'var(--color-ink)',
+                  lineHeight: 0.9,
+                  marginBottom: '2rem',
+                }}
+              >
+                Una herramienta<br />
+                <span style={{ color: 'var(--color-green-deep)' }}>hecha para vender.</span>
+              </h2>
+              <p style={{ fontSize: 'clamp(15px, 1.3vw, 18px)', lineHeight: 1.75, color: 'var(--color-ink-soft)', maxWidth: '52ch' }}>
+                279 especies con fichas de cuidado, frecuencias de riego por zona climática y stock en tiempo real. Diseñado para que cada vendedor del área de plantas vivas de Easy Chile tenga la respuesta correcta en segundos.
+              </p>
+            </div>
+
+            {/* Horizontal stat strip */}
+            <div
+              className="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-0"
+              style={{ borderTop: '0.5px solid var(--color-rule)' }}
+            >
+              {[
+                { value: `${catalog.length}`, label: 'Especies en catálogo' },
+                { value: `${tiendas.length}`, label: 'Tiendas Easy Chile' },
+                { value: `${zonas.length}`, label: 'Zonas climáticas' },
+                { value: '1', label: 'Plataforma integrada' },
+              ].map((s, i) => (
+                <div
+                  key={i}
+                  style={{
+                    padding: '2rem 0',
+                    paddingRight: '2rem',
+                    borderRight: i < 3 ? '0.5px solid var(--color-rule)' : 'none',
+                    paddingLeft: i > 0 ? '2rem' : 0,
+                  }}
+                >
+                  <p
+                    className="display"
+                    style={{ fontSize: 'clamp(36px, 4vw, 64px)', color: 'var(--color-ink)', fontStyle: 'italic' }}
+                  >
+                    {s.value}
+                  </p>
+                  <p style={{
+                    marginTop: '0.5rem',
+                    fontFamily: 'var(--font-sans)',
+                    fontSize: '0.5rem',
+                    fontWeight: 500,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.24em',
+                    color: 'var(--color-ink-soft)',
+                    opacity: 0.6,
+                  }}>
+                    {s.label}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
+          MÓDULOS — quick navigation, editorial grid
+      ══════════════════════════════════════════════════ */}
+      <section className="pt-28 pb-0">
+        <p className="eyebrow mb-5" style={{ color: 'var(--color-green-soft)' }}>Acceso directo</p>
+        <h2
+          className="serif mb-14"
+          style={{ fontSize: 'clamp(28px, 3.2vw, 50px)', letterSpacing: '-0.03em', maxWidth: '20ch' }}
+        >
+          ¿Qué necesitas ahora?
+        </h2>
+        <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+          <QuickLink href="/mi-tienda" iconKey="store" label="Mi tienda" hint="Riego por zona climática" />
+          <QuickLink href="/plantas" iconKey="sprout" label="Catálogo" hint={`${catalog.length} especies documentadas`} />
+          <QuickLink href="/alertas" iconKey="alert" label="Alertas" hint="Diagnóstico en segundos" />
+          <QuickLink href="/liquidacion" iconKey="tag" label="Liquidación" hint="Protocolo completo" />
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
+          3 REGLAS DE ORO — dark editorial stripe
+      ══════════════════════════════════════════════════ */}
+      <section
+        style={{
+          marginTop: '8rem',
           width: '100vw',
           position: 'relative',
           left: '50%',
           transform: 'translateX(-50%)',
         }}
       >
-        <div
-          className="surface-forest px-5 sm:px-8 py-20 sm:py-24"
-          style={{ width: '100%' }}
-        >
-          <div className="mx-auto max-w-6xl">
-            <p className="eyebrow mb-5" style={{ color: 'rgba(245,241,232,0.30)' }}>Lo esencial</p>
-            <h2 className="serif mb-14" style={{
-              fontSize: 'clamp(30px, 3.5vw, 52px)',
-              letterSpacing: '-0.03em',
-              color: 'var(--color-cream)',
-            }}>
-              Las 3 reglas de oro
+        <div className="surface-forest" style={{ width: '100%' }}>
+          <div
+            className="mx-auto max-w-6xl"
+            style={{ padding: 'clamp(72px,8vw,108px) clamp(20px,5vw,80px)' }}
+          >
+            <p className="eyebrow mb-5" style={{ color: 'rgba(245,241,232,0.28)' }}>Lo esencial</p>
+            <h2
+              className="display mb-16"
+              style={{
+                fontSize: 'clamp(36px, 4.5vw, 72px)',
+                fontStyle: 'italic',
+                color: 'var(--color-cream)',
+                lineHeight: 0.9,
+              }}
+            >
+              Las 3 reglas<br />
+              <span style={{ color: 'rgba(245,241,232,0.28)', fontSize: '0.75em' }}>que lo cambian todo.</span>
             </h2>
             <div className="grid gap-5 md:grid-cols-3">
               <ReglaCard numero="01" iconKey="drop"
                 titulo="No todas las plantas necesitan el mismo riego"
-                cuerpo="Como regla general: en verano, plantas de interior una vez por semana. En invierno, cada dos semanas."
-                tip="Truco: usa fieltro en las mesas. Humedécelo y las plantas toman agua por capilaridad según su necesidad."
-                ctaHref="/mi-tienda" ctaLabel="Ver frecuencia exacta de mi tienda" />
+                cuerpo="Interior: una vez por semana en verano, cada dos en invierno. Exterior: según zona climática."
+                tip="Fieltro húmedo en las mesas → las plantas toman agua por capilaridad según su necesidad."
+                ctaHref="/mi-tienda" ctaLabel="Frecuencia exacta de mi tienda" />
               <ReglaCard numero="02" iconKey="sun"
                 titulo="Ubica cada planta según su luz"
-                cuerpo="Las plantas de interior no toleran sol directo, salvo el de la mañana. Las de exterior necesitan al menos unas horas de sol directo."
-                tip="Sol directo fuerte sobre interior → hojas quemadas. Sin sol sobre exterior → la planta se debilita."
+                cuerpo="Interior no tolera sol directo, salvo el de la mañana. Exterior necesita al menos unas horas de sol."
+                tip="Sol fuerte en interior → hojas quemadas. Sin sol en exterior → planta débil y sin flores."
                 ctaHref="/plantas" ctaLabel="Ver fichas de plantas" />
               <ReglaCard numero="03" iconKey="eye"
-                titulo="Revisar cada día: 10 minutos salvan plantas"
-                cuerpo="Una planta enferma detectada a tiempo se puede salvar. Una abandonada se pierde. Revisa mañana, mediodía y al cierre."
-                tip="Mete el dedo 2 cm en la tierra. Húmedo → no riegues. Seco → riega. Más preciso que cualquier calendario."
+                titulo="10 minutos de revisión salvan plantas"
+                cuerpo="Una planta enferma detectada a tiempo se salva. Abandonada, se pierde. Revisa mañana, mediodía y cierre."
+                tip="Dedo 2 cm en la tierra: húmedo → no riegues. Seco → riega. Más preciso que cualquier calendario."
                 ctaHref="/rutina" ctaLabel="Ver checklist diario" />
             </div>
           </div>
@@ -242,9 +379,9 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           PLANTAS ESPECIALES
       ══════════════════════════════════════════════════ */}
-      <section className="pt-32 pb-0">
+      <section className="pt-28 pb-0">
         <p className="eyebrow mb-5" style={{ color: 'var(--color-green-soft)' }}>Atención extra</p>
-        <h2 className="serif mb-12" style={{ fontSize: 'clamp(30px, 3.5vw, 52px)', letterSpacing: '-0.03em' }}>
+        <h2 className="serif mb-12" style={{ fontSize: 'clamp(28px, 3.2vw, 50px)', letterSpacing: '-0.03em' }}>
           Plantas con cuidados específicos
         </h2>
         <div className="grid gap-5 md:grid-cols-2">
@@ -258,31 +395,33 @@ export default function HomePage() {
   );
 }
 
-/* ── Subcomponents ────────────────────────────────── */
+/* ── Subcomponents ──────────────────────────────── */
 
-function HeroStat({ value, label, separator }: { value: number; label: string; separator?: boolean }) {
+function HeroStat({ value, label, separator }: { value: number | string; label: string; separator?: boolean }) {
   return (
     <div
-      className="flex flex-col pl-8 first:pl-0"
-      style={separator ? { borderLeft: '0.5px solid rgba(245,241,232,0.10)' } : undefined}
+      style={{
+        paddingLeft: separator ? '2rem' : 0,
+        borderLeft: separator ? '0.5px solid rgba(245,241,232,0.09)' : 'none',
+      }}
     >
       <span
         className="display text-white"
-        style={{ fontSize: 'clamp(32px, 3.5vw, 52px)' }}
+        style={{ fontSize: 'clamp(28px, 3vw, 48px)', fontStyle: 'italic' }}
       >
         {value}
       </span>
-      <span style={{
-        marginTop: '0.4rem',
+      <p style={{
+        marginTop: '0.35rem',
         fontFamily: 'var(--font-sans)',
-        fontSize: '0.5rem',
+        fontSize: '0.47rem',
         fontWeight: 500,
         textTransform: 'uppercase',
         letterSpacing: '0.22em',
-        color: 'rgba(245,241,232,0.28)',
+        color: 'rgba(245,241,232,0.26)',
       }}>
         {label}
-      </span>
+      </p>
     </div>
   );
 }
@@ -294,53 +433,58 @@ function ReglaCard({ numero, iconKey, titulo, cuerpo, tip, ctaHref, ctaLabel }: 
   const Icon = Icons[iconKey];
   return (
     <div
-      className="flex flex-col rounded-2xl p-8 sm:p-9"
+      className="flex flex-col rounded-2xl"
       style={{
-        background: 'rgba(245,241,232,0.04)',
-        border: '0.5px solid rgba(245,241,232,0.08)',
-        transition: 'background 0.4s var(--ease-luxury)',
+        padding: 'clamp(28px,3vw,40px)',
+        background: 'rgba(245,241,232,0.035)',
+        border: '0.5px solid rgba(245,241,232,0.07)',
+        transition: 'background 0.5s var(--ease-luxury)',
       }}
     >
       <div className="flex items-start justify-between">
         <span
-          className="display select-none leading-none"
-          style={{ fontSize: '100px', color: 'rgba(245,241,232,0.06)', lineHeight: 1 }}
+          className="display select-none"
+          style={{ fontSize: '96px', color: 'rgba(245,241,232,0.05)', lineHeight: 1, fontStyle: 'italic' }}
           aria-hidden
         >
           {numero}
         </span>
-        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-full"
-          style={{ background: 'rgba(245,241,232,0.08)' }}>
-          <Icon aria-hidden className="h-5 w-5" strokeWidth={1.5} style={{ color: 'var(--color-cream)' }} />
+        <span
+          className="grid h-11 w-11 shrink-0 place-items-center rounded-full"
+          style={{ background: 'rgba(245,241,232,0.07)' }}
+        >
+          <Icon aria-hidden className="h-5 w-5" strokeWidth={1.4} style={{ color: 'rgba(245,241,232,0.55)' }} />
         </span>
       </div>
       <h3
-        className="serif mt-5 leading-snug"
-        style={{ fontSize: 'clamp(18px, 1.6vw, 22px)', color: 'var(--color-cream)' }}
+        className="serif mt-4 leading-snug"
+        style={{ fontSize: 'clamp(17px, 1.5vw, 20px)', color: 'var(--color-cream)' }}
       >
         {titulo}
       </h3>
-      <p className="mt-3 flex-1 leading-relaxed" style={{ fontSize: '14px', color: 'rgba(245,241,232,0.50)' }}>
+      <p className="mt-3 flex-1 leading-relaxed" style={{ fontSize: '13.5px', color: 'rgba(245,241,232,0.45)' }}>
         {cuerpo}
       </p>
       <div
-        className="mt-7 px-5 py-4 rounded-r-xl"
+        className="mt-6 px-5 py-4 rounded-r-xl"
         style={{
-          borderLeft: '2px solid rgba(245,241,232,0.15)',
-          background: 'rgba(245,241,232,0.04)',
+          borderLeft: '1.5px solid rgba(245,241,232,0.12)',
+          background: 'rgba(245,241,232,0.03)',
         }}
       >
-        <p style={{ fontSize: '13px', lineHeight: 1.7, color: 'rgba(245,241,232,0.40)' }}>{tip}</p>
+        <p style={{ fontSize: '13px', lineHeight: 1.7, color: 'rgba(245,241,232,0.36)' }}>{tip}</p>
       </div>
-      <Link href={ctaHref}
-        className="mt-7 inline-flex items-center gap-1.5 font-medium transition-all hover:gap-2.5"
+      <Link
+        href={ctaHref}
+        className="mt-7 inline-flex items-center gap-1.5 font-medium"
         style={{
-          fontSize: '12px',
-          color: 'rgba(245,241,232,0.45)',
+          fontSize: '11px',
+          color: 'rgba(245,241,232,0.38)',
           textTransform: 'uppercase',
-          letterSpacing: '0.12em',
-          transition: 'gap 0.3s var(--ease-luxury), color 0.3s',
-        }}>
+          letterSpacing: '0.14em',
+          transition: 'color 0.3s, gap 0.3s var(--ease-luxury)',
+        }}
+      >
         {ctaLabel}
         <Icons.arrowRight aria-hidden className="h-3.5 w-3.5" strokeWidth={2} />
       </Link>
@@ -348,35 +492,45 @@ function ReglaCard({ numero, iconKey, titulo, cuerpo, tip, ctaHref, ctaLabel }: 
   );
 }
 
-function QuickLink({ href, iconKey, label, hint }: { href: string; iconKey: 'store' | 'sprout' | 'alert' | 'tag'; label: string; hint: string }) {
+function QuickLink({ href, iconKey, label, hint }: {
+  href: string;
+  iconKey: 'store' | 'sprout' | 'alert' | 'tag';
+  label: string;
+  hint: string;
+}) {
   const Icon = Icons[iconKey];
   return (
-    <Link href={href}
-      className="group relative flex flex-col gap-7 rounded-2xl p-7 sm:p-8"
+    <Link
+      href={href}
+      className="group relative flex flex-col rounded-2xl overflow-hidden"
       style={{
         border: '0.5px solid var(--color-rule)',
         background: 'var(--color-surface)',
-        minHeight: '180px',
-        transition: 'border-color 0.4s var(--ease-luxury), box-shadow 0.4s var(--ease-luxury)',
+        minHeight: '190px',
+        padding: 'clamp(24px,2.5vw,36px)',
+        gap: '1.75rem',
+        transition: 'border-color 0.5s var(--ease-luxury), box-shadow 0.5s var(--ease-luxury), transform 0.5s var(--ease-luxury)',
       }}
     >
       <span
-        className="grid h-12 w-12 place-items-center rounded-xl text-[var(--color-cream)]"
+        className="grid h-12 w-12 place-items-center rounded-xl"
         style={{
           background: 'var(--color-green-deep)',
-          transition: 'transform 0.4s var(--ease-luxury)',
+          color: 'var(--color-cream)',
+          transition: 'transform 0.5s var(--ease-luxury)',
         }}
       >
         <Icon aria-hidden className="h-5 w-5" strokeWidth={1.75} />
       </span>
-      <div>
-        <p className="serif leading-tight" style={{ fontSize: 'clamp(19px, 2vw, 23px)' }}>{label}</p>
-        <p className="mt-1.5" style={{ fontSize: '12px', color: 'var(--color-ink-soft)', opacity: 0.7 }}>{hint}</p>
+      <div style={{ flex: 1 }}>
+        <p className="serif leading-tight" style={{ fontSize: 'clamp(18px, 1.8vw, 22px)' }}>{label}</p>
+        <p style={{ marginTop: '0.4rem', fontSize: '12px', color: 'var(--color-ink-soft)', opacity: 0.65 }}>{hint}</p>
       </div>
-      <Icons.arrowRight aria-hidden
-        className="absolute right-6 bottom-6 h-4 w-4 opacity-15 transition-all group-hover:opacity-80 group-hover:text-[var(--color-green-deep)] group-hover:translate-x-1"
+      <Icons.arrowRight
+        aria-hidden
+        className="absolute right-6 bottom-6 h-4 w-4 opacity-15 group-hover:opacity-70 group-hover:translate-x-1"
         strokeWidth={2}
-        style={{ transition: 'opacity 0.35s, transform 0.35s var(--ease-luxury), color 0.35s' }}
+        style={{ transition: 'opacity 0.35s, transform 0.5s var(--ease-luxury)', color: 'var(--color-green-deep)' }}
       />
     </Link>
   );
@@ -385,28 +539,26 @@ function QuickLink({ href, iconKey, label, hint }: { href: string; iconKey: 'sto
 function EspecialCard({ planta }: { planta: (typeof plantasEspeciales)[number] }) {
   return (
     <div
-      className="rounded-2xl p-7 sm:p-8"
+      className="rounded-2xl"
       style={{
         border: '0.5px solid var(--color-rule)',
         background: 'var(--color-surface)',
+        padding: 'clamp(24px,2.5vw,36px)',
       }}
     >
       <div className="flex items-start gap-5">
-        <span className="grid h-13 w-13 shrink-0 place-items-center rounded-xl bg-[var(--color-green-deep)] text-[var(--color-cream)]">
-          <Icons.flower aria-hidden className="h-6 w-6" strokeWidth={1.5} />
+        <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-[var(--color-green-deep)] text-[var(--color-cream)]">
+          <Icons.flower aria-hidden className="h-5 w-5" strokeWidth={1.5} />
         </span>
         <div>
-          <h3 className="serif leading-tight" style={{ fontSize: 'clamp(20px, 2vw, 26px)' }}>
+          <h3 className="serif leading-tight" style={{ fontSize: 'clamp(19px, 2vw, 24px)' }}>
             {planta.nombre}
           </h3>
           <p className="eyebrow mt-1.5" style={{ color: 'var(--color-green-soft)' }}>Planta de temporada</p>
         </div>
       </div>
-      <div
-        className="mt-6 rounded-xl px-6 py-5"
-        style={{ background: 'var(--color-surface-2)' }}
-      >
-        <p className="eyebrow mb-2.5" style={{ color: 'var(--color-green-deep)' }}>Cuidado especial</p>
+      <div className="mt-5 rounded-xl px-5 py-4" style={{ background: 'var(--color-surface-2)' }}>
+        <p className="eyebrow mb-2" style={{ color: 'var(--color-green-deep)' }}>Cuidado especial</p>
         <p className="leading-relaxed" style={{ fontSize: '14px' }}>{planta.especial}</p>
       </div>
       <div className="mt-5 grid grid-cols-2 gap-5" style={{ fontSize: '13px' }}>

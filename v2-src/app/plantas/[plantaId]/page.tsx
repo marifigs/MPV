@@ -65,16 +65,16 @@ export default async function PlantaDetailPage({ params }: PageProps) {
           EDITORIAL HERO — magazine spread layout
       ══════════════════════════════════════════════════ */}
       <header
-        className="grid gap-10 md:gap-16"
+        className="flex flex-col gap-8 md:grid md:gap-16"
         style={{ gridTemplateColumns: 'min(44vw, 460px) 1fr' }}
       >
         {/* ── Visual ──────────────────────────────────── */}
-        <div className="grain">
+        <div className="grain w-full">
           {videoFile ? (
             <PlantVideo videoFile={videoFile} name={displayNombre} />
           ) : displayFotoUrl ? (
             <div
-              className="overflow-hidden"
+              className="overflow-hidden w-full"
               style={{
                 borderRadius: '18px',
                 aspectRatio: '3 / 4',
@@ -92,7 +92,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
             </div>
           ) : (
             <div
-              className="overflow-hidden"
+              className="overflow-hidden w-full"
               style={{
                 borderRadius: '18px',
                 background: displayPlaceholder,
@@ -113,7 +113,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
         </div>
 
         {/* ── Identity ────────────────────────────────── */}
-        <div className="flex flex-col justify-center py-4">
+        <div className="flex flex-col justify-center py-4 md:py-4">
           {/* Grupo eyebrow */}
           <p className="eyebrow mb-6" style={{ color: 'var(--color-green-soft)' }}>
             {GRUPO_LABEL[displayGrupo as keyof typeof GRUPO_LABEL] ?? displayGrupo}
@@ -123,9 +123,10 @@ export default async function PlantaDetailPage({ params }: PageProps) {
           <h1
             className="display text-[var(--color-ink)]"
             style={{
-              fontSize: 'clamp(36px, 4.8vw, 80px)',
+              fontSize: 'clamp(40px, 5.2vw, 88px)',
               overflowWrap: 'break-word',
               lineHeight: 0.88,
+              fontStyle: 'italic',
             }}
           >
             {displayNombre}
