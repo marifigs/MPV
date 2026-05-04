@@ -26,7 +26,7 @@ export function parseDiasFrecuencia(freq: string): number {
   if (f === 'diario')                               return 1;
   const m = f.match(/cada\s*(\d+\.?\d*)\s*-?\s*(\d+\.?\d*)?\s*d/);
   if (m) {
-    const lo = parseFloat(m[1]);
+    const lo = parseFloat(m[1]!);
     const hi = m[2] ? parseFloat(m[2]) : lo;
     return (lo + hi) / 2;
   }
