@@ -17,51 +17,19 @@ import { SaveMiTienda } from '@/components/save-mi-tienda';
 import { Icons, zonaIcon, type ZonaClimaticaKey } from '@/lib/icons';
 import { GRUPO_ICON, GRUPO_LABEL } from '@/lib/group-icons';
 import { ZONAS_ORDEN } from '@/types/data';
-import type { ZonaClimatica, GrupoCuidado } from '@/types/data';
+import type { ZonaClimatica } from '@/types/data';
+import { calcularRiesgosTienda, type FactorPrincipal } from '@/lib/risk-engine';
 
-// ── Alertas de inventario por zona ────────────────────────────────────────────
-// Para cada zona: qué grupos de plantas son más vulnerables y por qué.
-type NivelAlerta = 'critica' | 'media' | 'leve';
-interface AlertaInventario {
-  nivel: NivelAlerta;
-  grupo: GrupoCuidado;
-  accion: string;
-}
-
-const ALERTAS_ZONA: Record<ZonaClimatica, AlertaInventario[]> = {
-  desertico: [
-    { nivel: 'critica', grupo: 'PLANTIN PRIMAV/VERAN',  accion: 'Regar 2 veces al día (7–9 AM y 17–19 PM). Sin riego matutino pueden deshidratarse antes del mediodía.' },
-    { nivel: 'critica', grupo: 'PLANTIN OTOÑ/INVIER',   accion: 'Proteger del sol directo entre 12–16h. El calor extremo quema hojas y agota el sustrato.' },
-    { nivel: 'media',   grupo: 'PLANTA INTERIOR FOLL',  accion: 'No exhibir en exterior sin sombra. El aire seco deshidrata las hojas de follaje en pocas horas.' },
-    { nivel: 'media',   grupo: 'PLANTA INTERIOR FLOR',  accion: 'Orquídeas y florales de interior: verificar humedad del sustrato cada mañana sin excepción.' },
-    { nivel: 'media',   grupo: 'FLORALES',              accion: 'Los florales pierden turgencia rápidamente. Priorizar en la rutina de riego de la mañana.' },
-  ],
-  semiarido: [
-    { nivel: 'media',   grupo: 'PLANTIN PRIMAV/VERAN',  accion: 'En dic–feb regar diariamente. Sin excepción, incluso si el día parece nublado.' },
-    { nivel: 'media',   grupo: 'PLANTA INTERIOR FOLL',  accion: 'Revisar humedad del sustrato cada 2 días. El aire seco de esta zona engaña: la superficie parece húmeda pero el interior está seco.' },
-    { nivel: 'leve',    grupo: 'FLORALES',              accion: 'Reducir exposición solar directa en verano. Exhibir en zona con sombra parcial de tarde.' },
-  ],
-  costero: [
-    { nivel: 'media',   grupo: 'PLANTA INTERIOR FOLL',  accion: 'El viento marino con sal puede quemar bordes de hojas. Mantener siempre en zona cubierta o bajo techo.' },
-    { nivel: 'media',   grupo: 'FLORALES',              accion: 'Pétalos sensibles al viento salino. Ubicar protegidos del viento. Revisar hongos en invierno.' },
-    { nivel: 'leve',    grupo: 'PLANTA INTERIOR FLOR',  accion: 'Limpiar hojas con paño húmedo cada 2 semanas para quitar acumulación de sal marina.' },
-  ],
-  templado: [
-    { nivel: 'leve',    grupo: 'PLANTIN PRIMAV/VERAN',  accion: 'En olas de calor (días sobre 33°C): agregar riego extra de emergencia al mediodía.' },
-    { nivel: 'leve',    grupo: 'PLANTA INTERIOR FOLL',  accion: 'En invierno reducir riego un 30–40%. El frío + suelo húmedo pudre raíces en maceta.' },
-  ],
-  montana: [
-    { nivel: 'critica', grupo: 'PLANTA INTERIOR FOLL',  accion: 'Cuando la temperatura nocturna baja de 2°C: mover adentro antes de las 19h sin excepción.' },
-    { nivel: 'critica', grupo: 'PLANTA INTERIOR FLOR',  accion: 'Florales de interior mueren con una sola noche de helada. Identificar en el pronóstico y proteger.' },
-    { nivel: 'media',   grupo: 'PLANTIN PRIMAV/VERAN',  accion: 'Plantines son muy sensibles al frío nocturno. Revisar pronóstico cada tarde.' },
-    { nivel: 'leve',    grupo: 'FLORALES',              accion: 'Florales de verano fuera de temporada: retirar de exhibición exterior cuando llegue el frío.' },
-  ],
-  'frio-humedo': [
-    { nivel: 'critica', grupo: 'HERBACEAS CACTUS',      accion: 'Cactus y suculentas son los más vulnerables al exceso de agua. Revisar drenaje de macetas cada 3 días tras lluvia.' },
-    { nivel: 'media',   grupo: 'PLANTA INTERIOR FOLL',  accion: 'Sustrato húmedo por más de 48h continuas: riesgo de pudrición de raíces. Asegurar que las macetas drenen bien.' },
-    { nivel: 'media',   grupo: 'FLORALES',              accion: 'Florales con suelo permanentemente mojado pierden raíces en 3–5 días. No regar si ha llovido ese día.' },
-    { nivel: 'leve',    grupo: 'PLANTA INTERIOR FLOR',  accion: 'Orquídeas y florales de interior: en lluvia continua, reducir riego a la mitad. El hongo es el principal riesgo.' },
-  ],
+// ── Factor labels & colors ────────────────────────────────────────────────────
+const FACTOR_LABEL: Record<FactorPrincipal, string> = {
+  'calor':       'Sequía / calor',
+  'frio':        'Frío / helada',
+  'exceso-agua': 'Exceso de agua',
+};
+const FACTOR_ICON: Record<FactorPrincipal, string> = {
+  'calor':       '☀',
+  'frio':        '❄',
+  'exceso-agua': '💧',
 };
 
 export function generateStaticParams() {
@@ -92,19 +60,13 @@ export default async function TiendaDetailPage({ params }: PageProps) {
     (a, b) => b[1].length - a[1].length
   );
 
-  // ── Alertas de inventario: cruzar stock real de esta tienda con riesgos por zona ──
-  const alertasZona = ALERTAS_ZONA[tienda.zona as ZonaClimatica] ?? [];
-  const alertasInventario = alertasZona
-    .map((alerta) => {
-      const plantasGrupo = plantasDeTienda.filter((p) => p.grupo === alerta.grupo);
-      const unidades = plantasGrupo.reduce((acc, p) => acc + p.stock, 0);
-      return { ...alerta, unidades, plantasGrupo };
-    })
-    .filter((a) => a.unidades > 0)
-    .sort((a, b) => {
-      const ord = { critica: 0, media: 1, leve: 2 };
-      return ord[a.nivel] - ord[b.nivel];
-    });
+  // ── Riesgos calculados por el motor de scoring ────────────────────────────────
+  const mesActual = new Date().getMonth() + 1;
+  const riesgos = calcularRiesgosTienda(
+    tienda.zona as ZonaClimatica,
+    plantasDeTienda,
+    mesActual,
+  );
 
   return (
     <div className="space-y-10">
@@ -146,77 +108,138 @@ export default async function TiendaDetailPage({ params }: PageProps) {
         </div>
       </header>
 
-      {/* ── Alertas de inventario ── */}
-      {alertasInventario.length > 0 && (
-        <section className="space-y-3">
-          <h2 className="serif text-[24px]">
-            {alertasInventario.some(a => a.nivel === 'critica')
-              ? '⚠ Plantas en riesgo en esta tienda'
-              : 'Plantas a monitorear hoy'}
+      {/* ── Riesgo de inventario — motor de scoring ──────────────────────── */}
+      <section className="space-y-4">
+        {/* Header */}
+        <div className="flex items-end gap-4">
+          <h2
+            className="display"
+            style={{
+              fontSize: 'clamp(28px, 3.5vw, 44px)',
+              fontStyle: 'italic',
+              lineHeight: 0.9,
+              color: 'var(--color-ink)',
+            }}
+          >
+            {riesgos.some(r => r.nivel === 'critica')
+              ? 'En riesgo hoy'
+              : riesgos.length > 0
+              ? 'A monitorear'
+              : 'Sin alertas activas'}
           </h2>
-          <p className="text-[14px] text-[var(--color-ink-soft)]">
-            Stock actual de {tienda.nombre} cruzado con condiciones del clima {ZONA_LABELS[tienda.zona as ZonaClimatica]}.
-          </p>
+          <div style={{ flex: 1, height: '0.5px', background: 'var(--color-rule)', marginBottom: '6px' }} />
+        </div>
+
+        <p className="text-[13px] text-[var(--color-ink-soft)] leading-relaxed">
+          Score calculado desde la frecuencia de riego de cada grupo,
+          amplificada por la zona <strong>{ZONA_LABELS[tienda.zona as ZonaClimatica]}</strong> y
+          la estación actual. Mayor score = mayor urgencia.
+        </p>
+
+        {riesgos.length === 0 ? (
+          <div className="rounded-2xl border border-[var(--color-rule)] bg-[var(--color-surface-2)] px-6 py-10 text-center">
+            <Icons.sprout aria-hidden className="mx-auto mb-3 h-7 w-7 text-[var(--color-green-soft)]" strokeWidth={1.25} />
+            <p className="text-[14px] text-[var(--color-ink-soft)]">
+              No se detectan riesgos significativos con el stock actual.
+            </p>
+          </div>
+        ) : (
           <ul className="space-y-3">
-            {alertasInventario.map((a) => {
-              const borderColor =
-                a.nivel === 'critica' ? 'var(--color-danger)' :
-                a.nivel === 'media'   ? 'var(--color-warning)' :
+            {riesgos.map((r) => {
+              const accentColor =
+                r.nivel === 'critica' ? 'var(--color-danger)'  :
+                r.nivel === 'media'   ? 'var(--color-warning)' :
                                         'var(--color-green-soft)';
               const bgColor =
-                a.nivel === 'critica' ? '#F7E1DE' :
-                a.nivel === 'media'   ? '#FBF1DC' :
+                r.nivel === 'critica' ? 'rgba(220,50,40,0.05)'  :
+                r.nivel === 'media'   ? 'rgba(215,150,0,0.05)'  :
                                         'var(--color-surface-2)';
-              const label =
-                a.nivel === 'critica' ? 'Riesgo alto' :
-                a.nivel === 'media'   ? 'Atención' : 'A considerar';
+              const nivelLabel =
+                r.nivel === 'critica' ? 'Riesgo alto' :
+                r.nivel === 'media'   ? 'Atención'    : 'Bajo riesgo';
+
               return (
-                <li key={a.grupo}
-                  className="rounded-xl border-l-4 p-5"
-                  style={{ borderLeftColor: borderColor, background: bgColor }}
+                <li
+                  key={r.grupo}
+                  className="overflow-hidden rounded-2xl"
+                  style={{
+                    border: `0.5px solid ${accentColor}`,
+                    background: bgColor,
+                  }}
                 >
-                  <div className="flex items-start justify-between gap-3 mb-2">
-                    <p className="font-semibold text-[15px] text-[var(--color-ink)]">
-                      {GRUPO_LABEL[a.grupo] ?? a.grupo}
-                    </p>
-                    <div className="flex items-center gap-2 shrink-0">
-                      <span className="text-[13px] font-semibold" style={{ color: borderColor }}>
-                        {a.unidades} uds.
+                  {/* Top bar */}
+                  <div
+                    className="flex items-center justify-between gap-4 px-5 py-3"
+                    style={{ borderBottom: `0.5px solid ${accentColor}`, background: bgColor }}
+                  >
+                    {/* Score dial */}
+                    <div className="flex items-center gap-3">
+                      <span
+                        className="display font-medium"
+                        style={{ fontSize: '32px', lineHeight: 1, color: accentColor, fontStyle: 'italic' }}
+                      >
+                        {r.puntuacion}
                       </span>
-                      <span className="rounded-full px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide"
-                        style={{ background: borderColor, color: '#fff' }}>
-                        {label}
-                      </span>
+                      <div>
+                        <p style={{ fontSize: '10px', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.12em', color: accentColor }}>
+                          {nivelLabel}
+                        </p>
+                        <p style={{ fontSize: '10px', color: 'var(--color-ink-soft)', letterSpacing: '0.06em' }}>
+                          {FACTOR_ICON[r.factorPrincipal]} {FACTOR_LABEL[r.factorPrincipal]}
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Group name + freq */}
+                    <div className="text-right">
+                      <p className="font-semibold text-[14px] text-[var(--color-ink)]">
+                        {GRUPO_LABEL[r.grupo] ?? r.grupo}
+                      </p>
+                      <p style={{ fontSize: '11px', color: 'var(--color-ink-soft)', marginTop: '1px' }}>
+                        Riego: <strong style={{ color: accentColor }}>{r.frecuenciaZona}</strong>
+                        {' · '}{r.unidades} uds.
+                      </p>
                     </div>
                   </div>
-                  <p className="text-[14px] leading-relaxed text-[var(--color-ink)]">{a.accion}</p>
-                  {a.plantasGrupo.length > 0 && (
-                    <details className="mt-3">
-                      <summary className="cursor-pointer text-[13px] font-medium text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]">
-                        Ver las {a.plantasGrupo.length} especies afectadas →
-                      </summary>
-                      <ul className="mt-2 flex flex-wrap gap-2">
-                        {a.plantasGrupo.map((p) => (
-                          <li key={p.id}>
-                            <Link href={`/plantas/${p.id}`}
-                              className="inline-flex items-center gap-1.5 rounded-full border border-[var(--color-rule)] bg-white/60 px-2.5 py-1 text-[12px] hover:border-[var(--color-green-deep)] transition-colors">
-                              {p.nombre} <span className="font-semibold">{p.stock}</span>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
-                  )}
+
+                  {/* Action */}
+                  <div className="px-5 py-4">
+                    <p className="text-[13px] leading-relaxed text-[var(--color-ink)]">{r.accion}</p>
+
+                    {r.plantasGrupo.length > 0 && (
+                      <details className="mt-3">
+                        <summary
+                          className="cursor-pointer text-[12px] font-medium hover:text-[var(--color-ink)] transition-colors"
+                          style={{ color: 'var(--color-ink-soft)' }}
+                        >
+                          {r.plantasGrupo.length} {r.plantasGrupo.length === 1 ? 'especie afectada' : 'especies afectadas'} →
+                        </summary>
+                        <ul className="mt-2 flex flex-wrap gap-1.5">
+                          {r.plantasGrupo.map((p) => (
+                            <li key={p.id}>
+                              <Link
+                                href={`/plantas/${p.id}`}
+                                className="inline-flex items-center gap-1 rounded-full border border-[var(--color-rule)] bg-white/60 px-2.5 py-1 text-[11px] transition-colors hover:border-[var(--color-green-deep)]"
+                              >
+                                {p.nombre}
+                                <span className="font-semibold" style={{ color: accentColor }}>{p.stock}</span>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </details>
+                    )}
+                  </div>
                 </li>
               );
             })}
           </ul>
-        </section>
-      )}
+        )}
+      </section>
 
       {/* Riego de la zona */}
       <section className="space-y-4">
-        <h2 className="serif text-[24px]">Riego de tu zona</h2>
+        <h2 className="display" style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontStyle: 'italic', lineHeight: 0.9 }}>Riego de tu zona</h2>
         <Card className="p-5 sm:p-6">
           <Eyebrow className="text-[var(--color-green-deep)]">Régimen general</Eyebrow>
           <p className="mt-2 text-[16px] leading-relaxed">{zona.riegoGeneral}</p>
@@ -245,7 +268,7 @@ export default async function TiendaDetailPage({ params }: PageProps) {
 
       {/* Frecuencia de riego por grupo */}
       <section className="space-y-3">
-        <h2 className="serif text-[24px]">Frecuencia por grupo de planta</h2>
+        <h2 className="display" style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontStyle: 'italic', lineHeight: 0.9 }}>Frecuencia por grupo</h2>
         <p className="text-[14px] text-[var(--color-ink-soft)]">
           Para tu zona ({ZONA_LABELS[tienda.zona]}). El número entre paréntesis es referencia general en otras zonas.
         </p>
@@ -277,8 +300,8 @@ export default async function TiendaDetailPage({ params }: PageProps) {
 
       {/* Stock por grupo */}
       <section className="space-y-3">
-        <h2 className="serif text-[24px]">
-          Plantas vigentes ({plantasDeTienda.length})
+        <h2 className="display" style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontStyle: 'italic', lineHeight: 0.9 }}>
+          Plantas vigentes <span style={{ fontSize: '60%', fontStyle: 'normal', fontWeight: 400, opacity: 0.5 }}>({plantasDeTienda.length})</span>
         </h2>
         {plantasDeTienda.length === 0 ? (
           <Alert variant="info">
@@ -334,7 +357,7 @@ export default async function TiendaDetailPage({ params }: PageProps) {
 
       {/* Comparativa con otras zonas */}
       <section className="space-y-3">
-        <h2 className="serif text-[24px]">Otras zonas climáticas</h2>
+        <h2 className="display" style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontStyle: 'italic', lineHeight: 0.9 }}>Otras zonas</h2>
         <div className="grid gap-2 sm:grid-cols-2">
           {ZONAS_ORDEN.filter((z) => z !== tienda.zona).map((z) => (
             <Link
