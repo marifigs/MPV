@@ -89,7 +89,7 @@ export default function HomePage() {
                   opacity: 0,
                 }}
               >
-                Tu guía operativa completa para el área de plantas. Zona climática, cuidados por especie y stock de tu tienda en un solo lugar.
+                Guía operativa para cuidar las plantas vivas y reducir la merma. Cuidados por especie, frecuencia de riego por zona climática y alertas de riesgo por tienda.
               </p>
 
               <div className="mt-12 flex items-center gap-8 animate-fade-up delay-500" style={{ opacity: 0 }}>
@@ -182,7 +182,7 @@ export default function HomePage() {
               <span className="block" style={{ fontSize: 'clamp(64px, 16vw, 96px)', color: 'rgba(245,241,232,0.16)' }}>bien cuidadas.</span>
             </h1>
             <p style={{ marginTop: '1.5rem', fontSize: '14px', lineHeight: 1.65, color: 'rgba(245,241,232,0.38)', maxWidth: '36ch' }}>
-              Tu guía operativa para el área de plantas vivas en Easy Chile.
+              Para cuidar las plantas y reducir la merma. Cuidados por especie, frecuencia de riego por zona y alertas de riesgo.
             </p>
             <div className="mt-8 flex items-center gap-5">
               <Link href="/plantas"
@@ -253,11 +253,11 @@ export default function HomePage() {
                   marginBottom: '2rem',
                 }}
               >
-                Una herramienta<br />
-                <span style={{ color: 'var(--color-green-deep)' }}>hecha para vender.</span>
+                Cuidar bien,<br />
+                <span style={{ color: 'var(--color-green-deep)' }}>evitar la merma.</span>
               </h2>
               <p style={{ fontSize: 'clamp(15px, 1.3vw, 18px)', lineHeight: 1.75, color: 'var(--color-ink-soft)', maxWidth: '52ch' }}>
-                279 especies con fichas de cuidado, frecuencias de riego por zona climática y stock en tiempo real. Diseñado para que cada vendedor del área de plantas vivas de Easy Chile tenga la respuesta correcta en segundos.
+                279 especies con fichas de cuidado, frecuencias de riego por zona climática y alertas de riesgo por tienda. Una herramienta operativa para que cada vendedor del área de plantas vivas tenga la respuesta correcta en segundos.
               </p>
             </div>
 
