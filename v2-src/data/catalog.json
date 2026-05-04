@@ -2424,7 +2424,7 @@
     "id": "tradescantia",
     "nombre": "TRADESCANTIA",
     "folderSlug": "TRADESCANTIA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/TRADESCANTIA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FLOR",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2433,7 +2433,7 @@
     "id": "tulipan",
     "nombre": "TULIPAN",
     "folderSlug": "TULIPAN",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/TULIPAN/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2442,7 +2442,7 @@
     "id": "tulipero",
     "nombre": "TULIPERO",
     "folderSlug": "TULIPERO",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/TULIPERO/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "ARBUSTIVA FOLLAJE",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2451,7 +2451,7 @@
     "id": "verbena",
     "nombre": "VERBENA",
     "folderSlug": "VERBENA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/VERBENA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2460,7 +2460,7 @@
     "id": "veronica",
     "nombre": "VERONICA",
     "folderSlug": "VERONICA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/VERONICA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2469,7 +2469,7 @@
     "id": "vinca",
     "nombre": "VINCA",
     "folderSlug": "VINCA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/VINCA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN PRIMAV/VERAN",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2478,7 +2478,7 @@
     "id": "viola",
     "nombre": "VIOLA",
     "folderSlug": "VIOLA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/VIOLA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2487,7 +2487,7 @@
     "id": "westringia",
     "nombre": "WESTRINGIA",
     "folderSlug": "WESTRINGIA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/WESTRINGIA/image.webp",
     "subrubro": "PLANTAS DE EXTERIOR",
     "grupo": "PLANTIN OTOÑ/INVIER",
     "fotoPlaceholder": "hsl(80 22% 90%)"
@@ -2496,7 +2496,7 @@
     "id": "yuca",
     "nombre": "YUCA",
     "folderSlug": "YUCA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/YUCA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
@@ -2505,7 +2505,7 @@
     "id": "yucca",
     "nombre": "YUCCA",
     "folderSlug": "YUCCA",
-    "fotoUrl": null,
+    "fotoUrl": "plantas/YUCCA/image.webp",
     "subrubro": "PLANTAS DE INTERIOR",
     "grupo": "PLANTA INTERIOR FOLL",
     "fotoPlaceholder": "hsl(150 18% 92%)"
