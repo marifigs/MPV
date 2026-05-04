@@ -2,20 +2,19 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Icons, type IconName } from '@/lib/icons';
+import { Icons } from '@/lib/icons';
 import { GlobalSearchTrigger } from './global-search';
-import { cn } from '@/lib/cn';
 
-type NavItem = { href: string; label: string; icon: IconName };
+type NavItem = { href: string; label: string };
 
 const ITEMS: NavItem[] = [
-  { href: '/', label: 'Inicio', icon: 'home' },
-  { href: '/mi-tienda', label: 'Mi tienda', icon: 'store' },
-  { href: '/plantas', label: 'Plantas', icon: 'sprout' },
-  { href: '/climas', label: 'Climas', icon: 'globe' },
-  { href: '/alertas', label: 'Alertas', icon: 'alert' },
-  { href: '/rutina', label: 'Rutina', icon: 'checklist' },
-  { href: '/liquidacion', label: 'Liquidación', icon: 'tag' },
+  { href: '/', label: 'Inicio' },
+  { href: '/mi-tienda', label: 'Mi tienda' },
+  { href: '/plantas', label: 'Plantas' },
+  { href: '/climas', label: 'Climas' },
+  { href: '/alertas', label: 'Alertas' },
+  { href: '/rutina', label: 'Rutina' },
+  { href: '/liquidacion', label: 'Liquidación' },
 ];
 
 function isActive(pathname: string, href: string): boolean {
@@ -89,41 +88,32 @@ export function TopNav() {
           </div>
         </div>
 
-        {/* Nav tabs */}
+        {/* Nav — icon-free, uppercase micro-text */}
         <nav
           aria-label="Secciones"
-          className="-mb-px flex gap-0 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex gap-0 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {ITEMS.map((item) => {
-            const Icon = Icons[item.icon];
             const active = isActive(pathname, item.href);
             return (
               <Link
                 key={item.href}
                 href={item.href}
                 aria-current={active ? 'page' : undefined}
-                className={cn(
-                  'group relative flex shrink-0 items-center gap-1.5 px-3.5 py-3 min-h-[44px]',
-                  'transition-colors duration-300',
-                  active
-                    ? 'text-[var(--color-green-deep)]'
-                    : 'text-[var(--color-ink-soft)] hover:text-[var(--color-ink)]'
-                )}
-                style={{ fontSize: '13px', fontWeight: active ? 500 : 400 }}
+                className="relative flex shrink-0 items-center px-3.5 py-3 min-h-[44px] transition-colors duration-300"
+                style={{
+                  fontFamily: 'var(--font-sans)',
+                  fontSize: '10.5px',
+                  fontWeight: active ? 500 : 400,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.18em',
+                  color: active
+                    ? 'var(--color-ink)'
+                    : 'var(--color-ink-soft)',
+                  opacity: active ? 1 : 0.6,
+                }}
               >
-                <Icon
-                  aria-hidden
-                  className="h-[14px] w-[14px] shrink-0"
-                  strokeWidth={active ? 2.25 : 1.75}
-                />
-                <span>{item.label}</span>
-                {/* Active indicator — thin hairline */}
-                {active && (
-                  <span
-                    className="absolute bottom-0 left-0 right-0 rounded-t-full"
-                    style={{ height: '1.5px', background: 'var(--color-green-deep)' }}
-                  />
-                )}
+                {item.label}
               </Link>
             );
           })}

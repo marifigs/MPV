@@ -102,7 +102,7 @@ export function PlantasExplorer() {
       </p>
 
       {/* Grid */}
-      <ul className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <ul className="grid gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-5">
         {filtered.slice(0, shown).map((p, index) => (
           <li key={p.id} className="animate-fade-up" style={{ animationDelay: `${Math.min(index, 24) * 0.03}s`, opacity: 0 }}>
             <LuxuryPlantCard plant={p} />
@@ -172,7 +172,7 @@ function CardOverlay({ label, nombre }: { label: string; nombre: string }) {
       <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '18px 20px' }}>
         <p style={{
           fontFamily: 'var(--font-sans)',
-          fontSize: '0.47rem',
+          fontSize: '10px',
           fontWeight: 500,
           textTransform: 'uppercase',
           letterSpacing: '0.28em',
@@ -214,11 +214,11 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
   };
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.currentTarget.style.boxShadow = '0 24px 64px rgba(24,32,26,0.20), 0 6px 20px rgba(24,32,26,0.10)';
+    e.currentTarget.style.boxShadow = '0 28px 72px rgba(24,32,26,0.22), 0 8px 24px rgba(24,32,26,0.12)';
   };
 
   const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.currentTarget.style.boxShadow = '0 2px 12px rgba(24,32,26,0.07)';
+    e.currentTarget.style.boxShadow = 'none';
     const media = cardRef.current?.querySelector('img, video') as HTMLElement | null;
     if (media) media.style.transform = '';
   };
@@ -227,12 +227,13 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
     <Link
       ref={cardRef}
       href={`/plantas/${plant.id}`}
-      className={cn('grain group block overflow-hidden rounded-xl')}
+      className={cn('grain group block overflow-hidden')}
       style={{
         aspectRatio: '3/4',
         display: 'block',
         position: 'relative',
-        boxShadow: '0 2px 12px rgba(24,32,26,0.07)',
+        borderRadius: '3px',
+        boxShadow: 'none',
         transition: 'box-shadow 0.7s var(--ease-luxury)',
       }}
       onMouseMove={handleMouseMove}
@@ -286,7 +287,7 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
           </p>
           <p style={{
             fontFamily: 'var(--font-sans)',
-            fontSize: '0.47rem',
+            fontSize: '10px',
             fontWeight: 500,
             textTransform: 'uppercase',
             letterSpacing: '0.28em',

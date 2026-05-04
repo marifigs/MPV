@@ -84,6 +84,7 @@ h1, h2, h3, h4, h5 {
   line-height: 1.08;
   color: var(--color-ink);
   font-weight: 400;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1;
 }
 
 button, a, input, select, textarea {
@@ -131,6 +132,7 @@ select:focus-visible,
   font-family: var(--font-display);
   letter-spacing: -0.02em;
   font-weight: 400;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "onum" 1;
 }
 
 .serif-italic {
@@ -138,6 +140,7 @@ select:focus-visible,
   font-style: italic;
   font-weight: 300;
   letter-spacing: -0.01em;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "dlig" 1, "onum" 1;
 }
 
 /* Display headline — maximum luxury scale */
@@ -146,6 +149,7 @@ select:focus-visible,
   font-weight: 300;
   letter-spacing: -0.04em;
   line-height: 0.86;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1, "dlig" 1, "onum" 1;
 }
 
 /* Thin ornamental rule */
@@ -249,3 +253,35 @@ select:focus-visible,
   border: 0.5px solid var(--color-rule);
   color: var(--color-ink-soft);
 }
+
+/* ── Magnetic custom cursor ───────────────────── */
+@media (pointer: fine) {
+  html.custom-cursor,
+  html.custom-cursor * {
+    cursor: none !important;
+  }
+}
+
+/* ── Aesop QuickLink editorial rows ──────────── */
+.ql-wipe {
+  position: absolute;
+  inset: 0;
+  background: var(--color-ink);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+.ql-row:hover .ql-wipe { transform: scaleX(1); }
+.ql-index,
+.ql-label,
+.ql-hint,
+.ql-arrow {
+  position: relative;
+  z-index: 1;
+}
+.ql-row:hover .ql-index  { color: rgba(245,241,232,0.35) !important; }
+.ql-row:hover .ql-label  { color: var(--color-cream) !important; }
+.ql-row:hover .ql-hint   { color: rgba(245,241,232,0.42) !important; opacity: 1 !important; }
+.ql-row:hover .ql-arrow  { color: var(--color-cream) !important; opacity: 0.65 !important; transform: translateX(8px); }

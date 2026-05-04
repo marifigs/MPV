@@ -35,7 +35,7 @@ export default function HomePage() {
               <div style={{ height: '0.5px', width: '40px', background: 'rgba(245,241,232,0.18)' }} />
               <span style={{
                 fontFamily: 'var(--font-sans)',
-                fontSize: '0.47rem',
+                fontSize: '10px',
                 fontWeight: 500,
                 textTransform: 'uppercase',
                 letterSpacing: '0.32em',
@@ -92,34 +92,36 @@ export default function HomePage() {
                 Guía operativa para cuidar las plantas vivas y reducir la merma. Cuidados por especie, frecuencia de riego por zona climática y alertas de riesgo por tienda.
               </p>
 
-              <div className="mt-12 flex items-center gap-8 animate-fade-up delay-500" style={{ opacity: 0 }}>
+              <div className="mt-12 flex items-center gap-10 animate-fade-up delay-500" style={{ opacity: 0 }}>
                 <Link
                   href="/plantas"
-                  className="inline-flex items-center gap-2.5 rounded-full font-semibold"
+                  className="inline-flex items-center gap-2.5"
                   style={{
-                    padding: '14px 30px',
-                    fontSize: '13px',
-                    background: 'var(--color-terracotta)',
-                    color: '#fff',
-                    transition: 'opacity 0.3s, transform 0.4s var(--ease-luxury)',
-                    letterSpacing: '0.02em',
+                    fontSize: '11px',
+                    fontWeight: 500,
+                    textTransform: 'uppercase',
+                    letterSpacing: '0.2em',
+                    color: 'rgba(245,241,232,0.62)',
+                    borderBottom: '0.5px solid rgba(245,241,232,0.22)',
+                    paddingBottom: '4px',
+                    transition: 'color 0.35s, border-color 0.35s',
                   }}
                 >
                   Ver catálogo
-                  <Icons.arrowRight aria-hidden className="h-3.5 w-3.5" strokeWidth={2.5} />
+                  <Icons.arrowRight aria-hidden className="h-3 w-3" strokeWidth={2} />
                 </Link>
                 <Link
                   href="/mi-tienda"
                   style={{
-                    fontSize: '12px',
-                    fontWeight: 500,
+                    fontSize: '11px',
+                    fontWeight: 400,
                     textTransform: 'uppercase',
                     letterSpacing: '0.18em',
-                    color: 'rgba(245,241,232,0.32)',
+                    color: 'rgba(245,241,232,0.28)',
                     transition: 'color 0.3s',
                   }}
                 >
-                  Mi tienda →
+                  Mi tienda
                 </Link>
               </div>
             </div>
@@ -184,11 +186,19 @@ export default function HomePage() {
             <p style={{ marginTop: '1.5rem', fontSize: '14px', lineHeight: 1.65, color: 'rgba(245,241,232,0.38)', maxWidth: '36ch' }}>
               Para cuidar las plantas y reducir la merma. Cuidados por especie, frecuencia de riego por zona y alertas de riesgo.
             </p>
-            <div className="mt-8 flex items-center gap-5">
+            <div className="mt-8 flex items-center gap-8">
               <Link href="/plantas"
-                className="inline-flex items-center gap-2 rounded-full font-semibold"
-                style={{ padding: '12px 22px', fontSize: '13px', background: 'var(--color-terracotta)', color: '#fff' }}>
-                Ver catálogo <Icons.arrowRight aria-hidden className="h-3.5 w-3.5" strokeWidth={2.5} />
+                className="inline-flex items-center gap-2"
+                style={{
+                  fontSize: '11px',
+                  fontWeight: 500,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.2em',
+                  color: 'rgba(245,241,232,0.62)',
+                  borderBottom: '0.5px solid rgba(245,241,232,0.22)',
+                  paddingBottom: '4px',
+                }}>
+                Ver catálogo <Icons.arrowRight aria-hidden className="h-3 w-3" strokeWidth={2} />
               </Link>
             </div>
             <div className="mt-10 grid grid-cols-3" style={{ borderTop: '0.5px solid rgba(245,241,232,0.10)', paddingTop: '1.5rem' }}>
@@ -348,7 +358,7 @@ export default function HomePage() {
                   <p style={{
                     marginTop: '0.5rem',
                     fontFamily: 'var(--font-sans)',
-                    fontSize: '0.5rem',
+                    fontSize: '10px',
                     fontWeight: 500,
                     textTransform: 'uppercase',
                     letterSpacing: '0.24em',
@@ -375,11 +385,12 @@ export default function HomePage() {
         >
           ¿Qué necesitas ahora?
         </h2>
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-4">
-          <QuickLink index={1} href="/mi-tienda"    iconKey="store"   label="Mi tienda"   hint="Riego por zona climática" />
-          <QuickLink index={2} href="/plantas"      iconKey="sprout"  label="Catálogo"    hint={`${catalog.length} especies`} />
-          <QuickLink index={3} href="/alertas"      iconKey="alert"   label="Alertas"     hint="Diagnóstico en segundos" />
-          <QuickLink index={4} href="/liquidacion"  iconKey="tag"     label="Liquidación" hint="Protocolo de merma" />
+        {/* Aesop-style editorial list */}
+        <div style={{ borderTop: '0.5px solid var(--color-rule)' }}>
+          <QuickLink index={1} href="/mi-tienda"   label="Mi tienda"   hint="Riego por zona climática" />
+          <QuickLink index={2} href="/plantas"     label="Catálogo"    hint={`${catalog.length} especies`} />
+          <QuickLink index={3} href="/alertas"     label="Alertas"     hint="Diagnóstico en segundos" />
+          <QuickLink index={4} href="/liquidacion" label="Liquidación" hint="Protocolo de merma" />
         </div>
       </section>
 
@@ -550,9 +561,8 @@ function ReglaCard({ numero, iconKey, titulo, cuerpo, tip, ctaHref, ctaLabel }: 
   );
 }
 
-function QuickLink({ href, iconKey, label, hint, index }: {
+function QuickLink({ href, label, hint, index }: {
   href: string;
-  iconKey: 'store' | 'sprout' | 'alert' | 'tag';
   label: string;
   hint: string;
   index: number;
@@ -560,71 +570,74 @@ function QuickLink({ href, iconKey, label, hint, index }: {
   return (
     <Link
       href={href}
-      className="group relative flex flex-col justify-between overflow-hidden"
+      className="ql-row group relative flex items-center overflow-hidden"
       style={{
-        border: '0.5px solid var(--color-rule)',
-        background: 'var(--color-surface)',
-        minHeight: '200px',
-        padding: 'clamp(22px,2.5vw,34px)',
-        transition: 'border-color 0.6s var(--ease-luxury), box-shadow 0.6s var(--ease-luxury)',
-        borderRadius: '18px',
+        borderBottom: '0.5px solid var(--color-rule)',
+        padding: 'clamp(20px, 2.5vw, 32px) 0',
+        textDecoration: 'none',
       }}
     >
-      {/* Ghost index number */}
+      {/* Full-width scaleX wipe on hover */}
+      <span className="ql-wipe" aria-hidden />
+
+      {/* Index */}
       <span
-        className="display select-none absolute"
+        className="ql-index shrink-0"
         aria-hidden
         style={{
-          fontSize: '120px',
-          color: 'var(--color-ink)',
-          opacity: 0.028,
-          lineHeight: 1,
-          right: '-0.1em',
-          top: '-0.15em',
-          fontStyle: 'italic',
-          letterSpacing: '-0.06em',
-          pointerEvents: 'none',
+          width: '3.5rem',
+          fontFamily: 'var(--font-sans)',
+          fontSize: '11px',
+          fontWeight: 400,
+          letterSpacing: '0.12em',
+          color: 'var(--color-ink-soft)',
+          opacity: 0.32,
+          transition: 'color 0.5s var(--ease-luxury), opacity 0.5s var(--ease-luxury)',
         }}
       >
         {String(index).padStart(2, '0')}
       </span>
 
-      {/* Top: hairline rule + label */}
-      <div>
-        <div style={{ height: '0.5px', background: 'var(--color-rule)', marginBottom: '20px', width: '32px' }} />
-        <p style={{
-          fontFamily: 'var(--font-sans)',
-          fontSize: '10px',
-          fontWeight: 500,
-          textTransform: 'uppercase',
-          letterSpacing: '0.2em',
-          color: 'var(--color-ink-soft)',
-          opacity: 0.55,
-        }}>
-          {hint}
-        </p>
-      </div>
-
-      {/* Bottom: name + arrow */}
-      <div className="flex items-end justify-between">
+      {/* Label + hint */}
+      <div className="flex-1" style={{ paddingLeft: 'clamp(16px, 2vw, 32px)', paddingRight: 'clamp(16px, 2vw, 32px)' }}>
         <p
-          className="display"
+          className="ql-label display"
           style={{
-            fontSize: 'clamp(22px, 2.2vw, 30px)',
+            fontSize: 'clamp(30px, 3.8vw, 58px)',
             fontStyle: 'italic',
             color: 'var(--color-ink)',
             lineHeight: 1,
+            transition: 'color 0.5s var(--ease-luxury)',
           }}
         >
           {label}
         </p>
-        <Icons.arrowRight
-          aria-hidden
-          className="h-4 w-4 shrink-0 mb-0.5 opacity-20 group-hover:opacity-80 group-hover:translate-x-1"
-          strokeWidth={1.75}
-          style={{ transition: 'opacity 0.4s, transform 0.5s var(--ease-luxury)', color: 'var(--color-green-deep)' }}
-        />
+        <p
+          className="ql-hint eyebrow"
+          style={{
+            marginTop: '6px',
+            color: 'var(--color-ink-soft)',
+            opacity: 0.45,
+            transition: 'color 0.5s var(--ease-luxury), opacity 0.5s var(--ease-luxury)',
+          }}
+        >
+          {hint}
+        </p>
       </div>
+
+      {/* Arrow */}
+      <span
+        className="ql-arrow shrink-0"
+        aria-hidden
+        style={{
+          fontSize: '18px',
+          color: 'var(--color-ink-soft)',
+          opacity: 0.25,
+          transition: 'color 0.5s var(--ease-luxury), opacity 0.5s var(--ease-luxury), transform 0.5s var(--ease-luxury)',
+        }}
+      >
+        →
+      </span>
     </Link>
   );
 }
