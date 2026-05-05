@@ -1,10 +1,5 @@
 {
-  "version": 2,
-  "name": "plantasfacil-easy",
-  "builds": [
-    { "src": "index.html", "use": "@vercel/static" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.html" }
-  ]
+  "installCommand": "cd v2-src && pnpm install",
+  "buildCommand": "cd v2-src && pnpm build",
+  "outputDirectory": "v2-src/out"
 }
