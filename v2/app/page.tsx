@@ -45,7 +45,6 @@ const NAV_CARDS = [
 
 export default function HomePage() {
   const inStock = plantsInStock();
-  const totalStock = inStock.reduce((sum, p) => sum + p.stock_total, 0);
 
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 md:px-6">
@@ -71,8 +70,7 @@ export default function HomePage() {
       <div className="mb-8 flex items-center gap-3 rounded-[var(--radius-md)] border border-[var(--green-soft)]/30 bg-[var(--green-deep)]/5 px-4 py-3">
         <TrendingDown className="size-4 shrink-0 text-[var(--green-deep)]" aria-hidden />
         <p className="text-sm text-[var(--ink)]">
-          <span className="font-semibold">{inStock.length} SKUs</span> con stock activo ·{" "}
-          <span className="font-semibold">{totalStock.toLocaleString("es-CL")}</span> unidades
+          <span className="font-semibold">{inStock.length} SKUs</span> disponibles en tienda
         </p>
       </div>
 

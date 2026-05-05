@@ -10,14 +10,14 @@ export const metadata = {
   title: "Alertas — PlantasFácil",
 };
 
-// Plants with zero or very low stock (≤5) that still have some stock entry
+// Plants available in very few stores (1–5)
 const lowStockPlants = plants
-  .filter((p) => p.stock_total > 0 && p.stock_total <= 50)
-  .sort((a, b) => a.stock_total - b.stock_total)
+  .filter((p) => p.tiendas.length > 0 && p.tiendas.length <= 5)
+  .sort((a, b) => a.tiendas.length - b.tiendas.length)
   .slice(0, 24);
 
-// Plants with no stock at all
-const zeroStockPlants = plants.filter((p) => p.stock_total === 0).slice(0, 24);
+// Plants not available in any store
+const zeroStockPlants = plants.filter((p) => p.tiendas.length === 0).slice(0, 24);
 
 // Plants on discount
 const onSalePlants = plants.filter((p) => p.descuento != null && p.descuento > 0);
@@ -60,8 +60,8 @@ export default function AlertasPage() {
 
         {/* Low stock */}
         <Section
-          title="Stock bajo"
-          description={`${lowStockPlants.length} SKUs con ≤50 unidades`}
+          title="Baja presencia"
+          description={`${lowStockPlants.length} SKUs en ≤5 tiendas`}
         >
           {lowStockPlants.length === 0 ? (
             <Alert variant="success">Todos los SKUs tienen stock suficiente.</Alert>
@@ -82,10 +82,10 @@ export default function AlertasPage() {
         {/* Zero stock */}
         <Section
           title="Sin stock"
-          description={`${plants.filter((p) => p.stock_total === 0).length} SKUs agotados`}
+          description={`${plants.filter((p) => p.tiendas.length === 0).length} SKUs sin presencia`}
         >
-          <Alert variant="info" title="SKUs sin stock">
-            Hay {plants.filter((p) => p.stock_total === 0).length} productos sin stock.
+          <Alert variant="info" title="SKUs sin tienda">
+            Hay {plants.filter((p) => p.tiendas.length === 0).length} productos sin presencia en tienda.
             Coordiná con el equipo de compras para reponer.
           </Alert>
           <SectionGrid className="mt-4">

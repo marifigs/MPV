@@ -78,8 +78,7 @@ export interface Plant {
   nombre_cientifico?: string;
   grupo: CareGroupId;
   subrubro: string;
-  stock_total: number;
-  stock?: Record<string, number>; // store nombre → units
+  tiendas: string[]; // store names where plant is available
   precio?: number;
   precio_anterior?: number;
   descuento?: number;

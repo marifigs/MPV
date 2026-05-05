@@ -54,9 +54,9 @@ export function wateringFrequency(plant: Plant, store: Store): string | undefine
   return care?.frecuencia[store.zona_climatica];
 }
 
-/** Plants in stock (stock_total > 0) */
+/** Plants available in at least one store */
 export function plantsInStock(): Plant[] {
-  return plants.filter((p) => p.stock_total > 0);
+  return plants.filter((p) => p.tiendas.length > 0);
 }
 
 /** Plants with active discount */

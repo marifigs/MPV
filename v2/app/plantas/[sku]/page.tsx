@@ -72,11 +72,11 @@ export default async function PlantDetailPage({ params }: Props) {
 
       <div className="mb-6 flex items-center gap-2 text-sm">
         <span
-          className={`font-semibold ${plant.stock_total > 0 ? "text-[var(--success)]" : "text-[var(--ink-soft)]"}`}
+          className={`font-semibold ${plant.tiendas.length > 0 ? "text-[var(--success)]" : "text-[var(--ink-soft)]"}`}
         >
-          {plant.stock_total > 0
-            ? `${plant.stock_total.toLocaleString("es-CL")} unidades en stock`
-            : "Sin stock activo"}
+          {plant.tiendas.length > 0
+            ? `Disponible en ${plant.tiendas.length} ${plant.tiendas.length === 1 ? "tienda" : "tiendas"}`
+            : "Sin presencia en tienda"}
         </span>
       </div>
 
