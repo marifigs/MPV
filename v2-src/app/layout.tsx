@@ -27,8 +27,8 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
   applicationName: 'Manual Plantas Vivas',
   icons: {
-    icon: '/MPV/v2/favicon.svg',
-    shortcut: '/MPV/v2/favicon.svg',
+    icon: `${process.env.NEXT_PUBLIC_ASSET_BASE ?? ''}/favicon.svg`,
+    shortcut: `${process.env.NEXT_PUBLIC_ASSET_BASE ?? ''}/favicon.svg`,
   },
 };
 

@@ -9,6 +9,7 @@ import { SearchBar } from '@/components/ui/search-bar';
 import { Icons } from '@/lib/icons';
 import { cn } from '@/lib/cn';
 import { getPlantVideoBySlug } from '@/lib/plant-video-map';
+import { assetUrl } from '@/lib/asset-url';
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 function capitalize(str: string): string {
@@ -156,7 +157,7 @@ function CardVideo({ videoFile }: { videoFile: string }) {
       muted loop playsInline preload="none"
       style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
     >
-      <source src={`/MPV/v2/videos/${videoFile}.mp4`} type="video/mp4" />
+      <source src={assetUrl(`/videos/${videoFile}.mp4`)} type="video/mp4" />
     </video>
   );
 }
@@ -256,7 +257,7 @@ function LuxuryPlantCard({ plant }: { plant: CatalogPlant }) {
         /* ── Photo card ── */
         <div style={{ position: 'relative', height: '100%', width: '100%' }}>
           <img
-            src={`/MPV/v2/${plant.fotoUrl}`}
+            src={assetUrl(`/${plant.fotoUrl}`)}
             alt=""
             loading="lazy"
             decoding="async"

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { plantas, plantasById, cuidadosByGrupo, tiendasById, ZONA_LABELS, catalog } from '@/data';
+import { assetUrl } from '@/lib/asset-url';
 
 function capitalize(str: string): string {
   return str.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
@@ -86,7 +87,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
               }}
             >
               <img
-                src={`/MPV/v2/${displayFotoUrl}`}
+                src={assetUrl(`/${displayFotoUrl}`)}
                 alt={`Foto de ${displayNombre}`}
                 className="h-full w-full object-cover"
                 loading="eager"
@@ -291,7 +292,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
                   }}
                 >
                   <img
-                    src={`/MPV/v2/${r.fotoUrl}`}
+                    src={assetUrl(`/${r.fotoUrl}`)}
                     alt={r.nombre}
                     loading="lazy"
                     className="absolute inset-0 h-full w-full object-cover"

@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { assetUrl } from '@/lib/asset-url';
 
 const PLANTS = [
   { file: 'abedul', name: 'Abedul', label: 'Exterior' },
@@ -62,7 +63,7 @@ function PlantVideo({ file, name, label }: { file: string; name: string; label: 
         className="w-full object-cover"
         style={{ height: '276px' }}
       >
-        <source src={`/MPV/v2/videos/${file}.mp4`} type="video/mp4" />
+        <source src={assetUrl(`/videos/${file}.mp4`)} type="video/mp4" />
       </video>
       {/* Card overlay */}
       <div className="absolute bottom-0 left-0 right-0 px-4 py-4"

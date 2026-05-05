@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
+import { assetUrl } from '@/lib/asset-url';
 
 interface PlantVideoProps {
   videoFile: string;
@@ -43,7 +44,7 @@ export function PlantVideo({ videoFile, name }: PlantVideoProps) {
         className="absolute inset-0 h-full w-full object-cover"
         aria-label={`Video de ${name}`}
       >
-        <source src={`/MPV/v2/videos/${videoFile}.mp4`} type="video/mp4" />
+        <source src={assetUrl(`/videos/${videoFile}.mp4`)} type="video/mp4" />
       </video>
       {/* Subtle gradient vignette */}
       <div

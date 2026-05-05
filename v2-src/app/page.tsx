@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Icons } from '@/lib/icons';
 import { plantas, tiendas, zonas, plantasEspeciales, catalog } from '@/data';
+import { assetUrl } from '@/lib/asset-url';
 
 export default function HomePage() {
   return (
@@ -143,9 +144,9 @@ export default function HomePage() {
               autoPlay muted loop playsInline preload="metadata"
               className="absolute inset-0 h-full w-full object-cover"
               style={{ opacity: 0.88 }}
-              poster="/MPV/v2/videos/hero-poster.jpg"
+              poster={assetUrl("/videos/hero-poster.jpg")}
             >
-              <source src="/MPV/v2/videos/hero-loop.mp4" type="video/mp4" />
+              <source src={assetUrl("/videos/hero-loop.mp4")} type="video/mp4" />
             </video>
             <div
               className="absolute inset-0 pointer-events-none"
@@ -162,8 +163,8 @@ export default function HomePage() {
           <video autoPlay muted loop playsInline preload="none"
             className="absolute inset-0 h-full w-full object-cover"
             style={{ objectPosition: 'center 20%' }}
-            poster="/MPV/v2/videos/hero-poster.jpg">
-            <source src="/MPV/v2/videos/hero-loop.mp4" type="video/mp4" />
+            poster={assetUrl("/videos/hero-poster.jpg")}>
+            <source src={assetUrl("/videos/hero-loop.mp4")} type="video/mp4" />
           </video>
           <div
             className="absolute inset-0"
