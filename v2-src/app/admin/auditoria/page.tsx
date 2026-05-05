@@ -6,12 +6,17 @@ import type { AuditEvent, AuditSession } from '@/types/supabase';
 
 type EventRow = AuditEvent & { session: Pick<AuditSession, 'user_email'> | null };
 
-const EVENT_LABELS: Record<string, string> = {
-  pageview: 'Vista de página',
-  search: 'Búsqueda',
-  plant_view: 'Ver planta',
-  store_view: 'Ver tienda',
-  logout: 'Cierre de sesión',
+const EVENT_LABELS: Record<string, { label: string; color: string }> = {
+  pageview:         { label: 'Vista de página',       color: 'var(--color-green-deep)' },
+  scroll_milestone: { label: 'Scroll milestone',      color: 'var(--color-green-soft)' },
+  scroll_exit:      { label: 'Salida con scroll',     color: 'var(--color-ink-soft)'   },
+  rage_click:       { label: '⚡ Rage click',          color: 'var(--color-danger)'     },
+  form_field:       { label: 'Campo de formulario',   color: 'var(--color-gold)'       },
+  js_error:         { label: '⚠ Error JS',             color: 'var(--color-warning)'    },
+  search:           { label: 'Búsqueda',              color: 'var(--color-green-deep)' },
+  plant_view:       { label: 'Ver planta',            color: 'var(--color-green-deep)' },
+  store_view:       { label: 'Ver tienda',            color: 'var(--color-green-deep)' },
+  logout:           { label: 'Cierre de sesión',      color: 'var(--color-ink-soft)'   },
 };
 
 export default function AuditoriaPage() {
@@ -157,8 +162,8 @@ export default function AuditoriaPage() {
                     {e.session?.user_email ?? '—'}
                   </td>
                   <td className="px-4 py-3">
-                    <span className="text-[11px] font-medium" style={{ color: 'var(--color-green-deep)' }}>
-                      {EVENT_LABELS[e.event_type] ?? e.event_type}
+                    <span className="text-[11px] font-medium" style={{ color: EVENT_LABELS[e.event_type]?.color ?? 'var(--color-ink-soft)' }}>
+                      {EVENT_LABELS[e.event_type]?.label ?? e.event_type}
                     </span>
                   </td>
                   <td className="px-4 py-3 font-mono text-[11px]" style={{ color: 'var(--color-ink-soft)' }}>{e.path}</td>
