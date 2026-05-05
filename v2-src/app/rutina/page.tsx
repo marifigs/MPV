@@ -76,9 +76,6 @@ export default function RutinaPage() {
                   <p className="text-[14px] leading-relaxed" style={{ color: 'var(--color-ink)' }}>
                     {d.accion}
                   </p>
-                  <p className="text-[11px] leading-relaxed" style={{ color: 'var(--color-ink-soft)', opacity: 0.6 }}>
-                    Fuente: {d.fuente}
-                  </p>
                 </div>
               </li>
             );
