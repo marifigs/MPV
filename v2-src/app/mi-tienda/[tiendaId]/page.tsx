@@ -99,8 +99,6 @@ export default async function TiendaDetailPage({ params }: PageProps) {
           {ZONA_LABELS[tienda.zona]}
           <span style={{ margin: '0 0.6em', opacity: 0.3 }}>·</span>
           Tienda {TIPO_TIENDA_LABELS[tienda.tipo]}
-          <span style={{ margin: '0 0.6em', opacity: 0.3 }}>·</span>
-          {totalUnidades} uds. en stock
           {tienda.riegoAutomatico && (
             <>
               <span style={{ margin: '0 0.6em', opacity: 0.3 }}>·</span>
@@ -211,7 +209,6 @@ export default async function TiendaDetailPage({ params }: PageProps) {
                       </p>
                       <p style={{ fontSize: '11px', color: 'var(--color-ink-soft)', marginTop: '1px' }}>
                         Riego: <strong style={{ color: accentColor }}>{r.frecuenciaZona}</strong>
-                        {' · '}{r.unidades} uds.
                       </p>
                     </div>
                   </div>
@@ -233,10 +230,9 @@ export default async function TiendaDetailPage({ params }: PageProps) {
                             <li key={p.id}>
                               <Link
                                 href={`/plantas/${p.id}`}
-                                style={{ fontSize: '12px', color: 'var(--color-ink-soft)', display: 'flex', justifyContent: 'space-between', padding: '3px 0', borderBottom: '0.5px solid var(--color-rule)', textDecoration: 'none' }}
+                                style={{ fontSize: '12px', color: 'var(--color-ink-soft)', display: 'block', padding: '3px 0', borderBottom: '0.5px solid var(--color-rule)', textDecoration: 'none' }}
                               >
-                                <span>{p.nombre}</span>
-                                <span style={{ fontWeight: 600, color: accentColor }}>{p.stock} uds.</span>
+                                {p.nombre}
                               </Link>
                             </li>
                           ))}
@@ -312,10 +308,10 @@ export default async function TiendaDetailPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Stock por grupo */}
+      {/* Plantas de la tienda */}
       <section className="space-y-3">
         <h2 className="display" style={{ fontSize: 'clamp(24px, 3vw, 40px)', fontStyle: 'italic', lineHeight: 0.9 }}>
-          Plantas vigentes <span style={{ fontSize: '60%', fontStyle: 'normal', fontWeight: 400, opacity: 0.5 }}>({plantasDeTienda.length})</span>
+          Plantas de esta tienda <span style={{ fontSize: '60%', fontStyle: 'normal', fontWeight: 400, opacity: 0.5 }}>({plantasDeTienda.length} especies)</span>
         </h2>
         {plantasDeTienda.length === 0 ? (
           <Alert variant="info">
@@ -342,7 +338,7 @@ export default async function TiendaDetailPage({ params }: PageProps) {
                       {GRUPO_LABEL[grupo as keyof typeof GRUPO_LABEL] ?? grupo}
                     </span>
                     <span className="ml-auto text-[13px] text-[var(--color-ink-soft)]">
-                      {lista.length} variedades · {sumGrupo} unidades
+                      {lista.length} {lista.length === 1 ? 'especie' : 'especies'}
                     </span>
                     <Icons.chevronDown
                       aria-hidden
@@ -355,10 +351,9 @@ export default async function TiendaDetailPage({ params }: PageProps) {
                       <li key={p.id}>
                         <Link
                           href={`/plantas/${p.id}`}
-                          className="flex items-center justify-between rounded-md px-3 py-2 text-[14px] hover:bg-[var(--color-surface)]"
+                          className="block rounded-md px-3 py-2 text-[14px] hover:bg-[var(--color-surface)] line-clamp-1"
                         >
-                          <span className="line-clamp-1">{p.nombre}</span>
-                          <span className="ml-2 shrink-0 font-medium">{p.stock}</span>
+                          {p.nombre}
                         </Link>
                       </li>
                     ))}
