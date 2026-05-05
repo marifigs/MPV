@@ -1,5 +1,6 @@
 {
-  "installCommand": "cd v2-src && pnpm install",
+  "framework": "nextjs",
+  "installCommand": "cd v2-src && pnpm install --frozen-lockfile",
   "buildCommand": "cd v2-src && pnpm build",
-  "outputDirectory": "v2-src/out"
+  "outputDirectory": "v2-src/.next"
 }

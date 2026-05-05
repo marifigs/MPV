@@ -3,6 +3,9 @@ import { DM_Sans, Cormorant_Garamond } from 'next/font/google';
 import { TopNav } from '@/components/top-nav';
 import { SiteFooter } from '@/components/site-footer';
 import { PageTransition } from '@/components/page-transition';
+import { AuthProvider } from '@/contexts/auth-context';
+import { AuthGuard } from '@/components/auth-guard';
+import { AuditTracker } from '@/components/audit-tracker';
 import './globals.css';
 
 const dmSans = DM_Sans({
@@ -43,17 +46,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es" className={`${dmSans.variable} ${cormorant.variable}`}>
       <body>
-        <a
-          href="#contenido"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-[var(--color-green-deep)] focus:text-[var(--color-cream)] focus:px-4 focus:py-2 focus:rounded-md"
-        >
-          Saltar al contenido
-        </a>
-        <TopNav />
-        <main id="contenido" className="mx-auto max-w-6xl px-5 sm:px-8 pb-40 pt-12">
-          <PageTransition>{children}</PageTransition>
-        </main>
-        <SiteFooter />
+        <AuthProvider>
+          <AuditTracker />
+          <AuthGuard>
+            <a
+              href="#contenido"
+              className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-[var(--color-green-deep)] focus:text-[var(--color-cream)] focus:px-4 focus:py-2 focus:rounded-md"
+            >
+              Saltar al contenido
+            </a>
+            <TopNav />
+            <main id="contenido" className="mx-auto max-w-6xl px-5 sm:px-8 pb-40 pt-12">
+              <PageTransition>{children}</PageTransition>
+            </main>
+            <SiteFooter />
+          </AuthGuard>
+        </AuthProvider>
       </body>
     </html>
   );

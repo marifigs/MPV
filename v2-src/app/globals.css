@@ -263,6 +263,22 @@ select:focus-visible,
 .ql-hint   { transition: opacity 0.4s var(--ease-luxury); }
 .ql-arrow  { transition: transform 0.5s var(--ease-luxury), opacity 0.4s var(--ease-luxury); }
 
+/* ── Form inputs (admin + login) ────────────────────────────── */
+.input-base {
+  width: 100%;
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+  outline: none;
+  border: 0.5px solid var(--color-rule);
+  background: var(--color-surface);
+  color: var(--color-ink);
+  border-radius: 2px;
+  transition: border-color 0.15s;
+}
+.input-base:focus {
+  border-color: var(--color-green-deep);
+}
+
 /* ── CSS Scroll-Driven Animations (Chrome 115+) ─ */
 @supports (animation-timeline: view()) {
   @media (prefers-reduced-motion: no-preference) {
