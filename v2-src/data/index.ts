@@ -7,6 +7,7 @@ import type {
   SenalAlerta,
   PasoRutina,
   TipExperto,
+  Diagnostico,
   ZonaClimatica,
   GrupoCuidado,
   ReglaLiquidacion,
@@ -18,6 +19,7 @@ import type {
 
 import tiendasData from './tiendas.json';
 import plantasData from './plantas.json';
+import diagnosticosData from './diagnosticos.json';
 import cuidadosData from './cuidados.json';
 import zonasData from './zonas.json';
 import plantasEspecialesData from './plantas-especiales.json';
@@ -34,6 +36,7 @@ export const plantasEspeciales = plantasEspecialesData as PlantaEspecial[];
 export const alertas = alertasData as SenalAlerta[];
 export const rutina = rutinaData as PasoRutina[];
 export const tips = tipsData as TipExperto[];
+export const diagnosticos = diagnosticosData as Diagnostico[];
 export const liquidacion = liquidacionData as {
   reglas: ReglaLiquidacion[];
   descuentos: DescuentoEtapa[];

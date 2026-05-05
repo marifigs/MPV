@@ -116,6 +116,14 @@ export interface TipExperto {
   texto: string;
 }
 
+export interface Diagnostico {
+  id: string;
+  observacion: string;
+  accion: string;
+  urgencia: 'alta' | 'normal' | 'baja';
+  fuente: string;
+}
+
 export type TipoLiquidacion =
   | 'flor-temporada'
   | 'flor-perenne'

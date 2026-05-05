@@ -1,0 +1,58 @@
+[
+  {
+    "id": "tierra-seca",
+    "observacion": "Al meter el dedo 2–3 cm, la tierra está seca",
+    "accion": "Riega ahora. Aplica agua lentamente hasta que salga por el fondo del macetero. El test del dedo a 2–3 cm de profundidad es el método más fiable para maceteros: la superficie puede parecer seca mientras la raíz aún tiene humedad.",
+    "urgencia": "alta",
+    "fuente": "RHS Houseplant Growing Guide; UMN Extension — Estimating Soil Moisture by Feel"
+  },
+  {
+    "id": "tierra-humeda",
+    "observacion": "La tierra está encharcada o con agua en el plato inferior",
+    "accion": "No riegues. Vacía el plato inferior de inmediato: las raíces sin oxígeno se pudren en horas. El exceso de agua es la causa más común de muerte en plantas de interior. Deja que la tierra seque antes del próximo riego.",
+    "urgencia": "alta",
+    "fuente": "Missouri Botanical Garden — Overwatering; RHS How to Help a Poorly Houseplant"
+  },
+  {
+    "id": "hojas-amarillas",
+    "observacion": "Las hojas están amarillas",
+    "accion": "El patrón importa: si amarillean hojas VIEJAS y NUEVAS a la vez → exceso de agua. Si solo amarillean las más VIEJAS → falta de agua o luz. Si las hojas nuevas amarillean pero las venas siguen verdes → posible deficiencia de hierro (agua muy calcárea). Toca siempre la tierra primero para descartar riego.",
+    "urgencia": "normal",
+    "fuente": "RHS — Chlorosis; RHS How to Help a Poorly Houseplant; Missouri Botanical Garden — Common Indoor Plant Problems"
+  },
+  {
+    "id": "planta-caida",
+    "observacion": "La planta está caída o muy marchita",
+    "accion": "Primero toca la tierra. Si está seca → riego urgente ahora. Si está húmeda → NO riegues: la marchitez con tierra mojada indica daño en raíces por exceso de agua. Saca la planta del macetero, inspecciona las raíces (raíces negras o blandas = pudrición). Avisa al encargado.",
+    "urgencia": "alta",
+    "fuente": "RHS How to Help a Poorly Houseplant; Missouri Botanical Garden — Overwatering"
+  },
+  {
+    "id": "polvo-blanco",
+    "observacion": "Hay polvo o manchas blancas en las hojas (se puede frotar)",
+    "accion": "Oidio (hongo). Aisla la planta del display de inmediato — es contagioso entre plantas cercanas. No la mojes ni la riegues desde arriba. Mejora la ventilación del área. Retira las hojas más afectadas. El fungicida frena el avance pero no elimina lo ya infectado. Avisa al encargado.",
+    "urgencia": "alta",
+    "fuente": "Missouri Botanical Garden — Powdery Mildew Indoors; UMN Extension — Powdery Mildew; RHS Powdery Mildews"
+  },
+  {
+    "id": "moscas-pequenas",
+    "observacion": "Hay mosquitos o moscas muy pequeñas alrededor del macetero",
+    "accion": "Son sciaridae (fungus gnats) y su presencia confirma que la tierra lleva tiempo húmeda. El daño en plantas adultas es menor, pero señala riego excesivo. Reduce frecuencia de riego y deja que la capa superior de tierra seque entre riegos. Pon trampas amarillas adhesivas para los adultos.",
+    "urgencia": "normal",
+    "fuente": "RHS — Fungus Gnats; UMN Extension — Fungus Gnats in Houseplants"
+  },
+  {
+    "id": "planta-inclinada",
+    "observacion": "La planta se inclina siempre hacia el mismo lado",
+    "accion": "Fototropismo: el lado sombreado produce más auxina (hormona de crecimiento) y se alarga más rápido, inclinando la planta hacia la luz. Gírala un cuarto de vuelta (90°) cada vez que riegues para que crezca pareja. Si la inclinación es severa y el tallo está muy alargado con hojas separadas, la planta necesita más luz.",
+    "urgencia": "baja",
+    "fuente": "RHS — How Plants Sense the Environment (Phototropism)"
+  },
+  {
+    "id": "color-palido",
+    "observacion": "La planta se ve pálida, con poco color, y crece hacia la luz",
+    "accion": "Falta de luz (etiolación). La planta produce menos clorofila de la necesaria. Muévela a una zona más iluminada, sin sol directo si es de interior. Si las hojas nuevas están amarillas con las venas verdes (no pálidas), puede ser falta de hierro por agua calcárea — es distinto y requiere abono específico.",
+    "urgencia": "baja",
+    "fuente": "Missouri Botanical Garden — Common Indoor Plant Problems; RHS — Chlorosis"
+  }
+]
