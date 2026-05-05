@@ -8,6 +8,9 @@ import type {
   PasoRutina,
   TipExperto,
   Diagnostico,
+  Plaga,
+  FaqCliente,
+  Estacion,
   ZonaClimatica,
   GrupoCuidado,
   ReglaLiquidacion,
@@ -20,6 +23,9 @@ import type {
 import tiendasData from './tiendas.json';
 import plantasData from './plantas.json';
 import diagnosticosData from './diagnosticos.json';
+import plagasData from './plagas.json';
+import faqClientesData from './faq-clientes.json';
+import estacionalData from './estacional.json';
 import cuidadosData from './cuidados.json';
 import zonasData from './zonas.json';
 import plantasEspecialesData from './plantas-especiales.json';
@@ -37,6 +43,9 @@ export const alertas = alertasData as SenalAlerta[];
 export const rutina = rutinaData as PasoRutina[];
 export const tips = tipsData as TipExperto[];
 export const diagnosticos = diagnosticosData as Diagnostico[];
+export const plagas = plagasData as Plaga[];
+export const faqClientes = faqClientesData as FaqCliente[];
+export const estacional = estacionalData as Estacion[];
 export const liquidacion = liquidacionData as {
   reglas: ReglaLiquidacion[];
   descuentos: DescuentoEtapa[];

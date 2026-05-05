@@ -1,0 +1,110 @@
+[
+  {
+    "id": "otono",
+    "nombre": "Otoño",
+    "meses": [3, 4, 5],
+    "mesesNombre": "Marzo · Abril · Mayo",
+    "descripcion": "Transición clave: las plantas reducen su ritmo. El principal riesgo es seguir regando como en verano cuando ya no corresponde.",
+    "plantasDestacadas": [
+      { "nombre": "Crisantemo", "motivo": "Floración de otoño, alta demanda" },
+      { "nombre": "Ciclamen", "motivo": "Empieza su temporada, ideal para interior fresco" },
+      { "nombre": "Calatea", "motivo": "Interior, perfecta para ambientes más húmedos de otoño" },
+      { "nombre": "Pothos y Philodendron", "motivo": "Follaje resistente, ventas estables todo el año" },
+      { "nombre": "Bulbos invernales", "motivo": "Momento de vender tulipanes, narcisos y jacintos para plantar" }
+    ],
+    "cuidadosClave": [
+      "Reducir la frecuencia de riego gradualmente — la evaporación baja con el frío",
+      "Dejar de fertilizar a partir de mayo — las plantas entran en reposo",
+      "Retirar plantas tropicales del exterior antes de la primera helada",
+      "Aumentar la limpieza de hojas secas — acumulan humedad y favorecen hongos"
+    ],
+    "riesgos": [
+      "Exceso de riego: el error más común en otoño — el suelo ya no seca igual",
+      "Hongos por humedad alta y ventilación reducida — más frecuente en el sur",
+      "Plagas de interior que se activan al cerrar ventanas (araña roja, cochinilla)"
+    ],
+    "zonaNorte": "Otoño suave en el norte — el riesgo de heladas es mínimo hasta junio. Reducir riego pero no suspender.",
+    "zonaSur": "Temperaturas bajas desde abril. Priorizar el retiro de plantas sensibles al frío. Riesgo de heladas anticipadas."
+  },
+  {
+    "id": "invierno",
+    "nombre": "Invierno",
+    "meses": [6, 7, 8],
+    "mesesNombre": "Junio · Julio · Agosto",
+    "descripcion": "Período de reposo. El principal error es seguir tratando las plantas como en verano. Menos agua, nada de fertilizante, protección del frío.",
+    "plantasDestacadas": [
+      { "nombre": "Ciclamen", "motivo": "Su temporada peak — prefiere temperaturas frescas" },
+      { "nombre": "Camelias", "motivo": "Floración invernal, muy llamativas en el display" },
+      { "nombre": "Violetas africanas", "motivo": "Interior, aguantan bien el invierno en casa" },
+      { "nombre": "Suculentas y cactus", "motivo": "Fáciles, bajo mantenimiento, atractivas para principiantes" },
+      { "nombre": "Poinsettia (Estrella de Navidad)", "motivo": "Julio–agosto: anticipar stock para temporada navideña" }
+    ],
+    "cuidadosClave": [
+      "Regar muy poco — verificar que la tierra esté bien seca antes de regar",
+      "No fertilizar en absoluto durante junio, julio y agosto",
+      "Proteger plantas sensibles de heladas y viento frío (especialmente tiendas del sur y montaña)",
+      "Mantener plantas de interior alejadas de ventanas con corriente y de calefactores directos"
+    ],
+    "riesgos": [
+      "Heladas: riesgo crítico en zonas montaña y frío-húmedo desde junio",
+      "Raíz podrida por exceso de riego con tierra que no seca en el frío",
+      "Araña roja: se activa con la calefacción interior y el aire seco"
+    ],
+    "zonaNorte": "Invierno seco y frío nocturno — heladas posibles en zonas de altura. El día sigue siendo cálido: ajustar riego según temperatura real.",
+    "zonaSur": "Heladas frecuentes, lluvia intensa. Priorizar cobertura y drenaje. Alto riesgo de pudrición por exceso de agua de lluvia."
+  },
+  {
+    "id": "primavera",
+    "nombre": "Primavera",
+    "meses": [9, 10, 11],
+    "mesesNombre": "Septiembre · Octubre · Noviembre",
+    "descripcion": "Temporada de mayor crecimiento. Las plantas despiertan, la demanda sube y es el mejor momento para trasplantar, fertilizar y renovar el display.",
+    "plantasDestacadas": [
+      { "nombre": "Petunias e Impatiens", "motivo": "Alta demanda, colorido, perfectas para exterior en primavera" },
+      { "nombre": "Begonias", "motivo": "Floración continua, versátiles, se venden solas" },
+      { "nombre": "Lavanda", "motivo": "Aromática, resistente, muy demandada en esta época" },
+      { "nombre": "Geranios (Pelargonium)", "motivo": "Clásico de primavera, colores llamativos para display exterior" },
+      { "nombre": "Hortensias", "motivo": "Gran demanda en octubre-noviembre, espectaculares en maceta grande" }
+    ],
+    "cuidadosClave": [
+      "Retomar fertilización desde septiembre — una vez a la semana en plantas activas",
+      "Aumentar la frecuencia de riego gradualmente al subir las temperaturas",
+      "Trasplantar plantas que llevan más de 2 años en la misma maceta",
+      "Inspeccionar stock minuciosamente — el calor activa plagas de exterior"
+    ],
+    "riesgos": [
+      "Pulgón: se dispara en primavera con los brotes nuevos",
+      "Exceso de sol directo en plantas de interior sacadas afuera sin adaptación gradual",
+      "Heladas tardías en septiembre en zonas montaña y sur — no bajar la guardia"
+    ],
+    "zonaNorte": "Primavera corta y muy calurosa. Desde octubre aumentar riego a diario en muchos grupos. Cuidar el sol directo de mediodía.",
+    "zonaSur": "Primavera tardía — en zonas frías esperar a octubre para sacar plantas al exterior. Mayor lluvia que en el norte."
+  },
+  {
+    "id": "verano",
+    "nombre": "Verano",
+    "meses": [12, 1, 2],
+    "mesesNombre": "Diciembre · Enero · Febrero",
+    "descripcion": "Temporada de mayor estrés hídrico. El calor mata rápido. La prioridad es el riego diario y la protección del sol directo intenso.",
+    "plantasDestacadas": [
+      { "nombre": "Agapanto", "motivo": "Floración veraniega, resistente al calor, muy decorativo" },
+      { "nombre": "Canas y Achira", "motivo": "Tropicales de verano, crecen rápido y son llamativas" },
+      { "nombre": "Portulaca", "motivo": "Suculenta de verano, tolera el sol directo intenso" },
+      { "nombre": "Zinnias y Margaritas", "motivo": "Colorido de temporada, alta rotación en verano" },
+      { "nombre": "Cactus y suculentas", "motivo": "El verano es su estación — mínimo mantenimiento, alta venta" }
+    ],
+    "cuidadosClave": [
+      "Regar diario o incluso 2 veces al día en plantas de exterior en zonas norte y costera",
+      "No dejar agua estancada en platos — fermenta con el calor",
+      "Revisar plantas en zonas de sol directo a mediodía — pueden morir en pocas horas",
+      "Preparar bien el riego antes del fin de semana — el viernes regar con buena carga"
+    ],
+    "riesgos": [
+      "Deshidratación aguda: en el norte una planta sin agua puede morir en horas",
+      "Quemaduras por sol directo en plantas de interior expuestas al exterior",
+      "Mosca blanca y araña roja: se multiplican rápido con el calor y la sequedad"
+    ],
+    "zonaNorte": "Máxima urgencia de riego. Algunas plantas necesitan riego 2 veces al día en enero y febrero. Planificar el fin de semana con antelación.",
+    "zonaSur": "Veranos más templados pero con períodos secos. Riego diario en exterior. Menos riesgo de quemaduras por sol intenso."
+  }
+]

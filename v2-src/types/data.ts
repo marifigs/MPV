@@ -124,6 +124,41 @@ export interface Diagnostico {
   fuente: string;
 }
 
+export interface Plaga {
+  id: string;
+  nombre: string;
+  tipo: 'insecto' | 'ácaro' | 'hongo';
+  urgencia: 'alta' | 'normal';
+  señales: string;
+  plantas: string[];
+  accion: string;
+}
+
+export interface FaqCliente {
+  id: string;
+  pregunta: string;
+  respuesta: string;
+  categoria: 'riego' | 'cuidados' | 'problemas' | 'seguridad';
+}
+
+export interface PlantaDestacada {
+  nombre: string;
+  motivo: string;
+}
+
+export interface Estacion {
+  id: string;
+  nombre: string;
+  meses: number[];
+  mesesNombre: string;
+  descripcion: string;
+  plantasDestacadas: PlantaDestacada[];
+  cuidadosClave: string[];
+  riesgos: string[];
+  zonaNorte: string;
+  zonaSur: string;
+}
+
 export type TipoLiquidacion =
   | 'flor-temporada'
   | 'flor-perenne'

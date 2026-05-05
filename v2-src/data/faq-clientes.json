@@ -1,0 +1,74 @@
+[
+  {
+    "id": "frecuencia-riego",
+    "pregunta": "¿Cada cuánto hay que regarla?",
+    "respuesta": "Antes de regar, mete el dedo 2 cm en la tierra. Si está seca, riega hasta que salga agua por abajo y vacía el plato. Si aún está húmeda, espera. La frecuencia depende de la planta, la maceta y el ambiente — no existe un calendario fijo.",
+    "categoria": "riego"
+  },
+  {
+    "id": "hojas-amarillas",
+    "pregunta": "¿Por qué se le están poniendo amarillas las hojas?",
+    "respuesta": "Lo más común es exceso de riego: las raíces se ahogan y no absorben nutrientes. Toca la tierra — si está empapada, deja de regar y asegúrate de que la maceta drene. También puede ser poca luz o cambio de ambiente reciente.",
+    "categoria": "problemas"
+  },
+  {
+    "id": "hojas-caen",
+    "pregunta": "¿Por qué le están cayendo las hojas?",
+    "respuesta": "Cualquier estrés puede causarlo: cambio de ubicación, corriente de aire, calefactor cerca, exceso o falta de agua. Es muy normal cuando se lleva la planta del vivero a casa. Dale unas semanas en un lugar estable sin corrientes de aire.",
+    "categoria": "problemas"
+  },
+  {
+    "id": "cuanta-luz",
+    "pregunta": "¿Cuánta luz necesita?",
+    "respuesta": "Las plantas de interior prefieren luz indirecta brillante — cerca de una ventana pero sin sol directo que queme las hojas. Si empieza a estirarse o a inclinarse hacia la ventana, necesita más luz. Si las hojas se blanquean, tiene demasiado sol directo.",
+    "categoria": "cuidados"
+  },
+  {
+    "id": "interior-exterior",
+    "pregunta": "¿Puede ir afuera o tiene que quedarse adentro?",
+    "respuesta": "Las plantas tropicales (pothos, ficus, orquídeas, helechos) son de interior y no toleran el frío ni el sol directo. Las plantas de exterior aguantan lluvia y sol fuerte. Algunas de interior pueden salir en verano a un lugar con sombra, pero nunca con heladas.",
+    "categoria": "cuidados"
+  },
+  {
+    "id": "puntas-marrones",
+    "pregunta": "¿Por qué tiene las puntas de las hojas marrones?",
+    "respuesta": "Generalmente es falta de humedad en el ambiente — pasa mucho en invierno con calefacción. También puede ser acumulación de sal del agua o del fertilizante en la tierra. Aleja la planta de calefactores y riega con agua reposada.",
+    "categoria": "problemas"
+  },
+  {
+    "id": "cuando-fertilizar",
+    "pregunta": "¿Cuándo y con qué fertilizarla?",
+    "respuesta": "Solo durante el período de crecimiento: primavera y verano (septiembre a marzo en Chile). En invierno la planta está en reposo y fertilizar puede quemarle las raíces. Una o dos veces al mes con fertilizante líquido es suficiente. Nunca fertilices con la tierra seca.",
+    "categoria": "cuidados"
+  },
+  {
+    "id": "cuando-cambiar-maceta",
+    "pregunta": "¿Cuándo hay que cambiarla de maceta?",
+    "respuesta": "Cada dos o tres años, idealmente en primavera. Señales: las raíces salen por los orificios de abajo, la tierra se seca muy rápido, o el crecimiento se frenó. Elige una maceta solo 5–10 cm más grande — una muy grande retiene demasiada humedad.",
+    "categoria": "cuidados"
+  },
+  {
+    "id": "marchita-riego-frecuente",
+    "pregunta": "¿Por qué está marchita si la riego seguido?",
+    "respuesta": "Probablemente la estás regando de más. Con tierra permanentemente mojada las raíces se pudren y ya no pueden absorber agua, aunque la riegues. Toca la tierra: si está fría y empapada, deja de regar y asegúrate de que la maceta drene bien.",
+    "categoria": "problemas"
+  },
+  {
+    "id": "toxica-mascotas",
+    "pregunta": "¿Es tóxica para perros o gatos?",
+    "respuesta": "Muchas plantas comunes son tóxicas para mascotas. Las más peligrosas: lirios (muy tóxicos para gatos), pothos, filodendro, difenbaquia y plantas bulbosas como tulipanes. Pregunta por el nombre específico de tu planta para confirmar.",
+    "categoria": "seguridad"
+  },
+  {
+    "id": "sin-flores",
+    "pregunta": "¿Por qué no le salen flores?",
+    "respuesta": "Las plantas con flores necesitan más luz, la temperatura correcta y fertilizante para flores (con más fósforo y potasio). Algunas como las orquídeas necesitan un período de frío o días más cortos para florecer. Si está en un lugar oscuro, invertirá su energía en hojas, no en flores.",
+    "categoria": "cuidados"
+  },
+  {
+    "id": "tiene-plaga",
+    "pregunta": "¿Cómo sé si tiene plaga?",
+    "respuesta": "Revisa el envés de las hojas y los brotes nuevos. Busca: algodón blanco (cochinilla), polvo grisáceo con telaraña fina (araña roja), insectitos verdes o negros agrupados (pulgón), nube de bichitos blancos al agitar (mosca blanca), o polvo blanco harinoso (oidio, que es un hongo). Una planta enferma también tiene hojas deformadas o que caen sin razón.",
+    "categoria": "problemas"
+  }
+]

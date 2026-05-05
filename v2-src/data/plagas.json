@@ -1,0 +1,56 @@
+[
+  {
+    "id": "cochinilla",
+    "nombre": "Cochinilla harinosa",
+    "tipo": "insecto",
+    "urgencia": "alta",
+    "señales": "Pelusa o algodón blanco en axilas de hojas, tallos y uniones. En avanzado: hollín negro pegajoso encima de las hojas.",
+    "plantas": ["Cactus y suculentas", "Orquídeas", "Ficus", "Begonias", "Cítricos", "Tropicales en general"],
+    "accion": "Aisla la planta de inmediato. Retira los puntos blancos con algodón empapado en alcohol. Si la infestación es severa, considera desechar la planta. Inspecciona siempre el stock nuevo antes de ponerlo junto a otras plantas."
+  },
+  {
+    "id": "arana-roja",
+    "nombre": "Araña roja",
+    "tipo": "ácaro",
+    "urgencia": "alta",
+    "señales": "Puntitos pálidos en el haz de las hojas. Envés con polvo grisáceo. En avanzado: telaraña fina sobre la planta. Hojas que se secan y caen. Truco: agita una rama sobre papel blanco — aparecen puntitos que se mueven.",
+    "plantas": ["Tomate", "Fuchsia", "Poinsettia", "Orquídeas", "Impatiens", "Prácticamente cualquier planta"],
+    "accion": "Aumenta la humedad alrededor de la planta (los ácaros detestan la humedad alta). Aísla. Aplica jabón insecticida en el envés de las hojas. Aleja las plantas de calefactores y radiadores."
+  },
+  {
+    "id": "pulgon",
+    "nombre": "Pulgón",
+    "tipo": "insecto",
+    "urgencia": "normal",
+    "señales": "Colonias de bichitos pequeños (verdes, negros o rosados) agrupados en brotes nuevos y yemas. Hojas que se arrugan o deforman. Presencia de melaza pegajosa en hojas.",
+    "plantas": ["Rosales", "Tomate", "Pimiento", "Ornamentales de jardín", "Frutales"],
+    "accion": "Retira las colonias con un chorro fuerte de agua o aplastándolas con los dedos. Poda los brotes más afectados. Aplica jabón insecticida si persiste. No excedas el fertilizante nitrogenado — estimula brotes tiernos que atraen pulgones."
+  },
+  {
+    "id": "oidio",
+    "nombre": "Oidio",
+    "tipo": "hongo",
+    "urgencia": "alta",
+    "señales": "Polvo o recubrimiento blanco harinoso sobre hojas, tallos y flores — como si le hubieran espolvoreado harina. Hojas que se deforman o toman tonos violáceos. No hay bichos: es una capa fúngica.",
+    "plantas": ["Rosas", "Hortensias", "Azaleas", "Delphiniums", "Calabacín", "Guisantes"],
+    "accion": "Retira y desecha las hojas infectadas (no al compost — es contagioso). Separa la planta para mejorar la circulación de aire. No mojes el follaje: riega siempre en la base. Evita exceso de fertilizante nitrogenado."
+  },
+  {
+    "id": "mosca-blanca",
+    "nombre": "Mosca blanca",
+    "tipo": "insecto",
+    "urgencia": "normal",
+    "señales": "Al tocar la planta vuela una nube de insectitos blancos de 1–2 mm. Envés de hojas con escamas ovaladas blancas. Hojas superiores con melaza pegajosa y hollín negro.",
+    "plantas": ["Tomate", "Pepino", "Crisantemo", "Gerbera", "Fuchsia", "Poinsettia", "Verbena"],
+    "accion": "Pon trampas adhesivas amarillas para capturar adultos. Inspecciona el envés de toda planta nueva antes de incorporarla al display. Aplica jabón insecticida o piretrina en varias aplicaciones (cada 5–7 días)."
+  },
+  {
+    "id": "trips",
+    "nombre": "Trips",
+    "tipo": "insecto",
+    "urgencia": "normal",
+    "señales": "Hojas con decoloración plateada o blanquecina. Puntitos negros de excremento. Flores con manchas blancas donde se perdió el pigmento. Truco: agita el follaje sobre papel blanco y busca insectos alargados de hasta 2 mm.",
+    "plantas": ["Gladiolo", "Dalia", "Violeta africana", "Fuchsia", "Ficus", "Dracaena", "Impatiens"],
+    "accion": "Coloca trampas adhesivas azules para monitorear y reducir la población adulta. Aplica jabón insecticida o aceite de neem. Elimina restos vegetales y revisa plantas nuevas antes de ponerlas junto a otras."
+  }
+]
