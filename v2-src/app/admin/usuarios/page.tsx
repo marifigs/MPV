@@ -2,17 +2,11 @@
 
 import * as React from 'react';
 import { supabase } from '@/lib/supabase';
-import { useAuth } from '@/contexts/auth-context';
 import type { Profile } from '@/types/supabase';
 
 export default function UsuariosPage() {
-  const { session } = useAuth();
   const [profiles, setProfiles] = React.useState<Profile[]>([]);
   const [loading, setLoading] = React.useState(true);
-  const [showForm, setShowForm] = React.useState(false);
-  const [form, setForm] = React.useState({ full_name: '', email: '', password: '', role: 'vendor', store: '' });
-  const [creating, setCreating] = React.useState(false);
-  const [formError, setFormError] = React.useState('');
 
   async function loadProfiles() {
     const { data } = await supabase.from('profiles').select('*').order('created_at', { ascending: false });
@@ -21,29 +15,6 @@ export default function UsuariosPage() {
   }
 
   React.useEffect(() => { loadProfiles(); }, []);
-
-  async function handleCreate(e: React.FormEvent) {
-    e.preventDefault();
-    setCreating(true);
-    setFormError('');
-    const res = await fetch('/api/admin/create-user', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        ...form,
-        caller_token: session?.access_token,
-      }),
-    });
-    const data = await res.json();
-    setCreating(false);
-    if (!res.ok) {
-      setFormError(data.error ?? 'Error al crear usuario');
-    } else {
-      setShowForm(false);
-      setForm({ full_name: '', email: '', password: '', role: 'vendor', store: '' });
-      loadProfiles();
-    }
-  }
 
   async function toggleActive(id: string, current: boolean) {
     await supabase.from('profiles').update({ is_active: !current }).eq('id', id);
@@ -59,73 +30,33 @@ export default function UsuariosPage() {
           <p className="eyebrow mb-1" style={{ color: 'var(--color-green-soft)' }}>Panel de administración</p>
           <h1 className="display" style={{ fontSize: '28px', fontStyle: 'italic' }}>Usuarios</h1>
         </div>
-        <button
-          onClick={() => setShowForm(v => !v)}
+        <a
+          href="https://supabase.com/dashboard"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.1em] transition-all"
-          style={{
-            background: 'var(--color-green-deep)',
-            color: 'var(--color-cream)',
-            borderRadius: '2px',
-          }}
+          style={{ background: 'var(--color-green-deep)', color: 'var(--color-cream)', borderRadius: '2px' }}
         >
-          {showForm ? 'Cancelar' : '+ Crear usuario'}
-        </button>
+          + Crear usuario →
+        </a>
       </div>
 
-      {/* Create user form */}
-      {showForm && (
-        <form
-          onSubmit={handleCreate}
-          className="p-6 space-y-4"
-          style={{ border: '0.5px solid var(--color-green-deep)', background: 'var(--color-surface)' }}
-        >
-          <p className="eyebrow" style={{ color: 'var(--color-green-deep)' }}>Nuevo usuario</p>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <Field label="Nombre completo">
-              <input
-                required value={form.full_name} onChange={e => setForm(f => ({ ...f, full_name: e.target.value }))}
-                className="input-base" placeholder="María González"
-              />
-            </Field>
-            <Field label="Correo electrónico">
-              <input
-                type="email" required value={form.email} onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                className="input-base" placeholder="maria@easy.cl"
-              />
-            </Field>
-            <Field label="Contraseña inicial">
-              <input
-                type="password" required minLength={8} value={form.password}
-                onChange={e => setForm(f => ({ ...f, password: e.target.value }))}
-                className="input-base" placeholder="Mínimo 8 caracteres"
-              />
-            </Field>
-            <Field label="Tienda (opcional)">
-              <input
-                value={form.store} onChange={e => setForm(f => ({ ...f, store: e.target.value }))}
-                className="input-base" placeholder="Easy Maipú"
-              />
-            </Field>
-            <Field label="Rol">
-              <select
-                value={form.role} onChange={e => setForm(f => ({ ...f, role: e.target.value }))}
-                className="input-base"
-              >
-                <option value="vendor">Vendedor</option>
-                <option value="admin">Administrador</option>
-              </select>
-            </Field>
-          </div>
-          {formError && <p className="text-[13px]" style={{ color: 'var(--color-warning)' }}>{formError}</p>}
-          <button
-            type="submit" disabled={creating}
-            className="px-6 py-2.5 text-[12px] font-semibold uppercase tracking-[0.1em]"
-            style={{ background: 'var(--color-ink)', color: 'var(--color-cream)', borderRadius: '2px' }}
-          >
-            {creating ? 'Creando…' : 'Crear usuario'}
-          </button>
-        </form>
-      )}
+      {/* Instruction box */}
+      <div
+        className="p-5 text-[13px] leading-relaxed"
+        style={{ border: '0.5px solid var(--color-gold)', background: 'hsl(40 60% 97%)' }}
+      >
+        <p className="font-semibold mb-1" style={{ color: 'var(--color-gold)' }}>Cómo crear un nuevo usuario</p>
+        <ol className="list-decimal list-inside space-y-1" style={{ color: 'var(--color-ink-soft)' }}>
+          <li>Ir a <strong>supabase.com/dashboard</strong> → tu proyecto → <strong>Authentication → Users</strong></li>
+          <li>Clic en <strong>&ldquo;Add user&rdquo;</strong> → ingresar email y contraseña</li>
+          <li>Para dar rol de admin, ejecutar en <strong>SQL Editor</strong>:<br />
+            <code className="text-[11px] mt-1 block px-3 py-1.5" style={{ background: 'var(--color-surface-2)', fontFamily: 'monospace' }}>
+              UPDATE profiles SET role = &apos;admin&apos; WHERE email = &apos;correo@ejemplo.com&apos;;
+            </code>
+          </li>
+        </ol>
+      </div>
 
       {/* Users table */}
       <div className="overflow-x-auto" style={{ border: '0.5px solid var(--color-rule)' }}>
@@ -143,9 +74,7 @@ export default function UsuariosPage() {
           <tbody>
             {profiles.map(p => (
               <tr key={p.id} style={{ borderTop: '0.5px solid var(--color-rule)', background: 'var(--color-surface)' }}>
-                <td className="px-4 py-3 font-medium" style={{ color: 'var(--color-ink)' }}>
-                  {p.full_name ?? '—'}
-                </td>
+                <td className="px-4 py-3 font-medium" style={{ color: 'var(--color-ink)' }}>{p.full_name ?? '—'}</td>
                 <td className="px-4 py-3" style={{ color: 'var(--color-ink-soft)' }}>{p.email}</td>
                 <td className="px-4 py-3">
                   <span
@@ -177,21 +106,16 @@ export default function UsuariosPage() {
                 </td>
               </tr>
             ))}
+            {profiles.length === 0 && (
+              <tr>
+                <td colSpan={6} className="px-4 py-8 text-center text-[13px]" style={{ color: 'var(--color-ink-soft)' }}>
+                  Sin usuarios aún
+                </td>
+              </tr>
+            )}
           </tbody>
         </table>
       </div>
-    </div>
-  );
-}
-
-function Field({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <label className="block mb-1.5 text-[11px] font-medium uppercase tracking-[0.12em]"
-        style={{ color: 'var(--color-ink-soft)' }}>
-        {label}
-      </label>
-      {children}
     </div>
   );
 }
