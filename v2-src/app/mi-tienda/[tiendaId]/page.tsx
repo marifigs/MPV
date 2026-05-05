@@ -21,14 +21,14 @@ import type { ZonaClimatica } from '@/types/data';
 import { calcularRiesgosTienda, type FactorPrincipal } from '@/lib/risk-engine';
 import { WeatherWidget } from '@/components/weather-widget';
 
-// ── Factor labels & colors ────────────────────────────────────────────────────
+// ── Factor labels & colors ──────────────────────────────────────────────────────────────────────────────
 const FACTOR_LABEL: Record<FactorPrincipal, string> = {
   'calor':       'Sequía / calor',
   'frio':        'Frío / helada',
   'exceso-agua': 'Exceso de agua',
 };
 const FACTOR_ICON: Record<FactorPrincipal, string> = {
-  'calor':       '☀',
+  'calor':       '☉',
   'frio':        '❄',
   'exceso-agua': '💧',
 };
@@ -60,7 +60,7 @@ export default async function TiendaDetailPage({ params }: PageProps) {
     (a, b) => b[1].length - a[1].length
   );
 
-  // ── Riesgos calculados por el motor de scoring ────────────────────────────────
+  // ── Riesgos calculados por el motor de scoring ──────────────────────────────────────────────
   const mesActual = new Date().getMonth() + 1;
   const riesgos = calcularRiesgosTienda(
     tienda.zona as ZonaClimatica,
@@ -117,7 +117,7 @@ export default async function TiendaDetailPage({ params }: PageProps) {
         </div>
       </header>
 
-      {/* ── Riesgo de inventario — motor de scoring ──────────────────────── */}
+      {/* ── Riesgo de inventario — motor de scoring ──────────────────────────────────── */}
       <section className="space-y-4">
         {/* Header */}
         <div className="flex items-end gap-4">

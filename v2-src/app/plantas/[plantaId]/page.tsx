@@ -41,12 +41,8 @@ export default async function PlantaDetailPage({ params }: PageProps) {
   const Icon = Icons[GRUPO_ICON[displayGrupo as keyof typeof GRUPO_ICON] ?? 'sprout'];
   const videoFile = getPlantVideo(displayFotoUrl ?? undefined);
 
-  const stockOrdenado = planta
-    ? Object.entries(planta.stockPorTienda)
-        .filter(([, qty]) => qty > 0)
-        .map(([id, qty]) => ({ tienda: tiendasById[id], qty }))
-        .filter((x) => !!x.tienda)
-        .sort((a, b) => b.qty - a.qty)
+  const tiendasDisponibles = planta
+    ? planta.tiendas.map((id) => tiendasById[id]).filter(Boolean)
     : [];
 
   const relacionadas = catalog
@@ -55,7 +51,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
 
   return (
     <div>
-      {/* ── Back ────────────────────────────────────────── */}
+      {/* ── Back ──────────────────────────────────────────── */}
       <Link
         href="/plantas"
         className="inline-flex items-center gap-1.5 transition-colors hover:text-[var(--color-ink)]"
@@ -72,7 +68,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
         className="flex flex-col gap-8 md:grid md:gap-16"
         style={{ gridTemplateColumns: 'min(44vw, 460px) 1fr' }}
       >
-        {/* ── Visual ──────────────────────────────────── */}
+        {/* ── Visual ────────────────────────────────────────── */}
         <div className="grain w-full">
           {videoFile ? (
             <PlantVideo videoFile={videoFile} name={displayNombre} />
@@ -116,7 +112,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
           )}
         </div>
 
-        {/* ── Identity ────────────────────────────────── */}
+        {/* ── Identity ────────────────────────────────────────── */}
         <div className="flex flex-col justify-center py-4 md:py-4">
           {/* Grupo eyebrow */}
           <p className="eyebrow mb-6" style={{ color: 'var(--color-green-soft)' }}>
@@ -238,15 +234,15 @@ export default async function PlantaDetailPage({ params }: PageProps) {
         ) : null}
 
         {/* ── Stock por tienda ── */}
-        {stockOrdenado.length > 0 ? (
+        {tiendasDisponibles.length > 0 ? (
           <section>
             <SectionEyebrow>Tiendas disponibles</SectionEyebrow>
             <div className="grid gap-2.5 md:grid-cols-2">
-              {stockOrdenado.map(({ tienda, qty }) =>
+              {tiendasDisponibles.map((tienda) =>
                 tienda ? (
                   <Link
-                    key={tienda.id}
-                    href={`/mi-tienda/${tienda.id}`}
+                    key={tienda!.id}
+                    href={`/mi-tienda/${tienda!.id}`}
                     className="flex items-center justify-between px-0 py-4 transition-all"
                     style={{
                       borderBottom: '0.5px solid var(--color-rule)',
@@ -260,7 +256,7 @@ export default async function PlantaDetailPage({ params }: PageProps) {
                         strokeWidth={1.75}
                         style={{ color: 'var(--color-green-deep)' }}
                       />
-                      {tienda.nombre}
+                      {tienda!.nombre}
                     </span>
                   </Link>
                 ) : null
