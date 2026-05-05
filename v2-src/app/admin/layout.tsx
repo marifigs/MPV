@@ -10,6 +10,7 @@ const NAV = [
   { href: '/admin/usuarios', label: 'Usuarios' },
   { href: '/admin/auditoria', label: 'Auditoría' },
   { href: '/admin/heatmap', label: 'Heatmap' },
+  { href: '/admin/funnel', label: 'Funnel' },
 ];
 
 function AdminShell({ children }: { children: React.ReactNode }) {

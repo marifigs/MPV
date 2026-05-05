@@ -6,41 +6,31 @@ import { supabase } from '@/lib/supabase';
 import { useAuth } from '@/contexts/auth-context';
 
 // ── Constants ─────────────────────────────────────────────────────────────────
-const HEARTBEAT_MS   = 30_000;
-const SESSION_KEY    = 'mpv-audit-session';
+const HEARTBEAT_MS      = 30_000;
+const SESSION_KEY       = 'mpv-audit-session';
 const SCROLL_MILESTONES = [25, 50, 75, 90, 100];
-const RAGE_WINDOW_MS = 500;
-const RAGE_MIN_CLICKS = 3;
-const RAGE_RADIUS_PX = 30;
+const RAGE_WINDOW_MS    = 500;
+const RAGE_MIN_CLICKS   = 3;
+const RAGE_RADIUS_PX    = 30;
 
 function getSessionId() { return sessionStorage.getItem(SESSION_KEY); }
 function setSessionId(id: string) { sessionStorage.setItem(SESSION_KEY, id); }
 
-// ── Event sender — fire-and-forget ────────────────────────────────────────────
-async function sendEvent(
-  sessionId: string,
-  userId: string,
-  path: string,
-  eventType: string,
-  metadata?: Record<string, unknown>
-) {
-  await supabase.from('audit_events').insert({
+type EventMeta = Record<string, string | number | null | undefined>;
+
+// ── Fire-and-forget event sender ──────────────────────────────────────────────
+function sendEvent(sessionId: string, userId: string, path: string, eventType: string, meta?: EventMeta) {
+  supabase.from('audit_events').insert({
     session_id: sessionId,
     user_id: userId,
     event_type: eventType,
     path,
-    metadata: metadata ?? null,
+    metadata: meta ?? null,
   });
 }
 
-// Keepalive version for pagehide / visibilitychange
-async function sendEventKeepalive(
-  sessionId: string,
-  userId: string,
-  path: string,
-  eventType: string,
-  metadata?: Record<string, unknown>
-) {
+// Keepalive variant for pagehide / visibilitychange
+async function sendEventKeepalive(sessionId: string, userId: string, path: string, eventType: string, meta?: EventMeta) {
   const { data: { session } } = await supabase.auth.getSession();
   const token = session?.access_token;
   if (!token) return;
@@ -52,7 +42,7 @@ async function sendEventKeepalive(
       'Authorization': `Bearer ${token}`,
       'Prefer': 'return=minimal',
     },
-    body: JSON.stringify([{ session_id: sessionId, user_id: userId, event_type: eventType, path, metadata: metadata ?? null }]),
+    body: JSON.stringify([{ session_id: sessionId, user_id: userId, event_type: eventType, path, metadata: meta ?? null }]),
     keepalive: true,
   }).catch(() => {});
 }
@@ -68,7 +58,7 @@ export function AuditTracker() {
   const pageCountRef    = React.useRef(0);
   const heartbeatRef    = React.useRef<ReturnType<typeof setInterval> | null>(null);
 
-  // Scroll tracking
+  // Scroll
   const maxScrollRef    = React.useRef(0);
   const scrollRafRef    = React.useRef<number | null>(null);
   const milestonesFired = React.useRef<Set<number>>(new Set());
@@ -80,16 +70,15 @@ export function AuditTracker() {
   // Rage click buffer
   const clickBuf        = React.useRef<Array<{ t: number; x: number; y: number }>>([]);
 
-  // Form abandonment: field name → touched (boolean)
-  const touchedFields   = React.useRef<Map<string, boolean>>(new Map());
+  // (form_field tracking removed — MPV/v2 is not e-commerce)
 
   const isLogin = pathname.startsWith('/login');
 
-  // ── Helpers ───────────────────────────────────────────────────────────────
   function getSid() { return sessionRef.current ?? getSessionId(); }
   function getUid() { return user?.id ?? ''; }
+  function getTitle() { return typeof document !== 'undefined' ? document.title : ''; }
 
-  // ── Create or resume audit session ───────────────────────────────────────
+  // ── Session creation ──────────────────────────────────────────────────────
   React.useEffect(() => {
     if (!user || isLogin) return;
     const existing = getSessionId();
@@ -108,7 +97,7 @@ export function AuditTracker() {
     })();
   }, [user, isLogin]);
 
-  // ── Heartbeat (online status) ─────────────────────────────────────────────
+  // ── Heartbeat ─────────────────────────────────────────────────────────────
   React.useEffect(() => {
     if (!user || isLogin) return;
     heartbeatRef.current = setInterval(async () => {
@@ -119,7 +108,7 @@ export function AuditTracker() {
     return () => { if (heartbeatRef.current) clearInterval(heartbeatRef.current); };
   }, [user, isLogin]);
 
-  // ── Session close + scroll exit on tab leave ──────────────────────────────
+  // ── Session close on tab leave ────────────────────────────────────────────
   React.useEffect(() => {
     if (!user || isLogin) return;
 
@@ -127,19 +116,20 @@ export function AuditTracker() {
       const sid = getSid();
       if (!sid) return;
       const duration = Math.round((Date.now() - startRef.current) / 1000);
+      const uid = getUid();
 
-      // Scroll exit event
-      await sendEventKeepalive(sid, getUid(), pathname, 'scroll_exit', {
+      await sendEventKeepalive(sid, uid, pathname, 'scroll_exit', {
         scroll_pct: maxScrollRef.current,
-        time_on_page_ms: Date.now() - startRef.current,
+        time_on_ms: Date.now() - startRef.current,
+        page_title: getTitle(),
       });
 
-      // Flush heatmap buffer
+      // Flush heatmap
       if (heatmapBuf.current.length > 0) {
         const { data: { session } } = await supabase.auth.getSession();
         const token = session?.access_token;
         if (token) {
-          const points = heatmapBuf.current.map(p => ({ session_id: sid, user_id: getUid(), path: p.path, x: p.x, y: p.y }));
+          const points = heatmapBuf.current.map(p => ({ session_id: sid, user_id: uid, path: p.path, x: p.x, y: p.y }));
           heatmapBuf.current = [];
           fetch(`${process.env.NEXT_PUBLIC_SUPABASE_URL}/rest/v1/heatmap_points`, {
             method: 'POST',
@@ -150,14 +140,7 @@ export function AuditTracker() {
         }
       }
 
-      // Form abandonment
-      const uid = getUid();
-      for (const [fieldName] of touchedFields.current) {
-        await sendEventKeepalive(sid, uid, pathname, 'form_field', { field_name: fieldName, field_action: 'abandon' });
-      }
-      touchedFields.current.clear();
-
-      // Close session record
+      // Close session
       const { data: { session } } = await supabase.auth.getSession();
       const token = session?.access_token;
       if (token) {
@@ -180,20 +163,28 @@ export function AuditTracker() {
     };
   }, [user, isLogin, pathname]);
 
-  // ── Pageview on route change ──────────────────────────────────────────────
+  // ── Pageview on route change (with title + referrer) ──────────────────────
   React.useEffect(() => {
     if (!user || isLogin) return;
     const sid = getSid();
     if (!sid) return;
-    // Reset per-page state
+
+    // Reset per-page counters
     maxScrollRef.current = 0;
     milestonesFired.current.clear();
     startRef.current = Date.now();
     pageCountRef.current += 1;
-    sendEvent(sid, getUid(), pathname, 'pageview');
+
+    // title via rAF — DOM has updated by then
+    requestAnimationFrame(() => {
+      sendEvent(sid, getUid(), pathname, 'pageview', {
+        page_title: document.title,
+        referrer: document.referrer || null,
+      });
+    });
   }, [pathname, user, isLogin]);
 
-  // ── Scroll depth tracking ─────────────────────────────────────────────────
+  // ── Scroll depth ──────────────────────────────────────────────────────────
   React.useEffect(() => {
     if (!user || isLogin) return;
 
@@ -212,7 +203,8 @@ export function AuditTracker() {
             if (sid) sendEvent(sid, getUid(), pathname, 'scroll_milestone', {
               milestone,
               scroll_pct: pct,
-              time_on_page_ms: Date.now() - startRef.current,
+              time_on_ms: Date.now() - startRef.current,
+              page_title: getTitle(),
             });
           }
         }
@@ -226,7 +218,7 @@ export function AuditTracker() {
     };
   }, [user, isLogin, pathname]);
 
-  // ── Click heatmap + rage click detection ─────────────────────────────────
+  // ── Click: heatmap + audit_event + rage detection ─────────────────────────
   React.useEffect(() => {
     if (!user || isLogin) return;
 
@@ -234,10 +226,11 @@ export function AuditTracker() {
       const now = Date.now();
       const x = e.clientX;
       const y = e.clientY;
+      const target = e.target as HTMLElement | null;
       const xNorm = Math.min(1, Math.max(0, x / window.innerWidth));
       const yNorm = Math.min(1, Math.max(0, (y + window.scrollY) / Math.max(document.body.scrollHeight, window.innerHeight)));
 
-      // Heatmap buffer (throttled)
+      // Heatmap buffer (throttled to avoid flooding)
       if (now - lastHeatmap.current >= 300) {
         lastHeatmap.current = now;
         heatmapBuf.current.push({ x: xNorm, y: yNorm, path: pathname });
@@ -252,58 +245,45 @@ export function AuditTracker() {
         }
       }
 
+      // Click as audit_event (with element context)
+      const sid = getSid();
+      if (sid) {
+        sendEvent(sid, getUid(), pathname, 'click', {
+          click_x: Math.round(x),
+          click_y: Math.round(y),
+          viewport_w: window.innerWidth,
+          viewport_h: window.innerHeight,
+          element_tag: target?.tagName?.toLowerCase() ?? null,
+          element_text: target?.textContent?.trim().slice(0, 80) ?? null,
+          element_id: target?.id ?? null,
+          page_title: getTitle(),
+        });
+      }
+
       // Rage click detection
       clickBuf.current.push({ t: now, x, y });
-      // Keep only clicks in the last RAGE_WINDOW_MS
       clickBuf.current = clickBuf.current.filter(c => now - c.t <= RAGE_WINDOW_MS);
-
       if (clickBuf.current.length >= RAGE_MIN_CLICKS) {
         const recent = clickBuf.current;
-        const xMin = Math.min(...recent.map(c => c.x));
-        const xMax = Math.max(...recent.map(c => c.x));
-        const yMin = Math.min(...recent.map(c => c.y));
-        const yMax = Math.max(...recent.map(c => c.y));
-        const spread = Math.sqrt(Math.pow(xMax - xMin, 2) + Math.pow(yMax - yMin, 2));
-        if (spread <= RAGE_RADIUS_PX) {
-          const sid = getSid();
-          if (sid) {
-            const target = e.target as HTMLElement | null;
-            sendEvent(sid, getUid(), pathname, 'rage_click', {
-              click_x: Math.round(x), click_y: Math.round(y),
-              viewport_w: window.innerWidth, viewport_h: window.innerHeight,
-              element_tag: target?.tagName?.toLowerCase() ?? '',
-              element_text: target?.textContent?.trim().slice(0, 80) ?? '',
-              element_id: target?.id ?? '',
-            });
-          }
-          clickBuf.current = []; // reset after rage click
+        const spread = Math.sqrt(
+          Math.pow(Math.max(...recent.map(c => c.x)) - Math.min(...recent.map(c => c.x)), 2) +
+          Math.pow(Math.max(...recent.map(c => c.y)) - Math.min(...recent.map(c => c.y)), 2)
+        );
+        if (spread <= RAGE_RADIUS_PX && sid) {
+          sendEvent(sid, getUid(), pathname, 'rage_click', {
+            click_x: Math.round(x), click_y: Math.round(y),
+            viewport_w: window.innerWidth, viewport_h: window.innerHeight,
+            element_tag: target?.tagName?.toLowerCase() ?? null,
+            element_text: target?.textContent?.trim().slice(0, 80) ?? null,
+            element_id: target?.id ?? null,
+          });
+          clickBuf.current = [];
         }
       }
     }
 
     window.addEventListener('pointerdown', onPointer, { capture: true });
     return () => window.removeEventListener('pointerdown', onPointer, { capture: true });
-  }, [user, isLogin, pathname]);
-
-  // ── Form field tracking ───────────────────────────────────────────────────
-  React.useEffect(() => {
-    if (!user || isLogin) return;
-
-    function onFocusIn(e: FocusEvent) {
-      const target = e.target as HTMLElement;
-      if (!['INPUT', 'TEXTAREA', 'SELECT'].includes(target.tagName)) return;
-      const input = target as HTMLInputElement;
-      if (input.type === 'password') return;
-      const name = input.name || input.id || input.placeholder || target.tagName.toLowerCase();
-      if (!touchedFields.current.has(name)) {
-        touchedFields.current.set(name, true);
-        const sid = getSid();
-        if (sid) sendEvent(sid, getUid(), pathname, 'form_field', { field_name: name, field_type: input.type, field_action: 'focus' });
-      }
-    }
-
-    document.addEventListener('focusin', onFocusIn);
-    return () => document.removeEventListener('focusin', onFocusIn);
   }, [user, isLogin, pathname]);
 
   // ── JS error tracking ─────────────────────────────────────────────────────
@@ -314,13 +294,10 @@ export function AuditTracker() {
       if (!e.message || e.message === 'Script error.') return;
       const sid = getSid();
       if (!sid) return;
-      sendEvent(sid, getUid(), pathname, 'js_error', {
-        error_message: e.message,
-        error_source: e.filename ?? '',
-      });
+      sendEvent(sid, getUid(), pathname, 'js_error', { error_message: e.message, error_source: e.filename ?? null });
     }
 
-    function onUnhandledRejection(e: PromiseRejectionEvent) {
+    function onRejection(e: PromiseRejectionEvent) {
       const msg = e.reason instanceof Error ? e.reason.message : String(e.reason ?? 'Unhandled rejection');
       if (!msg || msg === 'Script error.') return;
       const sid = getSid();
@@ -329,10 +306,10 @@ export function AuditTracker() {
     }
 
     window.addEventListener('error', onError);
-    window.addEventListener('unhandledrejection', onUnhandledRejection);
+    window.addEventListener('unhandledrejection', onRejection);
     return () => {
       window.removeEventListener('error', onError);
-      window.removeEventListener('unhandledrejection', onUnhandledRejection);
+      window.removeEventListener('unhandledrejection', onRejection);
     };
   }, [user, isLogin, pathname]);
 
