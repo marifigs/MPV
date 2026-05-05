@@ -4,6 +4,9 @@ import * as React from 'react';
 import { useRouter, usePathname } from 'next/navigation';
 import { useAuth } from '@/contexts/auth-context';
 
+// Auth is opt-in via env var — disabled until Supabase is configured
+const AUTH_ENABLED = process.env.NEXT_PUBLIC_AUTH_ENABLED === 'true';
+
 // Routes accessible without authentication
 const PUBLIC_PATHS = ['/login'];
 
@@ -20,7 +23,7 @@ export function AuthGuard({ children, requireAdmin = false }: AuthGuardProps) {
   const isPublic = PUBLIC_PATHS.some(p => pathname.startsWith(p));
 
   React.useEffect(() => {
-    if (loading || isPublic) return;
+    if (!AUTH_ENABLED || loading || isPublic) return;
     if (!user) {
       router.replace('/login');
       return;
@@ -30,8 +33,8 @@ export function AuthGuard({ children, requireAdmin = false }: AuthGuardProps) {
     }
   }, [user, profile, loading, requireAdmin, router, isPublic]);
 
-  // Always render public pages
-  if (isPublic) return <>{children}</>;
+  // Auth disabled globally or public page — render freely
+  if (!AUTH_ENABLED || isPublic) return <>{children}</>;
 
   if (loading) {
     return (
